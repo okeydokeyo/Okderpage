@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="indexStyle.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     
     <style>
@@ -135,7 +135,7 @@
 			$ad = $('#abgne_float_ad').css('opacity', 0).show(),	// 讓廣告區塊變透明且顯示出來
 			_width = $ad.width(),
 			_height = $ad.height(),
-			_diffY = -95, _diffX = 850,	// 距離右及下方邊距
+			_diffY = -95, _diffX = 750,	// 距離右及下方邊距
 			_moveSpeed = 400;	// 移動的速度
 		
 		// 先把 #abgne_float_ad 移動到定點
@@ -184,7 +184,7 @@
 </div>
     
 <header>
-    <nav class="navbar navbar-fixed-top" id="nav">
+    <nav class="navbar" id="nav">
         <nav class="navbar" id="top-navbar"> 
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -202,7 +202,7 @@
                         </li>
                         <li><a href="#services">服務內容</a></li>
                         <li><a href="#donate">我要捐款</a></li>
-                        <li><a href="#donateInfo">捐款資訊</a></li>
+                        <li><a href="#donateInfo">捐贈資訊</a></li>
                         <li><a href="#knowMore">認識脊髓損傷</a></li>
                         <li><a href="http://www.sci.org.tw/" target="blank">脊髓新樂園</a></li>
                         <li><a href="#">放大鏡</a></li>
@@ -246,7 +246,7 @@
 </header>
     
 <div class="video-container"> 
-    <video autoplay loop poster="icons/Banner-01.jpg" plays-inline id="index-video" muted>
+    <video autoplay loop poster="icons/video.png" plays-inline id="index-video" muted>
         <source src="videos/index-video.mp4" type="video/mp4">
     </video>
      <h1>邀您一起<br/>
@@ -276,40 +276,50 @@
     </a>
 </div>
     
-<div class="row" id="outer-flip-container">
-    <div class="flip-container col-xs-12 col-xs-offset-2 col-sm-3 col-sm-offset-1">
+<div class="row">
+    <div class="col-xs-12 col-md-10 col-md-offset-1">
+    <div class="col-md-4">
+    <div class="flip-container col-xs-4 col-md-10 col-md-offset-1">
         <a href="#">
         <div class="flipper">
             <div class="front">
-                <img src="icons/story1.png" style="width:300px">
-            </div>
-            <div class="back"> </div>
-        </div>
-        </a>
-    </div>
-    <div class="flip-container col-xs-12 col-xs-offset-2 col-sm-3 col-sm-offset-1">
-        <a href="#">
-        <div class="flipper">
-            <div class="front">
-                <p style="color:#fff;padding:120px">關於我們</p>
+                <img src="icons/關於我們.png" class="img-responsive" alt="關於我們">
             </div>
             <div class="back">
-                <p style="color:#fff;padding:120px">點擊察看</p>
+                <img src="icons/點我查看_灰.png" class="img-responsive" alt="點我查看">
             </div>
         </div>
         </a>
     </div>
-   <div class="flip-container col-xs-12 col-xs-offset-2 col-sm-3 col-sm-offset-1">
+    </div>
+    <div class="col-md-4">
+    <div class="flip-container col-xs-4 col-md-10 col-md-offset-1">
+        <a href="https://scsrc.eoffering.org.tw/contents/project_ct?p_id=13">
+        <div class="flipper">
+            <div class="front">
+                <img src="icons/個案故事_紅.png" class="img-responsive" alt="個案故事">
+            </div>
+            <div class="back">
+                <img src="icons/點我查看_紅.png" class="img-responsive" alt="點我查看">
+            </div>
+        </div>
+        </a>
+    </div>
+    </div>
+    <div class="col-md-4">
+    <div class="flip-container col-xs-4 col-md-10 col-md-offset-1">
        <a href="#"> 
        <div class="flipper">
             <div class="front">
-                <p style="color:#fff;padding:110px">認識脊髓損傷</p>
+                <img src="icons/認識脊髓損傷.png" class="img-responsive" alt="認識脊髓損傷">
             </div>
             <div class="back">
-                <p style="color:#fff;padding:120px">點擊察看</p>
+                <img src="icons/點我查看_灰.png" class="img-responsive" alt="點我查看">
             </div>
         </div>
        </a>
+    </div>
+    </div>
     </div>
 </div>
 
@@ -334,16 +344,14 @@
         <img src="icons/14515503271.png" width="500">
     </a>
 	</div>
-</body>
-    
 <footer>
     <div class="footer">
         <h4 id="contactUs">聯絡我們</h4>
-        <img class="img-responsive" src="icons/MainLogo.png" id="logo2">
         <a href="https://www.facebook.com/SCSRC.ORG.TW/"><img class=" img-circle" src="icons/Facebook.png"  id="Facebook"/></a>
         <h4 id="address">脊髓損傷協同團隊-財團法人脊髓損傷潛能發展中心</h4>
         <h4 id="address">32661桃園市楊梅區高榮里快速路五段701號</h4>
         <h4 id="address" style="padding-bottom:20px">(03)490-9001</h4>
     </div>
 </footer>
+</body>
 </html>
