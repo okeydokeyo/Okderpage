@@ -218,15 +218,10 @@ video{
     padding-left: 2%;
 }
 
-footer{
-    margin:auto;
-    font-size:
-}
-
 .footer{
     width: 100%;
-    margin: auto;
     background-color: #AAAAAA;
+    margin-top: 300px;
 }
 
 .footer h4{

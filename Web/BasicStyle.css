@@ -51,14 +51,11 @@ body{
     color:black;
     font-size: 1.2em;
 }
-footer{
-    margin:auto;
-    
-}
+
 .footer{
     width: 100%;
-    margin: auto;
     background-color: #AAAAAA;
+    margin-top: 300px;
 }
 
 #contactUs{
