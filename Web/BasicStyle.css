@@ -21,7 +21,7 @@ body{
     
 }
 #top-list a{
-    color:aliceblue;
+    color:#FFFFFF;
     font-size: 1em;
 }
 #dropdown-menu a{
@@ -56,6 +56,10 @@ body{
     width: 100%;
     background-color: #AAAAAA;
     margin-top: 300px;
+}
+
+.footer h4{
+    font-size:1.17em;
 }
 
 #contactUs{

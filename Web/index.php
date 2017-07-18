@@ -1,8 +1,7 @@
-<!DOCTYPE html>
 <html>
 <head>
     <title>桃園市私立脊髓損傷潛能發展中心</title>
-    <link href="icons/favicon.ico" rel="SHORTCUT ICON">
+    <link href="images/favicon.ico" rel="SHORTCUT ICON">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -34,8 +33,6 @@
             emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
             name = $( "#name" ),
             email = $( "#email" ),
-            
-      
         password = $( "#password" ),
         allFields = $( [] ).add( name ).add( email ).add( password ),
         tips = $( ".validateTips" );
@@ -110,6 +107,7 @@
         }
       } );
   </script>
+    
     <style type="text/css">
 	#abgne_float_ad {
 		display: none;
@@ -128,6 +126,7 @@
 		height: 3000px;
 	}
 </style>
+    
 <script type="text/javascript">
 	// 當網頁載入完
 	$(window).load(function(){
@@ -163,6 +162,7 @@
 	});
 </script>
 </head>
+    
 <body>
 <div id="dialog-form" title="脊髓損傷患者個案通報">
   <p class="validateTips">脊髓損傷患者個案通報資料</p>
@@ -184,70 +184,13 @@
 </div>
     
 <header>
-    <nav class="navbar" id="nav">
-        <nav class="navbar" id="top-navbar"> 
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myTopNavBar" id="top-navbar-button">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>    
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse" id="myTopNavBar">
-                    <ul class="nav navbar-nav navbar-right a" id="top-list">
-                        <li class="active"><a href="#">
-                            關於我們
-                        <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li><a href="#services">服務內容</a></li>
-                        <li><a href="#donate">我要捐款</a></li>
-                        <li><a href="#donateInfo">捐贈資訊</a></li>
-                        <li><a href="#knowMore">認識脊髓損傷</a></li>
-                        <li><a href="http://www.sci.org.tw/" target="blank">脊髓新樂園</a></li>
-                        <li><a href="#">放大鏡</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">語言<span class="caret"></span></a>
-                                <ul class="dropdown-menu" id="dropdown-menu">
-                                        <li><a href="#">繁體中文</a></li>
-                                        <li><a href="#">简体中文</a></li>
-                                        <li><a href="#">English</a></li>
-                                </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-       </nav>
-        <nav class="navbar" id="bottom-menu">
-            <div class="container-fluid">
-                <img class="img-responsive" src="icons/MainLogo.png" id="logo">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myBottomNavBar" id="bottom-navbar-button">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span> 
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse" id="myBottomNavBar">
-                    <ul class="nav navbar-nav navbar-right b" id="bottom-list">
-                        <li class="active"><a href="#">
-                            友善新世界雜誌<span class="sr-only">(current)
-                            </span></a>
-                        </li>
-                        <li><a href="#">媒體報導</a></li>
-                        <li><a href="#">新聞中心</a></li>
-                        <li><a href="#">志工園地</a></li>
-                        <li><a href="#">好站連結</a></li>
-                        <li><a href="#">留言板</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </nav>
+    <?php 
+    include("top_menu.php");
+    ?>
 </header>
     
 <div class="video-container"> 
-    <video autoplay loop poster="icons/video.png" plays-inline id="index-video" muted>
+    <video autoplay loop poster="images/video.png" plays-inline id="index-video" muted>
         <source src="videos/index-video.mp4" type="video/mp4">
     </video>
      <h1>邀您一起<br/>
@@ -262,10 +205,10 @@
     </ol>
     <div class="carousel-inner">
         <div class="item active">
-            <img src="icons/Banner-01.jpg">
+            <img src="images/Banner-01.jpg">
         </div>
-        <div class="item"><img src="icons/Banner-01.jpg"></div>
-        <div class="item"><img src="icons/Banner-01.jpg"></div>
+        <div class="item"><img src="images/Banner-01.jpg"></div>
+        <div class="item"><img src="images/Banner-01.jpg"></div>
     </div>
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left"></span>
@@ -279,72 +222,70 @@
     
 <div class="row">
     <div class="col-xs-12 col-md-10 col-md-offset-1">
+        
     <div class="col-md-4">
     <div class="flip-container col-xs-4 col-md-10 col-md-offset-1">
-        <a href="#">
         <div class="flipper">
             <div class="front">
-                <img src="icons/關於我們.png" class="img-responsive" alt="關於我們">
+                <img src="images/關於我們.png" class="img-responsive" alt="關於我們">
             </div>
             <div class="back">
-                <img src="icons/點我查看_灰.png" class="img-responsive" alt="點我查看">
+                <img src="images/點我查看_灰.png" class="img-responsive" alt="點我查看">
             </div>
         </div>
-        </a>
     </div>
     </div>
+        
     <div class="col-md-4">
     <div class="flip-container col-xs-4 col-md-10 col-md-offset-1">
         <a href="https://scsrc.eoffering.org.tw/contents/project_ct?p_id=13">
         <div class="flipper">
             <div class="front">
-                <img src="icons/個案故事_紅.png" class="img-responsive" alt="個案故事">
+                <img src="images/個案故事_紅.png" class="img-responsive" alt="個案故事">
             </div>
             <div class="back">
-                <img src="icons/點我查看_紅.png" class="img-responsive" alt="點我查看">
+                <img src="images/點我查看_紅.png" class="img-responsive" alt="點我查看">
             </div>
         </div>
         </a>
     </div>
     </div>
+        
     <div class="col-md-4">
     <div class="flip-container col-xs-4 col-md-10 col-md-offset-1">
        <a href="#"> 
        <div class="flipper">
             <div class="front">
-                <img src="icons/認識脊髓損傷.png" class="img-responsive" alt="認識脊髓損傷">
+                <img src="images/認識脊髓損傷.png" class="img-responsive" alt="認識脊髓損傷">
             </div>
             <div class="back">
-                <img src="icons/點我查看_灰.png" class="img-responsive" alt="點我查看">
+                <img src="images/點我查看_灰.png" class="img-responsive" alt="點我查看">
             </div>
         </div>
        </a>
     </div>
     </div>
+        
     </div>
 </div>
-
     
-<input type="image" src="icons/BB1.png"  alt="send" name="Test" id="BB1" onclick="send();" />
+<input type="image" src="images/BB1.png"  alt="send" name="Test" id="BB1" onclick="send();" />
 <div>
     <a href="https://scsrc.eoffering.org.tw/contents/project_ct?p_id=1">
-        <img src="icons/BB2.png" title="我要捐款" id="BB2" />
+        <img src="images/BB2.png" title="我要捐款" id="BB2" />
 	</a>
 </div>
 <div id="abgne_float_ad" >
     <span class="abgne_close_ad"><b>[X]</b></span>
     <a href="http://www.flycan.com.tw/course/course_javascript.php">
-        <img src="icons/14515503271.png" width="500">
+        <img src="images/14515503271.png" width="500">
     </a>
 	</div>
+    
 <footer>
-    <div class="footer">
-        <h4 id="contactUs">聯絡我們</h4>
-        <a href="https://www.facebook.com/SCSRC.ORG.TW/"><img class=" img-circle" src="icons/Facebook.png"  id="Facebook"/></a>
-        <h4 id="address">脊髓損傷協同團隊-財團法人脊髓損傷潛能發展中心</h4>
-        <h4 id="address">32661桃園市楊梅區高榮里快速路五段701號</h4>
-        <h4 id="address" style="padding-bottom:20px">(03)490-9001</h4>
-    </div>
+    <?php
+    include("footer.php");
+    ?>
 </footer>
 </body>
 </html>
