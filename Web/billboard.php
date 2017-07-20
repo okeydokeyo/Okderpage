@@ -11,19 +11,70 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-</head>
     
-<body>    
+    <script type="text/javascript">
+    //用戶端判斷是否有輸入留言
+        function check_data(){
+            if(document.myForm.name.value.length == 0)
+                alert("請填寫姓名欄！");
+            else if(document.myForm.topic.value.length == 0)
+                alert("請填寫留言主題！");
+            else if(document.myForm.content.value.length == 0)
+                alert("請填寫留言內容！");
+            else
+                myForm.submit();
+        }
+    </script>
+</head>
 <header>
     <?php
-    include("top_menu.php");
+        include("top_menu.php");
     ?>
 </header>
-
-<footer>
+<body>    
+    <form name="myForm" method="post" action="billboard_post.php" style="margin-top:200px">
+        <table border=0 width="800" align="center" cellspacing="0">
+            <tr>
+                <td width="15%">姓名</td>
+                <td width="85%"><input name="name" type=text size="50"></td>
+            </tr>
+            <tr>
+                <td width="15%">主題</td>
+                <td width="85%"><input name="topic" type=text size="50"></td>
+            </tr>
+            <tr>
+                <td width="15%">內容</td>
+                <td width="85%"><textarea name="content" cols="50" rows="5"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" algn="center">
+                    <input type="button" value="發布" onClick="check_data()">
+                </td>
+            </tr>
+        </table>
+    </form>
+    
     <?php
-    include("footer.php");
+        require_once("dbtools.inc.php");
+        $link = create_connection();
+        $sql = "SELECT*FROM comments ORDER BY time DESC";
+        $result = execute_sql("billboard", $sql, $link);    
+        
+        /* 
+        
+        
+        前端顯示留言的UI
+        
+        
+        */
+        mysqli_free_result($result);
+        mysqli_close($link);
     ?>
-</footer>
+    
+    <footer>
+        <?php
+            include("footer.php");
+        ?>
+    </footer>
 </body>
 </html>
