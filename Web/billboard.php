@@ -67,8 +67,8 @@
         
         
         */
-        mysqli_free_result($result);
-        mysqli_close($link);
+        mysql_free_result($result);
+        mysql_close($link);
     ?>
     
     <footer>
