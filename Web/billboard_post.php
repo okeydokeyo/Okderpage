@@ -8,7 +8,7 @@
 
     $link = create_connection();
     $sql = "INSERT INTO comments(name, topic, content, time) VALUES('$name', '$topic', '$content', '$current_time')";
-    $result = execute_sql("billboard", $sql, $link);
+    $result = execute_sql("scsrc", $sql, $link);
     
     mysqli_close($link);
     header("location:billboard.php");

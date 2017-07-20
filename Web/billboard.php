@@ -58,7 +58,7 @@
         require_once("dbtools.inc.php");
         $link = create_connection();
         $sql = "SELECT*FROM comments ORDER BY time DESC";
-        $result = execute_sql("billboard", $sql, $link);    
+        $result = execute_sql("scsrc", $sql, $link);    
         
         /* 
         
