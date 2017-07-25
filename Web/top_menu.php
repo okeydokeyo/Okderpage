@@ -19,13 +19,14 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">認識脊髓損傷<span class="caret"></span></a>
                                 <ul class="dropdown-menu" id="dropdown-menu">
-                                        <li><a href="#">什麼是脊髓損傷</a></li>
-                                        <li><a href="#">造成脊髓損傷的原因</a></li>
-                                        <li><a href="#">台灣脊髓損傷者概況</a></li>
-                                        <li><a href="#">脊髓損傷的急救處理</a></li>
+                                        <li><a href="KnowMore_1.php">什麼是脊髓損傷</a></li>
+                                        <li><a href="KnowMore_2.php">造成脊髓損傷的原因</a></li>
+                                        <li><a href="KnowMore_3.php">台灣脊髓損傷者概況</a></li>
+                                        <li><a href="KnowMore_4.php">脊髓損傷的急救處理</a></li>
                                 </ul>
                         </li>
                         <li><a href="http://www.sci.org.tw/" target="blank">脊髓新樂園</a></li>
+                        <li><a href="GoodLink.php" target="blank">好站連結</a></li>
                         <li><a href="#">放大鏡</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">語言<span class="caret"></span></a>
