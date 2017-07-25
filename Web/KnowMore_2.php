@@ -15,7 +15,7 @@
     ?>
 </header>
 
-<table cellspacing="1" cellpadding="2" border="0" id="table2">
+<table cellspacing="1" cellpadding="2" border="0" id="table">
     <tbody>
         <tr>
 		  <td align="left" valign="middle" id="title_01">什麼是脊髓損傷?</td>

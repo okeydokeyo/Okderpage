@@ -15,7 +15,7 @@
     ?>
 </header>
 
-<table cellspacing="1" cellpadding="2" border="0" id="table3">
+<table cellspacing="1" cellpadding="2" border="0" id="table">
     <tbody>
         <tr>
 		  <td align="left" valign="middle" id="title_01">台灣脊髓損傷者概況</td>
@@ -28,6 +28,54 @@
         </tr>
     </tbody>
 </table>
+    
+<table cellspacing="0" cellpadding="0" border="1" id="table1">
+    <tbody>
+        <tr style="HEIGHT: 21pt">
+            <td valign="top">
+            <div>年增加率</div>
+            </td>
+            <td valign="top">
+            <div>2,500人</div>
+            </td>
+            <td valign="top">
+            <div>男性損傷者</div>
+            </td>
+            <td valign="top">
+            <div>85.6%</div>
+            </td>
+        </tr>
+        <tr style="HEIGHT: 22.5pt">
+            <td valign="top">
+            <div>平均受傷年齡</div>
+            </td>
+            <td valign="top">
+            <div>27.3歲</div>
+            </td>
+            <td valign="top">
+            <div>女性損傷者</div>
+            </td>
+            <td valign="top">
+            <div>14.4%</div>
+            </td>
+        </tr>
+        <tr style="HEIGHT: 22.5pt">
+            <td valign="top">
+            <div>終身使用輪椅</div>
+            </td>
+            <td valign="top">
+            <div>92%</div>
+            </td>
+            <td valign="top">
+            <div>耗用社會成本</div>
+            </td>
+            <td valign="top">
+            <div>2,500萬</div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
     
 <footer>
     <?php

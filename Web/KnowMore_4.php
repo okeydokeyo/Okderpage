@@ -15,10 +15,10 @@
     ?>
 </header>
 
-<table cellspacing="1" cellpadding="2" border="0" id="table4">
+<table cellspacing="1" cellpadding="2" border="0" id="table">
     <tbody>
         <tr>
-		  <td align="left" valign="middle" id="title_01">脊髓損傷的急救處理</td>
+		  <td align="left" valign="middle">脊髓損傷的急救處理</td>
 		</tr>
         <tr>
             <td colspan="2">1. 如何知道傷者的脊髓受到傷害?<br /></td>
@@ -37,6 +37,22 @@
         </tr>
         <tr>
             <td colspan="2">3. 搶救四字訣：測、套、固、送<br /></td>
+        </tr>
+        <tr>
+            <td align="center"><img alt="" align="middle" width="100" height="103" src="images/KnowMore/im4_01.gif" /></td>
+            <td>測：測試受傷者的傷害狀況，以判斷其脊髓受損的情形。</td>
+        </tr>
+        <tr>
+            <td align="center"><img alt="" align="middle" width="100" height="103" src="images/KnowMore/im4_02.gif" /></td>
+            <td>套：套上頸圈以固定頸部，避免傷者的頸部受到二度傷害。</td>
+        </tr>
+        <tr>
+            <td align="center"><img alt="" align="middle" width="150" height="67" src="images/KnowMore/im4_03.gif" /></td>
+            <td>固：將傷者的頭、頸和身體呈一直線，固定在搬運板或擔架上。</td>
+        </tr>
+        <tr>
+            <td align="center"><img alt="" align="middle" width="100" height="103" src="images/KnowMore/im4_04.gif" /></td>
+            <td>送：馬上將傷者送到附近的區域教學醫院或醫學中心進行急救。</td>
         </tr>
         <tr>
             <td colspan="2">預防勝於治療，具備豐富的安全知識，可以減少不必要的脊髓傷害。如果不幸發生意外，請保持鎮定，運用正確而有效的急救方法，讓傷者在最短時間內得到最好的救治。<br /></td>
