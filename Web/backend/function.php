@@ -94,7 +94,7 @@ function iron_page( $sql, $item, $move, $page, $show ){
 		}
 	else{	// 可點選頁數 不足 預設點選頁數		
 		$return['show_start'] = 1;
-		}		
+    }		
 	
 	// 顯示幾頁可以點選
 	if( $return['total_page'] - $return['show_start'] >= $show )	

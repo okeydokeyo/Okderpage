@@ -16,31 +16,30 @@ $result = mysql_query($sql) or die("查詢失敗");
 $number = mysql_num_rows($result); //全部資料的總數
 $url = "message_calss.php"; //本頁的網址 & 使用的 get變數
 ?>
+
 <? 
 include_once ("top.php");
 ?>
 <script language="javascript">
-<!--
-//換頁Script
-function GoPage(page){
-   location.href="<? echo $url ?>?page="+page;
-}
-//選擇是否刪除
-function  Delete(id,page){
-if ( confirm("是否刪除此筆紀錄") ){
-    location.href='message_calssdel.php?chkdel=YES&DB_MesID='+id+'&page='+page;
-}
-}
--->
+    <!--
+        //換頁Script
+        function GoPage(page){
+            location.href="<? echo $url ?>?page="+page;
+        }
+        //選擇是否刪除
+        function  Delete(id,page){
+            if ( confirm("是否刪除此筆紀錄") ){
+                location.href='message_calssdel.php?chkdel=YES&DB_MesID='+id+'&page='+page;
+            }
+        }
+    -->
 </script>
 <!--top_end-->
 <table width="955" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td width="203" align="left" valign="top">
 <!--menu-->
-<? 
-include_once ("left_menu.php");
-?>
+    <? include_once ("left_menu.php");?>
 <!--menu_end-->
 	</td>
     <td width="752" align="left" valign="top">
@@ -90,28 +89,54 @@ include_once ("left_menu.php");
   if($return){
 		$i = 0;
 		while( $return[$i] ){
-		
 		    $MeTi = explode(" ",$return[$i]['DB_MesTime']); //解析留言時間
-			
 			//留言版管理者回覆
             $mAbk_result = mysql_query("select * from `message_adback` where `DB_MesID`='".$return[$i]['DB_MesID']."'") or die("mabk");
 			$mAbk_num = mysql_num_rows($mAbk_result);
 			//留言版回應
             $mbk_result = mysql_query("select * from `message_back` where `DB_MesID`='".$return[$i]['DB_MesID']."'") or die("mbk");
+            //回應數
 			$mbk_num = mysql_num_rows($mbk_result);
 			
 		?>		  
 		  <tr bgcolor="#ffffff">
-			<td align="center" class="text_12px_03"><? echo $return[$i]['DB_MesID'];?></td>
-			<td align="left"><span class="text_12px_04"><? echo $MeTi[0];?></span><br />
-			  <? echo $MeTi[1];?></td>
-			<td align="left" style="word-break:break-all;"><a href="message_list.php?DB_MesID=<? echo $return[$i]['DB_MesID'];?>&pg=<? echo $page;?>" class="link_04"><? echo $return[$i]['DB_MesSubject'];?></a></td>
-			<td align="center" style="word-break:break-all;"><? echo $return[$i]['DB_MesName'];?></td>
-			<td align="center"><? echo $mbk_num;?></td>
-			<td align="center" class="state_del"><? if ($mAbk_num <> 0){echo "<span class='state_add'>".$mAbk_num."</span>";}else{echo "<span class='state_del'>未回覆</span>";}?></td>
+			<td align="center" class="text_12px_03">
+                <? echo $return[$i]['DB_MesID'];?>
+            </td>
+			<td align="left"><span class="text_12px_04">
+                <? echo $MeTi[0];?>
+                </span><br />
+                <? echo $MeTi[1];?>
+            </td>
+			<td align="left" style="word-break:break-all;">
+                <a href="message_list.php?DB_MesID=<? echo $return[$i]['DB_MesID'];?>&pg=<? echo $page;?>" 
+                   class="link_04">
+                    <? echo $return[$i]['DB_MesSubject'];?>
+                </a>
+            </td>
+			<td align="center" style="word-break:break-all;">
+                <? echo $return[$i]['DB_MesName'];?>
+            </td>
 			<td align="center">
-			   <a href="message_calssReply.php?DB_MesID=<? echo $return[$i]['DB_MesID'];?>&page=<? echo $page;?>" class="button_02"><img src="images/icon_massage2.gif" border="0" align="absmiddle" /> 回覆</a>&nbsp;
-			   <a href="javascript:Delete(<? echo $return[$i]['DB_MesID'];?>,<? echo $page;?>);" class="button_03"><img src="images/icon_del2.gif" border="0" align="absmiddle" /> 刪除</a>
+                <? echo $mbk_num;?>
+            </td>
+			<td align="center" class="state_del">
+                <? 
+                    if ($mAbk_num <> 0){
+                        echo "<span class='state_add'>".$mAbk_num."</span>";
+                    }
+                    else{
+                        echo "<span class='state_del'>未回覆</span>";
+                    }
+                ?>
+            </td>
+			<td align="center">
+			   <a href="message_calssReply.php?DB_MesID=<? echo $return[$i]['DB_MesID'];?>&page=<? echo $page;?>" class="button_02">
+                   <img src="images/icon_massage2.gif" border="0" align="absmiddle" /> 回覆
+                </a>&nbsp;
+			   <a href="javascript:Delete(<? echo $return[$i]['DB_MesID'];?>,<? echo $page;?>);" class="button_03">
+                   <img src="images/icon_del2.gif" border="0" align="absmiddle" /> 刪除
+                </a>
 			</td>
 		  </tr>
 		<?
@@ -119,8 +144,6 @@ include_once ("left_menu.php");
 		}
    }		
 		?>		  
-		  
-		  
 		</table>
 		<div align="left" style="padding:5px;margin:5px"><img src="images/icon_g.gif" width="5" height="5" align="absmiddle" /> <span class="text_12px_04">每頁10筆，共<? echo $number;?>筆資料</span>
 <?  if ( $return['total_page'] > 1) { ?>		
