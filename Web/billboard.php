@@ -32,7 +32,7 @@
         
         function showReply(ID_in){
            if (ID_in == "") {
-                document.getElementById("txtHint").innerHTML = "";
+                document.getElementById("dialog-form").innerHTML = "";
                 return;
             } 
             else { 
