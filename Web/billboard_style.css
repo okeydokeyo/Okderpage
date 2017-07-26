@@ -1,3 +1,8 @@
+body{ 
+    font-family: 微軟正黑體,arial,helvetica,sans-serif;
+    background-color: #ffdddd;
+}
+
 .myDiv{
 	white-space: nowrap; /* 不斷行 */
 }
@@ -25,7 +30,7 @@
     font-size: 20px;
 }
 
-#sendbutton{
+.sendbutton{
     border-style:none;
     color:antiquewhite;
     background-color: red;
@@ -90,22 +95,34 @@
     padding-left: 30px;
 }
 
-#content_area{
-    background-color:white;
+.content_area{
     border-style: none;
     border: 0px;
     font-size: 30px;
 }
 
-#name_label{
+.name_label{
     background-color: darkgrey;
     color: white;
     padding: 40px 30px;
     margin-top: 15px;
     margin-right: 20px;
     font-weight: bold;
+    font-size:1.5em;
     border-radius: 50%;
 }
+
+.reply_name_label{
+    background-color: darkgrey;
+    color: white;
+    padding: 30px 30px;
+    margin-top: 15px;
+    margin-right: 20px;
+    font-weight: bold;
+    font-size:0.5em;
+    border-radius: 50%;   
+}
+
 
 #replybutton{
     border-style:none;
