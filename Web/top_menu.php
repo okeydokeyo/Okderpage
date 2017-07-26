@@ -12,7 +12,22 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myTopNavBar">
                     <ul class="nav navbar-nav navbar-right a" id="top-list">
-                        <li class="active"><a href="#">關於我們<span class="sr-only">(current)</span></a></li>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">關於我們<span class="caret"></span></a>
+                                                        <ul class="dropdown-menu" id="dropdown-menu">
+                                        <li><a href="about_1.php">中心簡介</a></li>
+                                        <li><a href="about_2.php">中心歷史</a></li>
+                                        <li><a href="about_3.php">新生命之家</a></li>
+                                        <li><a href="about_4.php">職業訓練中心願景</a></li><br>
+                                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">超人工作室<span class="caret"></span></a>
+                                           <ul class="dropdown-menu" id="dropdown-menu">
+                                        <li><a href="work_1.php">客服工作室</a></li>
+                                        <li><a href="work_2.php">網路工作室</a></li>
+                                        <li><a href="work_3.php">綠色資源工作室</a></li>
+</ul>
+                                        </li>
+                                        
+                                </ul>
+                        </li>
                         <li><a href="#services">服務內容</a></li>
                         <li><a href="#donate">我要捐款</a></li>
                         <li><a href="#donateInfo">捐款資訊</a></li>

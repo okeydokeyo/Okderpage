@@ -1,0 +1,65 @@
+@charset "utf-8";
+body{ 
+    font-family: 微軟正黑體,arial,helvetica,sans-serif;
+	
+}
+
+.img-full {
+	width: 100%;
+	height: 100%;
+	padding-top: 3%;
+}
+
+
+.header-image {
+	overflow: hidden;
+	margin-top: 94px;
+}
+
+.header-image {
+	display: block;
+	margin-bottom: 30px;
+	max-height: 400px;
+	position: relative;
+	margin-top: 29px;
+}
+.row-space-huge {
+	padding-top: 1px;
+}
+.row-space {
+	padding-top: 3px;
+}
+.row {
+	margin-left: 4%;
+	margin-right: 51%;
+}
+
+.r2 {
+	margin-left: 5%;
+	margin-right: 51%;
+	margin-top:10%;
+}
+
+.r {
+	margin-left: 5%;
+	margin-right: 51%;
+}
+
+.h1, h1 {
+    font-size: 41px;
+	font-weight: bolder;
+
+}
+.map{
+	position: absolute;
+	top: 620px;
+	right: 55px;
+}
+.structure{
+	position: absolute;
+	top: 1132px;
+	right: 237px;
+}
+strong {
+	font-size: 23px;	
+}
