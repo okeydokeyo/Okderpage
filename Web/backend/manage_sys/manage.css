@@ -1,0 +1,249 @@
+@charset "utf-8";
+
+.top_bg{
+	background-repeat: repeat-x;
+	background-position: top;
+	padding-top: 10px; padding-bottom: 10px;}
+
+.title_bg{
+    background-image:url(images/title_bg02.gif);
+	background-repeat: repeat-x;
+	background-position: top;
+	line-height: 150%; font-family: Arial, sans-serif, 新細明體;
+    color: #ffffff; font-size: 15px;
+	letter-spacing: 1px; text-decoration: none;}
+
+.text_12px_01 {
+	font-family: Arial, sans-serif, 新細明體;
+    color: #666666; font-size: 12px;
+	letter-spacing: 0px; text-decoration: none;}
+
+.text_12px_01form {
+	line-height: 200%;
+	font-family: Arial, sans-serif, 新細明體;
+    color: #666666; font-size: 12px;
+	letter-spacing: 0px; text-decoration: none;}
+
+.text_12px_02 {
+	font-family: Arial, sans-serif, 新細明體;
+    color: #00ccff; font-size: 12px; font-weight: bold;
+	letter-spacing: 0px; text-decoration: none;}
+
+.text_12px_03 {
+	font-family: Arial, sans-serif, 新細明體;
+    color: #cc3300; font-size: 12px;
+	letter-spacing: 0px; text-decoration: none;}
+
+.text_12px_03b {
+	font-family: Arial, sans-serif, 新細明體;
+    color: #cc3300; font-size: 12px; font-weight: bold;
+	letter-spacing: 0px; text-decoration: none;}
+
+
+.text_12px_04 {
+	font-family: Arial, sans-serif, 新細明體;
+    color: #006699; font-size: 12px;
+	letter-spacing: 0px; text-decoration: none;}
+
+.text_12px_05 {
+	font-family: Arial, sans-serif, 新細明體;
+    color: #ffffff; font-size: 12px;
+	letter-spacing: 0px; text-decoration: none;}
+
+.text_15px_01 {
+	font-family: Arial, sans-serif, 新細明體;
+    color: #666666; font-size: 15px;
+	letter-spacing: 0px; text-decoration: none;}
+
+.text_15px_02 {
+	font-family: Arial, sans-serif, 新細明體;
+    color: #00ccff; font-size: 15px; font-weight: bold;
+	letter-spacing: 0px; text-decoration: none;}
+
+.state_add {
+    font-family: Arial, sans-serif, 新細明體;
+    color: #00ccff; font-size: 12px;}
+
+.state_edit {
+    font-family: Arial, sans-serif, 新細明體;
+    color: #669900; font-size: 12px;}
+
+.state_del {
+    font-family: Arial, sans-serif, 新細明體;
+    color: #cc3300; font-size: 12px;}
+
+.menutitle_bg01 {
+    height:20px; vertical-align:middle;
+	background-image:url(images/menutitle_bg01.gif);
+	background-repeat:no-repeat;
+	padding-left:20px;
+	line-height: 150%; font-family: Arial, sans-serif, 新細明體;
+    color: #666666; font-size: 15px; font-weight:bold;
+	letter-spacing: 1px; text-decoration: none;}
+
+.menutitle_bg02 {
+    height:20px;
+	background-image:url(images/menutitle_bg02.gif);
+	background-repeat:no-repeat;
+	padding-left:20px;
+	line-height: 150%; font-family: Arial, sans-serif, 新細明體;
+    color: #666666; font-size: 15px; font-weight:bold;
+	letter-spacing: 1px; text-decoration: none;}
+
+.menutitle_bg {
+    height:24px; border-bottom: 1px solid #ffffff;
+	background-image:url(images/menutitle_bg.gif);
+	background-repeat:no-repeat;
+	padding-left:20px;
+	line-height: 150%; font-family: Arial, sans-serif, 新細明體;
+    color: #ffffff; font-size: 12px;
+	letter-spacing: 1px; text-decoration: none;}
+
+.menutitle_bg-2 {
+    height:24px; border-bottom: 1px solid #ffffff;
+	background-image:url(images/menutitle_bg-2.gif);
+	background-repeat:no-repeat;
+	padding-left:20px;
+	line-height: 150%; font-family: Arial, sans-serif, 新細明體;
+    color: #ffffff; font-size: 12px;
+	letter-spacing: 1px; text-decoration: none;}
+
+.m01 {
+	line-height: 150%; font-family: Arial, sans-serif, 新細明體;
+    color: #ffffff; font-size: 12px;
+	letter-spacing: 1px; text-decoration: none;}
+
+.m01:hover {
+	line-height: 150%; font-family: Arial, sans-serif, 新細明體;
+    color: #cc0000; font-size: 12px; font-weight:bold;
+	letter-spacing: 1px; text-decoration: none;}
+
+.m02 {
+	line-height: 150%; font-family: Arial, sans-serif, 新細明體;
+    color: #666666; font-size: 15px; font-weight:bold;
+	letter-spacing: 1px; text-decoration: none;}
+
+.m02:hover {
+	line-height: 150%; font-family: Arial, sans-serif, 新細明體;
+    color: #cc0000; font-size: 15px; font-weight:bold;
+	letter-spacing: 1px; text-decoration: none;}
+
+.link_01 {
+	line-height: 150%; font-family: Arial, sans-serif, 新細明體;
+	color: #666666; font-size: 12px; letter-spacing: 0px; text-decoration: none;}
+
+.link_01:hover {
+	line-height: 150%; font-family: Arial, sans-serif, 新細明體;
+    color: #00ccff; font-size: 12px; letter-spacing: 0px; text-decoration: none;}
+
+.link_02 {
+	line-height: 150%; font-family: Arial, sans-serif, 新細明體;
+	color: #333333; font-size: 100%; letter-spacing: 0px; text-decoration: underline;}
+
+.link_02:hover {
+	line-height: 150%; font-family: Arial, sans-serif, 新細明體;
+    color: #ff6600; font-size: 100%; letter-spacing: 0px; text-decoration: underline;
+	POSITION: relative; top: 1px; left: 1px;}
+
+.link_03 {
+	line-height: 150%; font-family: Arial, sans-serif, 新細明體;
+	color: #cc3300; font-size: 12px; letter-spacing: 0px; text-decoration: none;}
+
+.link_03:hover {
+	line-height: 150%; font-family: Arial, sans-serif, 新細明體; font-weight: bold;
+    color: #cc3300; font-size: 12px; letter-spacing: 0px; text-decoration: none;}
+
+.link_04 {
+	line-height: 150%; font-family: Arial, sans-serif, 新細明體;
+	color: #006699; font-size: 12px; letter-spacing: 0px; text-decoration: none;}
+
+.link_04:hover {
+	line-height: 150%; font-family: Arial, sans-serif, 新細明體; font-weight: bold;
+    color: #006699; font-size: 12px; letter-spacing: 0px; text-decoration: none;}
+
+.button_01 {
+	height: 20px;
+	font-family: Arial, sans-serif, 新細明體;
+	color: #333333; font-size: 12px; text-decoration: none;
+	background-color:#EFEFEF;
+	border: 1px solid #6B6B6B;
+	padding: 3px; margin:2px;}
+
+.button_01:hover {
+    height: 20px;
+	font-family: Arial, sans-serif, 新細明體;
+	color: #333333; font-size: 12px; text-decoration: none;
+	background-color:#D1F0A4;
+	border: 1px solid #6B6B6B;
+	padding: 3px; margin:2px;}
+
+.button_02 {
+	height: 20px;
+	font-family: Arial, sans-serif, 新細明體;
+	color: #333333; font-size: 12px; text-decoration: none;
+	background-color:#E6EDDA;
+	border: 1px solid #6B6B6B;
+	padding: 2px; margin:2px;}
+	
+.button_02:hover {
+    height: 20px;
+	font-family: Arial, sans-serif, 新細明體;
+	color: #ffffff; font-size: 12px; text-decoration: none;
+	background-color:#BBDDB7;
+	border: 1px solid #6B6B6B;
+	padding: 2px; margin:2px;}
+
+.button_03 {
+	height: 20px;
+	font-family: Arial, sans-serif, 新細明體;
+	color: #333333; font-size: 12px; text-decoration: none;
+	background-color:#ffcccc;
+	border: 1px solid #6B6B6B;
+	padding: 2px; margin:2px;}
+	
+.button_03:hover {
+    height: 20px;
+	font-family: Arial, sans-serif, 新細明體;
+	color: #ffffff; font-size: 12px; text-decoration: none;
+	background-color:#ff9999;
+	border: 1px solid #6B6B6B;
+	padding: 2px; margin:2px;}
+
+.button_04 {
+	height: 20px;
+	font-family: Arial, sans-serif, 新細明體;
+	color: #333333; font-size: 12px; text-decoration: none;
+	background-color:#EFEFEF;
+	border: 1px solid #6B6B6B;
+	padding: 3px; margin:2px;}
+
+.button_04:hover {
+    height: 20px;
+	font-family: Arial, sans-serif, 新細明體;
+	color: #ffffff; font-size: 12px; text-decoration: none;
+	background-color:#66ccff;
+	border: 1px solid #6B6B6B;
+	padding: 3px; margin:2px;}
+
+.button_05 {
+	height: 14px;
+	font-family: Arial, sans-serif, 新細明體; font-weight:bold;
+	color: #333333; font-size: 10px; text-decoration: none;
+	background-color:#EFEFEF;
+	border: 1px solid #6B6B6B;
+	padding: 1px 3px; margin:1px;}
+
+.button_05:hover {
+    height: 14px;
+	font-family: Arial, sans-serif, 新細明體; font-weight:bold;
+	color: #333333; font-size: 10px; text-decoration: none;
+	background-color:#D1F0A4;
+	border: 1px solid #6B6B6B;
+	padding: 1px 3px; margin:1px;}
+
+.border_01 { border: 1px solid #cccccc;}
+.border_02 { border-bottom: 1px solid #e7e7e7;}
+#border_02 { border: 1px solid #666666;}
+
+.m-title_01 { position:relative; top:-0.5em; left:-1px; width:10em; margin:0 auto; padding:0.1em; text-align:center; color: #666666; background: #cccccc;}
+.margin_01 { margin:0; padding:0px 10px 10px 10px;}

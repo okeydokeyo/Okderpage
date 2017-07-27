@@ -1,0 +1,196 @@
+@charset "utf-8";
+/* CSS Document */
+
+body { margin:0px;}
+.hidden { display: none;}
+
+.h5 { height: 5px;}
+.h6 { height: 6px; border-top: 1px dotted #cccccc;}
+.h30 { height: 30px;}
+.h50 { height: 50px;}
+.h180 { height: 180px;}
+.bottom_bg{
+    background-image: url(../backend/images/bottom_bg2.gif);
+	background-repeat: no-repeat;
+	background-position: bottom center;}
+
+#top {
+	font-family: Arial, sans-serif, 新細明體;
+	color: #ffffff; font-size: 13px; letter-spacing: 0px; text-decoration: none;
+	background-repeat:no-repeat; padding-right:130px;}
+#top a {       font-family: Arial, sans-serif, 新細明體; font-size:13px; color:#ffffff; text-decoration: none;}
+#top a:hover { font-family: Arial, sans-serif, 新細明體; font-size:13px; color:#333333; text-decoration: none;}
+
+#bottom {
+    padding: 10px 10px 20px 100px;
+	line-height: 150%; font-family: Arial, sans-serif, 新細明體;
+    color: #666666; font-size: 12px;
+    letter-spacing: 0px; text-decoration: none;
+    background-image: url(../backend/images/bottom_bg.gif); background-repeat: no-repeat; background-position:bottom;
+	background-color: #e6e6e6;
+	border-top: 1px solid #E8A0A5;
+	}
+
+#left_search{
+	width:190px; width:190px \9; *width:190px; width:180px; height:158px;
+	font-size: 12px;color: #333333;
+	background-image:url(../backend/images/menu_01.gif);background-repeat:no-repeat;
+	padding-top:35px;}
+
+#content { word-break:break-all;float: right; text-align: left; width:705px;}
+/* ---------------------------主目錄區塊設定--------------------------- */
+#leftmenu {
+    float: left; text-align: left; width:190px; z-index:-999;background-color: #ffffff;
+	background-image:url(../backend/imagesmenu_02.gif);background-repeat:repeat-y;}
+
+#leftmenu ul {list-style-type: none;padding-left:6px}
+#leftmenu li { }
+#leftmenu ul li ul {list-style-type: none;padding-left:0px}
+
+/* ---------------------------內容標題設定--------------------------- */
+#title_01 {height:40px;
+           font-family: Arial, sans-serif, 新細明體;
+           color: #DA2027;font-size:16px; font-weight: bold;
+		   letter-spacing: 1px; text-decoration: none;
+		   background-image: url(../backend/images/title_01.gif);background-repeat: no-repeat; background-position: right bottom;
+		   /*padding:6px 50px 6px 0px;*/}
+
+.th2 { /* 表格TH標頭設計樣式 淺藍色底 深色字*/
+	font-family: Arial, sans-serif, 新細明體; font-size:12px;color: #666666; letter-spacing: 1px; background-color:#ffffff; padding:8px 5px 7px 5px;
+	background-image:url(../backend/images/thbg02.gif);background-repeat: no-repeat;background-position:right center;
+	vertical-align: bottom;border-bottom-width: 4px; border-bottom-style: solid; border-bottom-color: #f1f1f2;}
+
+.th2-end { /* 表格TH標頭設計樣式 淺藍色底 深色字*/
+	font-family: Arial, sans-serif, 新細明體; font-size:12px;color: #666666; letter-spacing: 1px; background-color:#ffffff; padding:8px 5px 7px 5px;
+	vertical-align: bottom;border-bottom-width: 4px; border-bottom-style: solid; border-bottom-color: #f1f1f2;}
+
+/* ---------------------------FAQ設定--------------------------- */
+.faq_a { width: 590px; float: left;}/*列表頁*/
+.faq_q { width: 27px; float: left;}/*列表頁*/
+/* ---------------------------行事曆設定--------------------------- */
+.calendar_01{ background-color:#ffffff; border: 1px solid #cccccc; padding: 0px 6px;}
+.calendar_02{ background-color:#ffffff; border: 1px solid #cccccc; padding: 0px 3px;}
+
+/* ---------------------------留言版設定--------------------------- */
+#imageBox { padding: 3px;/*內距*/border: 1px solid #ddd; background: #fff; margin: 3px;/*邊界*/ text-align: center;/*文字對齊*/}
+#imageBox_02 { padding: 10px;/*內距*/border: 1px solid #f0f0f0; background: #fff; margin: 3px;/*邊界*/ text-align: center;/*文字對齊*/ background-color:#F6F6F6;}
+.message_bg2 { padding: 3px; border: 1px solid #f1f1f2; background-color:#ffffff;}
+.message_bg3 { border-bottom: 1px solid #ffffff;}
+.th3-end { /* 表格TH標頭設計樣式 淺藍色底 深色字*/
+	font-family: Arial, sans-serif, 新細明體; font-size:12px;color: #006699; letter-spacing: 1px; background-color:#ffffff; padding:8px 5px 7px 5px;
+	vertical-align: bottom;border-bottom-width: 2px; border-bottom-style: solid; border-bottom-color: #F58D91;}
+/* ---------------------------一般文字設定--------------------------- */
+.text_12px_01 {
+    line-height: 150%; font-family: Arial, sans-serif, 新細明體; color: #666666; font-size: 12px; letter-spacing: 0px; text-decoration: none;}
+.text_12px_01-2 { line-height: 200%; font-family: Arial, sans-serif, 新細明體;color: #666666; font-size: 12px; letter-spacing: 0px; text-decoration: none;}
+.text_12px_01b { font-family: Arial, sans-serif, 新細明體; color: #666666; font-size: 12px; letter-spacing: 0px; text-decoration: none;}
+.text_12px_02 { line-height: 150%; font-family: Arial, sans-serif, 新細明體; color: #006699; font-size: 12px; letter-spacing: 0px; text-decoration: none;}
+
+.text_12px_03 { line-height: 150%; font-family: Arial, sans-serif, 新細明體; color: #0099cc; font-size: 12px; letter-spacing: 0px; text-decoration: none;}
+.text_12px_03b { font-family: Arial, sans-serif, 新細明體; color: #cc3300; font-size: 12px; font-weight: bold; letter-spacing: 0px; text-decoration: none;}	
+.text_12px_04 {
+    line-height: 150%; font-family: Arial, sans-serif, 新細明體; color: #336699; font-size: 12px; letter-spacing: 0px; text-decoration: none;}
+.text_12px_04b {
+    line-height: 150%; font-family: Arial, sans-serif, 新細明體; color: #336699; font-size: 12px; letter-spacing: 0px; text-decoration: none; padding:3px; background-color:#f1f1f2;}
+
+.text_12px_06 { line-height: 150%; font-family: Arial, sans-serif, 新細明體; color: #00ccff; font-size: 12px; letter-spacing: 0px; text-decoration: none;}
+.text_12px_11{ line-height: 150%; font-family: Arial, sans-serif, 新細明體; color: #ffffff; font-size: 12px; letter-spacing: 0px; text-decoration: none;}
+.text_12px_11b{ line-height: 150%; font-family: Arial, sans-serif, 新細明體; color: #ffffff; font-size: 12px; letter-spacing: 0px; text-decoration: none; background-color: #3569A4;}
+.text_12px_11c{ line-height: 150%; font-family: Arial, sans-serif, 新細明體; color: #ffffff; font-size: 12px; letter-spacing: 0px; text-decoration: none; background-color: #999999;}
+.text_12px_11d{ line-height: 150%; font-family: Arial, sans-serif, 新細明體; color: #ffffff; font-size: 12px; letter-spacing: 0px; text-decoration: none; background-color: #F58D91;}
+.text_12px_12{ line-height: 150%; font-family: Arial, sans-serif, 新細明體; color: #ffff99; font-size: 12px; letter-spacing: 0px; text-decoration: none;}
+.text_12px_13-2 { line-height: 200%; font-family: Arial, sans-serif, 新細明體;color: #cccccc; font-size: 12px; letter-spacing: 0px; text-decoration: none;}
+
+.link_01 { line-height: 150%; font-family: Arial, sans-serif, 新細明體; color: #666666; font-size: 12px; letter-spacing: 0px; text-decoration: none;}
+.link_01:hover { line-height: 150%; font-family: Arial, sans-serif, 新細明體; color: #FB6400; font-size: 12px; letter-spacing: 0px; text-decoration: underline;}
+.link_02b{
+	line-height: 150%; font-family: Arial, sans-serif, 新細明體;
+	color: #666666; font-size: 12px; letter-spacing: 0px; text-decoration: none;}
+
+.link_02b:hover{
+	line-height: 150%; font-family: Arial, sans-serif, 新細明體;
+    color: #ff6600; font-size: 12px; letter-spacing: 0px; text-decoration: none;}
+
+.link_03 {
+    line-height: 150%; font-family: Arial, sans-serif, 新細明體;
+	color: #666666; font-size: 12px; letter-spacing: 0px; text-decoration: none;}
+	
+.link_03:hover {
+    line-height: 150%; font-family: Arial, sans-serif, 新細明體;
+	color: #0066cc; font-size: 12px; letter-spacing: 0px; text-decoration: none; POSITION: relative; top: 1px; left: 1px;}
+
+.link_04 {
+	line-height: 150%; font-family: Arial, sans-serif, 新細明體;
+	color: #336699; font-size: 12px; letter-spacing: 0px; text-decoration: none; border-bottom: 1px solid #336699;}
+
+.link_04:hover {
+	line-height: 150%; font-family: Arial, sans-serif, 新細明體;
+    color: #ff6600; font-size: 12px; letter-spacing: 0px; text-decoration: none; border-bottom: 1px solid #ff6600;
+	POSITION: relative; top: 1px; left: 1px;}
+
+.link_05 {
+	line-height: 150%; font-family: Arial, sans-serif, 新細明體;
+	color: #333333; font-size: 12px; letter-spacing: 0px; text-decoration: underline;}
+
+.link_05:hover {
+	line-height: 150%; font-family: Arial, sans-serif, 新細明體;
+    color: #ff6600; font-size: 12px; letter-spacing: 0px; text-decoration: underline;
+	POSITION: relative; top: 1px; left: 1px;}
+.link_09b{
+	line-height: 150%; font-family: Arial, sans-serif, 新細明體;
+	color: #336699; font-size: 12px; letter-spacing: 0px; text-decoration: none; border-bottom: 1px solid #336699;}
+
+.link_09b:hover{
+	line-height: 150%; font-family: Arial, sans-serif, 新細明體;
+    color: #00ccff; font-size: 12px; letter-spacing: 0px; text-decoration: none; border-bottom: 1px solid #00ccff;}
+
+.button_01{
+	font-size: 12px; font-family: Arial, sans-serif, 新細明體;
+	color: #ffffff;text-decoration: none; border:1px solid #ffffff;background-color:#f8b2b8; padding: 2px 5px;margin:1px;}
+.button_01:hover{
+	font-size: 12px; font-family: Arial, sans-serif, 新細明體;
+	color: #ff3333;text-decoration: none; border:1px solid #ffffff;background-color:#f8b2b8; padding: 2px 5px;margin:1px;}
+
+.button_04 {
+	height: 20px;
+	font-size: 12px; font-family: Arial, sans-serif, 新細明體;
+	color: #333333; text-decoration: none; background-color:#EFEFEF; border: 1px solid #6B6B6B; padding: 3px; margin:2px;}
+
+.button_04:hover {
+    height: 20px;
+	font-size: 12px; font-family: Arial, sans-serif, 新細明體;
+	color: #ffffff; text-decoration: none; background-color:#66ccff; border: 1px solid #6B6B6B; padding: 3px; margin:2px;}
+
+.button_05 {
+	height: 14px; font-family: Arial, sans-serif, 新細明體; font-weight:bold;
+	color: #333333; font-size: 10px; text-decoration: none;
+	background-color:#EFEFEF; border: 1px solid #6B6B6B; padding: 1px 3px; margin:1px;}
+
+.button_05:hover {
+    height: 14px; font-family: Arial, sans-serif, 新細明體; font-weight:bold;
+	color: #333333; font-size: 10px; text-decoration: none;
+	background-color:#D1F0A4; border: 1px solid #6B6B6B; padding: 1px 3px; margin:1px;}
+
+#margin_03 { margin-top: 100px;}
+
+.border_02 { border-bottom: 1px dotted #cccccc;}
+.border_04 {border-bottom: 1px solid #E8A0A5;}
+#border_02 { border: 1px solid #666666;}
+
+#padding_03 { padding-left: 20px; padding-right: 20px;}
+#padding_06 { padding: 5px;}
+#padding_07 { padding-top: 8px;}
+#padding_08 { padding-left: 10px;}
+#padding_12 { padding-right: 5px;}
+
+/* ---------------------------網站導覽設定--------------------------- */
+.style_contenttext {font-family: Verdana, Arial, Helvetica, sans-serif;color:#363636;line-height: 1.7;font-size:13px;padding:5px 7px 5px 9px;}
+.style_contenttext a{color: #CC3300;text-decoration: none;}
+.style_contenttext a:hover {color: #FB6400;text-decoration: underline;}
+
+/* ---------------------------網路相簿設定--------------------------- */
+.photo_01 { padding: 5px; border: 1px solid #cccccc;}
+.photo_02 { padding: 2px; border: 1px solid #cccccc;}
+
+.text_15px_02 { font-family: Arial, sans-serif, 新細明體; color: #0099cc; font-size: 15px; letter-spacing: 0px; text-decoration: none; font-weight: bold;}
+
