@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-    <title>桃園市私立脊髓損傷潛能發展中心</title>
+<meta charset="utf-8">
+<title>桃園市私立脊髓損傷潛能發展中心</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -14,10 +15,8 @@
     include("top_menu.php");
     ?>
 </header>
-<table cellspacing="1" cellpadding="2" border="0" id="table">
-    <tr>
-    </tr>
-</table>
+
+    
     
 <footer>
     <?php

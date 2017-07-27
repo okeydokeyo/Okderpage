@@ -7,7 +7,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="indexStyle.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    
+
+
     <style>
     label, input { display:block; }
     input.text { margin-bottom:12px; width:95%; padding: .4em; }
@@ -19,7 +20,6 @@
     .ui-dialog .ui-state-error { padding: .3em; }
     .validateTips { border: 1px solid transparent; padding: 0.3em; }
     </style>
-    
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -28,6 +28,8 @@
     
     
     <script>
+		
+		
     $( function(){
         var dialog, form,
             emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
@@ -269,6 +271,14 @@
     </div>
 </div>
     
+
+    
+<footer>
+    <?php
+    include("footer.php");
+    ?>
+</footer>
+
 <input type="image" src="images/BB1.png"  alt="send" name="Test" id="BB1" onclick="send();" />
 <div>
     <a href="https://scsrc.eoffering.org.tw/contents/project_ct?p_id=1">
@@ -281,11 +291,6 @@
         <img src="images/14515503271.png" width="500">
     </a>
 	</div>
-    
-<footer>
-    <?php
-    include("footer.php");
-    ?>
-</footer>
+
 </body>
 </html>

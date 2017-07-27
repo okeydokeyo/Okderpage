@@ -1,21 +1,26 @@
 
 #table {
-    max-width: 50%;
+    max-width: 60%;
     margin-left: 20%;
     margin-top: 10em;
     font-size: 1.2em;
 }
 
 #table1 {
-    max-width: 60%;
-    margin-left: 20%;
-    margin-top: 2em;
-    font-size: 1.2em;
-}
-#table1 td {
-    text-align: center;
+    max-width: 50%;
+    margin-left: 25%;
 }
 
-.digital {
-    color: dimgray;
-}
+/*.#table1 td {
+    BORDER-BOTTOM: windowtext 1pt solid; 
+    BORDER-LEFT: windowtext 1pt solid; 
+    PADDING-BOTTOM: 0cm; 
+    BACKGROUND-COLOR: transparent; 
+    PADDING-LEFT: 5.4pt; 
+    WIDTH: 27.5%; 
+    PADDING-RIGHT: 5.4pt; 
+    HEIGHT: 21pt; 
+    BORDER-TOP: windowtext 1pt solid; 
+    BORDER-RIGHT: windowtext 1pt solid; 
+    PADDING-TOP: 0cm;
+}*/

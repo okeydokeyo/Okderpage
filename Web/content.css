@@ -9,7 +9,9 @@ body{
 	height: 100%;
 	padding-top: 3%;
 }
-
+.footer{	
+	margin-top: 100px;
+}	
 
 .header-image {
 	overflow: hidden;
@@ -32,6 +34,7 @@ body{
 .row {
 	margin-left: 4%;
 	margin-right: 51%;
+	margin-top:30px;
 }
 
 .r2 {
@@ -41,8 +44,10 @@ body{
 }
 
 .r {
+	
 	margin-left: 5%;
 	margin-right: 51%;
+	color: #F50338;
 }
 
 .h1, h1 {
@@ -57,9 +62,13 @@ body{
 }
 .structure{
 	position: absolute;
-	top: 1132px;
-	right: 237px;
+	top: 1280px;
+	right: 200px;
 }
 strong {
 	font-size: 23px;	
+}
+
+.bodytext{
+    color:#321414;
 }

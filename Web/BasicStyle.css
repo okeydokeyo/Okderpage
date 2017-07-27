@@ -1,7 +1,3 @@
-body{ 
-    font-family: 微軟正黑體,arial,helvetica,sans-serif;
-    background-color: #ffdddd;
-}
 
 #nav{
     margin: auto;
@@ -22,7 +18,7 @@ body{
 }
 #top-list a{
     color:#FFFFFF;
-    font-size: 1em;
+    font-size: 1.2em;
 }
 #dropdown-menu a{
     color: black;
@@ -45,7 +41,7 @@ body{
 }
 #bottom-list{
     padding-top: 0.5em;
-    float:right:
+    float:right;
 }
 #bottom-list a{
     color:black;
@@ -55,7 +51,6 @@ body{
 .footer{
     width: 100%;
     background-color: #AAAAAA;
-    margin-top: 300px;
 }
 
 .footer h4{
@@ -79,3 +74,26 @@ body{
     text-align: center;
     color: aliceblue;
 }
+.a>li>a:hover{
+    text-decoration: none;
+    background-color: #666666;
+}
+.b>li>a:hover{
+    text-decoration: none;
+    background-color: #E5E5E5;
+}
+body {
+    background:url(123.png)center center no-repeat;
+    background-size: 85% auto;
+    margin: 0;
+    padding: 0;
+	font-family: 微軟正黑體,arial,helvetica,sans-serif;
+	background-color:#F4F4F4;
+}
+	.main-menu	{	color:black; background-color:none; padding:5px; margin:-25px 30px; cursor:pointer; display:inline-block; 	}	
+/* 主選單的樣式 */
+	.sub-menu	{	color:#E5E5E5; background-color:#CCCCCC; margin:5px -5px; padding:0px; list-style-type:none; position:absolute; 	} /* 下拉清單的樣式 */
+	.sub-menu li	{ padding: 3px 5px; text-align:left; } /* 下拉清單每一列的樣式 */
+	.sub-menu li:hover	{	color:#FFFFFF; background-color:#E5E5E5; 	}
+	.sub-menu a	{	text-align:left; display:block; text-decoration:none; color:#0000FF; 	}
+	.sub-menu a:hover	{	color:#FFFFFF; background-color:#E5E5E5; text-decoration:none; 	}
