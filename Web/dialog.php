@@ -37,14 +37,16 @@
             <input type="hidden" name="reply_num" value="'.$q.'">
             <table width="80%" align="center" cellspacing="0" border=0>
             <tr>
-                <td colspan="3">
+                <td colspan="1">
                     <label class="name_label">'.$name.'</label>
-                    <label>'.$topic.'</label>
+                </td>
+                <td colspan="2">
+                    <label id="reply_topic">'.$topic.'</label>
                 </td>
             </tr>
             <tr>
                 <td width="100%" colspan="3">
-                    <textarea readonly="readonly" class="content_area form-control" rows="4" style="background-color: white">'.$content.'</textarea>
+                    <textarea readonly="readonly" class="form-control" rows="4" id="reply_content_area">'.$content.'</textarea>
                 </td>
             </tr>
             <tr>
@@ -68,12 +70,12 @@
             $reply_name = mysql_result($reply_result,$i,2);
             $reply_content = mysql_result($reply_result,$i,3);
             $reply_time = mysql_result($reply_result,$i,4);
-            echo '<table width="80%" align="center" cellspacing="0" border=0>
+            echo '<table width="80%" align="center" cellspacing="0" border=0 style="margin-top:10px">
                     <tr>
-                        <td rowspan="2" width="20%" align="right">
+                        <td rowspan="2" width="15%" align="center">
                             <label class="reply_name_label">'.$reply_name.'</label>
                         </td>
-                        <td width="80%" align="left" valign="bottom">
+                        <td width="75%" align="left" valign="bottom">
                             <label>'.$reply_content.'</label>
                         </td>
                     </tr>
