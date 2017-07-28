@@ -67,6 +67,19 @@
                 xmlhttp.send();
             }  
         }  
+        
+        function link_category(category){
+            var num;
+            if(category == "捐款")
+                num = 1;
+            else if(category == "通報")
+                num = 2;
+            else if(category == "脊髓損傷")
+                num = 3;
+            else 
+                num = 4;
+            window.location = ("billboard_sort.php?num=" + num);
+        }
     </script>
 </head>
 <header>
@@ -130,9 +143,11 @@
                 function displayMessage(){
                     echo '
                         <li>
-                    <table id="message_table"  cellspacing="0">
+                    <table id="message_table" cellspacing="0" border="0">
                         <tr>
-                            <td><label id="category">'.$this->category.'</label></td>
+                            <td>
+                                <input type="button" value="'.$this->category.'" id="category" onclick="link_category(\''.$this->category.'\')">
+                            </td>
                         </tr>
                         <tr class="message_row">
                             <td id="td_1"><label id="topic_label">'.$this->topic.'</label></td>
