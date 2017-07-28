@@ -1,19 +1,10 @@
 
 #table {
-    max-width: 50%;
+    max-width: 40%;
     margin-left: 20%;
-    margin-top: 10em;
+    margin-top: 15em;
     font-size: 1.2em;
-}
-
-#table1 {
-    max-width: 60%;
-    margin-left: 20%;
-    margin-top: 2em;
-    font-size: 1.2em;
-}
-#table1 td {
-    text-align: center;
+    margin-bottom: 15em;
 }
 
 .digital {
