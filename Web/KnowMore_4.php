@@ -21,7 +21,7 @@
     ?>
 </header>
 
-<table cellspacing="1" cellpadding="6" border="0" id="table">
+<table cellspacing="2" cellpadding="2" border="0" id="table">
     <tbody>
         <tr>
             <td align="left" valign="middle" colspan="6"><h1>脊髓損傷的急救處理</h1><br /><br /></td>
