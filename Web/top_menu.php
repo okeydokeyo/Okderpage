@@ -14,20 +14,6 @@
 
                 <div class="collapse navbar-collapse" id="myTopNavBar">
                     <ul class="nav navbar-nav navbar-right a" id="top-list">
-                        <li class="active"><a href="#">關於我們<span class="sr-only">(current)</span></a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">服務內容<span class="caret"></span></a>
-                                <ul class="dropdown-menu" id="dropdown-menu">
-                                        <li><a href="#">生活重建訓練</a></li>
-                                        <li><a href="#">社區居住服務</a></li>
-                                        <li><a href="#">作業訓練</a></li>
-                                        <li><a href="#">職業訓練</a></li>
-                                        <li><a href="#">生命教育宣導</a></li>
-                                        <li><a href="#">居家就業</a></li>
-                                </ul>
-                        </li>
-                        <li class="active"><a href="#">關於我們<span class="sr-only">(current)</span></a></li>
-                        <li><a href="#services">服務內容</a></li>
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">關於我們<span class="caret"></span></a>
                                                         <ul class="dropdown-menu" id="dropdown-menu">
                                         <li><a href="about_1.php">中心簡介</a></li>
@@ -47,7 +33,7 @@
                         </li>
                         <li><a href="#services">服務內容</a></li>
                         <li><a href="#donate">我要捐款</a></li>
-                        <li><a href="#donateInfo">捐款資訊</a></li>
+                        <li><a href="#donateInfo">捐贈資訊</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">認識脊髓損傷<span class="caret"></span></a>
                                 <ul class="dropdown-menu" id="dropdown-menu">
@@ -92,7 +78,7 @@
                         <li><a href="#">媒體報導</a></li>
                         <li><a href="#">新聞中心</a></li>
                         <li><a href="#">志工園地</a></li>
-                        <li><a href="billboard.php">留言板</a></li>
+                        <li><a href="#">留言板</a></li>
                     </ul>
                 </div>
             </div>

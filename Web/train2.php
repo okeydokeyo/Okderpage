@@ -26,7 +26,7 @@
     ?>
 </header>
 <div class="header-image">
-<img src="train.jpg" alt="" class="img-full"></div>
+<img src="train2.jpg" alt="" class="img-full"></div>
 
 <div class="container">
   <div class="content-text row-space-huge">
@@ -39,44 +39,54 @@
 
     </div></div></div>
     
-     <div class="ro">
+     <div class="row co">
 <div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em>服務對象</h4>
-1.具電腦基礎操作能力需加強辦公室應用軟體使用之脊髓損傷者<br>
-
+  <h4><em class="icn icn_"></em><strong>服務對象</strong></h4>
+1.具電腦基礎操作能力需加強辦公室應用軟體使用之脊髓損傷者<br><br>
 2.具備生活自理能力，經評估符合參加基礎電腦班資格之脊髓損傷者。<br>
-
-3.欲報名職業訓練或返回職場，於參訓／工作前加強電腦文書應用能力者。 </div><div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em>訓練期間</h4>
-8週
-  <h4><em class="icn icn_"></em>課程大綱</h4>
-1. 作業系統環境認識、電腦環境設定、檔案總管、控制台、電腦維護等…。<br>
-2. Office軟體應用：Word、Excel、PowerPoint。 
 <br>
-3. TQC考照：中、英文打字、Word、Excel。</div></div>
-<div class="row">
+3.欲報名職業訓練或返回職場，於參訓／工作前加強電腦文書應用能力者。<br>
+<br> </div><div class="icontextbox col-sm-4">
+  <h4><em class="icn icn_"></em><strong>訓練期間</strong></h4>
+8週<br><br>
+
+</div>
 <div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em>預計開班時間</h4>
+  <h4><em class="icn icn_"></em><strong>課程大綱</strong></h4>
+1. 作業系統環境認識、電腦環境設定、檔案總管、控制台、電腦維護等…。<br><br>
+2. Office軟體應用：Word、Excel、PowerPoint。 <br><br>
+3. TQC考照：中、英文打字、Word、Excel。<br><br></div></div>
+
+<div class="row co">
+<div class="icontextbox col-sm-4">
+  <h4><em class="icn icn_"></em><strong>預計開班時間</strong></h4>
 1.106年02月06日至106年03月31日(第十期)。 <br>
+<br>
 
 2.106年04月24日至106年06月23日(第十一期)。 
 <br>
+<br>
 3.106年06月26日至106年08月18日(第十二期)。(預估) 
 <br>
-4.106年08月28日至106年10月27日(第十三期)。(預估) 
 <br>
-5.106年11月06日至106年12月29日(第十四期)。(預估) </div><div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em>入訓考核</h4>
-　1. 學、術科占50％。 
+4.106年08月28日至106年10月27日(第十三期)。(預估) 
+<br><br>
+
+5.106年11月06日至106年12月29日(第十四期)。(預估)<br>
+<br> </div><div class="icontextbox col-sm-4">
+  <h4><em class="icn icn_"></em><strong>入訓考核</strong></h4>
+1. 學、術科占50％。 
 　<br>
+<br>
 2. 面試占50％。 
 <br>
-　3. 開課前1週進行測驗及面試。</div><div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em>招收人數</h4>
+<br>
+3. 開課前1週進行測驗及面試。<br>
+<br></div><div class="icontextbox col-sm-4">
+  <h4><em class="icn icn_"></em><strong>招收人數</strong></h4>
 每班訓練學員最多6人，4人以上開課<br>
-<p><br>
-</p>
-<p>&nbsp;</p>
+<br>
+<br>
 </div></div>
 <footer>
     <?php
