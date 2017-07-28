@@ -255,7 +255,7 @@
         
     <div class="col-md-4">
     <div class="flip-container col-xs-4 col-md-10 col-md-offset-1">
-       <a href="#"> 
+       <a href="KnowMore_1.php"> 
        <div class="flipper">
             <div class="front">
                 <img src="images/認識脊髓損傷.png" class="img-responsive" alt="認識脊髓損傷">
