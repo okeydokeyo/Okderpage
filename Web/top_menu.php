@@ -31,7 +31,17 @@
                                         
                                 </ul>
                         </li>
-                        <li><a href="#services">服務內容</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">服務內容<span class="caret"></span></a>
+                                <ul class="dropdown-menu" id="dropdown-menu">
+                                        <li><a href="train.php">生活重建訓練</a></li>
+                                        <li><a href="train1.php">社區居住服務</a></li>
+                                        <li><a href="train2.php">作業訓練</a></li>
+                                        <li><a href="train3.php">職業訓練</a></li>
+                                        <li><a href="train4.php">生命教育宣導</a></li>
+                                        <li><a href="train5.php">居家就業</a></li>
+                                </ul>
+                        </li>
                         <li><a href="#donate">我要捐款</a></li>
                         <li><a href="#donateInfo">捐贈資訊</a></li>
                         <li class="dropdown">
