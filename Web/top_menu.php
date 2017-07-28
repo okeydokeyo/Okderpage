@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="BasicStyle.css">
+<script type="text/javascript" src="js/dd.js"></script>
 
 <nav class="navbar navbar-fixed-top" id="nav">
         <nav class="navbar" id="top-navbar"> 
@@ -10,6 +11,7 @@
                         <span class="icon-bar"></span>    
                     </button>
                 </div>
+
                 <div class="collapse navbar-collapse" id="myTopNavBar">
                     <ul class="nav navbar-nav navbar-right a" id="top-list">
                         <li class="active"><a href="#">關於我們<span class="sr-only">(current)</span></a></li>
@@ -32,12 +34,13 @@
                                         <li><a href="about_2.php">中心歷史</a></li>
                                         <li><a href="about_3.php">新生命之家</a></li>
                                         <li><a href="about_4.php">職業訓練中心願景</a></li><br>
-                                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">超人工作室<span class="caret"></span></a>
-                                           <ul class="dropdown-menu" id="dropdown-menu">
+                       <span class="main-menu" onmouseover="switchMenu( this, 'SubMenu3' )" onmouseout="hideMenu()" onclick="switchMenu( this, 'SubMenu3' )">超人工作室 <span style="font-size:9px;">&#9660;</span></a>
+                                          		<ul id="SubMenu3" class="sub-menu" style="display:none;">
                                         <li><a href="work_1.php">客服工作室</a></li>
                                         <li><a href="work_2.php">網路工作室</a></li>
                                         <li><a href="work_3.php">綠色資源工作室</a></li>
 </ul>
+                                       	</span>
                                         </li>
                                         
                                 </ul>
@@ -55,7 +58,7 @@
                                 </ul>
                         </li>
                         <li><a href="http://www.sci.org.tw/" target="blank">脊髓新樂園</a></li>
-                        <li><a href="GoodLink.php">好站連結</a></li>
+                        <li><a href="GoodLink.php" target="blank">好站連結</a></li>
                         <li><a href="#">放大鏡</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">語言<span class="caret"></span></a>

@@ -12,6 +12,12 @@
   text-align: center;
 }
 
+.footer{
+    width: 100%;
+    background-color: #AAAAAA;
+	margin-top: 300px;
+}
+
 video{
 	margin: auto;
 	/*margin-top: 65px;*/
@@ -75,6 +81,7 @@ video{
 }
 
 .flip-container {
+    margin-bottom: 15em;
     display: inline;
     perspective: 1000;
     transform-style: preserve-3d;
@@ -94,7 +101,7 @@ video{
 }
 
 .flipper {
-    margin-top: 50px;
+    margin-top: 10em;
     transition: 0.6s;
     transform-style: preserve-3d;
     position: relative;
@@ -121,15 +128,6 @@ video{
 
 .vertical.flip-container:hover .front {
     transform: rotateX(180deg);
-}
-
-.a>li>a:hover{
-    text-decoration: none;
-    background-color: #666666;
-}
-.b>li>a:hover{
-    text-decoration: none;
-    background-color: #E5E5E5;
 }
 
 .Sponsor h3{

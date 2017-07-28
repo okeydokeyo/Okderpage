@@ -1,5 +1,20 @@
 
 #table {
-    max-width: 50%;
+    max-width: 0%;
     margin-left: 25%;
+    margin-top: 15em;
+    margin-bottom: 8em;
+}
+
+#table td a{
+    font-size: 1.2em
+}
+
+a{
+    color: dimgray;
+    cursor: auto;
+}
+
+h1 {
+    color: indianred;
 }
