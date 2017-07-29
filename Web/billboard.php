@@ -54,9 +54,9 @@
                                 autoOpen: false,
                                 draggable: false,
                                 resizable: false,
+                                modal: false,
                                 height: h,
                                 width: w,
-                                modal: true,
                                 position: { my: 'center', at: 'center'}
                             });
                             dialog.dialog( "open" );
