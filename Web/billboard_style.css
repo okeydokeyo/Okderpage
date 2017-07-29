@@ -1,18 +1,40 @@
 body{ 
     font-family: 微軟正黑體,arial,helvetica,sans-serif;
-    background-color: #ffdddd;
+    background-color:#F4F4F4;
 }
 
 .myDiv{
 	white-space: nowrap; /* 不斷行 */
+    margin-top: 2%;
+}
+
+.myDiv ul{
+    width: 80%;
+    margin: auto;
+    padding: 0px;
 }
 
 .myDiv ul li{
-    display: inline;
-    margin-left: 20px;
+    display: inline-block;
+    margin-left: 4.15%;
+    margin-right: 4.15%;
+    width: 25%;
+}
+
+.ui-dialog{
+    position: fixed;
+}
+
+#dialog-form{
+    background-color: white;
+    width: 50%;
 }
 
 
+element.style {
+    width: 50%;
+    
+}
 #input_table{
     margin-top:180px;
     border-collapse: separate;
@@ -28,6 +50,7 @@ body{
 
 #input_area{
     font-size: 20px;
+    resize: none;
 }
 
 .sendbutton{
@@ -44,8 +67,7 @@ body{
 }
 
 #message_table{
-    width:25%;
-    margin-left:50px;
+    width:100%;
     display: inline-table;
 }
 
@@ -102,6 +124,7 @@ body{
     border-style: none;
     border: 0px;
     font-size: 2em;
+    resize:none;
 }
 
 #reply_topic{

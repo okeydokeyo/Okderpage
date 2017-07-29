@@ -46,7 +46,7 @@
             </tr>
             <tr>
                 <td width="100%" colspan="3">
-                    <textarea readonly="readonly" class="form-control" rows="4" id="reply_content_area">'.$content.'</textarea>
+                <p id="reply_content_area">'.$content.'</p>
                 </td>
             </tr>
             <tr>

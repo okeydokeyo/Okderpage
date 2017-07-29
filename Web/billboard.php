@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>桃園市私立脊髓損傷潛能發展中心</title>
@@ -47,12 +48,16 @@
                     if (this.readyState == 4 && this.status == 200) {
                         document.getElementById("dialog-form").innerHTML = this.responseText;
                         $(function() {
+                            var w = $(window).width() * 0.5;
+                            var h = $(window).height() * 0.5;
                             var dialog = $("#dialog-form").dialog({
                                 autoOpen: false,
-                                height: 600,
-                                width: 1000,
+                                draggable: false,
+                                resizable: false,
+                                height: h,
+                                width: w,
                                 modal: true,
-                                position: { my: 'center bottom', at: 'center center'}
+                                position: { my: 'center', at: 'center'}
                             });
                             dialog.dialog( "open" );
                         });

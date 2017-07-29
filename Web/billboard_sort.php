@@ -31,13 +31,17 @@
                         if (this.readyState == 4 && this.status == 200) {
                             document.getElementById("dialog-form").innerHTML = this.responseText;
                             $(function() {
-                                var dialog = $("#dialog-form").dialog({
-                                    autoOpen: false,
-                                    height: 600,
-                                    width: 1000,
-                                    modal: true,
-                                    position: { my: 'center bottom', at: 'center bottom'}
-                                });
+                            var w = $(window).width() * 0.5;
+                            var h = $(window).height() * 0.5;
+                            var dialog = $("#dialog-form").dialog({
+                                autoOpen: false,
+                                draggable: false,
+                                resizable: false,
+                                height: h,
+                                width: w,
+                                modal: true,
+                                position: { my: 'center', at: 'center'}
+                            });
                                 dialog.dialog( "open" );
                             });
                             $('#sendreply_button').click(function(){
