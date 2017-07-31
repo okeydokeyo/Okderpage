@@ -30,7 +30,7 @@
 
 <div class="container">
   <div class="content-text row-space-huge">
-     <div class="r1">
+     <div class="r">
        <h1>生活重建訓練</h1>
      </div>
   <div class="row row-space">
@@ -41,33 +41,33 @@
 
     </div></div></div>
     
-     <div class="row">
+     <div class="row co">
 <div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em>服務對象</h4>
+  <h4><em class="icn icn_"></em><strong>服務對象</strong></h4>
 凡經醫療機構復健完成，經入訓評估需生活重建訓練之脊髓損傷者。<br>
 <br>
  </div><div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em>訓練期間</h4>
+  <h4><em class="icn icn_"></em><strong>訓練期間</strong></h4>
 頸髓班： 15週 <br>
 胸腰髓班：11週<br>
 <br></div><div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em>課程大綱</h4>
+  <h4><em class="icn icn_"></em><strong>課程大綱</strong></h4>
 生理知識、體能訓練、生活自理、社會適應訓練、心理諮商、駕駛訓練、社區居住自立生活等。<br>
 <br></div></div>
-<div class="row">
+<div class="row co">
 <div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em>預計開班時間</h4>
+  <h4><em class="icn icn_"></em><strong>預計開班時間</strong></h4>
 胸腰髓班：02/13、05/08、07/31、10/23 <br>
 <br>
 頸 髓 班：02/13、05/08、06/05、09/25、10/23 <br>
 <br>
 ※以上開課時間將會視情況增加或變動<br>
 <br></div><div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em>聯絡電話</h4>
+  <h4><em class="icn icn_"></em><strong>聯絡電話</strong></h4>
 03-4909001分機218 <br>
 業務負責人員：周先生<br>
 <br></div><div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em>聯絡地址</h4>
+  <h4><em class="icn icn_"></em><strong>聯絡地址</strong></h4>
 32661桃園市楊梅區高榮里快速路5段701號<br><br>
 <br>
 <p><br>

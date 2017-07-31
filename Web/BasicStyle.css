@@ -4,11 +4,11 @@
 }
 
 #top-navbar-button{
-    background-color:crimson;
+    background-color:white;
 }
 
 #top-navbar-button span{
-    background-color: aliceblue;
+    background-color:#AAAAAA;
 }
 
 #top-navbar{
@@ -29,11 +29,11 @@
     margin: auto;
 }
 #bottom-navbar-button{
-    background-color:aliceblue;
+    background-color:#AAAAAA;
 }
 
 #bottom-navbar-button span{
-    background-color: red;
+    background-color:white;
 }
 #logo{
     float:left;
@@ -90,10 +90,16 @@ body {
 	font-family: 微軟正黑體,arial,helvetica,sans-serif;
 	background-color:#F4F4F4;
 }
-	.main-menu	{	color:black; background-color:none; padding:5px; margin:-25px 30px; cursor:pointer; display:inline-block; 	}	
-/* 主選單的樣式 */
-	.sub-menu	{	color:#E5E5E5; background-color:#CCCCCC; margin:5px -5px; padding:0px; list-style-type:none; position:absolute; 	} /* 下拉清單的樣式 */
-	.sub-menu li	{ padding: 3px 5px; text-align:left; } /* 下拉清單每一列的樣式 */
+/*以下是超人工作室下拉選單樣式調整*/
+	.main-menu	{
+	margin-top: -19px;
+	padding-top:-4px
+}	/* 主選單的樣式 */
+	.sub-menu	{	color:#E5E5E5; background-color:#FFFFFF; margin:0px 0px; padding:0px; list-style-type:none; position:absolute; z-index:1;	} /* 下拉清單的樣式 */
+	.sub-menu li	{
+	text-align: left;
+	z-index: 1;
+} /* 下拉清單每一列的樣式 */
 	.sub-menu li:hover	{	color:#FFFFFF; background-color:#E5E5E5; 	}
-	.sub-menu a	{	text-align:left; display:block; text-decoration:none; color:#0000FF; 	}
+	.sub-menu a	{	text-align:left; display:block; text-decoration:none; color:#0000FF; z-index:1;	}
 	.sub-menu a:hover	{	color:#FFFFFF; background-color:#E5E5E5; text-decoration:none; 	}

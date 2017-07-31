@@ -43,10 +43,9 @@
 <div class="icontextbox col-sm-2">
   <h4><em class="icn icn_"></em><strong>服務對象</strong></h4>
 學生、企業、受刑人、酒駕緩起訴</div>
- <div class="icontextbox col-sm-4">
+ <div class="icontextbox col-sm-2">
   <h4><em class="icn icn_"></em><strong>生命教育宣導聯絡人</strong></h4>
-蔡課長<br>
-03-490-9001#112
+蔡課長   03-490-9001#112
 </div></div>
 
 <footer>

@@ -30,7 +30,7 @@
 
 <div class="container">
   <div class="content-text row-space-huge">
-     <div class="r1">
+     <div class="r">
        <h1>社區居住服務</h1>
      </div>
   <div class="row row-space">
@@ -39,13 +39,13 @@
 
     </div></div></div>
     
-     <div class="row">
+     <div class="row co">
 <div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em>服務對象</h4>
+  <h4><em class="icn icn_"></em><strong>服務對象</strong></h4>
 凡經生活自理訓練完成，經入訓評估需社區居住服務之脊髓損傷者。 </div><div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em>訓練期間</h4>
+  <h4><em class="icn icn_"></em><strong>訓練期間</strong></h4>
  4週</div><div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em>課程大綱</h4>
+  <h4><em class="icn icn_"></em><strong>課程大綱</strong></h4>
 交通搭車訓練、居家生活訓練、社區生活支持、資訊技藝研習、職前能力養成、同儕輔導諮商。</div></div>
 
 <footer>
