@@ -37,8 +37,16 @@
                                         <li><a href="train5.php">居家就業</a></li>
                                 </ul>
                         </li>
-                        <li><a href="#donate">我要捐款</a></li>
-                        <li><a href="#donateInfo">捐贈資訊</a></li>
+                        <li><a href="https://scsrc.eoffering.org.tw/" target="_blank">我要捐款</a></li>
+                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">捐贈資訊<span class="caret"></span></a>
+                                <ul class="dropdown-menu" id="dropdown-menu">
+                                        <li><a href="donate.php">愛心電子發票捐贈</a></li>
+                                        <li><a href="donate1.php">物資募集</a></li>
+                                        <li><a href="donate2.php">捐款捐物徵信</a></li>
+                                        <li><a href="donate3.php">統一勸募徵信</a></li>
+                                        <li><a href="donate4.php">年度收支表</a></li>
+                                        <li><a href="donate5.php">會計師查核報告書</a></li>
+                                </ul></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">認識脊髓損傷<span class="caret"></span></a>
                                 <ul class="dropdown-menu" id="dropdown-menu">
