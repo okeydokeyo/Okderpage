@@ -57,7 +57,6 @@
                                 </ul>
                         </li>
                         <li><a href="http://www.sci.org.tw/" target="blank">脊髓新樂園</a></li>
-                        <li><a href="GoodLink.php">好站連結</a></li>
                         <li><a href="#">放大鏡</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">語言<span class="caret"></span></a>
@@ -91,6 +90,7 @@
                         <li><a href="#">媒體報導</a></li>
                         <li><a href="#">新聞中心</a></li>
                         <li><a href="#">志工園地</a></li>
+                        <li><a href="GoodLink.php">好站連結</a></li>
                         <li><a href="billboard.php">留言板</a></li>
                     </ul>
                 </div>

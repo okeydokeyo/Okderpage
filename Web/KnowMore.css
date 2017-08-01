@@ -1,11 +1,11 @@
-
-#table {
-    
-    margin-top: 15em;
-    margin-bottom: 15em;
+#table 
+{
+    margin-top: 10em;
+    margin-bottom: 5em;
 }
 
-.digital {
+.digital 
+{
     color: dimgray;
 }
 
@@ -21,8 +21,8 @@
 @media only screen and (min-width: 321px) and (max-width: 768px)
 {
     #table {
-        max-width: 80%;
-        margin-left: 10%;
+        max-width: 90%;
+        margin-left: 5%;
         font-size: 1em;
     }
 }
@@ -30,8 +30,8 @@
 @media screen and (max-width: 320px)
 {
     #table {
-        max-width: 90%;
-        margin-left: 5%;
+        max-width: 95%;
+        margin-left: 2.5%;
         font-size: 1em;
     }
 }

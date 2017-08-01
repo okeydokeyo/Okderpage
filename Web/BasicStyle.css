@@ -83,8 +83,11 @@
     background-color: #E5E5E5;
 }
 body {
-    background:url(123.png)center center no-repeat;
-    background-size: 85% auto;
+    background:url(images/bg/bg_03.png);
+    background-size: 20% auto;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     margin: 0;
     padding: 0;
 	font-family: 微軟正黑體,arial,helvetica,sans-serif;
@@ -93,7 +96,7 @@ body {
 /*以下是超人工作室下拉選單樣式調整*/
 	.main-menu	{
 	margin-top: -19px;
-	padding-top:-4px
+	padding-top:-4px;
 }	/* 主選單的樣式 */
 	.sub-menu	{	color:#E5E5E5; background-color:#FFFFFF; margin:0px 0px; padding:0px; list-style-type:none; position:absolute; z-index:1;	} /* 下拉清單的樣式 */
 	.sub-menu li	{

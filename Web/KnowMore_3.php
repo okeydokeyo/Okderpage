@@ -1,7 +1,7 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <title>桃園市私立脊髓損傷潛能發展中心</title>
+    <title>認識脊髓損傷</title>
+    <link href="images/favicon.ico" rel="SHORTCUT ICON">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet">
