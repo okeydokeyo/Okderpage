@@ -56,6 +56,7 @@
         
     <div class="col-md-4">
     <div class="flip-container col-xs-4 col-md-10 col-md-offset-1">
+        <a href="about_1.php"> 
         <div class="flipper">
             <div class="front">
                 <img src="images/關於我們.png" class="img-responsive" alt="關於我們">
@@ -64,6 +65,7 @@
                 <img src="images/點我查看_灰.png" class="img-responsive" alt="點我查看">
             </div>
         </div>
+        </a>
     </div>
     </div>
         
