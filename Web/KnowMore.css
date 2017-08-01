@@ -1,12 +1,37 @@
 
 #table {
-    max-width: 40%;
-    margin-left: 20%;
+    
     margin-top: 15em;
-    font-size: 1.2em;
     margin-bottom: 15em;
 }
 
 .digital {
     color: dimgray;
+}
+
+@media screen and (min-width: 769px)
+{
+    #table {
+        max-width: 50%;
+        margin-left: 20%;
+        font-size: 1.2em;
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 768px)
+{
+    #table {
+        max-width: 80%;
+        margin-left: 10%;
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 320px)
+{
+    #table {
+        max-width: 90%;
+        margin-left: 5%;
+        font-size: 1em;
+    }
 }

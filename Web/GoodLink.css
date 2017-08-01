@@ -1,20 +1,52 @@
-
-#table {
-    max-width: 0%;
-    margin-left: 25%;
+#table
+{
     margin-top: 15em;
     margin-bottom: 8em;
 }
 
-#table td a{
-    font-size: 1.2em
-}
-
-a{
+a
+{
     color: dimgray;
     cursor: auto;
 }
 
-h1 {
+h1 
+{
     color: indianred;
+}
+
+@media screen and (min-width: 769px)
+{
+    #table {
+        width: 75%;
+        margin-left: 25%;
+    }
+    
+    #table td a{
+        font-size: 1.2em;
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 768px)
+{
+    #table {
+        width: 80%;
+        margin-left: 10%;
+    }
+    
+    #table td a{
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width: 320px)
+{
+    #table {
+        width: 90%;
+        margin-left: 5%;
+    }
+    
+    #table td a{
+        font-size: 1em;
+    }
 }
