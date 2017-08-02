@@ -9,6 +9,12 @@
     color: dimgray;
 }
 
+#table td a
+{
+    color: dimgray;
+    cursor: auto;
+}
+
 @media screen and (min-width: 769px)
 {
     #table {

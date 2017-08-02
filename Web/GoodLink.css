@@ -4,6 +4,12 @@
     margin-bottom: 5em;
 }
 
+#table td a
+{
+    color: dimgray;
+    cursor: auto;
+}
+
 @media screen and (min-width: 769px)
 {
     #table 
@@ -15,7 +21,6 @@
     #table td a
     {
         font-size: 1.1em;
-        color: dimgray;
     }
     
     #table td img
@@ -35,8 +40,6 @@
     #table td a
     {
         font-size: 1.1em;
-        color: dimgray;
-        cursor: auto;
     }
     
     #table td img
@@ -57,12 +60,10 @@
     #table td a
     {
         font-size: 1em;
-        color: dimgray;
-        cursor: auto;
     }
     
     #table td img
     {
-        width: 10em;
+        width: 8em;
     }
 }

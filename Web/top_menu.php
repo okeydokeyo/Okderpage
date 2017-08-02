@@ -54,6 +54,7 @@
                                         <li><a href="KnowMore_2.php">造成脊髓損傷的原因</a></li>
                                         <li><a href="KnowMore_3.php">台灣脊髓損傷者概況</a></li>
                                         <li><a href="KnowMore_4.php">脊髓損傷的急救處理</a></li>
+                                        <li><a href="KnowMore_5.php">脊髓損傷衛教影片</a></li>
                                 </ul>
                         </li>
                         <li><a href="http://www.sci.org.tw/" target="blank">脊髓新樂園</a></li>
