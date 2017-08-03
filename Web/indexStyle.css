@@ -1,9 +1,9 @@
+@media screen and (min-width: 900px) {
 .video-container{
     margin: auto;
 }
 
 .video-container h1 {
-  position: absolute;
   top: 50%;
   width: 100%;
   font-size: 5em;
@@ -20,7 +20,7 @@
 
 video{
 	margin: auto;
-	/*margin-top: 65px;*/
+	margin-top: 120px;
 	width: 100%;
 	max-width: 100%;
 	max-height: 80%;
@@ -53,11 +53,9 @@ video{
 }
 
 #myCarousel{
-    width: 70%;
+    width: 100%;
     height:auto;
     background-color: white;
-    margin: auto;
-    margin-top: 50px;
 }
 
 .carousel-indicators li{
@@ -66,6 +64,7 @@ video{
 
 .carousel-inner > .item > img{
       width: 100%;
+	  height:auto;
       margin: auto;
 }
 
@@ -81,7 +80,7 @@ video{
 }
 
 .flip-container {
-    margin-bottom: 15em;
+    margin-bottom: 80px;
     display: inline;
     perspective: 1000;
     transform-style: preserve-3d;
@@ -101,7 +100,7 @@ video{
 }
 
 .flipper {
-    margin-top: 10em;
+    margin-top: 3em;
     transition: 0.6s;
     transform-style: preserve-3d;
     position: relative;
@@ -140,4 +139,412 @@ video{
 .Sponsor a{
     float: left;
     padding-left: 2%;
+}
+
+.wrapper{
+	margin-top:50px;
+}
+
+.box-a{
+width:50%;
+height:300px;
+float:left;
+display:inline;
+}
+
+.box-b{
+width:50%;
+height:300px;
+float:left;
+display:inline;
+}
+
+.text_12px_06{
+	font-size: 12px;
+    text-align:left;
+	color: #824A1A;
+}
+.link_03{
+	font-size: 0.9em;
+	text-align:left;
+	color: #3A2203;
+}
+.link_03:hover{
+	font-size: 1em;
+	text-align:left;
+	color: #824A1A;
+}
+#padding_07 {
+    padding-top: 8px;
+}
+
+.border_02 {
+    border-bottom: 1px dotted #cccccc;
+}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 899px) {
+.video-container{
+    margin: auto;
+}
+
+.video-container h1 {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  font-size: 2.5em;
+  letter-spacing: 1em;
+  color:#FFFFFF;
+  text-align: center;
+}
+
+.footer{
+    width: 100%;
+    background-color: #AAAAAA;
+	margin-top: 200px;
+}
+
+video{
+	margin: auto;
+	margin-top: 120px;
+	width: 100%;
+	max-width: 100%;
+	max-height: 80%;
+	height: auto;
+}
+#index-video{
+    filter:brightness(0.8);
+}
+
+#BB1{
+    position: fixed;
+	top: 120px;
+    left: -108px;
+	width: 200px;
+    height: auto;  
+}
+#BB1:hover{
+	left: 0%;
+}
+
+#BB2 {
+    position: fixed;
+	top: 200px;
+    left:-108px;
+	width: 200px;
+    height: auto; 
+}
+#BB2:hover{
+	left: 0%;
+}
+
+#myCarousel{
+    width: 100%;
+    height:auto;
+    background-color: white;
+}
+
+.carousel-indicators li{
+    background-color: crimson;
+}
+
+.carousel-inner > .item > img{
+      width: 100%;
+	  height:auto;
+      margin: auto;
+}
+
+.front {
+    background: #AAA;
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.back {
+    background: #F33;
+    transform: rotateY(-180deg);
+}
+
+.flip-container {
+    margin-bottom: 80px;
+    display: inline;
+    perspective: 1000;
+    transform-style: preserve-3d;
+}
+
+.flip-container:hover .back {
+    transform: rotateY(0deg);
+}
+
+.flip-container:hover .front {
+    transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.flipper {
+    margin-top: 5em;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.front, .back {
+    backface-visibility: hidden;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: absolute;
+}
+
+.vertical.flip-container {
+    position: relative;
+}
+
+.vertical .back {
+    transform: rotateX(180deg);
+}
+
+.vertical.flip-container:hover .back {
+    transform: rotateX(0deg);
+}
+
+.vertical.flip-container:hover .front {
+    transform: rotateX(180deg);
+}
+
+.Sponsor h3{
+    padding-top: 20%;
+    color: #e60000;
+    text-align: center;
+	font-size: 1.5em;
+}
+
+.Sponsor a{
+    float: left;
+    padding-left: 2%;
+}
+
+
+.box-a{
+width:100%;
+height:auto;
+float:left;
+display:inline;
+}
+
+.box-b{
+width:100%;
+height:auto;
+margin-top:10px;
+float:left;
+display:inline;
+}
+
+.text_12px_06{
+	font-size: 12px;
+    text-align:left;
+	color: #824A1A;
+}
+.link_03{
+	font-size: 0.9em;
+	text-align:left;
+	color: #3A2203;
+}
+.link_03:hover{
+	font-size: 1em;
+	text-align:left;
+	color: #824A1A;
+}
+#padding_07 {
+    padding-top: 8px;
+}
+
+.border_02 {
+    border-bottom: 1px dotted #cccccc;
+}
+}
+
+
+@media screen and (max-width: 479px) {
+.video-container{
+    margin: auto;
+}
+
+.video-container h1 {
+  top: 50%;
+  width: 100%;
+  font-size: 1.5em;
+  letter-spacing: 1em;
+  color:#FFFFFF;
+  text-align: center;
+}
+
+.footer{
+    width: 100%;
+    background-color: #AAAAAA;
+	margin-top: 200px;
+}
+
+video{
+	margin: auto;
+	/*margin-top: 65px;*/
+	width: 100%;
+	max-width: 100%;
+	max-height: 80%;
+	height: auto;
+}
+#index-video{
+    filter:brightness(0.8);
+}
+
+#BB1{
+    position: fixed;
+	top: 120px;
+    left:-80px;
+	width: 150px;
+    height: auto;  
+}
+#BB1:hover{
+	left: 0%;
+}
+
+#BB2 {
+    position: fixed;
+	top: 200px;
+    left:-80px;
+	width:150px;
+    height: auto; 
+}
+#BB2:hover{
+	left: 0%;
+}
+
+#myCarousel{
+    width: 100%;
+    height:auto;
+    background-color: white;
+}
+
+.carousel-indicators li{
+    background-color: crimson;
+}
+
+.carousel-inner > .item > img{
+      width: 100%;
+	  height:auto;
+      margin: auto;
+}
+
+.front {
+    background: #AAA;
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.back {
+    background: #F33;
+    transform: rotateY(-180deg);
+}
+
+.flip-container {
+    margin-bottom:10px;
+    display: inline;
+    perspective: 1000;
+    transform-style: preserve-3d;
+}
+
+.flip-container:hover .back {
+    transform: rotateY(0deg);
+}
+
+.flip-container:hover .front {
+    transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.front, .back {
+    backface-visibility: hidden;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: absolute;
+}
+
+.vertical.flip-container {
+    position: relative;
+}
+
+.vertical .back {
+    transform: rotateX(180deg);
+}
+
+.vertical.flip-container:hover .back {
+    transform: rotateX(0deg);
+}
+
+.vertical.flip-container:hover .front {
+    transform: rotateX(180deg);
+}
+
+.Sponsor h3{
+    padding-top: 20%;
+    color: #e60000;
+    text-align: center;
+	font-size: 1.5em;
+}
+
+.Sponsor a{
+    float: left;
+    padding-left: 2%;
+}
+
+
+.box-a{
+width:100%;
+height:auto;
+float:left;
+display:inline;
+}
+
+.box-b{
+width:100%;
+height:auto;
+margin-top: 10px;
+float:left;
+display:inline;
+}
+
+.text_12px_06{
+	font-size: 4px;
+    text-align:left;
+	color: #824A1A;
+}
+.link_03{
+	font-size:4px;
+	text-align:left;
+	color: #3A2203;
+}
+.link_03:hover{
+	text-align:left;
+	color: #824A1A;
+}
+#padding_07 {
+    padding-top: 8px;
+}
+
+.border_02 {
+    border-bottom: 1px dotted #cccccc;
+}
 }
