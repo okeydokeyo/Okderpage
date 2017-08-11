@@ -45,19 +45,19 @@
             <td colspan="6"><h4><strong>3. 搶救四字訣：測、套、固、送</strong></h4><br></td>
         </tr>
         <tr>
-            <td align="center"><img alt="" align="middle" width="100" height="103" src="images/KnowMore/im4_01.gif" /></td>
+            <td align="center"><img alt="" align="middle" width="100" src="images/KnowMore/im4_01.gif"></td>
             <td colspan="5">測：測試受傷者的傷害狀況，以判斷其脊髓受損的情形。</td>
         </tr>
         <tr>
-            <td align="center"><img alt="" align="middle" width="100" height="103" src="images/KnowMore/im4_02.gif" /></td>
+            <td align="center"><img alt="" align="middle" width="100" src="images/KnowMore/im4_02.gif"></td>
             <td colspan="5">套：套上頸圈以固定頸部，避免傷者的頸部受到二度傷害。</td>
         </tr>
         <tr>
-            <td align="center"><img alt="" align="middle" width="150" height="67" src="images/KnowMore/im4_03.gif" /></td>
+            <td align="center"><img alt="" align="middle" width="150" src="images/KnowMore/im4_03.gif"></td>
             <td colspan="5">固：將傷者的頭、頸和身體呈一直線，固定在搬運板或擔架上。</td>
         </tr>
         <tr>
-            <td align="center"><img alt="" align="middle" width="100" height="103" src="images/KnowMore/im4_04.gif" /></td>
+            <td align="center"><img alt="" align="middle" width="100" src="images/KnowMore/im4_04.gif"></td>
             <td colspan="5">送：馬上將傷者送到附近的區域教學醫院或醫學中心進行急救。</td>
         </tr>
         <tr>

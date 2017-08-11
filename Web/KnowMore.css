@@ -4,15 +4,16 @@
     margin-bottom: 5em;
 }
 
-.digital 
-{
-    color: dimgray;
-}
-
 #table td a
 {
     color: dimgray;
     cursor: auto;
+}
+
+td font
+{
+    font-size: 1.8em;
+    color: dimgray;
 }
 
 @media screen and (min-width: 769px)
@@ -27,8 +28,8 @@
 @media only screen and (min-width: 321px) and (max-width: 768px)
 {
     #table {
-        max-width: 90%;
-        margin-left: 5%;
+        max-width: 80%;
+        margin-left: 10%;
         font-size: 1em;
     }
 }
@@ -36,8 +37,8 @@
 @media screen and (max-width: 320px)
 {
     #table {
-        max-width: 95%;
-        margin-left: 2.5%;
+        max-width: 90%;
+        margin-left: 5%;
         font-size: 1em;
     }
 }
