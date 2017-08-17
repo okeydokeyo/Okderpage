@@ -29,6 +29,19 @@
     <h1>捐款捐物徵信錄</h1>
       </div>
   <div class="row row-space">
+               <div align="left" style="margin-bottom:-35px;" class="text_12px_01b border_02">
+		<img src="pin.png" alt="*" width="15" align="absmiddle"> 選擇檔案類別：
+	<select id="DB_DowUnitID" name="DB_DowUnitID" class="text_12px_01b">
+		<option value="">不分類</option>
+							<option value="22">捐物徵信</option>
+
+		<option value="22">捐款徵信</option>
+
+				
+	</select>
+	<input name="no" type="hidden" value="12">
+		<input type="submit" name="name" value="送出" id="name" class="text_12px_01b">
+	    </div>
     <table style="border:3px #cccccc solid;" cellpadding="5" rules="all"  width="100%" border="0" id="margin_01" class="text_12px_01" summary="捐款捐物徵信錄表格">
 		  <tbody><tr>
             <th width="10%" align="center" class="th2">序號</th>

@@ -32,23 +32,18 @@
     <h1>愛心電子發票</h1>
       </div>
   <div class="row row-space">
-    <font size="4">電子發票上路了
+    <font size="4">電子發票上路了,脊髓損傷潛能發展中心也有了自己的愛心碼,
+<b style="color:#4F2C0D; font-weight: bolder;">捐發票，愛地球；做愛心，更EASY。</b><br><br>
 
-脊髓損傷潛能發展中心也有了自己的愛心碼
-<br>
-<br>
-<ul style="color:#4F2C0D; font-weight: bolder;">捐發票，愛地球；做愛心，更EASY。</ul><br>
-現在只要結帳前告訴店員我們的愛心碼<br><br>
-<ul style="color:#C10003; padding-left:20%;"><strong>518007</strong></ul><br>
-或出示我們的<br><br>
-<ul style="color:#C10003; padding-left:20%;"><strong>愛心條碼<img src="code.jpg" height="50"></strong></ul>
-<br>
+現在只要結帳前告訴店員我們的愛心碼:
+<b style="color:#C10003;"><strong>518007</strong></b>
+或出示我們的:
+<b style="color:#C10003;"><strong>愛心條碼<img src="code.jpg" height="50"></strong></b>
 就可以將發票捐給脊髓損傷潛能發展中心
 <br>
 <br>
 <strong>您的小小舉動 我們大大的溫馨</strong>
-<br><br>
-
+<br>
 <strong>脊髓損傷潛能發展中心由衷的感謝您<br>
 <br>
 <br>

@@ -38,10 +38,11 @@
     <p>目前接受新北市、桃園巿政府委辦的『 居家就業方案 』</p>
 
     </div></div></div>
-    
-     <div class="row co">
+    <div class="container">
+     <div class="row-space row co">
 <div class="icontextbox col-sm-3">
-  <h4><em class="icn icn_"></em><strong>服務對象</strong></h4>
+    <p class="bodytext"><strong>服務對象</strong></p><p>
+  
 1.年滿15歲以上65歲以下，礙於身體功能障礙，導致無法久坐或外出之中、重度以上身心障礙者。
          <br>
       	<br>
@@ -55,7 +56,8 @@
 <br>
 <br>
 就業服務員主要工作為開發工作機會及身障人士，並視身障人士就業能力及條件予以媒合。
-</div></div>
+</p>
+</div></div></div>
 <footer>
     <?php
     include("footer.php");

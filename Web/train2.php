@@ -38,29 +38,32 @@
     <p>基礎電腦訓練目的主要在提升傷友電腦應用能力，以滿足數位落差學習的需求，課程中並有工作態度的學習及其他作業能力的養成，在有電腦應用能力後，以加強電腦應用技能後以利銜接返回職場之能力並可銜接其它電腦進階的職種訓練（網頁設計、程式設計、電腦繪圖…等）或直接從事電腦相關的工作。（文書、行政…等）。 </p>
 
     </div></div></div>
-    
-     <div class="row co">
+    <div class="container">
+
+     <div class="row co row-space">
 <div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em><strong>服務對象</strong></h4>
+    <p class="bodytext"><strong>服務對象</strong></p><p>
 1.具電腦基礎操作能力需加強辦公室應用軟體使用之脊髓損傷者<br><br>
 2.具備生活自理能力，經評估符合參加基礎電腦班資格之脊髓損傷者。<br>
 <br>
 3.欲報名職業訓練或返回職場，於參訓／工作前加強電腦文書應用能力者。<br>
-<br> </div><div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em><strong>訓練期間</strong></h4>
+<br></p> </div><div class="icontextbox col-sm-4">
+    <p class="bodytext"><strong>訓練期間</strong></p><p>
 8週<br><br>
-
+</p>
 </div>
 <div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em><strong>課程大綱</strong></h4>
+<p class="bodytext">
+	<strong>課程大綱</strong></p><p>
 1. 作業系統環境認識、電腦環境設定、檔案總管、控制台、電腦維護等…。<br><br>
 2. Office軟體應用：Word、Excel、PowerPoint。 <br><br>
-3. TQC考照：中、英文打字、Word、Excel。<br><br></div></div>
+3. TQC考照：中、英文打字、Word、Excel。</p><br><br></div></div></div>
 
-<div class="row co">
+<div class="container">
+<div class="row row-space co">
 <div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em><strong>預計開班時間</strong></h4>
-1.106年02月06日至106年03月31日(第十期)。 <br>
+    <p class="bodytext"><strong>預計開班時間</strong></p>
+<p>1.106年02月06日至106年03月31日(第十期)。 <br>
 <br>
 
 2.106年04月24日至106年06月23日(第十一期)。 
@@ -72,19 +75,20 @@
 4.106年08月28日至106年10月27日(第十三期)。(預估) 
 <br><br>
 5.106年11月06日至106年12月29日(第十四期)。(預估)<br>
-<br> </div><div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em><strong>入訓考核</strong></h4>
+<br></p> </div><div class="icontextbox col-sm-4">
+    <p class="bodytext"><strong>入訓考核</strong></p><p>
 1. 學、術科占50％。<br>
 <br>2. 面試占50％。 
 <br>
 <br>
 3. 開課前1週進行測驗及面試。<br>
-<br></div><div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em><strong>招收人數</strong></h4>
+<br></p></div><div class="icontextbox col-sm-4">
+    <p class="bodytext"><strong>招收人數</strong></p><p>
 每班訓練學員最多6人，4人以上開課<br>
 <br>
 <br>
-</div></div>
+</p>
+</div></div></div>
 <footer>
     <?php
     include("footer.php");

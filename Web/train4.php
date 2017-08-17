@@ -39,14 +39,15 @@
 
     </div></div></div>
     
-     <div class="row co">
+    <div class="container">
+     <div class="row co row-space">
 <div class="icontextbox col-sm-2">
-  <h4><em class="icn icn_"></em><strong>服務對象</strong></h4>
-學生、企業、受刑人、酒駕緩起訴</div>
+    <p class="bodytext"><strong>服務對象</strong></p><p>
+學生、企業、受刑人、酒駕緩起訴</p></div>
  <div class="icontextbox col-sm-2">
-  <h4><em class="icn icn_"></em><strong>生命教育宣導聯絡人</strong></h4>
-蔡課長   03-490-9001#112
-</div></div>
+    <p class="bodytext"><strong>生命教育宣導聯絡人</strong></p><p>
+蔡課長   03-490-9001#112</p>
+</div></div></div>
 
 <footer>
     <?php

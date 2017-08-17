@@ -72,12 +72,16 @@
     </div></div></div>
     
     <div class="map">
+  <p class="bodytext"><strong>中心位置 </strong></p>
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.5692929826328!2d121.16384271426912!3d24.946738547939464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681f4988cbf495%3A0xf85fb55263ee6589!2z6ISK6auT5pCN5YK35r2b6IO955m85bGV5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1500904493563" width="500" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
     
     <div class="structure">
-    <p class="bodytext"><strong>組織架構 </strong></p>
-    <img src="架構.png" width="500px">
+       <img src="map.jpg" width="400px">
+    <p class="bodytext"><strong><br>
+<br>
+組織架構 </strong></p>
+    <img src="架構.png" width="450px">
     </div>
 
 

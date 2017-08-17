@@ -29,17 +29,24 @@ body{
 	padding-top: 1px;
 }
 .row-space {
-	padding-top: 3px;
+	margin-top:50px;
+	margin-left:10%;
+	max-width: 40%;
+
 }
-.row {
-	margin-right: 51%;
+.ro {
+    max-width: 50%;
 	margin-top:30px;
-	margin-left:4%;
+	margin-left:20%;
+}
+.r {
+	margin-top:30px;
+	margin-left:10%;
 }
 .co {
-	margin-right: 51%;
+    max-width:43.236%;
 	margin-top:30px;
-	margin-left:4%;
+	margin-left:8.8%;
 }
 .r2 {
 	margin-left: 4%;
@@ -48,7 +55,7 @@ body{
 }
 
 .r1 {
-	margin-left: 8%;
+	margin-left: 14%;
 	margin-right: 51%;
 }
 
@@ -56,7 +63,7 @@ body{
 
 .r4{
 	margin-top:200px;
-	margin-left: 4%;
+	margin-left: 10%;
 	margin-right: 51%;
 }
 
@@ -67,13 +74,13 @@ body{
 }
 .map{
 	position: absolute;
-	top: 620px;
+	top: 570px;
 	right: 55px;
 }
 .structure{
 	position: absolute;
-	top: 1380px;
-	right: 200px;
+	top: 1050px;
+	right: 100px;
 }
 strong {
 	font-size: 23px;	
@@ -87,7 +94,7 @@ p{
 }
 
 .col-sm-2 {
-    width: 50%;
+    width: 50%;  
     float: left; 
 }
 .col-sm-3 {
@@ -95,6 +102,9 @@ p{
     float: left; 
 }
 .col-sm-4 {
-    width: 33.333333%;
+    width: 33.3333333%;
     float: left; 
+}
+.icn_ ssss{
+	font-size: 1.2em;
 }

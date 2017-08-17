@@ -38,15 +38,16 @@
     <p>社區居住服務主要在增進傷友社區居住自立生活的能力，除了交通搭車、居家生活體驗及社區生活支持外，還包括資訊技藝研習、職前能力養成及同儕輔導諮商，以便傷友更能夠順利轉銜後續相關職業重建、就業、創業等職涯作準備，協助個案適應以自立生活為目標的社區生活型態。 </p>
 
     </div></div></div>
-    
-     <div class="row co">
+     <div class="container">
+     <div class="row row-space co">
 <div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em><strong>服務對象</strong></h4>
-凡經生活自理訓練完成，經入訓評估需社區居住服務之脊髓損傷者。 </div><div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em><strong>訓練期間</strong></h4>
- 4週</div><div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em><strong>課程大綱</strong></h4>
-交通搭車訓練、居家生活訓練、社區生活支持、資訊技藝研習、職前能力養成、同儕輔導諮商。</div></div>
+    <p class="bodytext"><strong>服務對象</strong></p><p>
+凡經生活自理訓練完成，經入訓評估需社區居住服務之脊髓損傷者。</p> </div>
+ <div class="icontextbox col-sm-4">
+    <p class="bodytext"><strong>訓練期間</strong></p><p>
+ 4週</p></div><div class="icontextbox col-sm-4">
+    <p class="bodytext"><strong>課程大綱</strong></p><p>
+交通搭車訓練、居家生活訓練、社區生活支持、資訊技藝研習、職前能力養成、同儕輔導諮商。</p></div></div></div>
 
 <footer>
     <?php

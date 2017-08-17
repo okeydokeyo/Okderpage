@@ -39,36 +39,42 @@
 
     </div></div></div>
     
-     <div class="row co">
+    <div class="container">
+     <div class="row co row-space">
 <div class="icontextbox col-sm-3">
-  <h4><em class="icn icn_"></em><strong>醫療器材暨創意設計人才培育班</strong></h4>
+    <p class="bodytext"><strong>醫療器材暨創意設計人才培育班</strong></p><p>
 設計思考（同理心＋問題定義）、設計思考（腦力激盪）、設計思考（原型製作）+驗證、應用色彩學、爆炸式創新（工程TRIZ）、爆炸式創新（商用TRIZ）、專利實務、創新商業模式、群眾募資、大數據與物聯網、文化創意行銷、廣告管理、手工藝產品介紹、遊戲化行銷、財務報表、行銷企劃實務、計畫企劃書資源與撰寫、簡報技巧初階、基本設計、立體表現技法、向量繪圖、設計素描、視覺傳達設計、媒體公關、簡報技巧進階、影片剪輯、基礎網頁製作、Scratch 創意程式設計與作品發表、App Inventor 程式設計、基本電路學、機械結構設計（樂高）、機械結構設計（樂高）、機械結構設計（樂高）、主題性醫療器材設計進階、Arduino 基礎程式設計、電腦程式語言 C++、專業攝影、文創商品設計、電子商務實務練習、商品設計、商標設計、造型設計、文創3D設計、電腦程式設計Solidworks、專題製作、創客類專題製作、作品網頁展現、作品APP 展現、企劃書＋專利佈局展現、行銷影片展現、投影簡報技巧展現。<br>
-<br>
+	<br></p>
 </div>
- 
+		</div></div>
+		<div class="container">
+		<div class="row co row-space">
  <div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em><strong>客戶服務班</strong></h4>
-手機客服專線處理、客戶來電處理、電話行銷、客戶服務系統操作
+    <p class="bodytext"><strong>客戶服務班</strong></p>
+<p>手機客服專線處理、客戶來電處理、電話行銷、客戶服務系統操作
 <br>
 （目前學習之內容及方向以台灣大哥大電話客服為主）<br>
 <br>
+</p>
 </div>
  
  <div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em><strong>辦公室作業軟體應用實務班</strong></h4>
+    <p class="bodytext"><strong>辦公室作業軟體應用實務班</strong></p><p>
 Office軟體應用：Word、Excel、PowerPoint<br>
 Google雲端辦公軟體：Google文件、Google Drive雲端硬碟、Google協作平台、部落格<br>
 其他辦公室應用：Photo排版、文書排版、中英文打字<br><br>
-
+</p>
 </div><div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em><strong>視覺設計班</strong></h4>
+    <p class="bodytext"><strong>視覺設計班</strong></p><p>
 基礎美工、PohtoShop、ImageReady、專業美工排版、色彩學字學、版面與造型設計、Logo設計、封面設計、CIS規劃設計、數位剪輯、海報設計、廣告招牌設計、包裝設計…等<br>
 <br>
-</div></div>
- 
-<div class="row co">
+</p>
+</div></div></div>
+		
+<div class="container">
+<div class="row co row-space">
 <div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em><strong>網頁程式設計班</strong></h4>
+  <p class="bodytext"><strong>網頁程式設計班</strong></p><p>
 美工視覺設計：基礎美工、PohtoShop、ImageReady、數位剪輯<br>
 <br>
 網頁排版設計：HTML、Dreamweaver。<br>
@@ -77,19 +83,23 @@ Google雲端辦公軟體：Google文件、Google Drive雲端硬碟、Google協�
 
 <br>
 <br>
-網頁架站實作：FTP、Windows 和Linux作業系統安裝</div>
+網頁架站實作：FTP、Windows 和Linux作業系統安裝</p></div>
+ 
  
  <div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em><strong>電腦繪圖設計班</strong></h4>
+  <p class="bodytext"><strong>電腦繪圖設計班</strong></p><p>
 Autocad  2D 3D、Soild works 、PhotoShop、傳統建築繪圖<br>
 <br>
+</p>
 </div>
 <div class="icontextbox col-sm-4">
-  <h4><em class="icn icn_"></em><strong>電子商務創意設計實務班</strong></h4>
+  <p class="bodytext"><strong>電子商務創意設計實務班</strong></p><p>
 創業與電子商務概念、電子商務網站規劃、網路商店架設、網站行銷與規劃、網路商店後台管理系統設計、網頁架站實作、專題製作、實習操作
 <br>
 <br>
-</div></div>
+</p>
+</div></div></div>
+
 <footer>
     <?php
     include("footer.php");

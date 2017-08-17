@@ -29,13 +29,11 @@
     <h1>年度收支表</h1>
       </div>
   <div class="row row-space">
-   <div align="left" style="padding:5px;margin:5px" class="text_12px_01b border_02">
-		<img src="pin.png" alt="*" width="10" height="11" align="absmiddle"> 選擇檔案類別：
+               <div align="left" style="margin-bottom:-35px;" class="text_12px_01b border_02">
+		<img src="pin.png" alt="*" width="15" align="absmiddle"> 選擇檔案類別：
 	<select id="DB_DowUnitID" name="DB_DowUnitID" class="text_12px_01b">
 		<option value="">不分類</option>
-					
-		<option value="22">收支表</option>
-				
+							<option value="22">收支表</option>
 	</select>
 	<input name="no" type="hidden" value="12">
 		<input type="submit" name="name" value="送出" id="name" class="text_12px_01b">
