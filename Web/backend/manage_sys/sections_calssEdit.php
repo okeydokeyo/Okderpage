@@ -1,4 +1,4 @@
-<? 
+<? /*
 include "cksession.php";
 include "../config.php";
 include "../function.php";
@@ -27,7 +27,7 @@ if(!empty($DB_OrdTagSort) && !empty($DB_OrdTagSubject) ){
 	$UpStr2="'".$_SESSION['ManUser']."','".$_SERVER['REMOTE_ADDR']."','條列式訊息管理標籤','".$DB_OrdTagSubject."','edit',NOW()";
 	Recording_Add("recording",$UpStr,$UpStr2);
 }
-
+*/
 ?>
 <? 
 include_once ("top.php");

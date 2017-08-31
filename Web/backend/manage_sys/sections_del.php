@@ -1,10 +1,10 @@
-<?php 
+<?php /*
 include "cksession.php";
 include "../config.php";
 include "../function.php";
 chk_account_id($_SESSION['ManUser']); //檢查帳號是否符合後,否回首頁
 chk_Power("DB_ManP_8"); //檢查是否功能權限,否回首頁
-
+*/
 ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?
