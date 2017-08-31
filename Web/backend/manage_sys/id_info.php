@@ -1,4 +1,4 @@
-<? 
+<?/* 
 include "cksession.php";
 include "../config.php";
 include "../function.php";
@@ -32,12 +32,15 @@ if( !empty($_POST['DB_ManName']) && !empty($_POST['DB_ManEmail']) ){
 	 }
 
 }
+*/
 ?>
 
 <?
 include_once ("top.php");
 ?>
 
+<html>
+<body>
 <script language="javascript">
 <!--
 function checkinput(){
