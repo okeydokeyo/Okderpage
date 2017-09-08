@@ -1,4 +1,4 @@
-<?
+<?/*
 include "cksession.php";
 include "../config.php";
 include "../function.php";
@@ -8,11 +8,15 @@ chk_Power("DB_ManP_18"); //檢查是否功能權限,否回首頁
 
 $page = (empty($_GET['page']))?1:$_GET['page']; //現在頁面
 //********************************************************************************************************
-
+*/
 //留言版管理查詢
-$sql = "select * from `message` where 1 ORDER BY `DB_MesID` DESC";	
-$return = iron_page( $sql, 10, 10, $page, 10 ); //iron分頁程式
-$result = mysql_query($sql) or die("查詢失敗");
+require_once("dbtools.inc.php");
+$link = create_connection();
+$sql = "SELECT*FROM comments WHERE pass=1 ORDER BY time DESC";
+$result = execute_sql("scsrc", $sql, $link);    
+$num_rows = mysql_num_rows($result);
+//$return = iron_page( $sql, 10, 10, $page, 10 ); //iron分頁程式
+//$result = mysql_query($sql) or die("查詢失敗");
 $number = mysql_num_rows($result); //全部資料的總數
 $url = "message_calss.php"; //本頁的網址 & 使用的 get變數
 ?>

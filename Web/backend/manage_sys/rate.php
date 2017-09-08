@@ -1,4 +1,4 @@
-<?
+<? /*
 include "cksession.php";
 include "../config.php";
 include "../function.php";
@@ -46,7 +46,7 @@ $result = mysql_query($sql) or die("查詢失敗");
 $number = mysql_num_rows($result); //全部資料的總數
 $url = "rate.php"; //本頁的網址 & 使用的 get變數
 
-$return = iron_page( $sql, 10, 10, $page, 10 ); //iron分頁程式
+$return = iron_page( $sql, 10, 10, $page, 10 ); //iron分頁程式 */
 ?>
 
 <? 

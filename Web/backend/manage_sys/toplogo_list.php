@@ -1,4 +1,4 @@
-<?
+<?/*
 include "cksession.php";
 include "../config.php";
 include "../function.php";
@@ -13,7 +13,7 @@ $sql = "select * from `logo` where 1 ORDER BY `DB_LogID` ASC";
 $return = iron_page( $sql, 10, 10, $page, 6 ); //iron分頁程式
 $result = mysql_query($sql) or die("查詢失敗");
 $number = mysql_num_rows($result); //全部資料的總數
-$url = "toplogo_list.php"; //本頁的網址 & 使用的 get變數
+$url = "toplogo_list.php"; //本頁的網址 & 使用的 get變數*/
 ?>
 
 <? 
@@ -97,22 +97,29 @@ include_once ("left_menu.php");
 		  </tr>
 		<?
 		if($return){
-		$i = 0;
-		$c = ($page - 1) * 10;
-		while( $return[$i] ){
-		$c++;
-		
-		if($return[$i]['DB_LogAnnounce']=="1"){
-		$DB_LogAnnounce="不顯示";
-		}else{
-		$DB_LogAnnounce="顯示";
+		  $i = 0;
+		  $c = ($page - 1) * 10;
+		  while( $return[$i] ){
+		      $c++;		
+		      if($return[$i]['DB_LogAnnounce']=="1"){
+		      $DB_LogAnnounce="不顯示";
+		  }
+        else{
+		  $DB_LogAnnounce="顯示";
 		}
 		?>		  
 		  <tr bgcolor="#ffffff">
-			<td align="center"><? if($return[$i]['DB_LogID']=="1"){echo "預設";}else{?><? echo iron_give_zero("2",$return[$i]['DB_LogID']);?><? }?></td>
+			<td align="center"><? 
+              if($return[$i]['DB_LogID']=="1"){
+                  echo "預設";}
+              else{
+            ?>
+            <? echo iron_give_zero("2",$return[$i]['DB_LogID']);?><? }?></td>
+              
 			<td align="left" class="text_12px_03"><? echo $return[$i]['DB_LogExp'];?></td>
 			<td align="center"><? echo $DB_LogAnnounce;?></td>
-			<td align="center">
+			
+            <td align="center">
 			  <a href="toplogo_edit.php?DB_LogID=<? echo $return[$i]['DB_LogID'];?>&page=<? echo $page;?>" class="button_02"><img src="images/icon_edit.gif" border="0" align="absmiddle" /> 編輯</a>
 			  <? if($return[$i]['DB_LogID']!="1"){?><a href="javascript:Delete(<? echo $return[$i]['DB_LogID'];?>,<? echo $page;?>);" class="button_03"><img src="images/icon_del2.gif" border="0" align="absmiddle" /> 刪除</a><? }?>
 			</td>

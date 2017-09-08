@@ -1,4 +1,4 @@
-<? 
+<? /*
 include "cksession.php";
 include "../config.php";
 include "../function.php";
@@ -24,7 +24,7 @@ if ( !empty($DB_MenID) ){
 			$UpStr = "`DB_MenContent`='$DB_MenContent',`DB_EndTime`=NOW(),`DB_EditUser`='".$_SESSION['ManUser']."'";
 			EditSql("menu","$DB_MenID","DB_MenID","bottom_info.php","修改成功!!",$UpStr);
 }
-
+*/
 ?>
 <? 
 include_once ("top.php");

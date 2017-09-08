@@ -18,11 +18,12 @@
             $category = "中心相關問題";
             break;
     }
+    $email = $_POST["email"];
     date_default_timezone_set('Asia/Taipei');   
     $current_time = date("Y-m-d H:i:s");
 
     $link = create_connection();
-    $sql = "INSERT INTO comments(name, topic, content, category, time) VALUES('$name', '$topic', '$content', '$category', '$current_time')";
+    $sql = "INSERT INTO comments(name, topic, content, category, time, email) VALUES('$name', '$topic', '$content', '$category', '$current_time', '$email')";
     $result = execute_sql("scsrc", $sql, $link);
     
     mysqli_close($link);

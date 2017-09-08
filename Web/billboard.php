@@ -25,10 +25,85 @@
                 alert("請填寫留言主旨！");
             else if($('input[name=category]:checked').length <= 0)
                 alert("請選擇留言類別！");
+            else if(document.myForm.email.value.length == 0)
+                alert("請填寫聯絡信箱！");
             else{
-                myForm.submit();
-                alert("您的留言已提交，審核後即會顯示於下方留言區");
+                showConfirmDialog("1");
             }
+        }
+        
+        function showConfirmDialog(type){
+            $(function() {
+                var w = $(window).width() * 0.5;
+                var h = $(window).height() * 0.35;
+                var dialog = $("#confirm-dialog-form").dialog({
+                    autoOpen: false,
+                    draggable: false,
+                    resizable: false,
+                    modal: true,
+                    height: h,
+                    width: w,
+                    position: { my: 'center', at: 'center'}
+                });
+                dialog.dialog( "open" );
+            });
+            
+            $('#submitMessage').click(function(){
+                if(type == "1"){
+                    if(document.getElementById("IHaveReadTheRules").checked == true){
+                        $( function(){
+                            $("#messageSuccess").dialog({
+                                modal: true,
+                                buttons: {
+                                    Ok: function() {
+                                        myForm.submit();
+                                        $( this ).dialog( "close" );
+                                    }
+                                }
+                            });
+                        }); 
+                    }
+                    else{
+                        $( function(){
+                            $("#readTheRulesFirst").dialog({
+                                modal: true,
+                                buttons: {
+                                    Ok: function() {
+                                        $( this ).dialog( "close" );
+                                    }
+                                }
+                            });
+                        });
+                    }    
+                }
+                else if(type == "2"){
+                    if(document.getElementById("IHaveReadTheRules").checked == true){
+                        $( function(){
+                            $("#replySuccess").dialog({
+                                modal: true,
+                                buttons:{
+                                    Ok: function(){
+                                        $( this ).dialog( "close" );
+                                         $("#dialog-form").submit();
+                                    }
+                                }
+                            });
+                        });
+                    }
+                    else{
+                        $( function(){
+                            $("#readTheRulesFirst").dialog({
+                                modal: true,
+                                buttons:{
+                                    Ok:function() {
+                                        $( this ).dialog( "close" );
+                                    }
+                                }
+                            });
+                        });
+                    }   
+                }
+            }); 
         }
         
         function showReply(ID_in){
@@ -62,8 +137,7 @@
                             dialog.dialog( "open" );
                         });
                         $('#sendreply_button').click(function(){
-                            $("#dialog-form").submit();
-                            alert("您的回覆已提交，審核後即會顯示於下方回覆區");
+                            showConfirmDialog("2");
                         });
         
                     }
@@ -100,6 +174,29 @@
     <form id="dialog-form" method="post" title="回覆留言" style="display:none" action="reply_post.php">
     </form>
     
+    <form id="confirm-dialog-form" title="留言板注意事項" style="display:none">
+        <p>(1)本留言版僅供留言，任何與本網頁或脊髓損傷無關的內容或宣傳活動皆會被刪除，且不會另行通知。</p>
+        <p>(2)請不要留一切有可能展開罵戰, 人身攻擊或惡意性批評任何人的留言。</p>
+        <p>(3)請勿在留言版上留粗口、污穢性及侮辱性等字眼。</p>
+        <p>(4)請清楚瀏覽本網站的資料內容後再行留言發問，本網站涵括了許多實用的資訊。</p>
+        <p>(5)如果有任何問題，可以透過寄送電子郵件至 sci@scsrc.org.tw 聯絡我們！</p>
+        <p>(6)本網保留一切刪除留言且不另行通知的權利, 敬請配合。</p>
+        <input type="checkbox" id="IHaveReadTheRules"> 我已詳讀並同意留言板使用規則<br><br>
+        <input type="button" id="submitMessage" value="提交審核留言">
+    </form>
+    
+    <div id="messageSuccess">
+        <p>您的留言已提交，審核後即會顯示於下方留言區</p>
+    </div>
+    
+    <div id="replySuccess">
+        <p>您的回覆已提交，審核後即會顯示於下方留言區</p>
+    </div>
+    
+    <div id="readTheRulesFirst">
+        <p>請確認回覆規則！</p>
+    </div>
+    
     <form name="myForm" method="post" action="billboard_post.php">
         <table width="80%" align="center" cellspacing="0" id="input_table">
             <tr>
@@ -122,7 +219,10 @@
                 </td>
             </tr>
             <tr align="right">
-                <td colspan="3">
+                <td colspan="2">
+                    <input type="text" class="form-control Input" name="email" placeholder="連絡信箱：">
+                </td>
+                <td>
                     <input type="button" value="發布" class="sendbutton" onClick="check_data()">
                 </td>
             </tr>

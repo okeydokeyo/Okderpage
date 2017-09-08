@@ -1,4 +1,4 @@
-<?
+<? /*
 include "cksession.php";
 include "../config.php";
 include "../function.php";
@@ -14,7 +14,7 @@ $sql = "select * from `left_tags` where 1 ORDER BY `DB_LefTagSort` ASC";
 $return = iron_page( $sql, 1000, 10, $page, 10 ); //iron分頁程式
 $result = mysql_query($sql) or die("查詢失敗let");
 $number = mysql_num_rows($result); //全部資料的總數
-$url = "indexleft_calss.php"; //本頁的網址 & 使用的 get變數
+$url = "indexleft_calss.php"; //本頁的網址 & 使用的 get變數*/
 ?>
 <? 
 include_once ("top.php");
