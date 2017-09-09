@@ -9,7 +9,7 @@ $id = $_GET['DB_MesID'];  //主鍵
 
 if($id!=""){
 
-	$row = SoloSql('message',"`DB_MesID`='$id'");
+	$row = SoloSql('comments',"`DB_MesID`='$id'");
 
 	//紀錄使用者資訊	
 	$UpStr="`DB_RecUser`,`DB_RecIp`,`DB_RecSubject`,`DB_RecAccess`,`DB_RecAction`,`DB_RecTime`";
@@ -17,11 +17,9 @@ if($id!=""){
 	Recording_Add("recording",$UpStr,$UpStr2);
     
 	//刪除留言版管理者回覆
-	mysql_query("delete from `message_adback` where `DB_MesID`='$id'");
-	//刪除留言版回應
-    mysql_query("delete from `message_back` where `DB_MesID`='$id'");
+	mysql_query("delete from `comments_reply` where `DB_MesID`='$id'");
 	//留言版管理
-  	DelSql("message",$id,"DB_MesID","message_calss.php?page=".$_GET['page']."");
+  	DelSql("comments",$id,"DB_MesID","message_calss.php?page=".$_GET['page']."");
 }	  
 ?>
 

@@ -13,7 +13,7 @@ $page = (empty($_GET['page']))?1:$_GET['page']; //現在頁面
 //********************************************************************************************************
 
 //留言版回應查詢
-$sql = "select * from `message_back` where `DB_MesID`='".$_GET['DB_MesID']."' ORDER BY `DB_MbkID` DESC";	
+$sql = "select * from `comments_reply` where `DB_MesID`='".$_GET['DB_MesID']."' ORDER BY `DB_MadTime` DESC";	
 $return = iron_page( $sql, 10, 10, $page, 10 ); //iron分頁程式
 $result = mysql_query($sql) or die("查詢失敗");
 $number = mysql_num_rows($result); //全部資料的總數
@@ -22,6 +22,13 @@ $url = "message_list.php"; //本頁的網址 & 使用的 get變數
 <? 
 include_once ("top.php");
 ?>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script language="javascript">
 <!--
 //換頁Script
@@ -30,10 +37,53 @@ function GoPage(page){
 }
 //選擇是否刪除
 function  Delete(id,page){
-if ( confirm("是否刪除此筆紀錄") ){
-    location.href='message_del.php?chkdel=YES&DB_MbkID='+id+'&pg=<? echo $_GET['pg'];?>&page='+page;
+    if ( confirm("是否刪除此筆紀錄") ){
+        location.href='message_del.php?chkdel=YES&DB_MadID='+id+'&pg=<? echo $_GET['pg'];?>&page='+page;
+    }
 }
-}
+function review(id){
+        $(function() {
+            $( "#comment_review" ).dialog({
+                resizable: false,
+                height: "auto",
+                width: 500,
+                modal: true,
+                buttons: {
+                    確認審核通過: function() {
+                        $.ajax({
+                            method: "GET",
+                            url: "reply_pass.php",
+                            data:{DB_MadID:id, passNum:1},
+                            success: function(data){
+                                $("#comment_pass").dialog( "close" );
+                                location.reload();
+                            },
+                            error: function(ts) {
+                                alert(ts.responseText);
+                            }
+                        }); 
+                    },
+                    確認審核未過: function() {
+                        $.ajax({
+                            method: "GET",
+                            url: "reply_pass.php",
+                            data:{DB_MadID:id, passNum:0},
+                            success: function(data){
+                                $("#comment_pass").dialog( "close" );
+                                location.reload();
+                            },
+                            error: function(ts) {
+                                alert(ts.responseText);
+                            }
+                        }); 
+                    },
+                    取消: function() {
+                        $( this ).dialog( "close" );
+                    }
+                }
+            });
+        });
+    }
 -->
 </script>
 <!--top_end-->
@@ -47,6 +97,12 @@ include_once ("left_menu.php");
 <!--menu_end-->
 	</td>
     <td width="752" align="left" valign="top">
+        
+    <div id="comment_review" title="審核回覆" style="display: none;">
+        <p>提醒：審核通過後即會公開顯示</p> 
+        <p>提醒：審核確認後即無法修改，僅能刪除審核通過之留言</p> 
+    </div>
+        
 	<table border="0" cellspacing="0" cellpadding="0">
 	  <tr>
 		<td align="left" valign="middle"><img src="images/gray_01.gif" width="10" height="20" /></td>
@@ -96,7 +152,7 @@ include_once ("left_menu.php");
 		$i = 0;
 		while( $return[$i] ){
 		
-		    $MbTi = explode(" ",$return[$i]['DB_MbkTime']);   //解析回應時間
+		    $MbTi = explode(" ",$return[$i]['DB_MadTime']);   //解析回應時間
 			
 			//計算回應排序
 			if ($number > 10){
@@ -109,11 +165,21 @@ include_once ("left_menu.php");
 			<td align="center" valign="top" class="text_12px_03"><? echo $sn;?></td>
 			<td align="left" valign="top"><span class="text_12px_04"><? echo $MbTi[0];?></span><br />
 			  <? echo $MbTi[1];?></td>
-			<td align="left" valign="top" class="text_12px_03" style="word-break:break-all;"><? echo $return[$i]['DB_MbkName'];?></td>
+			<td align="left" valign="top" class="text_12px_03" style="word-break:break-all;"><? echo $return[$i]['reply_name'];?></td>
 			<td align="left" valign="top" style="word-break:break-all;">
-			<? echo nl2br($return[$i]['DB_MbkContent']);?>
+			<? echo nl2br($return[$i]['DB_MadBack']);?>
 			</td>
-			<td align="center"><a href="javascript:Delete(<? echo $return[$i]['DB_MbkID'];?>,<? echo $page;?>);" class="button_03"><img src="images/icon_del2.gif" border="0" align="absmiddle" /> 刪除</a></td>
+			<td align="center">
+                <?php
+                    $pass = $return[$i]['pass'];
+                    if($pass == -1){      
+                        echo '<input type="submit" class="button_02" onClick="review('.$return[$i]['DB_MadID'].')" value="審核"> <br>';
+                    }
+                    else{
+                        echo "<span class='state_del'>回覆已審核</span>";
+                    }
+                ?>
+                <a href="javascript:Delete(<? echo $return[$i]['DB_MadID'];?>,<? echo $page;?>);" class="button_03"><img src="images/icon_del2.gif" border="0" align="absmiddle" /> 刪除</a></td>
 		  </tr>
 		<?
 		   $i++;

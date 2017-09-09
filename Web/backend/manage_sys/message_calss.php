@@ -20,9 +20,6 @@ $url = "message_calss.php"; //本頁的網址 & 使用的 get變數
 <? 
 include_once ("top.php");
 ?>
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     
@@ -44,49 +41,63 @@ include_once ("top.php");
         }
         
         function Message_Pass(id){
-            if(id == -1){
-                $( function() {
+            $( function() {
+                $( "#comment_pass" ).dialog({
+                    resizable: false,
+                    height: "auto",
+                    width: 400,
+                    modal: true,
+                    buttons: {
+                        確認審核通過: function() {
+                            $.ajax({
+                                method: "GET",
+                                url: "message_pass.php",
+                                data:{DB_MesID:id, passNum:1},
+                                success: function(data){
+                                    $("#comment_pass").dialog( "close" );
+                                    location.reload();
+                                },
+                                error: function(ts) {
+                                    alert(ts.responseText);
+                                }
+                            }); 
+                        },
+                        取消: function() {
+                          $( this ).dialog( "close" );
+                        }
+                    }
+                    });
+                  } );
+        }
+    
+        function Message_noPass(id){
+            $( function() {
                     $( "#comment_nopass" ).dialog({
-                      resizable: false,
+                       resizable: false,
                       height: "auto",
                       width: 400,
                       modal: true,
                       buttons: {
                         確認審核未過: function() {
-                          $( this ).dialog( "close" );
-                        },
-                        取消: function() {
-                          $( this ).dialog( "close" );
-                        }
-                      }
-                    });
-                  } );
-            }
-            else{
-                $( function() {
-                    $( "#comment_pass" ).dialog({
-                      resizable: false,
-                      height: "auto",
-                      width: 400,
-                      modal: true,
-                      buttons: {
-                        確認審核通過: function() {
                             $.ajax({
-                                type: 'POST',
+                                method: "GET",
                                 url: "message_pass.php",
-                                data:{id:id},
-                                success: function() {
-                                    $( this ).dialog( "close" );
+                                data:{DB_MesID:id, passNum:0},
+                                success: function(data){
+                                    $("#comment_nopass").dialog( "close" );
+                                    location.reload();
+                                },
+                                error: function(ts) {
+                                    alert(ts.responseText);
                                 }
-                            });
+                            }); 
                         },
                         取消: function() {
                           $( this ).dialog( "close" );
                         }
                       }
                     });
-                  } );
-            }
+                  } );  
         }
     -->
 </script>
@@ -149,9 +160,9 @@ include_once ("top.php");
 		  <tr bgcolor="#f1f1f1">
               <td width="8%" align="center">留言編號</td>
               <td width="12%" align="center">日 期</td>
-              <td width="36%" align="center">標 題 (請點選標題文字進入管理回應)</td>
+              <td width="36%" align="center">標 題 (請點選標題文字進入回應審核及管理)</td>
               <td width="10%" align="center">留言者</td>
-              <td width="8%" align="center">審核</td>
+              <td width="8%" align="center">留言審核</td>
               <td width="8%" align="center">回覆數</td>
               <td width="18%" align="center">功 能</td>
 		  </tr>
@@ -182,8 +193,16 @@ include_once ("top.php");
                     <? echo $return[$i]['DB_MesName'];?>
                 </td>
                 <td align="center">
-                        <input type="submit" onClick="Message_Pass(<?echo $return[$i]['DB_MesID'];?>)" value="審核通過">
-                        <input type="submit" onClick="Message_Pass(-1)" value="審核不通過">
+                    <?php
+                    $pass = $return[$i]['pass'];
+                    if($pass == -1){      
+                        echo '<input type="submit" onClick="Message_Pass('.$return[$i]['DB_MesID'].')" value="審核通過">
+                            <input type="submit" onClick="Message_noPass('.$return[$i]['DB_MesID'].')" value="審核不通過">';
+                    }
+                    else{
+                        echo "<span class='state_del'>已審核</span>";
+                    }
+                    ?>
                 </td>
                 <td align="center" class="state_del">
                     <? 
@@ -197,8 +216,9 @@ include_once ("top.php");
                 </td>
                 <td align="center">
                     <a href="message_calssReply.php?DB_MesID=<? echo $return[$i]['DB_MesID'];?>&page=<? echo $page;?>" class="button_02">
-                        <img src="images/icon_massage2.gif" border="0" align="absmiddle" /> 回覆
+                        <img src="images/icon_massage2.gif" border="0" align="absmiddle" /> 查看留言/進行回覆
                     </a>&nbsp;
+                    <br>
                     <a href="javascript:Delete(<? echo $return[$i]['DB_MesID'];?>,<? echo $page;?>);" class="button_03">
                         <img src="images/icon_del2.gif" border="0" align="absmiddle" /> 刪除
                     </a>

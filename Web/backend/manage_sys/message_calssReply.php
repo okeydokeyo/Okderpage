@@ -17,9 +17,9 @@ $DB_MadBack = ereg_replace("'","\'",$_POST['DB_MadBack']);
 
 if( !empty($DB_MadBack) ){
 					//新增
-					$UpStr = "`DB_MesID`,`DB_MadTime`,`DB_MadBack`";
-					$UpStr2 = "'$MesID',NOW(),'$DB_MadBack'";
-					AddSql("message_adback","message_calss.php?page=".$_POST['page']."","回覆成功!!",$UpStr,$UpStr2);
+					$UpStr = "`DB_MesID`,`DB_MadTime`,`DB_MadBack`, `reply_name`, `pass`";
+					$UpStr2 = "'$MesID',NOW(),'$DB_MadBack', '管理員', '1'";
+					AddSql("comments_reply","message_calss.php?page=".$_POST['page']."","回覆成功!!",$UpStr,$UpStr2);
 			
 					//紀錄使用者資訊	
 					$UpStr="`DB_RecUser`,`DB_RecIp`,`DB_RecSubject`,`DB_RecAccess`,`DB_RecAction`,`DB_RecTime`";
@@ -125,18 +125,30 @@ include_once ("left_menu.php");
 			<td align="left" valign="top" class="border_02">
 <?
        //留言版管理者回覆
-       $mAbk_result = mysql_query("select * from `message_adback` where `DB_MesID`='".$ary['DB_MesID']."' ORDER BY `DB_MadID` DESC") or die("mabk");
+       $mAbk_result = mysql_query("select * from `comments_reply` where `DB_MesID`='".$ary['DB_MesID']."' ORDER BY `DB_MadID` DESC") or die("mabk");
 	   $mAbk_num = mysql_num_rows($mAbk_result);
 	   
 	   for ($a1=1 ;$a1<=$mAbk_ary = mysql_fetch_array($mAbk_result) ;$a1++){
 	          
 			  $MaTi = explode(" ",$mAbk_ary['DB_MadTime']); //解析管理者回復時間			  
 ?>			  
-			  回覆 <font color="red"><? if ($mAbk_num > 1){echo $mAbk_num-($a1-1);}else{echo $mAbk_num;}?></font> 於 <span class="text_12px_04"><? echo $MaTi[0];?></span>　<? echo $MaTi[1];?><br />
-			    <div style="background-color:#f1f1f2; padding:5px;word-break:break-all;"><? echo ereg_replace("<br />","<p>",nl2br($mAbk_ary['DB_MadBack']));?></div>
+			  回覆 <font color="red">
+            <?php 
+                if ($mAbk_num > 1){
+                    echo $mAbk_num-($a1-1);
+                }
+                else{
+                    echo $mAbk_num;
+                }
+            ?></font> 於 
+                <span class="text_12px_04"><? echo $MaTi[0];?></span>　
+                <? echo $MaTi[1];?><br />
+                <div style="background-color:#f1f1f2; padding:5px;word-break:break-all;">
+                    <? echo ereg_replace("<br />","<p>",nl2br($mAbk_ary['DB_MadBack']));?>
+                </div>
 				<br />
 <?     } ?>					
-			  回覆 <font color="red"><? echo $mAbk_num+1;?></font> 於 <span class="text_12px_04"><? echo date("Y-m-d");?></span>　<? echo date("H:i:s");?>  
+			  回覆 <font color="red"><? echo $mAbk_num+1;?></font>
 			  <textarea name="DB_MadBack" cols="100" rows="10" class="text_12px_01" id=""></textarea>
 			  <input type="hidden" name="MesID" value="<? echo $_GET['DB_MesID'];?>" />
 			  <input type="hidden" name="DB_MesSubject" value="<? echo $ary['DB_MesSubject'];?>" />

@@ -25,10 +25,6 @@
 <body>
     <?php
         $q = intval($_GET['q']);
-        ?>
-    <p><?php echo "$q";?></p>
-    
-    <?php
         require_once("dbtools.inc.php");
         $link = create_connection();
         $sql = "SELECT*FROM comments WHERE DB_MesID='".$q."'";
@@ -66,7 +62,7 @@
             </tr>
             </table>'; 
     
-        $reply_sql = "SELECT*FROM comments_reply WHERE DB_MesID=".$q."";
+        $reply_sql = "SELECT*FROM comments_reply WHERE DB_MesID=".$q." AND pass=1 ";
         $reply_result = execute_sql("scsrc2", $reply_sql, $link); 
         $num_rows = mysql_num_rows($reply_result);
         $i=0;
