@@ -5,7 +5,7 @@
 
     chk_IP($_SERVER['REMOTE_ADDR']); //針對某人封鎖IP
     chk_all($_POST['id']);           //檢查是否有特殊字元
-    //chk_all($_POST['passwd']);       //檢查是否有特殊字元
+    chk_all($_POST['passwd']);       //檢查是否有特殊字元
 
     $DB_ManUser = $_POST['id'];
     $DB_ManPwd=md5($_POST['passwd']);

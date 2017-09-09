@@ -25,10 +25,14 @@
 <body>
     <?php
         $q = intval($_GET['q']);
+        ?>
+    <p><?php echo "$q";?></p>
+    
+    <?php
         require_once("dbtools.inc.php");
         $link = create_connection();
-        $sql = "SELECT*FROM comments WHERE ID='".$q."'";
-        $comment_result = execute_sql("scsrc", $sql, $link); 
+        $sql = "SELECT*FROM comments WHERE DB_MesID='".$q."'";
+        $comment_result = execute_sql("scsrc2", $sql, $link); 
         $ID = mysql_result($comment_result,0,0);
         $name = mysql_result($comment_result,0,2);
         $topic = mysql_result($comment_result,0,3);
@@ -62,8 +66,8 @@
             </tr>
             </table>'; 
     
-        $reply_sql = "SELECT*FROM comments_reply WHERE comment_num=".$q."";
-        $reply_result = execute_sql("scsrc", $reply_sql, $link); 
+        $reply_sql = "SELECT*FROM comments_reply WHERE DB_MesID=".$q."";
+        $reply_result = execute_sql("scsrc2", $reply_sql, $link); 
         $num_rows = mysql_num_rows($reply_result);
         $i=0;
         while($i<$num_rows){

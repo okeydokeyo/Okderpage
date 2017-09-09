@@ -33,7 +33,7 @@
         }
         
         function showConfirmDialog(type){
-            $(function() {
+            $(function(){
                 var w = $(window).width() * 0.5;
                 var h = $(window).height() * 0.35;
                 var dialog = $("#confirm-dialog-form").dialog({
@@ -47,24 +47,23 @@
                 });
                 dialog.dialog( "open" );
             });
-            
             $('#submitMessage').click(function(){
                 if(type == "1"){
                     if(document.getElementById("IHaveReadTheRules").checked == true){
-                        $( function(){
+                        $(function(){
                             $("#messageSuccess").dialog({
                                 modal: true,
-                                buttons: {
-                                    Ok: function() {
+                                buttons:{
+                                    Ok:function(){
                                         myForm.submit();
-                                        $( this ).dialog( "close" );
+                                        $(this).dialog("close");
                                     }
                                 }
                             });
                         }); 
                     }
                     else{
-                        $( function(){
+                        $(function(){
                             $("#readTheRulesFirst").dialog({
                                 modal: true,
                                 buttons: {
@@ -139,7 +138,6 @@
                         $('#sendreply_button').click(function(){
                             showConfirmDialog("2");
                         });
-        
                     }
                 };
                 xmlhttp.open("GET","dialog.php?q="+ID_in,true);
@@ -232,8 +230,8 @@
     <div class="myDiv">
         <ul>
             <?php
-            $sql = "SELECT*FROM comments WHERE pass=1 ORDER BY time DESC";
-            $result = execute_sql("scsrc", $sql, $link);    
+            $sql = "SELECT*FROM comments WHERE pass=1 ORDER BY DB_MesTime DESC";
+            $result = execute_sql("scsrc2", $sql, $link);    
             $num_rows = mysql_num_rows($result);
             class Message{
                 var $ID, $category, $topic, $name, $current_time, $content;

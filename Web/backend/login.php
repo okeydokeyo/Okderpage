@@ -75,7 +75,7 @@ function checkinput(){
                                          <input name="id" type="text" class="text_13px_01"  size="20" />&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
                                      密碼 / PW&nbsp;
                                     <input name="passwd" type="password" class="text_13px_01" size="20" />
-                                </div><br />
+                                </div><br/>
                                 <a href="javascript:document.form1.submit();" onclick="return checkinput();" onkeypress="return checkinput();" class="link_03">
                                      <img src="images/login.gif" alt="登入" width="69" height="28" border="0" />
                                 </a>

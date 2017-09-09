@@ -10,8 +10,8 @@
     $current_time = date("Y-m-d H:i:s");
     
     $link = create_connection();
-    $sql = "INSERT INTO comments_reply(comment_num, reply_name, reply_content, reply_time) VALUES('$ReplyID', '$name', '$content', '$current_time')";
-    $result = execute_sql("scsrc", $sql, $link);
+    $sql = "INSERT INTO comments_reply(DB_MesID, reply_name, DB_MadBack, DB_MadTime) VALUES('$ReplyID', '$name', '$content', '$current_time')";
+    $result = execute_sql("scsrc2", $sql, $link);
     mysql_close($link);
     header("location:billboard.php");
     exit(); 

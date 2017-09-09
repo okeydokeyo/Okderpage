@@ -1,13 +1,13 @@
 <?
-    if(empty($_SERVER["HTTPS"])) {
+    /*if(empty($_SERVER["HTTPS"])) {
         $https = "https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         header("Location:".$https);
         exit();
-    }
+    }*/
     $host="localhost";    //主機名稱
     $user="root";         //登入者帳號
     $password="okderrr";     //登入者密碼 
-    $selectdb="scsrc";   //資料庫名稱
+    $selectdb="scsrc2";   //資料庫名稱
     //連結資料庫
     mysql_connect($host,$user,$password) or die("資料庫無法連線") ;
     mysql_select_db($selectdb);
@@ -24,7 +24,7 @@
 
     //session_register('http_url');
 
-    //$url_file="/ioth";
+    $url_file="/ioth";
 
     /****************************************************
     功能：得知使用者的所有資訊
@@ -59,5 +59,5 @@
     }
 ?>
 <? 
-    $userauth = get_user_info( $_SESSION['ManUser'] ); 
+    //$userauth = get_user_info( $_SESSION['ManUser'] ); 
 ?>

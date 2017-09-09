@@ -6,7 +6,7 @@ chk_account_id($_SESSION['ManUser']); //檢查帳號是否符合後,否回首頁
 chk_Power("DB_ManP_18"); //檢查是否功能權限,否回首頁
 
 //留言版管理查詢
-$ary = SoloSql("message","`DB_MesID`='".$_GET['DB_MesID']."'");
+$ary = SoloSql("comments","`DB_MesID`='".$_GET['DB_MesID']."'");
 
 
 $page = (empty($_GET['page']))?1:$_GET['page']; //現在頁面

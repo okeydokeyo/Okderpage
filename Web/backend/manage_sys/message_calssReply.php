@@ -8,7 +8,7 @@ chk_Power("DB_ManP_18"); //檢查是否功能權限,否回首頁
 
 
 //留言版管理查詢
-$ary = SoloSql("message","`DB_MesID`='".$_GET['DB_MesID']."'");
+$ary = SoloSql("comments","`DB_MesID`='".$_GET['DB_MesID']."'");
 
 $MesID = $_POST['MesID'];
 $DB_MesSubject = ereg_replace("'","\'",$_POST['DB_MesSubject']);
@@ -16,7 +16,6 @@ $DB_MadBack = ereg_replace("'","\'",$_POST['DB_MadBack']);
 
 
 if( !empty($DB_MadBack) ){
-
 					//新增
 					$UpStr = "`DB_MesID`,`DB_MadTime`,`DB_MadBack`";
 					$UpStr2 = "'$MesID',NOW(),'$DB_MadBack'";

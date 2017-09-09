@@ -23,8 +23,8 @@
     $current_time = date("Y-m-d H:i:s");
 
     $link = create_connection();
-    $sql = "INSERT INTO comments(name, topic, content, category, time, email) VALUES('$name', '$topic', '$content', '$category', '$current_time', '$email')";
-    $result = execute_sql("scsrc", $sql, $link);
+    $sql = "INSERT INTO comments(DB_MesName, DB_MesSubject, DB_MesContent, category, DB_MesTime, DB_MesEmail) VALUES('$name', '$topic', '$content', '$category', '$current_time', '$email')";
+    $result = execute_sql("scsrc2", $sql, $link);
     
     mysqli_close($link);
     header("location:billboard.php");
