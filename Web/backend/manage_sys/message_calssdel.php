@@ -16,8 +16,6 @@ if($id!=""){
 	$UpStr2="'".$_SESSION['ManUser']."','".$_SERVER['REMOTE_ADDR']."','留言版','".ereg_replace("'","\'",$row['DB_MesSubject'])."','del',NOW()";
 	Recording_Add("recording",$UpStr,$UpStr2);
     
-	//刪除留言版管理者回覆
-	mysql_query("delete from `comments_reply` where `DB_MesID`='$id'");
 	//留言版管理
   	DelSql("comments",$id,"DB_MesID","message_calss.php?page=".$_GET['page']."");
 }	  

@@ -175,8 +175,11 @@ include_once ("left_menu.php");
                     if($pass == -1){      
                         echo '<input type="submit" class="button_02" onClick="review('.$return[$i]['DB_MadID'].')" value="審核"> <br>';
                     }
-                    else{
-                        echo "<span class='state_del'>回覆已審核</span>";
+                    else if($pass == 1){
+                        echo "<span class='state_del'>審核通過</span>";
+                    }
+                    else if($pass == 0){
+                        echo "<span class='state_del'>審核未通過</span>";
                     }
                 ?>
                 <a href="javascript:Delete(<? echo $return[$i]['DB_MadID'];?>,<? echo $page;?>);" class="button_03"><img src="images/icon_del2.gif" border="0" align="absmiddle" /> 刪除</a></td>

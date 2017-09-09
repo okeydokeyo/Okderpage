@@ -199,8 +199,11 @@ include_once ("top.php");
                         echo '<input type="submit" onClick="Message_Pass('.$return[$i]['DB_MesID'].')" value="審核通過">
                             <input type="submit" onClick="Message_noPass('.$return[$i]['DB_MesID'].')" value="審核不通過">';
                     }
-                    else{
-                        echo "<span class='state_del'>已審核</span>";
+                    else if($pass == 1){
+                        echo "<span class='state_del'>審核通過</span>";
+                    }
+                    else if($pass == 0){
+                        echo "<span class='state_del'>審核未通過</span>";
                     }
                     ?>
                 </td>

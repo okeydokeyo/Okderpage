@@ -9,11 +9,11 @@ $id = $_GET['DB_MadID'];  //主鍵
 
 if($id!=""){
 
-	$row = SoloSql('comments_reply',"`DB_MbkID`='$id'");
+	$row = SoloSql('comments_reply',"`DB_MadID`='$id'");
 
 	//紀錄使用者資訊	
 	$UpStr="`DB_RecUser`,`DB_RecIp`,`DB_RecSubject`,`DB_RecAccess`,`DB_RecAction`,`DB_RecTime`";
-	$UpStr2="'".$_SESSION['ManUser']."','".$_SERVER['REMOTE_ADDR']."','留言版-回應列表','".ereg_replace("'","\'",$row['DB_MbkName'])."','del',NOW()";
+	$UpStr2="'".$_SESSION['ManUser']."','".$_SERVER['REMOTE_ADDR']."','留言版-回應列表','".ereg_replace("'","\'",$row['DB_MadName'])."','del',NOW()";
 	Recording_Add("recording",$UpStr,$UpStr2);
 
 	//刪除留言版回應
