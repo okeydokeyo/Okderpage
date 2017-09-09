@@ -20,22 +20,39 @@
     ?>
 </header>
 
-<select name="mag" onChange="">
-    <option value="mag">-請選擇-</option>
-    <option value="mag1">第一期</option>
-    <option value="mag2">第二期</option>
-    <option value="mag3">第三期</option>
-    <option value="mag4">第四期</option>
-    <option value="mag5">第五期</option>
-    <option value="mag6">第六期</option>
-    <option value="mag7">第七期</option>
-    <option value="mag8">第八期</option>
-    <option value="mag9">第九期</option>
-    <option value="mag10">第十期</option>
-</select>
 
     
-    
+<form name="form1" method="get" action="news.php">
+    <select name="mag" onchange="window.location='news.php?mag='+this.value">
+        <option value="">-請選擇-</option>
+        <option value="1">友善新世界</option>
+        <option value="2">超人之友</option>
+        <option value="3">服務成果報告書</option>
+    </select>
+
+    <?php
+        require_once("dbtools.inc.php");
+        $link = create_connection();
+        $sql = "SELECT*FROM ordi WHERE DB_OrdBasis='3' AND pass=1 ORDER BY time DESC";
+        $result = execute_sql("scsrc2", $sql, $link);    
+        $num_rows = mysql_num_rows($result);
+        
+        if(@$_GET["mag"]==1)
+        {
+            echo '<h1>友善新世界</h1>';
+        }
+        else if(@$_GET["mag"]==2)
+        {
+            
+        }
+        else if(@$_GET["mag"]==3)
+        {
+
+        }
+    ?>
+</form>
+
+
 <footer>
     <?php
     include("footer.php");

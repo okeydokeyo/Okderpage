@@ -84,7 +84,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myBottomNavBar">
                     <ul class="nav navbar-nav navbar-right b" id="bottom-list">
-                        <li class="active"><a href="#">
+                        <li class="active"><a href="news.php">
                             友善新世界雜誌<span class="sr-only">(current)
                             </span></a>
                         </li>
