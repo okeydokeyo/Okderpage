@@ -35,6 +35,7 @@
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
+    
     <div class="carousel-inner">
         <div class="item active">
             <img src="images/Banner-01.jpg">
@@ -52,8 +53,26 @@
     </a></div>
 </div>
   <div class="box-b">
-		  	  	  <table width="100%" border="0" cellspacing="0" cellpadding="0" id="margin_01" summary="<? echo $Inter_ary['DB_IntSubject'];?>文字表格">
-		   <?		   
+<?php 
+error_reporting(E_ALL ^ E_DEPRECATED);
+include "config.php";
+include "function.php";
+?>
+<?php
+if(isset($_GET['show']))  $show=$_GET['show']; 
+else $show =  '0' ;
+?>
+<?php
+		$Inter_result = mysql_query("select * from `inter` ORDER BY `DB_IntSort` ASC") or die("查詢失敗n3");
+		while ($Inter_ary = mysql_fetch_array($Inter_result)){
+		?>
+		<?php
+		if($Inter_ary['DB_IntBasis']=="1"){
+		      $ordt_result = mysql_query("select * from `ordi_tags` where `DB_OrdTagID`='".$Inter_ary['DB_IntNumID']."' && `DB_OrdTagAnnounce`='0'") or die("查詢失敗b1");
+		      $ordt_ary = mysql_fetch_array($ordt_result);
+		?>  
+	  <table width="100%" border="0" cellspacing="0" cellpadding="0" id="margin_01" summary="<?php echo $Inter_ary['DB_IntSubject'];?>文字表格">
+		   <?php		   
 		   //查詢條例式訊息管理資料
 		   $time = date("Y-m-d"); //時間
 		   $Ordi_result = mysql_query("select * from `ordi` where `DB_OrdTagID`='".$Inter_ary['DB_IntNumID']."' && `DB_OrdAnnounce`='0' && (`DB_OrdStart_Time`<='$time' && `DB_OrdEnd_Time`>='$time' || `DB_OrdPermanent`='1')  ORDER BY `DB_OrdTime` DESC LIMIT 0,".$Inter_ary['DB_IntOrdi']."");
@@ -80,14 +99,18 @@
 		   ?>
 		<tr>
 		  <td width="1%" align="center" valign="top" id="padding_07" class="border_02"><img src="images/icon_point.gif" alt="*" width="3" height="3" /></td>
-		  <td width="12%" align="left" valign="top" class="text_12px_06 border_02"><? echo $Ordi_ary['DB_OrdTime'];?></td>
-		  <td align="left" valign="middle" class="border_02"><a href="<? echo $newClass;?>" class="link_03" title="<? echo $newName;?>" <? echo $newOpen;?>><? echo $Ordi_ary['DB_OrdSubject'];?></a></td>
+		  <td width="12%" align="left" valign="top" class="text_12px_06 border_02"><?php echo $Ordi_ary['DB_OrdTime'];?></td>
+		  <td align="left" valign="middle" class="border_02"><a href="<?php echo $newClass;?>" class="link_03" title="<?php echo $newName;?>" <?php echo $newOpen;?>><?php echo $Ordi_ary['DB_OrdSubject'];?></a></td>
 		</tr>
 		<tr>
 		  <td colspan="3" class="h5"></td>
 		</tr>
-		  <? }}?>
+		  <?php }}?>
 	  </table>
+	  <br />
+		<?php }?>
+
+		<?php }?>
 		  	  
 		  	  </div>
     </div>
@@ -154,12 +177,10 @@
 	</a>
 </div>
     
-<footer>
     <?php
     include("footer.php");
     ?>
-</footer>
-    
+
 
 <script src="http://download.arefly.com/chinese_convert.js"></script>
 <script>
