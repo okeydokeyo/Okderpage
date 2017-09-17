@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機: localhost:3306
--- 產生時間： 2017 年 09 月 09 日 17:28
+-- 產生時間： 2017 年 09 月 10 日 06:40
 -- 伺服器版本: 5.6.35
 -- PHP 版本： 5.5.38
 
@@ -44,7 +44,10 @@ CREATE TABLE `comments` (
 INSERT INTO `comments` (`DB_MesID`, `DB_MesContent`, `DB_MesName`, `DB_MesSubject`, `category`, `DB_MesTime`, `DB_MesEmail`, `pass`) VALUES
 (49, 'AAA', 'AAA', 'AAA', '捐款', '2017-09-08 18:11:54', 'AAA', 1),
 (50, 'BBB', 'BBB', 'BBBB', '捐款', '2017-09-09 16:10:03', 'BBB', 1),
-(51, 'CCC', 'CCC', 'CCC', '通報', '2017-09-09 21:13:10', 'CCC', 1);
+(51, 'CCC', 'CCC', 'CCC', '通報', '2017-09-09 21:13:10', 'CCC', 1),
+(57, 'DDD', 'DDD', 'DDD', '脊髓損傷', '2017-09-10 12:15:36', 'DDD', 1),
+(58, 'EEE', 'EEE', 'EEE', '中心相關問題', '2017-09-10 12:15:46', 'EEE', 1),
+(59, 'FFF', 'FFF', 'FFF', '捐款', '2017-09-10 12:26:48', 'FFF', 0);
 
 --
 -- 已匯出資料表的索引
@@ -64,7 +67,7 @@ ALTER TABLE `comments`
 -- 使用資料表 AUTO_INCREMENT `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `DB_MesID` int(12) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `DB_MesID` int(12) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -2,7 +2,7 @@
 //include "cksession.php";
 //include "../config.php";
 //include "../function.php";
-/*chk_account_id($_SESSION['ManUser']); //檢查帳號是否符合後,否回首頁
+chk_account_id($_SESSION['ManUser']); //檢查帳號是否符合後,否回首頁
 chk_Power("DB_ManP_8"); //檢查是否功能權限,否回首頁
 
 $DB_OrdTagID=$_GET['DB_OrdTagID'];
@@ -10,14 +10,13 @@ $arry1=SoloSql("ordi_tags"," `DB_OrdTagID`='$DB_OrdTagID'");
 
 
 $page = (empty($_GET['page']))?1:$_GET['page']; //現在頁面
-//********************************************************************************************************
 
 //條列式訊息管理查詢
 $sql = "select * from `ordi` where `DB_OrdTagID`='$DB_OrdTagID' ORDER BY `DB_OrdTime` DESC";	
 $return = iron_page( $sql, 10, 10, $page, 10 ); //iron分頁程式
 $result = mysql_query($sql) or die("查詢失敗");
 $number = mysql_num_rows($result); //全部資料的總數
-$url = "sections_list.php"; //本頁的網址 & 使用的 get變數*/
+$url = "sections_list.php"; //本頁的網址 & 使用的 get變數
 ?>
 <? 
 include_once ("top.php");
@@ -74,7 +73,8 @@ include_once ("left_menu.php");
 			<option value="c" >中文</option>
 			<option value="e" >英文</option>
 	      </select>-->
-		  <a href="sections_calss.php" class="button_04">◎回標籤列表</a>&nbsp;<a href="sections_add.php?DB_OrdTagID=<? echo $DB_OrdTagID;?>" class="button_04">◎新增資料</a></div></td>
+		  <a href="sections_calss.php" class="button_04">◎回標籤列表</a>&nbsp;
+            <a href="sections_add.php?DB_OrdTagID=<? echo $DB_OrdTagID;?>" class="button_04">◎新增資料</a></div></td>
 	  </tr>
 	</table>
 	<table width="752" border="0" cellspacing="0" cellpadding="0">

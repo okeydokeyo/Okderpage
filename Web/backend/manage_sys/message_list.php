@@ -83,7 +83,7 @@ function review(id){
                 }
             });
         });
-    }
+}
 -->
 </script>
 <!--top_end-->
@@ -100,7 +100,7 @@ include_once ("left_menu.php");
         
     <div id="comment_review" title="審核回覆" style="display: none;">
         <p>提醒：審核通過後即會公開顯示</p> 
-        <p>提醒：審核確認後即無法修改，僅能刪除審核通過之留言</p> 
+        <p>提醒：審核確認後只能刪除留言，無法將審核未過之留言改為通過</p> 
     </div>
         
 	<table border="0" cellspacing="0" cellpadding="0">

@@ -31,6 +31,13 @@
         $comment_result = execute_sql("scsrc2", $sql, $link); 
         $ID = mysql_result($comment_result,0,0);
         $name = mysql_result($comment_result,0,2);
+        $name_style;
+        if(mb_strlen($name, 'utf-8')>5){
+            $name_style = "name_style_2";
+        }
+        else{
+            $name_style = "name_style_1";
+        }
         $topic = mysql_result($comment_result,0,3);
         $content = mysql_result($comment_result,0,1);
         echo '
@@ -38,7 +45,7 @@
             <table width="80%" align="center" cellspacing="0" border=0>
             <tr>
                 <td colspan="1">
-                    <label class="name_label">'.$name.'</label>
+                    <label class="'.$name_style.'">'.$name.'</label>
                 </td>
                 <td colspan="2">
                     <label id="reply_topic">'.$topic.'</label>
@@ -62,7 +69,7 @@
             </tr>
             </table>'; 
     
-        $reply_sql = "SELECT*FROM comments_reply WHERE DB_MesID=".$q." AND pass=1 ";
+        $reply_sql = "SELECT*FROM comments_reply WHERE DB_MesID=".$q." AND pass=1";
         $reply_result = execute_sql("scsrc2", $reply_sql, $link); 
         $num_rows = mysql_num_rows($reply_result);
         $i=0;
@@ -70,21 +77,41 @@
             $reply_name = mysql_result($reply_result,$i,2);
             $reply_content = mysql_result($reply_result,$i,3);
             $reply_time = mysql_result($reply_result,$i,4);
-            echo '<table width="80%" align="center" cellspacing="0" border=0 style="margin-top:10px">
-                    <tr>
-                        <td rowspan="2" width="15%" align="center">
-                            <label class="reply_name_label">'.$reply_name.'</label>
-                        </td>
-                        <td width="75%" align="left" valign="bottom">
-                            <label>'.$reply_content.'</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="left">
-                            <label>'.$reply_time.'</label>
-                        </td>
-                    </tr>
-                </table>';
+            $reply_manager = mysql_result($reply_result,$i,6);
+            if($reply_manager == 1){
+                echo '<table width="80%" align="center" cellspacing="0" border=0 style="margin-top:10px">
+                        <tr>
+                            <td rowspan="2" width="15%" align="center">
+                                <label class="reply_name_label2">'.$reply_name.'</label>
+                            </td>
+                            <td width="75%" align="left" valign="bottom">
+                                <label>'.$reply_content.'</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                <label>'.$reply_time.'</label>
+                            </td>
+                        </tr>
+                    </table>';
+            }
+            else{
+                echo '<table width="80%" align="center" cellspacing="0" border=0 style="margin-top:10px">
+                        <tr>
+                            <td rowspan="2" width="15%" align="center">
+                                <label class="reply_name_label">'.$reply_name.'</label>
+                            </td>
+                            <td width="75%" align="left" valign="bottom">
+                                <label>'.$reply_content.'</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left">
+                                <label>'.$reply_time.'</label>
+                            </td>
+                        </tr>
+                    </table>';
+            }
             $i++;   
         }
         mysql_free_result($comments_result);

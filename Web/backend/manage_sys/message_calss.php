@@ -40,16 +40,16 @@ include_once ("top.php");
             }
         }
         
-        function Message_Pass(id){
-            $( function() {
-                $( "#comment_pass" ).dialog({
-                    resizable: false,
-                    height: "auto",
-                    width: 400,
-                    modal: true,
-                    buttons: {
-                        確認審核通過: function() {
-                            $.ajax({
+function Message_Pass(id){
+        $(function() {
+            $( "#comment_pass" ).dialog({
+                resizable: false,
+                height: "auto",
+                width: 500,
+                modal: true,
+                buttons: {
+                    確認審核通過: function() {
+                        $.ajax({
                                 method: "GET",
                                 url: "message_pass.php",
                                 data:{DB_MesID:id, passNum:1},
@@ -60,56 +60,39 @@ include_once ("top.php");
                                 error: function(ts) {
                                     alert(ts.responseText);
                                 }
-                            }); 
-                        },
-                        取消: function() {
-                          $( this ).dialog( "close" );
-                        }
-                    }
-                    });
-                  } );
-        }
-    
-        function Message_noPass(id){
-            $( function() {
-                    $( "#comment_nopass" ).dialog({
-                       resizable: false,
-                      height: "auto",
-                      width: 400,
-                      modal: true,
-                      buttons: {
-                        確認審核未過: function() {
+                            });  
+                    },
+                    確認審核未過: function() {
                             $.ajax({
                                 method: "GET",
                                 url: "message_pass.php",
                                 data:{DB_MesID:id, passNum:0},
                                 success: function(data){
-                                    $("#comment_nopass").dialog( "close" );
+                                    $("#comment_pass").dialog( "close" );
                                     location.reload();
                                 },
                                 error: function(ts) {
                                     alert(ts.responseText);
                                 }
                             }); 
-                        },
-                        取消: function() {
-                          $( this ).dialog( "close" );
-                        }
-                      }
-                    });
-                  } );  
-        }
+                    },
+                    取消: function() {
+                        $( this ).dialog( "close" );
+                    }
+                }
+            });
+        });
+}
     -->
 </script>
 <!--top_end-->
 <html>
 <body>
-<div id="comment_pass" title="確認審核" style="display: none;">
-        <p>確認本留言審核通過</p>
+<div id="comment_pass" title="留言審核" style="display: none;">
+    <p>提醒：審核通過後即會公開顯示</p> 
+    <p>提醒：審核確認後只能刪除留言，無法將審核未過之留言改為通過</p> 
 </div>
-<div id="comment_nopass" title="確認審核" style="display: none;">
-        <p>確認本留言審核未過</p>
-</div>
+    
 <table width="955" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td width="203" align="left" valign="top">
@@ -147,7 +130,7 @@ include_once ("top.php");
 		<td height="10" colspan="3" align="left" valign="top">&nbsp;</td>
 	  </tr>
 	</table>
-	<table width="752" border="0" cellspacing="0" cellpadding="0">
+	<table width="900" border="0" cellspacing="0" cellpadding="0">
 	  <tr>
 		<td width="5" align="left" valign="top"><img src="images/com_top_L.gif" width="5" height="5" /></td>
 		<td width="742" align="left" valign="top" background="images/com_top.gif"></td>
@@ -163,7 +146,7 @@ include_once ("top.php");
               <td width="36%" align="center">標 題 (請點選標題文字進入回應審核及管理)</td>
               <td width="10%" align="center">留言者</td>
               <td width="8%" align="center">留言審核</td>
-              <td width="8%" align="center">回覆數</td>
+              <td width="8%" align="center">回覆審核</td>
               <td width="18%" align="center">功 能</td>
 		  </tr>
             <?
@@ -172,7 +155,7 @@ include_once ("top.php");
                 while( $return[$i] ){
                     $MeTi = explode(" ",$return[$i]['DB_MesTime']); //解析留言時間
                     //留言版管理者回覆
-                    $mAbk_result = mysql_query("select * from `comments_reply` where `DB_MesID`='".$return[$i]['DB_MesID']."'") or die("mabk");
+                    $mAbk_result = mysql_query("select * from `comments_reply` where `DB_MesID`='".$return[$i]['DB_MesID']."' AND pass=-1") or die("mabk");
                     $mAbk_num = mysql_num_rows($mAbk_result);        
             ?>		  
             <tr bgcolor="#ffffff">
@@ -195,9 +178,8 @@ include_once ("top.php");
                 <td align="center">
                     <?php
                     $pass = $return[$i]['pass'];
-                    if($pass == -1){      
-                        echo '<input type="submit" onClick="Message_Pass('.$return[$i]['DB_MesID'].')" value="審核通過">
-                            <input type="submit" onClick="Message_noPass('.$return[$i]['DB_MesID'].')" value="審核不通過">';
+                    if($pass == -1){
+                        echo '<input type="submit" class="button_02" onClick="Message_Pass('.$return[$i]['DB_MesID'].')" value="留言審核">';
                     }
                     else if($pass == 1){
                         echo "<span class='state_del'>審核通過</span>";
@@ -210,18 +192,19 @@ include_once ("top.php");
                 <td align="center" class="state_del">
                     <? 
                     if ($mAbk_num <> 0){
-                        echo "<span class='state_add'>".$mAbk_num."</span>";
+                        echo "<span class='state_add'>".$mAbk_num."則未審核</span>";
                     }
                     else{
-                        echo "<span class='state_del'>未回覆</span>";
+                        echo "<span class='state_del'>皆已審核</span>";
                     }
                     ?>
                 </td>
+                
                 <td align="center">
                     <a href="message_calssReply.php?DB_MesID=<? echo $return[$i]['DB_MesID'];?>&page=<? echo $page;?>" class="button_02">
                         <img src="images/icon_massage2.gif" border="0" align="absmiddle" /> 查看留言/進行回覆
                     </a>&nbsp;
-                    <br>
+                    <br><br>
                     <a href="javascript:Delete(<? echo $return[$i]['DB_MesID'];?>,<? echo $page;?>);" class="button_03">
                         <img src="images/icon_del2.gif" border="0" align="absmiddle" /> 刪除
                     </a>

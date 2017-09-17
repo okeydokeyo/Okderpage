@@ -17,8 +17,8 @@ $DB_MadBack = ereg_replace("'","\'",$_POST['DB_MadBack']);
 
 if( !empty($DB_MadBack) ){
 					//新增
-					$UpStr = "`DB_MesID`,`DB_MadTime`,`DB_MadBack`, `reply_name`, `pass`";
-					$UpStr2 = "'$MesID',NOW(),'$DB_MadBack', '管理員', '1'";
+					$UpStr = "`DB_MesID`,`DB_MadTime`,`DB_MadBack`, `reply_name`, `pass`, `manager`";
+					$UpStr2 = "'$MesID',NOW(),'$DB_MadBack', '管理員', '1', '1'";
 					AddSql("comments_reply","message_calss.php?page=".$_POST['page']."","回覆成功!!",$UpStr,$UpStr2);
 			
 					//紀錄使用者資訊	
@@ -131,16 +131,10 @@ include_once ("left_menu.php");
 	   for ($a1=1 ;$a1<=$mAbk_ary = mysql_fetch_array($mAbk_result) ;$a1++){
 	          
 			  $MaTi = explode(" ",$mAbk_ary['DB_MadTime']); //解析管理者回復時間			  
+            echo $mAbk_ary['reply_name'];
 ?>			  
-			  回覆 <font color="red">
-            <?php 
-                if ($mAbk_num > 1){
-                    echo $mAbk_num-($a1-1);
-                }
-                else{
-                    echo $mAbk_num;
-                }
-            ?></font> 於 
+            <font color="red">
+            </font> 於 
                 <span class="text_12px_04"><? echo $MaTi[0];?></span>　
                 <? echo $MaTi[1];?><br />
                 <div style="background-color:#f1f1f2; padding:5px;word-break:break-all;">

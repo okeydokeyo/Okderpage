@@ -968,7 +968,7 @@ $Manager_num = mysql_num_rows($Manager_result); //全部資料的總數
 
 
 if($Manager_num==0){
-echo "<script>location.href='../index.php';</script>";
+echo "<script>location.href='../../index.php';</script>";
 exit;
 }
 }
@@ -987,7 +987,7 @@ function chk_Power($ManP){
    $Manager_num = mysql_num_rows($Manager_result);
 
    if($Manager_num == "0"){
-      echo "<script>location.href='id_info.php';</script>";
+      echo "<script>location.href='../../index.php';</script>";
       exit;
    }
 }
@@ -1004,7 +1004,7 @@ $ChkN：字元長度
 ***************************************************************/
 function chk_IP($ChkIP){
 if($ChkIP == "210.69.35.10"){
-echo "<script>location.href='../index.php';</script>";
+echo "<script>location.href='id_info.php';</script>";
 exit;
 }
 }

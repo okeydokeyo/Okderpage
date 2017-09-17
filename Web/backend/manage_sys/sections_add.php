@@ -41,6 +41,7 @@ if($DB_OrdBasis=="1"){
 		$DB_OrdUrlName_2=ereg_replace("'","\'",$_POST['DB_OrdUrlName_2']);
 		$DB_OrdUrl_3=$_POST['DB_OrdUrl_3'];
 		$DB_OrdUrlName_3=ereg_replace("'","\'",$_POST['DB_OrdUrlName_3']);
+    
 		if(!empty($DB_OrdTime) && !empty($DB_OrdSubject) ){
 			for($i=1; $i<=3; $i++ ){
 			$return=iron_upload("DB_OrdImg_$i", time()."$i", "", "../file", "gif,jpg,jpeg,png", "16677216" );
@@ -62,7 +63,9 @@ if($DB_OrdBasis=="1"){
 			$UpStr2="'".$_SESSION['ManUser']."','".$_SERVER['REMOTE_ADDR']."','條列式訊息管理-".$DB_OrdTagSubject_no."','".$DB_OrdSubject."','add',NOW()";
 			Recording_Add("recording",$UpStr,$UpStr2);
 		}
-}elseif($DB_OrdBasis=="2"){
+}
+
+elseif($DB_OrdBasis=="2"){
 		$return=iron_upload("DB_OrdArchive2_1", time(), "", "../file", "", "16677216" );
 		if(!empty($DB_OrdTime) && !empty($DB_OrdSubject) ){
 			$UpStr=" `DB_OrdTagID`,`DB_OrdTime`,`DB_OrdStart_Time`,`DB_OrdEnd_Time`,`DB_OrdBasis`,`DB_OrdSubject`,`DB_OrdArchive2_1`,`DB_OrdName2_1`,`DB_OrdAnnounce`,`DB_AddTime`,`DB_EditUser`";
@@ -74,7 +77,9 @@ if($DB_OrdBasis=="1"){
 			$UpStr2="'".$_SESSION['ManUser']."','".$_SERVER['REMOTE_ADDR']."','條列式訊息管理-".$DB_OrdTagSubject_no."','".$DB_OrdSubject."','add',NOW()";
 			Recording_Add("recording",$UpStr,$UpStr2);
 		}
-}elseif($DB_OrdBasis=="3"){
+}
+
+elseif($DB_OrdBasis=="3"){
 		$DB_OrdUrl3_1=$_POST['DB_OrdUrl3_1'];
 		if(!empty($DB_OrdTime) && !empty($DB_OrdSubject) ){
 			$UpStr=" `DB_OrdTagID`,`DB_OrdTime`,`DB_OrdStart_Time`,`DB_OrdEnd_Time`,`DB_OrdBasis`,`DB_OrdSubject`,`DB_OrdUrl3_1`,`DB_OrdAnnounce`,`DB_AddTime`,`DB_EditUser`";

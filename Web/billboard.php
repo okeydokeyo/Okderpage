@@ -207,7 +207,7 @@
                     <input type="text" class="form-control Input" name="name" placeholder="姓名：">
                 </td>
                 <td width="40%">
-                    <input type="text" class="form-control Input" name="topic" placeholder="主旨：">
+                    <input type="text" class="form-control Input" name="topic" placeholder="主旨：（八字以內）">
                 </td>
                 <td valign="center" >
                     <label class="radio-inline" style="margin-left:15px"><input type="radio" name="category" value="donation" id="A">捐款</label>
@@ -234,14 +234,51 @@
             $result = execute_sql("scsrc2", $sql, $link);    
             $num_rows = mysql_num_rows($result);
             class Message{
-                var $ID, $category, $topic, $name, $current_time, $content;
+                var $ID, $category, $topic, $name, $current_time, $content, $reply_num, $button, $name_style;
                 function __construct($ID_in, $category_in, $topic_in, $name_in, $time_in, $content_in){
                     $this->ID = $ID_in;
+                    
                     $this->category = $category_in;
+                    if($this->category ===  "捐款"){
+                        $this->button = "button1";
+                    }
+                    else if($this->category === "通報"){
+                        $this->button = "button2";
+                    }
+                    else if($this->category === "脊髓損傷"){
+                        $this->button = "button3";
+                    }
+                    else if($this->category === "中心相關問題"){
+                        $this->button = "button4";
+                    }
+                    
                     $this->topic = $topic_in;
+                    
+                    $length = mb_strlen($name_in, 'utf-8');
+                    if($length>5){
+                        $arr1 = str_split($name_in);
+                        
+                        for($i=0; $i < $length; $i+=5){
+                            $name_in = substr_replace($name_in, "<br>", $i+5, 0);
+                        }
+                        
+                        $this->name_style = "name_style_2";
+                    }
+                    else{
+                        $this->name_style = "name_style_1";
+                    }
+                    
                     $this->name = $name_in;
+                    
                     $this->current_time = $time_in;
                     $this->content = $content_in;
+                    
+                    $link2 = create_connection();
+                    $reply_sql = "SELECT*FROM comments_reply WHERE DB_MesID=".$this->ID." AND pass=1";
+                    $reply_result = execute_sql("scsrc2", $reply_sql, $link2); 
+                    $reply_num_in = mysql_num_rows($reply_result);
+                    
+                    $this->reply_num = $reply_num_in;
                 }
                 function displayMessage(){
                     echo '
@@ -249,13 +286,13 @@
                     <table id="message_table" cellspacing="0" border="0">
                         <tr>
                             <td>
-                                <input type="button" value="'.$this->category.'" id="category" onclick="link_category(\''.$this->category.'\')">
+                                <input type="button" value="'.$this->category.'" id="category" class="'.$this->button.'" onclick="link_category(\''.$this->category.'\')">
                             </td>
                         </tr>
                         <tr class="message_row">
                             <td id="td_1"><label id="topic_label">'.$this->topic.'</label></td>
                             <td id="td_2" rowspan="2">
-                                <label class="name_label">'.$this->name.'</label>
+                                <label class="'.$this->name_style.'">'.$this->name.'</label>
                             </td>
                         </tr>
                         <tr class="message_row tr_2">
@@ -264,6 +301,11 @@
                         <tr class="message_row tr_2">
                             <td width="100%" colspan="2">
                                 <textarea readonly="readonly" class="form-control content_area" rows=6 style="background-color: white;">'.$this->content.'</textarea>
+                            </td>
+                        </tr>
+                        <tr class="message_row" align="right">
+                            <td id="td_4" colspan="2">
+                                <p id="showReplyNum">'.$this->reply_num.'則留言</p>
                             </td>
                         </tr>
                         <tr class="message_row" align="right">
