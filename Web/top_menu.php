@@ -1,6 +1,23 @@
 <link rel="stylesheet" type="text/css" href="BasicStyle.css">
 <script type="text/javascript" src="js/dd.js"></script>
 
+<script language="javascript">
+    function check(){
+        if(document.searchform.name.value == "站內搜尋"){
+            alert('標題搜尋未正確填寫，請確認');
+            document.searchform.name.focus();
+            return;
+        }
+        else if(document.searchform.name.value == ""){
+            alert('標題搜尋未正確填寫，請確認');
+            document.searchform.name.focus();
+            return;
+        }
+        else{
+            document.searchform.submit();
+        }
+    }
+</script>
 <nav class="navbar navbar-fixed-top" id="nav">
         <nav class="navbar" id="top-navbar"> 
             <div class="container-fluid">
@@ -58,14 +75,19 @@
                                 </ul>
                         </li>
                         <li><a href="http://www.sci.org.tw/" target="blank">脊髓新樂園</a></li>
-                        <li><a href="#">放大鏡</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">語言<span class="caret"></span></a>
-                                <ul class="dropdown-menu" id="dropdown-menu">
-                                        <li><a href="#">繁體中文</a></li>
-                                        <li><a href="#">简体中文</a></li>
-                                        <li><a href="#">English</a></li>
-                                </ul>
+                        <li>
+                            <a href="javascript:translatePage();" id="translateLink"></a>
+                        </li>
+                        <li>
+                        <form action="search.php" method="post" name="searchform">
+                            <tr>
+                                <td><input name="name" type="text" onblur="if(this.value=='')this.value='站內搜尋'" onfocus="if(this.value.indexOf('站')!=-1)this.value=''" value="站內搜尋" size="10" id="KeyWord"/>
+                                </td>
+                            </tr>
+                            <tr>
+                              <td><input type="button" value="站內搜尋" onclick="return check()" id="search_button"></td>
+                            </tr>
+                        </form>
                         </li>
                     </ul>
                 </div>
@@ -74,7 +96,6 @@
         <nav class="navbar" id="bottom-menu">
             <div class="container-fluid">
                 <a href="index.php"><img src="images/MainLogo.jpg" alt="網站所屬單位名稱及商標圖" id="logo"/></a>
-                
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myBottomNavBar" id="bottom-navbar-button">
                         <span class="icon-bar"></span>
@@ -89,8 +110,7 @@
                             </span></a>
                         </li>
                         <li><a href="#">媒體報導</a></li>
-                        <li><a href="#">新聞中心</a></li>
-                        <li><a href="#">志工園地</a></li>
+                        <li><a href="volunteer.php">志工園地</a></li>
                         <li><a href="GoodLink.php">好站連結</a></li>
                         <li><a href="billboard.php">留言板</a></li>
                     </ul>

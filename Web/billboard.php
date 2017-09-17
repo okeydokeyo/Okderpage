@@ -347,5 +347,15 @@
             include("footer.php");
         ?>
     </footer>
+<script src="http://download.arefly.com/chinese_convert.js"></script>
+<script>
+var defaultEncoding = 1; // 預設語言：1-繁體中文 | 2-简体中文
+var translateDelay = 0;
+var cookieDomain = "http://web.cc.ncu.edu.tw/~103403519/";	// 修改爲你的部落格地址
+var msgToTraditionalChinese = "繁簡轉換";	// 簡轉繁時所顯示的文字
+var msgToSimplifiedChinese = "繁简转换"; 	// 繁转简时所显示的文字
+var translateButtonId = "translateLink";	// 「轉換」<A>鏈接標籤ID
+translateInitilization();
+</script>
 </body>
 </html>
