@@ -22,37 +22,63 @@
 
 
     
-<form name="form1" method="get" action="news.php">
+<form name="form1" method="get" action="news.php"><a>雜誌分類：</a>
     <select name="mag" onchange="window.location='news.php?mag='+this.value">
         <option value="">-請選擇-</option>
         <option value="1">友善新世界</option>
         <option value="2">超人之友</option>
         <option value="3">服務成果報告書</option>
-    </select>
+    </select><br>
 
-    <?php
-        require_once("dbtools.inc.php");
-        $link = create_connection();
-        $sql = "SELECT*FROM ordi WHERE DB_OrdBasis='3' AND pass=1 ORDER BY time DESC";
-        $result = execute_sql("scsrc2", $sql, $link);    
-        $num_rows = mysql_num_rows($result);
+    <?php        
+        $con = mysql_connect("localhost","root","");
+        if (!$con)
+        {
+          die('Could not connect: ' . mysql_error());
+        }
         
+        mysql_select_db("scsrc2", $con);
+        mysql_query("SET NAMES utf8");
+
         if(@$_GET["mag"]==1)
         {
-            echo '<h1>友善新世界</h1>';
+            $result = mysql_query("SELECT * FROM ordi WHERE DB_OrdBasis='3' AND DB_OrdKind ='1'");
+            echo '<h1>友善新世界</h1><br>';
+            while($row = mysql_fetch_array($result))
+            {
+              echo "<a href='".$row['DB_OrdUrl3_1']."' target='_blank'>".$row['DB_OrdSubject'];
+              echo "<br><br>";
+            }
+
         }
         else if(@$_GET["mag"]==2)
         {
-            
+            $result = mysql_query("SELECT * FROM ordi WHERE DB_OrdBasis='3' AND DB_OrdKind ='2'");
+            echo '<h1>超人之友</h1><br>';
+            while($row = mysql_fetch_array($result))
+            {
+              echo "<a href='".$row['DB_OrdUrl3_1']."' target='_blank'>".$row['DB_OrdSubject'];
+              echo "<br><br>";
+            }
+
         }
         else if(@$_GET["mag"]==3)
         {
+            $result = mysql_query("SELECT * FROM ordi WHERE DB_OrdBasis='3' AND DB_OrdKind ='3'");
+            echo '<h1>服務成果報告書</h1><br>';
+            while($row = mysql_fetch_array($result))
+            {
+              echo "<a href='".$row['DB_OrdUrl3_1']."' target='_blank'>".$row['DB_OrdSubject'];
+              echo "<br><br>";
+            }
 
         }
+
+        mysql_close($con);
     ?>
 </form>
 
-
+    
 <footer>
     <?php
     include("footer.php");
