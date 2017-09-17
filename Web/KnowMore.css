@@ -16,29 +16,81 @@ td font
     color: dimgray;
 }
 
+form 
+{
+    margin-top: 10em;
+    margin-bottom: 5em;
+}
+
+iframe
+{
+    width: 60%;
+    height: 60%;
+    margin-left: 10%;
+}
+
 @media screen and (min-width: 769px)
 {
-    #table {
+    #table 
+    {
         max-width: 50%;
         margin-left: 20%;
         font-size: 1.2em;
+    }
+    
+    form
+    {
+        width: 75%;
+        margin-left: 20%;
+        font-size: 1.1em;
+    }
+    
+    form a
+    {
+        font-size: 1.1em;
     }
 }
 
 @media only screen and (min-width: 321px) and (max-width: 768px)
 {
-    #table {
+    #table 
+    {
         max-width: 80%;
         margin-left: 10%;
         font-size: 1em;
+    }
+    
+    form
+    {
+        width: 80%;
+        margin-left: 10%;
+        font-size: 1.1em;
+    }
+    
+    form a
+    {
+        font-size: 1.1em;
     }
 }
 
 @media screen and (max-width: 320px)
 {
-    #table {
+    #table 
+    {
         max-width: 90%;
         margin-left: 5%;
+        font-size: 1em;
+    }
+    
+    form
+    {
+        width: 90%;
+        margin-left: 5%;
+        font-size: 1em;
+    }
+    
+    form a
+    {
         font-size: 1em;
     }
 }

@@ -13,13 +13,58 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
-<body>    
+<body> 
 <header>
     <?php 
     include("top_menu.php");
     ?>
 </header>
+    
 
+    <form name="form1" method="get" action="KnowMore_5.php">影片：
+        <select name="vedio" onchange="window.location='KnowMore_5.php?vedio='+this.value">
+            <option value="">-請選擇-</option>
+            <?php
+            $con = mysql_connect("localhost","root","");
+            if (!$con)
+            {
+              die('Could not connect: ' . mysql_error());
+            }
+
+            mysql_select_db("scsrc2", $con);
+            mysql_query("SET NAMES utf8"); 
+            $result = mysql_query("SELECT * FROM ordi WHERE DB_OrdTagID='29'");
+            while($row = mysql_fetch_array($result))
+            {
+                echo "<option value='".$row['DB_OrdID']."'>".$row['DB_OrdSubject']."</option>";
+            }
+            mysql_close($con);
+            ?>
+        </select><br>
+        <?php
+        $con = mysql_connect("localhost","root","");
+        if (!$con)
+        {
+          die('Could not connect: ' . mysql_error());
+        }
+
+        mysql_select_db("scsrc2", $con);
+        mysql_query("SET NAMES utf8"); 
+        $result = mysql_query("SELECT * FROM ordi WHERE DB_OrdTagID='29'");
+        while($row = mysql_fetch_array($result))
+        {
+            if($row['DB_OrdID'] == @$_GET["vedio"])
+            {
+                echo "<h1>".$row['DB_OrdSubject']."</h1>";
+                echo $row['DB_OrdYou_1'];
+            }
+        }
+
+        mysql_close($con);
+        ?>
+        
+    </form>
+<!--    
 <table cellspacing="1" cellpadding="2" border="0" id="table">
     <tbody>
         <tr>
@@ -29,6 +74,8 @@
             <td align="center">公告日期<br><br></td>
             <td align="center">標題<br><br></td>
         </tr>
+        
+        
         <tr>
             <td>2013-03-14&nbsp;&nbsp;&nbsp;<br><br></td>
             <td class="href"><a href="https://www.youtube.com/watch?v=73F4SvBTkLs" target="_blank">脊髓損傷者常用輔具介紹</a><br><br></td>
@@ -89,6 +136,7 @@
             <td>2013-01-07<br><br></td>
             <td><a href="https://www.youtube.com/watch?v=n4scbZWcyXQ" target="_blank">汽機車改裝介紹</a><br><br></td>
         </tr>
+        -->
     </tbody>
 </table>
     
