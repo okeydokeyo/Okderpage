@@ -49,6 +49,11 @@ iframe
     {
         font-size: 1.1em;
     }
+    
+    form font
+    {
+        font-size: 1.1em;
+    }
 }
 
 @media only screen and (min-width: 321px) and (max-width: 768px)
@@ -71,6 +76,11 @@ iframe
     {
         font-size: 1.1em;
     }
+    
+    form font
+    {
+        font-size: 1.1em;
+    }
 }
 
 @media screen and (max-width: 320px)
@@ -90,6 +100,11 @@ iframe
     }
     
     form a
+    {
+        font-size: 1em;
+    }
+    
+    form font
     {
         font-size: 1em;
     }

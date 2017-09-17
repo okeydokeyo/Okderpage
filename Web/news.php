@@ -22,7 +22,7 @@
 
 
     
-<form name="form1" method="get" action="news.php"><a>雜誌分類：</a>
+<form name="form1" method="get" action="news.php"><font>雜誌分類：</font>
     <select name="mag" onchange="window.location='news.php?mag='+this.value">
         <option value="">-請選擇-</option>
         <option value="1">友善新世界</option>

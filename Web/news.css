@@ -6,7 +6,6 @@ form {
 form a
 {
     color: dimgray;
-    cursor: auto;
 }
 
 @media screen and (min-width: 769px)
@@ -19,6 +18,11 @@ form a
     }
     
     form a
+    {
+        font-size: 1.1em;
+    }
+    
+    form font
     {
         font-size: 1.1em;
     }
@@ -37,6 +41,11 @@ form a
     {
         font-size: 1.1em;
     }
+    
+    form font
+    {
+        font-size: 1.1em;
+    }
 }
 
 @media screen and (max-width: 320px)
@@ -51,5 +60,10 @@ form a
     form a
     {
         font-size: 1em;
+    }
+    
+    form font
+    {
+        font-size: 1.1em;
     }
 }

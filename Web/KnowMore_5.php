@@ -21,7 +21,7 @@
 </header>
     
 
-    <form name="form1" method="get" action="KnowMore_5.php">影片：
+    <form name="form1" method="get" action="KnowMore_5.php"><font>影片：</font>
         <select name="vedio" onchange="window.location='KnowMore_5.php?vedio='+this.value">
             <option value="">-請選擇-</option>
             <?php
