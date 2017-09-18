@@ -22,7 +22,7 @@
 
 
     
-<form name="form1" method="get" action="news.php"><font>雜誌分類：</font>
+<form id="newsForm" method="get" action="news.php"><font id="newsSubject">雜誌分類：</font>
     <select name="mag" onchange="window.location='news.php?mag='+this.value">
         <option value="">-請選擇-</option>
         <option value="1">友善新世界</option>
@@ -46,7 +46,7 @@
             echo '<h1>友善新世界</h1><br>';
             while($row = mysql_fetch_array($result))
             {
-              echo "<a href='".$row['DB_OrdUrl3_1']."' target='_blank'>".$row['DB_OrdSubject'];
+              echo "<a href='".$row['DB_OrdUrl3_1']."' target='_blank' class='magslink'>".$row['DB_OrdSubject'];
               echo "<br><br>";
             }
 
@@ -57,7 +57,7 @@
             echo '<h1>超人之友</h1><br>';
             while($row = mysql_fetch_array($result))
             {
-              echo "<a href='".$row['DB_OrdUrl3_1']."' target='_blank'>".$row['DB_OrdSubject'];
+              echo "<a href='".$row['DB_OrdUrl3_1']."' target='_blank' class='magslink'>".$row['DB_OrdSubject'];
               echo "<br><br>";
             }
 
@@ -68,7 +68,7 @@
             echo '<h1>服務成果報告書</h1><br>';
             while($row = mysql_fetch_array($result))
             {
-              echo "<a href='".$row['DB_OrdUrl3_1']."' target='_blank'>".$row['DB_OrdSubject'];
+              echo "<a href='".$row['DB_OrdUrl3_1']."' target='_blank' class='magslink'>".$row['DB_OrdSubject'];
               echo "<br><br>";
             }
 

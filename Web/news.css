@@ -1,28 +1,29 @@
-form {
+#newsForm 
+{
     margin-top: 10em;
     margin-bottom: 5em;
 }
 
-form a
+#newsSubject
 {
     color: dimgray;
 }
 
 @media screen and (min-width: 769px)
 {
-    form
+    #newsForm 
     {
         width: 75%;
         margin-left: 15%;
         font-size: 1.1em;
     }
     
-    form a
+    .magslink
     {
         font-size: 1.1em;
     }
     
-    form font
+    #newsSubject
     {
         font-size: 1.1em;
     }
@@ -30,19 +31,19 @@ form a
 
 @media only screen and (min-width: 321px) and (max-width: 768px)
 {
-    form
+    #newsForm 
     {
         width: 80%;
         margin-left: 10%;
         font-size: 1.1em;
     }
     
-    form a
+    .magslink
     {
         font-size: 1.1em;
     }
     
-    form font
+    #newsSubject
     {
         font-size: 1.1em;
     }
@@ -50,19 +51,19 @@ form a
 
 @media screen and (max-width: 320px)
 {
-    form
+    #newsForm 
     {
         width: 90%;
         margin-left: 5%;
         font-size: 1em;
     }
     
-    form a
+    .magslink
     {
         font-size: 1em;
     }
     
-    form font
+    #newsSubject
     {
         font-size: 1.1em;
     }
