@@ -30,16 +30,11 @@
         <option value="3">服務成果報告書</option>
     </select><br>
 
-    <?php        
-        $con = mysql_connect("localhost","root","");
-        if (!$con)
-        {
-          die('Could not connect: ' . mysql_error());
-        }
+    <?php  
+        require_once("dbtools.inc.php");
+        $link = create_connection();        
+        mysql_select_db("scsrc2", $link);
         
-        mysql_select_db("scsrc2", $con);
-        mysql_query("SET NAMES utf8");
-
         if(@$_GET["mag"]==1)
         {
             $result = mysql_query("SELECT * FROM ordi WHERE DB_OrdBasis='3' AND DB_OrdKind ='1'");
@@ -74,7 +69,7 @@
 
         }
 
-        mysql_close($con);
+        mysql_close($link);
     ?>
 </form>
 

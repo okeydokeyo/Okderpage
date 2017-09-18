@@ -67,11 +67,25 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">認識脊髓損傷<span class="caret"></span></a>
                                 <ul class="dropdown-menu" id="dropdown-menu">
-                                        <li><a href="KnowMore_1.php">什麼是脊髓損傷</a></li>
-                                        <li><a href="KnowMore_2.php">造成脊髓損傷的原因</a></li>
-                                        <li><a href="KnowMore_3.php">台灣脊髓損傷者概況</a></li>
-                                        <li><a href="KnowMore_4.php">脊髓損傷的急救處理</a></li>
-                                        <li><a href="KnowMore_5.php">脊髓損傷衛教影片</a></li>
+                                    <?php
+                                    require_once("dbtools.inc.php");
+                                    $link = create_connection();        
+                                    mysql_select_db("scsrc2", $link);
+                                    $result = mysql_query("SELECT * FROM top WHERE DB_TopTagID='4' ORDER BY DB_TopSort ASC");
+                                    while($row = mysql_fetch_array($result))
+                                    {
+                                        echo "<li><a href='KnowMore.php?artID=".$row['DB_TopNumID']."'>".$row['DB_TopSubject']."</a></li>";
+                                    }
+                                    mysql_close($link);
+                                    ?>
+                                    <li><a href="KnowMoreVedio.php">脊髓損傷衛教影片</a></li>
+                                    <!--
+                                    <li><a href="KnowMore_1.php">什麼是脊髓損傷</a></li>
+                                    <li><a href="KnowMore_2.php">造成脊髓損傷的原因</a></li>
+                                    <li><a href="KnowMore_3.php">台灣脊髓損傷者概況</a></li>
+                                    <li><a href="KnowMore_4.php">脊髓損傷的急救處理</a></li>
+                                    <li><a href="KnowMore_5.php">脊髓損傷衛教影片</a></li>
+                                    -->
                                 </ul>
                         </li>
                         <li><a href="http://www.sci.org.tw/" target="blank">脊髓新樂園</a></li>

@@ -21,35 +21,25 @@
 </header>
     
 
-    <form id="vedioForm" method="get" action="KnowMore_5.php"><font id="vedioSubject">影片：</font>
-        <select name="vedio" onchange="window.location='KnowMore_5.php?vedio='+this.value">
+    <form id="vedioForm" method="get" action="KnowMoreVedio.php"><font id="vedioSubject">影片：</font>
+        <select name="vedio" onchange="window.location='KnowMoreVedio.php?vedio='+this.value">
             <option value="">-請選擇-</option>
             <?php
-            $con = mysql_connect("localhost","root","");
-            if (!$con)
-            {
-              die('Could not connect: ' . mysql_error());
-            }
-
-            mysql_select_db("scsrc2", $con);
-            mysql_query("SET NAMES utf8"); 
+            require_once("dbtools.inc.php");
+            $link = create_connection();        
+            mysql_select_db("scsrc2", $link);
             $result = mysql_query("SELECT * FROM ordi WHERE DB_OrdTagID='29'");
             while($row = mysql_fetch_array($result))
             {
                 echo "<option value='".$row['DB_OrdID']."'>".$row['DB_OrdSubject']."</option>";
             }
-            mysql_close($con);
+            mysql_close($link);
             ?>
         </select><br>
         <?php
-        $con = mysql_connect("localhost","root","");
-        if (!$con)
-        {
-          die('Could not connect: ' . mysql_error());
-        }
-
-        mysql_select_db("scsrc2", $con);
-        mysql_query("SET NAMES utf8"); 
+        require_once("dbtools.inc.php");
+        $link = create_connection();        
+        mysql_select_db("scsrc2", $link);
         $result = mysql_query("SELECT * FROM ordi WHERE DB_OrdTagID='29'");
         while($row = mysql_fetch_array($result))
         {
@@ -60,7 +50,7 @@
             }
         }
 
-        mysql_close($con);
+        mysql_close($link);
         ?>
         
     </form>

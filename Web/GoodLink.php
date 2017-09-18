@@ -22,13 +22,9 @@
     
     <table cellspacing="1" cellpadding="1" border="0" id="table">
         <?php
-        $con = mysql_connect("localhost","root","");
-        if (!$con)
-        {
-          die('Could not connect: ' . mysql_error());
-        }
-        mysql_select_db("scsrc2", $con);
-        mysql_query("SET NAMES utf8");
+        require_once("dbtools.inc.php");
+        $link = create_connection();        
+        mysql_select_db("scsrc2", $link);
         $result = mysql_query("SELECT * FROM website_tags ORDER BY DB_WebTagID ASC");
         while($row = mysql_fetch_array($result))
         {
@@ -41,7 +37,7 @@
             }
             echo "<tr><td><br><br><br><br></td></tr>";
         }
-        mysql_close($con);
+        mysql_close($link);
         ?>
     </table> 
 

@@ -15,12 +15,26 @@
 
 </head>
 <body>    
-<header>
-    <?php 
-    include("top_menu.php");
+    <header>
+        <?php 
+        include("top_menu.php");
+        ?>
+    </header>
+    
+    <?php
+    require_once("dbtools.inc.php");
+    $link = create_connection();        
+    mysql_select_db("scsrc2", $link);
+    $result = mysql_query("SELECT * FROM article WHERE DB_ArtID = '".$_GET[artID]."'");
+    while($row = mysql_fetch_array($result))
+    {
+        echo "<table class='artTitle'><tr><td><h1>".$row['DB_ArtSubject']."</h1></td></tr></table>";
+        echo $row['DB_ArtContent'];
+    }
+    mysql_close($link);
     ?>
-</header>
-
+    
+    <!--
 <table cellspacing="1" cellpadding="1" border="0" id="table">
     <tbody>
         <tr>
@@ -47,7 +61,8 @@
         </tr>
     </tbody>
 </table>
-
+-->
+    
 <footer>
     <?php
     include("footer.php");
