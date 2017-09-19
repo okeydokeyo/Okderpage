@@ -25,16 +25,56 @@
 <form id="newsForm" method="get" action="news.php"><font id="newsSubject">雜誌分類：</font>
     <select name="mag" onchange="window.location='news.php?mag='+this.value">
         <option value="">-請選擇-</option>
+        <?php
+        require_once("dbtools.inc.php");
+        $link = create_connection();        
+        mysql_select_db("scsrc2", $link);
+        $result = mysql_query("SELECT * FROM `left` WHERE DB_LefTagID='35' ORDER BY DB_LefSort ASC");
+        while($row = mysql_fetch_array($result))
+        {
+            echo "<option value='".$row['DB_LefID']."'>".$row['DB_LefSubject']."</option>";
+        }
+        mysql_close($link);
+        ?>
+    </select><br>
+    <?php
+    require_once("dbtools.inc.php");
+    $link = create_connection();        
+    mysql_select_db("scsrc2", $link);
+    $result = mysql_query("SELECT * FROM ordi WHERE DB_OrdBasis='3' AND DB_OrdKind!='null' ORDER BY DB_OrdID ASC");
+    $result2 = mysql_query("SELECT * FROM `left` WHERE DB_LefID='".@$_GET["mag"]."'");
+    while($row2 = mysql_fetch_array($result2))
+    {
+        echo "<br><h1>".$row2['DB_LefSubject']."</h1><br><br>";
+    }
+    while($row = mysql_fetch_array($result))
+    {
+        if($row['DB_OrdKind'] == @$_GET["mag"])
+        {
+            echo "<a href='".$row['DB_OrdUrl3_1']."' target='_blank' class='magslink'>".$row['DB_OrdSubject'];
+            echo "<br><br>";
+        }
+    }
+
+    mysql_close($link);
+    ?>
+    
+    
+    <!--
+    <select name="mag" onchange="window.location='news.php?mag='+this.value">
+        <option value="">-請選擇-</option>
         <option value="1">友善新世界</option>
         <option value="2">超人之友</option>
         <option value="3">服務成果報告書</option>
     </select><br>
-
+    -->
     <?php  
-        require_once("dbtools.inc.php");
+        /*require_once("dbtools.inc.php");
         $link = create_connection();        
         mysql_select_db("scsrc2", $link);
         
+    
+    
         if(@$_GET["mag"]==1)
         {
             $result = mysql_query("SELECT * FROM ordi WHERE DB_OrdBasis='3' AND DB_OrdKind ='1'");
@@ -69,7 +109,7 @@
 
         }
 
-        mysql_close($link);
+        mysql_close($link);*/
     ?>
 </form>
 
