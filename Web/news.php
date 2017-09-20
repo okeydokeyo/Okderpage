@@ -29,7 +29,7 @@
         require_once("dbtools.inc.php");
         $link = create_connection();        
         mysql_select_db("scsrc2", $link);
-        $result = mysql_query("SELECT * FROM `left` WHERE DB_LefTagID='35' ORDER BY DB_LefSort ASC");
+        $result = mysql_query("SELECT * FROM `left` WHERE `DB_LefTagID`='35' ORDER BY `DB_LefSort` ASC");
         while($row = mysql_fetch_array($result))
         {
             echo "<option value='".$row['DB_LefID']."'>".$row['DB_LefSubject']."</option>";
@@ -41,8 +41,8 @@
     require_once("dbtools.inc.php");
     $link = create_connection();        
     mysql_select_db("scsrc2", $link);
-    $result = mysql_query("SELECT * FROM ordi WHERE DB_OrdBasis='3' AND DB_OrdKind!='null' ORDER BY DB_OrdID ASC");
-    $result2 = mysql_query("SELECT * FROM `left` WHERE DB_LefID='".@$_GET["mag"]."'");
+    $result = mysql_query("SELECT * FROM `ordi` WHERE `DB_OrdBasis`='3' AND `DB_OrdKind`!='null' ORDER BY `DB_OrdID` ASC");
+    $result2 = mysql_query("SELECT * FROM `left` WHERE `DB_LefID`='".@$_GET["mag"]."'");
     while($row2 = mysql_fetch_array($result2))
     {
         echo "<br><h1>".$row2['DB_LefSubject']."</h1><br><br>";
@@ -51,66 +51,45 @@
     {
         if($row['DB_OrdKind'] == @$_GET["mag"])
         {
-            echo "<a href='".$row['DB_OrdUrl3_1']."' target='_blank' class='magslink'>".$row['DB_OrdSubject'];
-            echo "<br><br>";
+            if($row['DB_OrdTagID']==11)
+            {
+                echo "<a href='".$row['DB_OrdUrl3_1']."' class='magslink'>".$row['DB_OrdSubject'];
+                echo "<br><br>";
+            }
+            else
+            {
+                echo "<a href='".$row['DB_OrdUrl3_1']."' target='_blank' class='magslink'>".$row['DB_OrdSubject'];
+                echo "<br><br>";
+            }
+        }
+    }
+    
+    if(@$_GET["{124}"] != null)
+    {
+        $result3 = mysql_query("SELECT * FROM `ordi_tags` WHERE `DB_OrdTagID`='".@$_GET["{124}"]."'");
+        while($row3 = mysql_fetch_array($result3)) echo "<br><h1>".$row3['DB_OrdTagSubject']."</h1><br><br>";
+        $result4 = mysql_query("SELECT * FROM `ordi` WHERE `DB_OrdTagID`='".@$_GET["{124}"]."' ORDER BY `DB_OrdID` ASC");
+        while($row4 = mysql_fetch_array($result4))
+        {
+            echo "<a href='news.php?magArt=".$row4['DB_OrdID']."' class='magslink'>".$row4['DB_OrdSubject']."</a><br><br>";
+        }
+        echo "<br><br><a href='news.php?mag=124' class='magslink'>-回上頁-</a>";
+    }
+    
+    if(@$_GET["magArt"] != null)
+    {
+        $result5 = mysql_query("SELECT * FROM `ordi` WHERE `DB_OrdID`='".@$_GET["magArt"]."'");
+        while($row5 = mysql_fetch_array($result5))
+        {
+            echo "<br><h1>".$row5['DB_OrdSubject']."</h1><br><br>";
+            echo $row5['DB_OrdContent'];
+            echo "<br><br><br><a href='news.php?{124}=".$row5['DB_OrdTagID']."' class='magslink'>-回上頁-</a>";
         }
     }
 
     mysql_close($link);
     ?>
     
-    
-    <!--
-    <select name="mag" onchange="window.location='news.php?mag='+this.value">
-        <option value="">-請選擇-</option>
-        <option value="1">友善新世界</option>
-        <option value="2">超人之友</option>
-        <option value="3">服務成果報告書</option>
-    </select><br>
-    -->
-    <?php  
-        /*require_once("dbtools.inc.php");
-        $link = create_connection();        
-        mysql_select_db("scsrc2", $link);
-        
-    
-    
-        if(@$_GET["mag"]==1)
-        {
-            $result = mysql_query("SELECT * FROM ordi WHERE DB_OrdBasis='3' AND DB_OrdKind ='1'");
-            echo '<h1>友善新世界</h1><br>';
-            while($row = mysql_fetch_array($result))
-            {
-              echo "<a href='".$row['DB_OrdUrl3_1']."' target='_blank' class='magslink'>".$row['DB_OrdSubject'];
-              echo "<br><br>";
-            }
-
-        }
-        else if(@$_GET["mag"]==2)
-        {
-            $result = mysql_query("SELECT * FROM ordi WHERE DB_OrdBasis='3' AND DB_OrdKind ='2'");
-            echo '<h1>超人之友</h1><br>';
-            while($row = mysql_fetch_array($result))
-            {
-              echo "<a href='".$row['DB_OrdUrl3_1']."' target='_blank' class='magslink'>".$row['DB_OrdSubject'];
-              echo "<br><br>";
-            }
-
-        }
-        else if(@$_GET["mag"]==3)
-        {
-            $result = mysql_query("SELECT * FROM ordi WHERE DB_OrdBasis='3' AND DB_OrdKind ='3'");
-            echo '<h1>服務成果報告書</h1><br>';
-            while($row = mysql_fetch_array($result))
-            {
-              echo "<a href='".$row['DB_OrdUrl3_1']."' target='_blank' class='magslink'>".$row['DB_OrdSubject'];
-              echo "<br><br>";
-            }
-
-        }
-
-        mysql_close($link);*/
-    ?>
 </form>
 
     

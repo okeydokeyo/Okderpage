@@ -9,6 +9,11 @@
     color: dimgray;
 }
 
+.size_3
+{
+    color: dimgray;
+}
+
 @media screen and (min-width: 769px)
 {
     #newsForm 
@@ -26,6 +31,10 @@
     #newsSubject
     {
         font-size: 1.1em;
+    }
+
+    .size_3
+    {
     }
 }
 
@@ -47,6 +56,10 @@
     {
         font-size: 1.1em;
     }
+
+    .size_3
+    {
+    }
 }
 
 @media screen and (max-width: 320px)
@@ -66,5 +79,9 @@
     #newsSubject
     {
         font-size: 1.1em;
+    }
+
+    .size_3
+    {
     }
 }
