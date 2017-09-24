@@ -2,8 +2,8 @@
 include "cksession.php";
 include "../config.php";
 include "../function.php";
-chk_account_id($_SESSION['ManUser']); //檢查帳號是否符合後,否回首頁
-chk_Power("DB_ManP_11"); //檢查是否功能權限,否回首頁
+//chk_account_id($_SESSION['ManUser']); //檢查帳號是否符合後,否回首頁
+//chk_Power("DB_ManP_11"); //檢查是否功能權限,否回首頁
 
 $DB_DowTagID=$_GET['DB_DowTagID'];
 $arry=SoloSql("download_tags"," `DB_DowTagID`='$DB_DowTagID'");

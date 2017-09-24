@@ -1,10 +1,17 @@
+<? $arry = SoloSql("menu","`DB_MenID`='1'");?>
 <div class="footer">
-    <h4 id="contactUs">聯絡我們</h4>
-    <a href="https://www.facebook.com/SCSRC.ORG.TW/"><img class=" img-circle" src="images/Facebook.png"  id="Facebook"/></a>
-    <h4 id="address">脊髓損傷協同團隊-財團法人脊髓損傷潛能發展中心</h4>
-    <h4 id="address">32661桃園市楊梅區高榮里快速路五段701號</h4>
-    <h4 id="address" style="padding-bottom:20px">(03)490-9001</h4>
+    <? echo $arry['DB_MenContent'];?>
 </div>
+<?
+if ( empty($_SESSION['ckIP']) ){
+      
+	  session_register("ckIP");
+	  $_SESSION['ckIP'] = $_SERVER['REMOTE_ADDR'];
+	  //新增瀏覽紀錄 
+	  mysql_query("insert into `counter` (`DB_CouIp`,`DB_Time`) values ('".$_SERVER['REMOTE_ADDR']."',NOW())")or die("新增失敗ip");  
+}
+?>
+<iframe width="0" height="0" name="FormFrame2"></iframe>
 <script src="http://download.arefly.com/chinese_convert.js"></script>
 <script>
 var defaultEncoding = 1; // 預設語言：1-繁體中文 | 2-简体中文

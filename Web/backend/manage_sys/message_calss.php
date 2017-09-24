@@ -2,8 +2,8 @@
 include "cksession.php";
 include "../config.php";
 include "../function.php";
-chk_account_id($_SESSION['ManUser']); //檢查帳號是否符合後,否回首頁
-chk_Power("DB_ManP_18"); //檢查是否功能權限,否回首頁
+//chk_account_id($_SESSION['ManUser']); //檢查帳號是否符合後,否回首頁
+//chk_Power("DB_ManP_18"); //檢查是否功能權限,否回首頁
 
 
 $page = (empty($_GET['page']))?1:$_GET['page']; //現在頁面
