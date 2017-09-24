@@ -35,7 +35,9 @@
 <br>
 　　中心自1995年成立至今，非常感謝許多企業、社團及愛心人士的資助，讓中心能夠提供傷友更好的重建環境</font>
 
-   </div></div></div>
+   </div>
+    </div>
+    </div>
 <footer>
     <?php
     include("footer.php");

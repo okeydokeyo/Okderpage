@@ -1,9 +1,9 @@
-<? /*
+<? 
 include "cksession.php";
 include "../config.php";
 include "../function.php";
-chk_account_id($_SESSION['ManUser']); //檢查帳號是否符合後,否回首頁
-chk_Power("DB_ManP_3"); //檢查是否功能權限,否回首頁
+//chk_account_id($_SESSION['ManUser']); //檢查帳號是否符合後,否回首頁
+//chk_Power("DB_ManP_3"); //檢查是否功能權限,否回首頁
 
 
 $arry = SoloSql("menu","`DB_MenID`='1'");
@@ -24,7 +24,6 @@ if ( !empty($DB_MenID) ){
 			$UpStr = "`DB_MenContent`='$DB_MenContent',`DB_EndTime`=NOW(),`DB_EditUser`='".$_SESSION['ManUser']."'";
 			EditSql("menu","$DB_MenID","DB_MenID","bottom_info.php","修改成功!!",$UpStr);
 }
-*/
 ?>
 <? 
 include_once ("top.php");

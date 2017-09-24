@@ -1,22 +1,22 @@
-#table 
-{
-    margin-top: 10em;
-    margin-bottom: 5em;
-}
-
 #table td a
 {
     color: dimgray;
     cursor: auto;
 }
 
-td font
+.artTitle
+{
+    margin-top: 10em;
+    margin-bottom: 5em;
+}
+
+#vedioSubject
 {
     font-size: 1.8em;
     color: dimgray;
 }
 
-form 
+#vedioForm 
 {
     margin-top: 10em;
     margin-bottom: 5em;
@@ -31,6 +31,11 @@ iframe
 
 @media screen and (min-width: 769px)
 {
+    .artTitle
+    {
+        margin-left: 20%;
+    }
+    
     #table 
     {
         max-width: 50%;
@@ -38,19 +43,14 @@ iframe
         font-size: 1.2em;
     }
     
-    form
+    #vedioForm
     {
         width: 75%;
         margin-left: 20%;
         font-size: 1.1em;
     }
     
-    form a
-    {
-        font-size: 1.1em;
-    }
-    
-    form font
+    #vedioSubject
     {
         font-size: 1.1em;
     }
@@ -58,6 +58,12 @@ iframe
 
 @media only screen and (min-width: 321px) and (max-width: 768px)
 {
+    .artTitle
+    {
+        max-width: 50%;
+        margin-left: 20%;
+    }
+    
     #table 
     {
         max-width: 80%;
@@ -65,19 +71,14 @@ iframe
         font-size: 1em;
     }
     
-    form
+    #vedioForm
     {
         width: 80%;
         margin-left: 10%;
         font-size: 1.1em;
     }
     
-    form a
-    {
-        font-size: 1.1em;
-    }
-    
-    form font
+    #vedioSubject
     {
         font-size: 1.1em;
     }
@@ -85,6 +86,12 @@ iframe
 
 @media screen and (max-width: 320px)
 {
+    .artTitle
+    {
+        max-width: 50%;
+        margin-left: 20%;
+    }
+    
     #table 
     {
         max-width: 90%;
@@ -92,19 +99,14 @@ iframe
         font-size: 1em;
     }
     
-    form
+    #vedioForm
     {
         width: 90%;
         margin-left: 5%;
         font-size: 1em;
     }
     
-    form a
-    {
-        font-size: 1em;
-    }
-    
-    form font
+    #vedioSubject
     {
         font-size: 1em;
     }

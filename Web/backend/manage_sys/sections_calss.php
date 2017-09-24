@@ -1,4 +1,4 @@
-<? /*
+<? 
 include "cksession.php";
 include "../config.php";
 include "../function.php";
@@ -7,14 +7,14 @@ chk_Power("DB_ManP_8"); //檢查是否功能權限,否回首頁
 
 
 $page = (empty($_GET['page']))?1:$_GET['page']; //現在頁面
-//********************************************************************************************************
+/*******************************************************************************************************/
 
 //條列式訊息管理查詢
 $sql = "select * from `ordi_tags` where 1 ORDER BY `DB_OrdTagSort` ASC";	
 $return = iron_page( $sql, 1000, 10, $page, 10 ); //iron分頁程式
 $result = mysql_query($sql) or die("查詢失敗");
 $number = mysql_num_rows($result); //全部資料的總數
-$url = "sections_calss.php"; //本頁的網址 & 使用的 get變數 */
+$url = "sections_calss.php"; //本頁的網址 & 使用的 get變數 
 ?>
 <? 
 include_once ("top.php");
@@ -23,7 +23,7 @@ include_once ("top.php");
 <!--
 //換頁Script
 function GoPage(page){
-   location.href="<?// echo $url ?>?page="+page;
+   location.href="<? echo $url ?>?page="+page;
 }
 //選擇是否刪除
 function  Delete(id){
@@ -89,8 +89,8 @@ include_once ("left_menu.php");
 			<td width="10%" align="center">顯示</td>
 			<td width="20%" align="center">功能</td>
 		  </tr>
-		<? /*
-		if($return){
+		<? 
+		/*if($return){
 		$i = 0;
 		$c = ($page - 1) * 1000;
 		while( $return[$i] ){
