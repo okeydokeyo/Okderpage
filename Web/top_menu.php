@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="BasicStyle.css">
 <script type="text/javascript" src="js/dd.js"></script>
-
 <script language="javascript">
+
     function check(){
         if(document.searchform.name.value == "站內搜尋"){
             alert('標題搜尋未正確填寫，請確認');
@@ -17,6 +17,7 @@
             document.searchform.submit();
         }
     }
+
 </script>
 <nav class="navbar navbar-fixed-top" id="nav">
         <nav class="navbar" id="top-navbar"> 
@@ -109,7 +110,7 @@
                             友善新世界雜誌<span class="sr-only">(current)
                             </span></a>
                         </li>
-                        <li><a href="#">媒體報導</a></li>
+                        <li><a href="news_list.php?no=13">媒體報導</a></li>
                         <li><a href="volunteer.php">志工園地</a></li>
                         <li><a href="GoodLink.php">好站連結</a></li>
                         <li><a href="billboard.php">留言板</a></li>
