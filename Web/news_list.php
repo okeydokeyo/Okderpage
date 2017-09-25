@@ -1,4 +1,3 @@
-<!doctype html>
 <html>
 <head>
     <title>桃園市私立脊髓損傷潛能發展中心</title>
@@ -9,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="indexStyle.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="about_3.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="content.css">
 
@@ -17,8 +15,10 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+
 </head>
- <?php
+<?php
 error_reporting(E_ALL ^ E_DEPRECATED);
 session_start();//初始化session,就是開始要始用session
 include "config.php";
@@ -51,29 +51,54 @@ $abri = $arry['DB_OrdTagSubject']; //top標題
     include("top_menu.php");
     ?>
 </header>
-<body>
-
-
+   <body>
 <script language="javascript">
 <!--
 //換頁Script
 function GoPage(page){
    location.href="<?php echo $url ?>?no=<?php echo $no;?>&page="+page;
 }
-function loadHTML(){
-$("div#content").load("");
-}
+-->
 </script><noscript>
   <p>很抱歉，本網頁使用script可是您的瀏覽器並不支援，請改用支援 JavaScript 的瀏覽器，謝謝!</p>  
 </noscript>
-<!--left_menu_end-->
-<!--con-->
+<!--top_end-->
+  <tr>
+    <td align="left" valign="top">
+<!--left_menu-->
+
 	<div id="content">
-<a href="news_list.php?no=23">按我</a>
-	  <table width="100%" border="0" cellspacing="0" cellpadding="0" id="margin_01" class="text_12px_01">
+	  <table style="margin-top:3%; margin-left:16%; margin-right:16%;"  width="68%" border="0" cellspacing="0" cellpadding="0">
+	    <tr>
+		  <td align="left" valign="middle" id="title_01"><h1><?php echo $arry['DB_OrdTagSubject'];?><input type="button" value="新聞中心" style="
+  font-size:46%;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: pink;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left: 5%;
+}"  onclick="location.href='news_list.php?no=23'"><input type="button" value="媒體報導" style="
+  font-size:46%;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: pink;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left: 2%;
+}"  onclick="location.href='news_list.php?no=13'"></h1></td>
+		</tr>
+	  </table>
+
+	  <table style="margin-top:1%; margin-left:16%; margin-right:16%;" width="68%" border="0" cellspacing="0" cellpadding="0" id="margin_01" class="text_12px_01">
 		<caption align="left" class="hidden"><?php echo $arry['DB_OrdTagSubject'];?>列表</caption>
 <?php
-//條列式訊息管理查詢	
 $ordi_result = mysql_query("select * from `ordi` where `DB_OrdTagID`='$no' && `DB_OrdAnnounce`='0' && `DB_OrdNewTime`!='0000-00-00'&& (`DB_OrdStart_Time`<='$time' && `DB_OrdEnd_Time`>='$time' || `DB_OrdPermanent`='1')") or die("查詢失敗OrNum");
 $ordi_num = mysql_num_rows($ordi_result);
 ?>		
@@ -135,7 +160,7 @@ $ordi_num = mysql_num_rows($ordi_result);
 		</tr>
 	  </table>
 	  <br />
-		<div align="left" style="padding:5px;margin:5px"><img src="images/icon_g.gif" alt="*" width="5" height="5" align="absmiddle" /> <span class="text_12px_04">資料筆數：<?php echo $number;?>　　
+		<div style="margin-left:23%;" align="left" style="padding:5px;margin:5px"><img src="images/icon_g.gif" alt="*" width="5" height="5" align="absmiddle" /> <span class="text_12px_04">資料筆數：<?php echo $number;?>　　
 		<?php  if ( $return['total_page'] > 1) { ?>		
 		頁數：<?php echo $return[ 'now_page' ];?> / <?php echo  $return[ 'total_page' ];?></span>
 		　|　
@@ -147,8 +172,9 @@ $ordi_num = mysql_num_rows($ordi_result);
 		  <a href="javascript:GoPage(<?php echo $return['b']; ?>)" title="下一頁" class="button_05">>></a>
 		  <a href="javascript:GoPage(<?php echo $return['total_page']; ?>)" title="最後頁" class="button_05">>|</a>
 		<?php   }   ?>			
-		</div></div>
-	 
+		</div>
+	</td>
+  </tr>
 <footer>
     <?php
     include("footer.php");
