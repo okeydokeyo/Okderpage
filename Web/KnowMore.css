@@ -22,13 +22,6 @@
     margin-bottom: 5em;
 }
 
-iframe
-{
-    width: 60%;
-    height: 60%;
-    margin-left: 10%;
-}
-
 @media screen and (min-width: 769px)
 {
     .artTitle
@@ -53,6 +46,13 @@ iframe
     #vedioSubject
     {
         font-size: 1.1em;
+    }
+
+    .youtubeVideo 
+    {
+        width: 60%;
+        height: 60%;
+        margin-left: 10%;
     }
 }
 
@@ -82,6 +82,13 @@ iframe
     {
         font-size: 1.1em;
     }
+
+    .youtubeVideo 
+    {
+        width: 80%;
+        height: auto;
+        margin-left: 5%;
+    }
 }
 
 @media screen and (max-width: 320px)
@@ -109,5 +116,11 @@ iframe
     #vedioSubject
     {
         font-size: 1em;
+    }
+
+    .youtubeVideo 
+    {
+        width: auto;
+        max-height: auto;
     }
 }

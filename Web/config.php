@@ -1,4 +1,4 @@
-<?
+<?php
     /*if(empty($_SERVER["HTTPS"])) {
         $https = "https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         header("Location:".$https);
@@ -58,6 +58,6 @@
         }
     }
 ?>
-<? 
+<?php
     //$userauth = get_user_info( $_SESSION['ManUser'] ); 
 ?>

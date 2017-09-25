@@ -108,7 +108,7 @@
        </nav>
         <nav class="navbar" id="bottom-menu">
             <div class="container-fluid">
-            <? 
+            <?php
             $Logo_result = mysql_query("select * from `logo` where `DB_LogID`='1' && `DB_LogAnnounce`='0'") or die("查詢失敗lo");
             $Logo_num = mysql_num_rows($Logo_result);
             if ($Logo_num <> 0){
@@ -119,7 +119,7 @@
                 $Logo_ary = mysql_fetch_array($Logo2_result);
             }
             ?>	
-                <a href="index.php"><img src="images/<? echo $Logo_ary['DB_LogImg'];?>" alt="網站所屬單位名稱及商標圖" id="logo"/></a>
+                <a href="index.php"><img src="images/<?php echo $Logo_ary['DB_LogImg'];?>" alt="網站所屬單位名稱及商標圖" id="logo"/></a>
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myBottomNavBar" id="bottom-navbar-button">
                         <span class="icon-bar"></span>
