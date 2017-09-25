@@ -1,3 +1,7 @@
+<?php 
+session_start();//初始化session,就是開始要始用session
+?>
+
 <html>
 <head>
     <title>桃園市私立脊髓損傷潛能發展中心</title>
@@ -18,23 +22,14 @@
 
 </head>
     
-
-<?php
-error_reporting(E_ALL ^ E_DEPRECATED);
-session_start();//初始化session,就是開始要始用session
-include "config.php";
-include "function.php";
-
-chk_IP($_SERVER['REMOTE_ADDR']);
-chk_data($_GET['page'],5);//檢查字元長度後過長退回上一頁
-chk_data($_GET['no'],"5");  //檢查數值是否大於5個字元
-$no=$_GET['no'];
-$arry=SoloSql("article"," `DB_ArtID`='$no'");
-
-?>
 <header>
     <?php 
     include("top_menu.php");
+    chk_IP($_SERVER['REMOTE_ADDR']);
+    chk_data($_GET['page'],5);//檢查字元長度後過長退回上一頁
+    chk_data($_GET['no'],"5");  //檢查數值是否大於5個字元
+    $no=$_GET['no'];
+    $arry=SoloSql("article"," `DB_ArtID`='$no'");
     ?>
 </header>
    <body>
