@@ -6,7 +6,6 @@ include "../function.php";
 //chk_Power("DB_ManP_16"); //檢查是否功能權限,否回首頁
 
 $arry=SoloSql("logo","`DB_LogID`='".$_GET['DB_LogID']."'");
-
 $page=$_POST['page'];
 $DB_LogID_no=$_POST['DB_LogID_no'];
 $DB_LogAnnounce=$_POST['DB_LogAnnounce'];
@@ -36,9 +35,7 @@ if(!empty($DB_LogExp) ){
 			$UpStr2="'".$_SESSION['ManUser']."','".$_SERVER['REMOTE_ADDR']."','LOGO圖管理','".$DB_LogExp."','edit',NOW()";
 			Recording_Add("recording",$UpStr,$UpStr2);
 }
-?>
 
-<? 
 include_once ("top.php");
 ?>
 <script language="JavaScript" type="text/javascript" src="ajax.js"></script>
@@ -71,10 +68,8 @@ function change1( num,DB_FileName ){
 	oHttpReq.open( "GET", "toplogo_file_del.php?num="+num+"&del=Yes&DB_FileName="+DB_FileName+"&rand="+rand(), true );  
 	oHttpReq.send(null);
 }
+</script>
 
-//-->
-</Script>
-<!--top_end-->
 <table width="955" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td width="203" align="left" valign="top">

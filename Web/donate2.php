@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();//初始化session,就是開始要始用session
     /*if(empty($_SERVER["HTTPS"])) {
         $https = "https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
@@ -78,6 +78,7 @@ session_start();//初始化session,就是開始要始用session
     include("top_menu.php");
     ?>
 </header>
+    
 <body>
     <?php 
     mysql_query("set names utf8") or die("err_1");
@@ -121,7 +122,7 @@ session_start();//初始化session,就是開始要始用session
 		  <tr>
             <th width="10%" align="center" class="th2">序號</th>
             <th width="75%" align="center" class="th2">檔案名稱</th>
-            <th width="15%" align="center" class="th2">檔案</th>
+            <th width="15%" align="center" class="th2">下載</th>
           </tr>
 		  <tr>
 			<td colspan="3" class="h5"></td>

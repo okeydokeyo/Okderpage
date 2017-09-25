@@ -60,7 +60,6 @@ function GoPage(page){
    location.href="<? echo $url ?>?year=<? echo $_GET['year'];?>&month=<? echo $_GET['month'];?>&page="+page;
 }
 
-
 function resubmit1(y){
    location.href="<? echo $url ?>?year="+y+"&month=<? echo $_GET['month'];?>";
 }
@@ -70,7 +69,8 @@ function resubmit2(m){
 }
 -->
 </script>
-
+<html>
+<body>
 <!--top_end-->
 <table width="955" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
@@ -128,9 +128,14 @@ include_once ("left_menu.php");
 			<option value="12" <? if ($_GET['month'] == "12"){echo "selected";}?>>12</option>
 	      </select><span class="text_12px_01">月</span>
 
-		<a href="javascript:if(confirm('是否清空資訊!!')) location.href='rate.php?del=YES&year=<? echo $_GET['year'];?>&month=<? echo $_GET['month'];?>'" class="button_03"><img src="images/icon_del2.gif" border="0" align="absmiddle" /> 清 空 資 訊</a></div></td>
+		<a href="javascript:if(confirm('是否清空資訊!!')) location.href='rate.php?del=YES&year=<? echo $_GET['year'];?>&month=<? echo $_GET['month'];?>'" class="button_03">
+            <img src="images/icon_del2.gif" border="0" align="absmiddle" /> 清 空 資 訊
+        </a>
+        </div>
+        </td>
 	  </tr>
 	</table>
+        
 	<table width="752" border="0" cellspacing="0" cellpadding="0">
 	  <tr>
 		<td width="5" align="left" valign="top"><img src="images/com_top_L.gif" width="5" height="5" /></td>
@@ -173,14 +178,14 @@ include_once ("left_menu.php");
 		   $i++;
 		}
    }		
-		?>			  
-		  
+		?>	
 		</table>
-		<div align="left" style="padding:5px;margin:5px"><img src="images/icon_g.gif" width="5" height="5" align="absmiddle" /> <span class="text_12px_04">每頁10筆，共<? echo $number;?>筆資料</span>
+		<div align="left" style="padding:5px;margin:5px">
+            <img src="images/icon_g.gif" width="5" height="5" align="absmiddle" /> <span class="text_12px_04">每頁10筆，共<? echo $number;?>筆資料</span>
 <?  if ( $return['total_page'] > 1) { ?>		
 		　|　
-		  <a href="javascript:GoPage(1)" title="最前頁" class="button_05">|<</a>
-		  <a href="javascript:GoPage(<? echo $return['f']; ?>)" title="上一頁" class="button_05"><<</a> 
+		  <a href="javascript:GoPage(1)" title="最前頁" class="button_05">|</a>
+		  <a href="javascript:GoPage(<? echo $return['f']; ?>)" title="上一頁" class="button_05"></a> 
 		  <?   for($i=$return[ 'show_start' ];$i<$return['show_start']+$return['show_page'];$i++){ ?>		  
 		       <? if ($i!=$page){?>　<a href="javascript:GoPage(<? echo $i;?>)" class="link_02"><? }?><? if ($i==$page){?>　<span class="text_12px_03b"><? }?><? echo $i;?><? if ($i==$page){?></span><? }?><? if ($i!=$page){?></a><? }?>
 		  <?   }   ?>　		  

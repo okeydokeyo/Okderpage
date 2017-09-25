@@ -1,30 +1,5 @@
 <?
 session_start();//初始化session,就是開始要始用session
-include "config.php";
-include "function.php";
-
-chk_IP($_SERVER['REMOTE_ADDR']);
-chk_data($_GET['page'],5);//檢查字元長度後過長退回上一頁
-chk_data($_GET['no'],"5");  //檢查數值是否大於5個字元
-chk_data($_GET['DB_DowUnitID'],"5");  //檢查數值是否大於5個字元
-
-$no=$_GET['no'];
-$arry=SoloSql("download_tags"," `DB_DowTagID`='$no'");
-
-if($_GET['DB_DowUnitID']!=""){
-    $DB_DowUnitID=" && `DB_DowUnitID`='".$_GET['DB_DowUnitID']."'";
-}
-
-
-$page = (empty($_GET['page']))?1:$_GET['page']; //現在頁面
-//********************************************************************************************************
-
-//檔案下載標籤管理查詢
-$sql = "select * from `download` where `DB_DowTagID`=13 $DB_DowUnitID && `DB_DowAnnounce`='0' ORDER BY `DB_DowSort` ASC";	
-$return = iron_page( $sql, 10, 10, $page, 10 ); //iron分頁程式
-$result = mysql_query($sql) or die("查詢失敗");
-$number = mysql_num_rows($result); //全部資料的總數
-$url = "donate3.php"; //本頁的網址 & 使用的 get變數
 ?>
 
 <script language="javascript">//換頁Script
@@ -62,9 +37,29 @@ function GoPage(page){
 </header>
     
 <body>  
-    <div style="margin-top: 200px;">
-        <form action="donate3.php" method="GET" name="form1" > 
-            <div align="left" style="padding:5px;margin:5px" class="text_12px_01b border_02"> 選擇檔案類別：         
+    <?php 
+    chk_IP($_SERVER['REMOTE_ADDR']);
+    chk_data($_GET['page'],5);//檢查字元長度後過長退回上一頁
+    chk_data($_GET['no'],"5");  //檢查數值是否大於5個字元
+    chk_data($_GET['DB_DowUnitID'],"5");  //檢查數值是否大於5個字元
+    $no=$_GET['no'];
+    $arry=SoloSql("download_tags"," `DB_DowTagID`='$no'");
+
+    if($_GET['DB_DowUnitID']!=""){
+        $DB_DowUnitID=" && `DB_DowUnitID`='".$_GET['DB_DowUnitID']."'";
+    }
+    $page = (empty($_GET['page']))?1:$_GET['page']; //現在頁面
+    //********************************************************************************************************
+
+    //檔案下載標籤管理查詢
+    $sql = "select * from `download` where `DB_DowTagID`=13 $DB_DowUnitID && `DB_DowAnnounce`='0' ORDER BY `DB_DowSort` ASC";	
+    $return = iron_page( $sql, 10, 10, $page, 10 ); //iron分頁程式
+    $result = mysql_query($sql) or die("查詢失敗");
+    $number = mysql_num_rows($result); //全部資料的總數
+    $url = "donate3.php"; //本頁的網址 & 使用的 get變數 
+    ?>
+        <form action="donate3.php" method="GET" name="form1" style="margin-top:12em; margin-left:6em;" > 
+            <div align="left"> 選擇檔案類別：         
 	           <select id="DB_DowUnitID" name="DB_DowUnitID" class="text_12px_01b">
 		          <option value="" >不分類</option>
 		          <?//查詢檔案下載類別資料
@@ -79,18 +74,17 @@ function GoPage(page){
                   </option>
 		          <? } ?>		
 	           </select>
-	           <input name="no" type="hidden" value="<? echo $_GET['no'];?>" />
-		       <input type="submit" name="name" value="送出" id="name" class="text_12px_01b" />
+	           <input name="no" type="hidden" value="13" />
+		       <input type="submit" name="name" value="送出" id="search_button" class="text_12px_01b" />
             </div>
         </form>
-    </div>
     
-    <table width="100%" border="0" cellspacing="0" cellpadding="0" id="margin_01" class="text_12px_01" summary="<? echo $arry['DB_DowTagSubject'];?>表格">
+    <table width="50%" border="0" cellspacing="0" cellpadding="0" id="margin_01" class="text_12px_01" summary="<? echo $arry['DB_DowTagSubject'];?>表格" align="center">
         <caption align="left" class="hidden"><? echo $arry['DB_DowTagSubject'];?>列表</caption>
         <tr>
             <th width="10%" align="center" class="th2">序號</th>
             <th width="75%" align="center" class="th2">檔案名稱</th>
-            <th width="15%" align="center" class="th2-end">檔案下載</th>
+            <th width="15%" align="center" class="th2">下載</th>
         </tr>
         <tr>
             <td colspan="3" class="h5"></td>

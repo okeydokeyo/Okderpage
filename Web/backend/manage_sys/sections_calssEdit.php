@@ -86,6 +86,7 @@ include_once ("left_menu.php");
 		  <a href="sections_calss.php" class="button_04">◎回標籤列表頁</a></div></td>
 	  </tr>
 	</table>
+        
 	<table width="752" border="0" cellspacing="0" cellpadding="0">
 	  <tr>
 		<td width="5" align="left" valign="top"><img src="images/com_top_L.gif" width="5" height="5" /></td>

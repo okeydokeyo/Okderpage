@@ -26,21 +26,14 @@
     <select name="mag" onchange="window.location='news.php?mag='+this.value">
         <option value="">-請選擇-</option>
         <?php
-        require_once("dbtools.inc.php");
-        $link = create_connection();        
-        mysql_select_db("scsrc2", $link);
         $result = mysql_query("SELECT * FROM `left` WHERE `DB_LefTagID`='35' ORDER BY `DB_LefSort` ASC");
         while($row = mysql_fetch_array($result))
         {
             echo "<option value='".$row['DB_LefID']."'>".$row['DB_LefSubject']."</option>";
         }
-        mysql_close($link);
         ?>
     </select><br>
     <?php
-    require_once("dbtools.inc.php");
-    $link = create_connection();        
-    mysql_select_db("scsrc2", $link);
     $result = mysql_query("SELECT * FROM `ordi` WHERE `DB_OrdBasis`='3' AND `DB_OrdKind`!='null' ORDER BY `DB_OrdID` ASC");
     $result2 = mysql_query("SELECT * FROM `left` WHERE `DB_LefID`='".@$_GET["mag"]."'");
     while($row2 = mysql_fetch_array($result2))
@@ -86,8 +79,6 @@
             echo "<br><br><br><a href='news.php?{124}=".$row5['DB_OrdTagID']."' class='magslink'>-回上頁-</a>";
         }
     }
-
-    mysql_close($link);
     ?>
     
 </form>
