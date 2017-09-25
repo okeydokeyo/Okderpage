@@ -48,7 +48,7 @@ $arry=SoloSql("ordi_tags"," `DB_OrdTagID`='".$arry1['DB_OrdTagID']."'");
 <!--left_menu-->
 
 	<div id="content">
-	  <table style="margin-top:5%; margin-left:16%;" width="84%" border="0" cellspacing="0" cellpadding="0" id="margin_01" class="text_12px_01" summary="最新消息文字表格">
+	  <table style="margin-top:5%; margin-left:16%; margin-right:16%;" width="68%" border="0" cellspacing="0" cellpadding="0" id="margin_01" class="text_12px_01" summary="最新消息文字表格">
 	    <tr>
 		  <th align="left" valign="middle" class="th2-end"><?php echo $arry1['DB_OrdSubject'];?></th>
 	    </tr>
