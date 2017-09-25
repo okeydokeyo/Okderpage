@@ -18,13 +18,8 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
-<header>
-    <?php 
-    include("top_menu.php");
-    ?>
-</header>
-<body>
  <?php
+error_reporting(E_ALL ^ E_DEPRECATED);
 session_start();//初始化session,就是開始要始用session
 include "config.php";
 include "function.php";
@@ -51,6 +46,13 @@ $url = "news_list.php"; //本頁的網址 & 使用的 get變數
 
 $abri = $arry['DB_OrdTagSubject']; //top標題
 ?>
+<header>
+    <?php 
+    include("top_menu.php");
+    ?>
+</header>
+<body>
+
 
 <script language="javascript">
 <!--
