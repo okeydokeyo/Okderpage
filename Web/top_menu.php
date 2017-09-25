@@ -32,34 +32,34 @@
 
                 <div class="collapse navbar-collapse" id="myTopNavBar">
                     <ul class="nav navbar-nav navbar-right a" id="top-list">
-                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">關於我們<span class="caret"></span></a>
+                       <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">關於我們<span class="caret"></span></a>
                                                         <ul class="dropdown-menu" id="dropdown-menu">
-                                        <li><a href="about_1.php">中心簡介</a></li>
-                                        <li><a href="about_2.php">中心歷史</a></li>
-                                        <li><a href="about_3.php">新生命之家</a></li>
-                                        <li><a href="about_4.php">職業訓練中心願景</a></li><br>
+                                        <li><a href="art.php?no=25">中心簡介</a></li>
+                                        <li><a href="art.php?no=26">中心歷史</a></li>
+                                        <li><a href="art.php?no=29">新生命之家</a></li>
+                                        <li><a href="art.php?no=68">職業訓練中心願景</a></li><br>
                        <li class="main-menu" onmouseover="switchMenu( this, 'SubMenu3' )" onmouseout="hideMenu()" onclick="switchMenu( this, 'SubMenu3' )"><a>超人工作室 </a><ul id="SubMenu3" class="sub-menu" style="display:none;">
-                                        <li><a href="work_1.php">客服工作室</a></li>
-                                        <li><a href="work_2.php">網路工作室</a></li>
-                                        <li><a href="work_3.php">綠色資源工作室</a></li></ul></li>  
+                                        <li><a href="art.php?no=33">客服工作室</a></li>
+                                        <li><a href="art.php?no=34">網路工作室</a></li>
+                                        <li><a href="art.php?no=52">綠色資源工作室</a></li></ul></li>  
                                 </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">服務內容<span class="caret"></span></a>
                                 <ul class="dropdown-menu" id="dropdown-menu">
-                                        <li><a href="train.php">生活重建訓練</a></li>
-                                        <li><a href="train1.php">社區居住服務</a></li>
-                                        <li><a href="train2.php">作業訓練</a></li>
-                                        <li><a href="train3.php">職業訓練</a></li>
-                                        <li><a href="train4.php">生命教育宣導</a></li>
-                                        <li><a href="train5.php">居家就業</a></li>
+                                        <li><a href="art.php?no=42">生活重建訓練</a></li>
+                                        <li><a href="art.php?no=47">社區居住服務</a></li>
+                                        <li><a href="art.php?no=45">作業訓練</a></li>
+                                        <li><a href="art.php?no=44">職業訓練</a></li>
+                                        <li><a href="art.php?no=63">生命教育宣導</a></li>
+                                        <li><a href="art.php?no=64">居家就業</a></li>
                                 </ul>
                         </li>
                         <li><a href="https://scsrc.eoffering.org.tw/" target="_blank">我要捐款</a></li>
                          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">捐贈資訊<span class="caret"></span></a>
                                 <ul class="dropdown-menu" id="dropdown-menu">
-                                        <li><a href="donate.php">愛心電子發票捐贈</a></li>
-                                        <li><a href="donate1.php">物資募集</a></li>
+                                        <li><a href="art.php?no=69">愛心電子發票捐贈</a></li>
+                                        <li><a href="art.php?no=36">物資募集</a></li>
                                         <li><a href="donate2.php">捐款捐物徵信</a></li>
                                         <li><a href="donate3.php">統一勸募徵信</a></li>
                                         <li><a href="donate4.php">年度收支表</a></li>
