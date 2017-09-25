@@ -1,3 +1,6 @@
+<?php 
+session_start();//初始化session,就是開始要始用session 
+?>
 <html>
 <head>
     <title>桃園市私立脊髓損傷潛能發展中心</title>
@@ -18,37 +21,30 @@
 
 
 </head>
-<?php
-error_reporting(E_ALL ^ E_DEPRECATED);
-session_start();//初始化session,就是開始要始用session
-include "config.php";
-include "function.php";
 
-chk_IP($_SERVER['REMOTE_ADDR']);
-chk_data($_GET['page'],5);//檢查字元長度後過長退回上一頁
-chk_data($_GET['no'],"5");  //檢查數值是否大於5個字元
-
-$no=$_GET['no'];
-$arry=SoloSql("ordi_tags"," `DB_OrdTagID`='$no' && `DB_OrdTagAnnounce`='0'");
-
-
-$time = date("Y-m-d"); //時間
-
-$page = (empty($_GET['page']))?1:$_GET['page']; //現在頁面
-//********************************************************************************************************
-
-//條列式訊息管理查詢
-$sql = "select * from `ordi` where `DB_OrdTagID`='$no' && `DB_OrdAnnounce`='0' && (`DB_OrdStart_Time`<='$time' && `DB_OrdEnd_Time`>='$time' || `DB_OrdPermanent`='1') ORDER BY `DB_OrdTime` DESC";	
-$return = iron_page( $sql, 10, 10, $page, 10 ); //iron分頁程式
-$result = mysql_query($sql) or die("查詢失敗");
-$number = mysql_num_rows($result); //全部資料的總數
-$url = "news_list.php"; //本頁的網址 & 使用的 get變數
-
-$abri = $arry['DB_OrdTagSubject']; //top標題
-?>
 <header>
     <?php 
     include("top_menu.php");
+    chk_IP($_SERVER['REMOTE_ADDR']);
+    chk_data($_GET['page'],5);//檢查字元長度後過長退回上一頁
+    chk_data($_GET['no'],"5");  //檢查數值是否大於5個字元
+
+    $no=$_GET['no'];
+    $arry=SoloSql("ordi_tags"," `DB_OrdTagID`='$no' && `DB_OrdTagAnnounce`='0'");
+
+    $time = date("Y-m-d"); //時間
+
+    $page = (empty($_GET['page']))?1:$_GET['page']; //現在頁面
+    //********************************************************************************************************
+
+    //條列式訊息管理查詢
+    $sql = "select * from `ordi` where `DB_OrdTagID`='$no' && `DB_OrdAnnounce`='0' && (`DB_OrdStart_Time`<='$time' && `DB_OrdEnd_Time`>='$time' || `DB_OrdPermanent`='1') ORDER BY `DB_OrdTime` DESC";	
+    $return = iron_page( $sql, 10, 10, $page, 10 ); //iron分頁程式
+    $result = mysql_query($sql) or die("查詢失敗");
+    $number = mysql_num_rows($result); //全部資料的總數
+    $url = "news_list.php"; //本頁的網址 & 使用的 get變數
+
+    $abri = $arry['DB_OrdTagSubject']; //top標題
     ?>
 </header>
    <body>
@@ -68,7 +64,7 @@ function GoPage(page){
 <!--left_menu-->
 
 	<div id="content">
-	  <table style="margin-top:3%; margin-left:16%; margin-right:16%;"  width="68%" border="0" cellspacing="0" cellpadding="0">
+	  <table style="margin-top:15%; margin-left:16%; margin-right:16%;"  width="68%" border="0" cellspacing="0" cellpadding="0">
 	    <tr>
 		  <td align="left" valign="middle" id="title_01"><h1><?php echo $arry['DB_OrdTagSubject'];?><input type="button" value="新聞中心" style="
   font-size:46%;
@@ -164,8 +160,8 @@ $ordi_num = mysql_num_rows($ordi_result);
 		<?php  if ( $return['total_page'] > 1) { ?>		
 		頁數：<?php echo $return[ 'now_page' ];?> / <?php echo  $return[ 'total_page' ];?></span>
 		　|　
-		  <a href="javascript:GoPage(1)" title="最前頁" class="button_05">|<</a>
-		  <a href="javascript:GoPage(<?php echo $return['f']; ?>)" title="上一頁" class="button_05"><<</a>
+		  <a href="javascript:GoPage(1)" title="最前頁" class="button_05">|</a>
+		  <a href="javascript:GoPage(<?php echo $return['f']; ?>)" title="上一頁" class="button_05"></a>
 		  <?php for($i=$return[ 'show_start' ];$i<$return['show_start']+$return['show_page'];$i++){ ?>		  
 		       <?php if ($i!=$page){?>　<a href="javascript:GoPage(<?php echo $i;?>)" class="link_05" title="第<?php echo $i;?>頁" ><?php }?><?php if ($i==$page){?>　<span class="text_12px_03b"><?php }?><?php echo $i;?><?php if ($i==$page){?></span><?php }?><?php if ($i!=$page){?></a><?php }?>
 		  <?php   }   ?>　		  

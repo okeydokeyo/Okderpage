@@ -22,9 +22,6 @@
     
     <table cellspacing="1" cellpadding="1" border="0" id="table">
         <?php
-        require_once("dbtools.inc.php");
-        $link = create_connection();        
-        mysql_select_db("scsrc2", $link);
         $result = mysql_query("SELECT * FROM website_tags ORDER BY DB_WebTagID ASC");
         while($row = mysql_fetch_array($result))
         {
@@ -37,7 +34,6 @@
             }
             echo "<tr><td><br><br><br><br></td></tr>";
         }
-        mysql_close($link);
         ?>
     </table> 
 

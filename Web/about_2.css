@@ -227,15 +227,7 @@ i, cite, em, var, address, dfn {
     margin-top: 12.5px;
     margin-bottom: 12.5px;
 }
-.h1, .h2, .h3, .h4, .h5, h1, h2, h3, h4, h5 {
-    font-weight: 700;
-    line-height: 1.1;
-    color: #003063;
-    text-transform: uppercase;
-}
-.h1, .h2, .h3, .h4, .h5, blockquote p, h1, h2, h3, h4, h5 {
-    font-family: TradeGothicCond, NewLetterGothic, "Siri Core", "Geneva CY", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Hiragino Kaku Gothic ProN W3", Osaka, メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "Arial Unicode MS", Tahoma, Helvetica, sans-serif;
-}
+
 *, :after, :before {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
