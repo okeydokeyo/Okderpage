@@ -24,11 +24,10 @@
     
 <body>
     <?php
+        include "config.php";
+        include "function.php";
         $q = intval($_GET['q']);
-        require_once("dbtools.inc.php");
-        $link = create_connection();
-        $sql = "SELECT*FROM comments WHERE DB_MesID='".$q."'";
-        $comment_result = execute_sql("scsrc2", $sql, $link); 
+        $comment_result = mysql_query("SELECT*FROM comments WHERE DB_MesID='".$q."'") or die("查詢失敗n3"); 
         $ID = mysql_result($comment_result,0,0);
         $name = mysql_result($comment_result,0,2);
         $name_style;
@@ -68,9 +67,7 @@
                 </td>
             </tr>
             </table>'; 
-    
-        $reply_sql = "SELECT*FROM comments_reply WHERE DB_MesID=".$q." AND pass=1";
-        $reply_result = execute_sql("scsrc2", $reply_sql, $link); 
+        $reply_result = mysql_query("SELECT*FROM comments_reply WHERE DB_MesID=".$q." AND pass=1") or die("查詢失敗n3");; 
         $num_rows = mysql_num_rows($reply_result);
         $i=0;
         while($i<$num_rows){
@@ -114,9 +111,6 @@
             }
             $i++;   
         }
-        mysql_free_result($comments_result);
-        mysql_free_result($reply_result);
-        mysql_close($link);
     ?>
 <script src="http://download.arefly.com/chinese_convert.js"></script>
 <script>

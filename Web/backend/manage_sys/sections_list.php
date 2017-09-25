@@ -1,9 +1,9 @@
 <?
-//include "cksession.php";
-//include "../config.php";
-//include "../function.php";
-chk_account_id($_SESSION['ManUser']); //檢查帳號是否符合後,否回首頁
-chk_Power("DB_ManP_8"); //檢查是否功能權限,否回首頁
+include "cksession.php";
+include "../config.php";
+include "../function.php";
+//chk_account_id($_SESSION['ManUser']); //檢查帳號是否符合後,否回首頁
+//chk_Power("DB_ManP_8"); //檢查是否功能權限,否回首頁
 
 $DB_OrdTagID=$_GET['DB_OrdTagID'];
 $arry1=SoloSql("ordi_tags"," `DB_OrdTagID`='$DB_OrdTagID'");

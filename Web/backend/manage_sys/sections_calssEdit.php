@@ -1,9 +1,9 @@
-<? /*
+<? 
 include "cksession.php";
 include "../config.php";
 include "../function.php";
-chk_account_id($_SESSION['ManUser']); //檢查帳號是否符合後,否回首頁
-chk_Power("DB_ManP_8"); //檢查是否功能權限,否回首頁
+//chk_account_id($_SESSION['ManUser']); //檢查帳號是否符合後,否回首頁
+//chk_Power("DB_ManP_8"); //檢查是否功能權限,否回首頁
 
 $DB_OrdTagID=$_GET['DB_OrdTagID'];
 
@@ -27,7 +27,7 @@ if(!empty($DB_OrdTagSort) && !empty($DB_OrdTagSubject) ){
 	$UpStr2="'".$_SESSION['ManUser']."','".$_SERVER['REMOTE_ADDR']."','條列式訊息管理標籤','".$DB_OrdTagSubject."','edit',NOW()";
 	Recording_Add("recording",$UpStr,$UpStr2);
 }
-*/
+
 ?>
 <? 
 include_once ("top.php");

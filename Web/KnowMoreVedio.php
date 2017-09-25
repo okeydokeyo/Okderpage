@@ -25,21 +25,14 @@
         <select name="vedio" onchange="window.location='KnowMoreVedio.php?vedio='+this.value">
             <option value="">-請選擇-</option>
             <?php
-            require_once("dbtools.inc.php");
-            $link = create_connection();        
-            mysql_select_db("scsrc2", $link);
             $result = mysql_query("SELECT * FROM ordi WHERE DB_OrdTagID='29'");
             while($row = mysql_fetch_array($result))
             {
                 echo "<option value='".$row['DB_OrdID']."'>".$row['DB_OrdSubject']."</option>";
             }
-            mysql_close($link);
             ?>
         </select><br>
         <?php
-        require_once("dbtools.inc.php");
-        $link = create_connection();        
-        mysql_select_db("scsrc2", $link);
         $result = mysql_query("SELECT * FROM ordi WHERE DB_OrdTagID='29'");
         while($row = mysql_fetch_array($result))
         {
@@ -49,8 +42,6 @@
                 echo $row['DB_OrdYou_1'];
             }
         }
-
-        mysql_close($link);
         ?>
         
     </form>

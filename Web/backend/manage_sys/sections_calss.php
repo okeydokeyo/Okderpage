@@ -2,8 +2,8 @@
 include "cksession.php";
 include "../config.php";
 include "../function.php";
-chk_account_id($_SESSION['ManUser']); //檢查帳號是否符合後,否回首頁
-chk_Power("DB_ManP_8"); //檢查是否功能權限,否回首頁
+//chk_account_id($_SESSION['ManUser']); //檢查帳號是否符合後,否回首頁
+//chk_Power("DB_ManP_8"); //檢查是否功能權限,否回首頁
 
 
 $page = (empty($_GET['page']))?1:$_GET['page']; //現在頁面
@@ -90,33 +90,32 @@ include_once ("left_menu.php");
 			<td width="20%" align="center">功能</td>
 		  </tr>
 		<? 
-		/*if($return){
+		if($return){
 		$i = 0;
 		$c = ($page - 1) * 1000;
 		while( $return[$i] ){
 		$c++;
-		
 		if($return[$i]['DB_OrdTagAnnounce']=="1"){
-		$DB_OrdTagAnnounce="<span class=\"state_del\">不顯示</span>";
-		}else{
-		$DB_OrdTagAnnounce="<span class=\"state_edit\">顯示</span>";
+		  $DB_OrdTagAnnounce="<span class=\"state_del\">不顯示</span>";
 		}
-		*/
+        else{
+		  $DB_OrdTagAnnounce="<span class=\"state_edit\">顯示</span>";
+		}
 		?>
 		  <tr bgcolor="#ffffff">
-			<td align="center"><? //echo $return[$i]['DB_OrdTagSort'];?></td>
-			<td align="left"><a href="sections_list.php?DB_OrdTagID=<? //echo $return[$i]['DB_OrdTagID'];?>" class="link_04"><? //echo $return[$i]['DB_OrdTagSubject'];?></a></td>
-			<td align="center"><? //echo $DB_OrdTagAnnounce;?></td>
-			<td align="center"><a href="sections_calssEdit.php?DB_OrdTagID=<? //echo $return[$i]['DB_OrdTagID'];?>" class="button_02"><img src="images/icon_edit.gif" border="0" align="absmiddle" /> 編輯</a>&nbsp;<a href="javascript:Delete(<? //echo $return[$i]['DB_OrdTagID'];?>);" class="button_03"><img src="images/icon_del2.gif" border="0" align="absmiddle" /> 刪除</a></td>
+			<td align="center"><? echo $return[$i]['DB_OrdTagSort'];?></td>
+			<td align="left"><a href="sections_list.php?DB_OrdTagID=<? echo $return[$i]['DB_OrdTagID'];?>" class="link_04"><? echo $return[$i]['DB_OrdTagSubject'];?></a></td>
+			<td align="center"><? echo $DB_OrdTagAnnounce;?></td>
+			<td align="center"><a href="sections_calssEdit.php?DB_OrdTagID=<? echo $return[$i]['DB_OrdTagID'];?>" class="button_02"><img src="images/icon_edit.gif" border="0" align="absmiddle" /> 編輯</a>&nbsp;<a href="javascript:Delete(<? echo $return[$i]['DB_OrdTagID'];?>);" class="button_03"><img src="images/icon_del2.gif" border="0" align="absmiddle" /> 刪除</a></td>
 		  </tr>
-		<? //$i++;
-	//	}
-	//	}else{
+		<?$i++;
+		}
+		}else{
 		?>
 		  <tr bgcolor="#ffffff">
 			<td colspan="4" align="center">目前沒有資料</td>
 			</tr>
-		<? //}?>
+		<? }?>
 		</table>
 		</td>
 		<td align="left" valign="top" style="background-image:url(images/com_R.gif); background-repeat:repeat-y;">&nbsp;</td>

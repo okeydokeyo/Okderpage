@@ -69,15 +69,13 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">認識脊髓損傷<span class="caret"></span></a>
                                 <ul class="dropdown-menu" id="dropdown-menu">
                                     <?php
-                                    require_once("dbtools.inc.php");
-                                    $link = create_connection();        
-                                    mysql_select_db("scsrc2", $link);
+                                    error_reporting(E_ALL ^ E_DEPRECATED);
+                                    include "config.php";
+                                    include "function.php";
                                     $result = mysql_query("SELECT * FROM top WHERE DB_TopTagID='4' ORDER BY DB_TopSort ASC");
-                                    while($row = mysql_fetch_array($result))
-                                    {
+                                    while($row = mysql_fetch_array($result)){
                                         echo "<li><a href='KnowMore.php?artID=".$row['DB_TopNumID']."'>".$row['DB_TopSubject']."</a></li>";
                                     }
-                                    mysql_close($link);
                                     ?>
                                     <li><a href="KnowMoreVedio.php">脊髓損傷衛教影片</a></li>
                                     <!--
@@ -110,7 +108,18 @@
        </nav>
         <nav class="navbar" id="bottom-menu">
             <div class="container-fluid">
-                <a href="index.php"><img src="images/MainLogo.jpg" alt="網站所屬單位名稱及商標圖" id="logo"/></a>
+            <? 
+            $Logo_result = mysql_query("select * from `logo` where `DB_LogID`='1' && `DB_LogAnnounce`='0'") or die("查詢失敗lo");
+            $Logo_num = mysql_num_rows($Logo_result);
+            if ($Logo_num <> 0){
+                $Logo_ary = mysql_fetch_array($Logo_result);
+            }
+            else{
+                $Logo2_result = mysql_query("select * from `logo` where `DB_LogAnnounce`='0' ORDER BY `DB_LogID` ASC") or die("查詢失敗lo2");
+                $Logo_ary = mysql_fetch_array($Logo2_result);
+            }
+            ?>	
+                <a href="index.php"><img src="images/<? echo $Logo_ary['DB_LogImg'];?>" alt="網站所屬單位名稱及商標圖" id="logo"/></a>
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myBottomNavBar" id="bottom-navbar-button">
                         <span class="icon-bar"></span>
