@@ -22,16 +22,12 @@
     </header>
     
     <?php
-    require_once("dbtools.inc.php");
-    $link = create_connection();        
-    mysql_select_db("scsrc2", $link);
     $result = mysql_query("SELECT * FROM article WHERE DB_ArtID = '".$_GET[artID]."'");
     while($row = mysql_fetch_array($result))
     {
         echo "<table class='artTitle'><tr><td><h1>".$row['DB_ArtSubject']."</h1></td></tr></table>";
         echo $row['DB_ArtContent'];
     }
-    mysql_close($link);
     ?>
     
     <!--
@@ -63,10 +59,9 @@
 </table>
 -->
     
-<footer>
+
     <?php
     include("footer.php");
     ?>
-</footer>
 </body>
 </html>

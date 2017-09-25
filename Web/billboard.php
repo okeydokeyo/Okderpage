@@ -165,10 +165,6 @@
     ?>
 </header>
 <body>  
-    <?php
-        require_once("dbtools.inc.php");
-        $link = create_connection();
-    ?>  
     <form id="dialog-form" method="post" title="回覆留言" style="display:none" action="reply_post.php">
     </form>
     
@@ -230,8 +226,7 @@
     <div class="myDiv">
         <ul>
             <?php
-            $sql = "SELECT*FROM comments WHERE pass=1 ORDER BY DB_MesTime DESC";
-            $result = execute_sql("scsrc2", $sql, $link);    
+            $result = mysql_query("SELECT*FROM comments WHERE pass=1 ORDER BY DB_MesTime DESC") or die("查詢失敗n3");
             $num_rows = mysql_num_rows($result);
             class Message{
                 var $ID, $category, $topic, $name, $current_time, $content, $reply_num, $button, $name_style;
@@ -273,9 +268,8 @@
                     $this->current_time = $time_in;
                     $this->content = $content_in;
                     
-                    $link2 = create_connection();
-                    $reply_sql = "SELECT*FROM comments_reply WHERE DB_MesID=".$this->ID." AND pass=1";
-                    $reply_result = execute_sql("scsrc2", $reply_sql, $link2); 
+                    
+                    $reply_result = mysql_query("SELECT*FROM comments_reply WHERE DB_MesID=".$this->ID." AND pass=1") or die("查詢失敗n3");
                     $reply_num_in = mysql_num_rows($reply_result);
                     
                     $this->reply_num = $reply_num_in;
@@ -337,8 +331,6 @@
                     $message_count++;
                }  
             }
-            mysql_free_result($result);
-            mysql_close($link);
         ?>
     </ul>   
     </div>

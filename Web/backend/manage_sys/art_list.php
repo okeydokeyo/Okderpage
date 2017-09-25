@@ -1,9 +1,9 @@
-<? /*
+<? 
 include "cksession.php";
 include "../config.php";
 include "../function.php";
-chk_account_id($_SESSION['ManUser']); //檢查帳號是否符合後,否回首頁
-chk_Power("DB_ManP_9"); //檢查是否功能權限,否回首頁
+//chk_account_id($_SESSION['ManUser']); //檢查帳號是否符合後,否回首頁
+//chk_Power("DB_ManP_9"); //檢查是否功能權限,否回首頁
 
 
 $page = (empty($_GET['page']))?1:$_GET['page']; //現在頁面
@@ -14,7 +14,7 @@ $sql = "select * from `article` where 1 ORDER BY `DB_ArtSort` ASC";
 $return = iron_page( $sql, 10, 10, $page, 10 ); //iron分頁程式
 $result = mysql_query($sql) or die("查詢失敗");
 $number = mysql_num_rows($result); //全部資料的總數
-$url = "art_list.php"; //本頁的網址 & 使用的 get變數 */
+$url = "art_list.php"; //本頁的網址 & 使用的 get變數 
 ?>
 <? 
 include_once ("top.php");

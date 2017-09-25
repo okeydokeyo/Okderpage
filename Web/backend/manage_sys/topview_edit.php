@@ -20,7 +20,8 @@ if($DB_AniBasis=="1"){
 			if(!empty($_FILES['DB_AniArchive_1']['name'])){
 				$return=iron_upload("DB_AniArchive_1", time(), "", "../file", "", "16677216" );
 				$UpStr=" `DB_AniAnnounce`='$DB_AniAnnounce',`DB_AniBasis`='$DB_AniBasis',`DB_AniDescription`='$DB_AniDescription',`DB_AniArchive_1`='".$return['new_file']."',`DB_AniName_1`='".$return['old_file_name']."',`DB_EndTime`=NOW(),`DB_EditUser`='".$_SESSION['ManUser']."'";
-			}else{
+			}
+            else{
 				$UpStr=" `DB_AniAnnounce`='$DB_AniAnnounce',`DB_AniBasis`='$DB_AniBasis',`DB_AniDescription`='$DB_AniDescription',`DB_EndTime`=NOW(),`DB_EditUser`='".$_SESSION['ManUser']."'";
 			}
 			EditSql("animation","$DB_AniID_no","DB_AniID","topview_list.php?page=$page","修改成功!!",$UpStr);
@@ -359,18 +360,19 @@ include_once ("left_menu.php");
 			  <tr>
 			    <td width="15%" align="left" valign="top" class="border_02"><img src="images/icon_g.gif" width="5" height="5" align="absmiddle" /> 上 傳 動 畫<font color="red">*</font></td>
 			    <td width="85%" align="left" valign="top" class="border_02">
-	<span id="file1">
-	<?
-	if(!empty($arry['DB_AniArchive_1']) && !empty($arry['DB_AniName_1'])){
-	?>
-	<a href="download.php?DB_FileTitle=<? echo urlencode($arry['DB_AniName_1']);?>&DB_FileName=<? echo $arry['DB_AniArchive_1'];?>"><? echo $arry['DB_AniName_1'];?></a> <a href="javascript:change1(<? echo $arry['DB_AniID'];?>,'DB_AniArchive_1');"><img src="images/icon_del.gif" width="16" height="16" border="0" align="absmiddle" /></a>
-	<? 
-	}elseif(empty($arry['DB_AniArchive_1']) && empty($arry['DB_AniName_1'])){
-	?>
-	<input name="DB_AniArchive_1" type="file" id="DB_AniArchive_1" class="text_12px_01"/>
-	<? }?>
-	</span>
-				
+                    <span id="file1">
+                    <?
+                    if(!empty($arry['DB_AniArchive_1']) && !empty($arry['DB_AniName_1'])){
+                    ?>
+                    <a href="download.php?DB_FileTitle=<? echo urlencode($arry['DB_AniName_1']);?>&DB_FileName=<? echo $arry['DB_AniArchive_1'];?>"><? echo $arry['DB_AniName_1'];?></a> 
+                    <a href="javascript:change1(<? echo $arry['DB_AniID'];?>,'DB_AniArchive_1');"><img src="images/icon_del.gif" width="16" height="16" border="0" align="absmiddle" /></a>
+                    <? 
+                    }
+                    elseif(empty($arry['DB_AniArchive_1']) && empty($arry['DB_AniName_1'])){
+                    ?>
+                        <input name="DB_AniArchive_1" type="file" id="DB_AniArchive_1" class="text_12px_01"/>
+                    <? }?>
+                    </span>
 				(動畫會依比例自動縮到 寬 705PX 高170px)
 				</td>
 		      </tr>

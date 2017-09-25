@@ -53,16 +53,10 @@
     </a></div>
 </div>
   <div class="box-b">
-<?php 
-error_reporting(E_ALL ^ E_DEPRECATED);
-include "config.php";
-include "function.php";
-?>
+
 <?php
 if(isset($_GET['show']))  $show=$_GET['show']; 
 else $show =  '0' ;
-?>
-<?php
 		$Inter_result = mysql_query("select * from `inter` ORDER BY `DB_IntSort` ASC") or die("查詢失敗n3");
 		while ($Inter_ary = mysql_fetch_array($Inter_result)){
 		?>

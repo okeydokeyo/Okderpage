@@ -1,11 +1,10 @@
 <?
 session_start();//初始化session,就是開始要始用session
-include "function.php";
     /*if(empty($_SERVER["HTTPS"])) {
         $https = "https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         header("Location:".$https);
         exit();
-    }*/
+    }
     // 調整網頁語系
     @header('Content-Type: text/html; charset=utf-8'); 
 
@@ -13,12 +12,12 @@ include "function.php";
     mb_internal_encoding("UTF-8");
 
     //session_register('http_url');
-    $url_file="/ioth";
+    $url_file="/ioth";*/
 
     /****************************************************
     功能：得知使用者的所有資訊
     ****************************************************/
-    function get_user_info( $DB_ManUser ){	
+    /*function get_user_info( $DB_ManUser ){	
         $result_a = mysql_query("select * from `manager` where `DB_ManUser` = '$DB_ManUser'");
         $num_a=mysql_num_rows($result_a);
         if($num_a<>0){
@@ -46,9 +45,7 @@ include "function.php";
             unset( $_SESSION[ $key ] );
         }
     }
-
-
-    //$userauth = get_user_info( $_SESSION['ManUser'] ); 
+    $userauth = get_user_info( $_SESSION['ManUser'] ); */
 ?>
 
 <script language="javascript">//換頁Script
@@ -81,17 +78,8 @@ include "function.php";
     include("top_menu.php");
     ?>
 </header>
-    
 <body>
     <?php 
-    $host="localhost";    //主機名稱
-    $user="root";         //登入者帳號
-    $password="okderrr";     //登入者密碼 
-    $selectdb="scsrc2";   //資料庫名稱
-    //連結資料庫
-    mysql_connect($host,$user,$password) or die("資料庫無法連線") ;
-    mysql_select_db($selectdb);
-
     mysql_query("set names utf8") or die("err_1");
     mysql_query("set character_set_client=utf8") or die("err_2");
     mysql_query("set character_set_results=utf8") or die("err_3");
