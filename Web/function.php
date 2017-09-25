@@ -1,9 +1,9 @@
-<?
+<?php
 function SHOWJAVA($MSG,$URL){
 	echo "<script>alert('$MSG'); location.href='$URL';</script>";
 }
 function CK_SESSION($ckMain){
-	echo "<script>location.href='home.php';</script>";
+	echo "<script>location.href='index.php';</script>";
 }
 function CK_SESSION_1($ckMain){
 	echo "<script>location.href='$ckMain';</script>";

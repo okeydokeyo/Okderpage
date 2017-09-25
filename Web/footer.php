@@ -1,8 +1,8 @@
-<? $arry = SoloSql("menu","`DB_MenID`='1'");?>
+<?php $arry = SoloSql("menu","`DB_MenID`='1'");?>
 <div class="footer">
-    <? echo $arry['DB_MenContent'];?>
+    <?php echo $arry['DB_MenContent'];?>
 </div>
-<?
+<?php
 if ( empty($_SESSION['ckIP']) ){
       
 	  session_register("ckIP");
