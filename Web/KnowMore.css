@@ -85,9 +85,8 @@
 
     .youtubeVideo 
     {
-        width: 80%;
-        height: auto;
-        margin-left: 5%;
+        width: auto;
+        max-height: auto;
     }
 }
 
