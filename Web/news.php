@@ -28,17 +28,51 @@
             $result = mysql_query("SELECT * FROM `left` WHERE `DB_LefTagID`='35' ORDER BY `DB_LefSort` ASC");
             while($row = mysql_fetch_array($result))
             {
-                echo "<option value='".$row['DB_LefID']."'>".$row['DB_LefSubject']."</option>";
+                echo "<option value='".$row['DB_LefNumID']."'>".$row['DB_LefSubject']."</option>";
             }
             ?>
-        </select><br>
+        </select><br><br>
         <?php
-        $result1 = mysql_query("SELECT * FROM `ordi` WHERE `DB_OrdBasis`='3' AND `DB_OrdKind`!='null' ORDER BY `DB_OrdID` ASC");
-        $result2 = mysql_query("SELECT * FROM `left` WHERE `DB_LefID`='".@$_GET["mag"]."'");
-        while($row2 = mysql_fetch_array($result2))
+        $result1 = mysql_query("SELECT * FROM `ordi` WHERE `DB_OrdTagID`='".@$_GET["mag"]."'");
+        $result2 = mysql_query("SELECT * FROM `ordi_tags` WHERE `DB_OrdTagID`='".@$_GET["mag"]."'");
+        if(@$_GET["mag"]!=null)
         {
-            echo "<br><h1>".$row2['DB_LefSubject']."</h1><br><br>";
+            while($row = mysql_fetch_array($result2))
+            {
+                echo "<h2>".$row['DB_OrdTagSubject']."</h2>";
+                echo "<br><br>";
+            }
+            while($row = mysql_fetch_array($result1))
+            {
+                if($row['DB_OrdBasis']==1 && $row['DB_OrdPermanent']==1)
+                {
+                    echo "<font class='newsContent'>●&nbsp;&nbsp;&nbsp;&nbsp;</font><a href='news.php?article=".$row['DB_OrdID']."' class='magslink'>".$row['DB_OrdSubject']."</a>";
+                    echo "<br><br>";
+                }
+                else if($row['DB_OrdBasis']==3)
+                {
+                    echo "<font class='newsContent'>線上預覽：</font>";
+                    echo "<a href='".$row['DB_OrdUrl3_1']."' target='_blank' class='magslink'>".$row['DB_OrdSubject']."</a>";
+                }
+            }
         }
+        
+        if(@$_GET["article"]!=null)
+        {
+            $result3 = mysql_query("SELECT * FROM `ordi` WHERE `DB_OrdID`='".@$_GET["article"]."'");
+            while($row = mysql_fetch_array($result3))
+            {
+                echo "<h2>".$row['DB_OrdSubject']."</h2>";
+                echo "<br><br>";
+                echo "<form id='newsForm'>".$row['DB_OrdContent'];
+                echo "<br><br><br>";
+                echo "<a href='news.php?mag=".$row['DB_OrdTagID']."' class='magslink'>-回上頁-</a></form>";
+            }
+        }
+        
+        
+        /*
+        
         while($row = mysql_fetch_array($result1))
         {
             if($row['DB_OrdKind'] == @$_GET["mag"])
@@ -77,7 +111,7 @@
                 echo $row5['DB_OrdContent'];
                 echo "<br><br><br><a href='news.php?{124}=".$row5['DB_OrdTagID']."' class='magslink'>-回上頁-</a>";
             }
-        }
+        }*/
         ?>
 
     </form>
