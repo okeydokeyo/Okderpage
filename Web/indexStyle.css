@@ -1,9 +1,23 @@
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1450px) {
 .video-container{
     margin: auto;
 }
 
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}    
+
 .video-container h1 {
+    
+  -webkit-animation-duration: 1.5s;
+  -moz-animation-duration: 1.5s;
+  -webkit-animation-name: slidein;
+  -moz-animation-name: slidein;
   position: absolute;
   top: 50%;
   width: 100%;
@@ -12,11 +26,30 @@
   color: #fff;
   text-align: center;
 }
+@-webkit-keyframes slidein {
+  from {
+  top: 70%;
+  }
+
+  to {
+  top: 50%;
+  }
+}
+
+@-moz-keyframes slidein {
+  from {
+  top: 70%;
+  }
+
+  to {
+  top: 50%;
+  }
+}
 
 .footer{
     width: 100%;
     background-color: #AAAAAA;
-	margin-top: 200px;
+	margin-top: 27em;
 }
 
 video{
@@ -34,8 +67,8 @@ video{
 #BB1{
     position: fixed;
 	top: 120px;
-    left: -108px;
-	width: 200px;
+    left: -123px;
+	width: 230px;
     height: auto;  
 }
 #BB1:hover{
@@ -45,8 +78,194 @@ video{
 #BB2 {
     position: fixed;
 	top: 200px;
-    left:-108px;
-	width: 200px;
+    left:-123px;
+	width: 230px;
+    height: auto; 
+}
+#BB2:hover{
+	left: 0%;
+}
+
+#myCarousel{
+    width: 100%;
+    height:auto;
+    background-color: white;
+}
+
+.carousel-indicators li{
+    background-color: crimson;
+}
+
+.carousel-inner > .item > img{
+      width: 100%;
+	  height:auto;
+      margin: auto;
+}
+
+.front {
+    background: #AAA;
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.back {
+    background: #F33;
+    transform: rotateY(-180deg);
+}
+
+.flip-container {
+    margin-bottom: 80px;
+    display: inline;
+    perspective: 1000;
+    transform-style: preserve-3d;
+}
+
+.flip-container:hover .back {
+    transform: rotateY(0deg);
+}
+
+.flip-container:hover .front {
+    transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.flipper {
+    margin-top: 9em;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.front, .back {
+    backface-visibility: hidden;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: absolute;
+}
+
+.vertical.flip-container {
+    position: relative;
+}
+
+.vertical .back {
+    transform: rotateX(180deg);
+}
+
+.vertical.flip-container:hover .back {
+    transform: rotateX(0deg);
+}
+
+.vertical.flip-container:hover .front {
+    transform: rotateX(180deg);
+}
+
+.Sponsor h3{
+    padding-top: 20%;
+    color: #e60000;
+    text-align: center;
+	font-size: 1.5em;
+}
+
+.Sponsor a{
+    float: left;
+    padding-left: 2%;
+}
+
+.wrapper{
+	margin-top:50px;
+}
+
+.box-a{
+width:50%;
+height:300px;
+float:left;
+display:inline;
+}
+
+.box-b{
+width:50%;
+height:300px;
+float:left;
+display:inline;
+}
+
+.text_12px_06{
+	font-size: 12px;
+    text-align:left;
+	color: #824A1A;
+}
+.link_03{
+	font-size: 0.9em;
+	text-align:left;
+	color: #3A2203;
+}
+.link_03:hover{
+	font-size: 1em;
+	text-align:left;
+	color: #824A1A;
+}
+#padding_07 {
+    padding-top: 8px;
+}
+
+.border_02 {
+    border-bottom: 1px dotted #cccccc;
+}
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1449px) {
+.video-container{
+    margin: auto;
+}
+
+.video-container h1 {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  font-size: 5em;
+  letter-spacing: 1em;
+  color: #fff;
+  text-align: center;
+}
+
+.footer{
+    width: 100%;
+    background-color: #AAAAAA;
+	margin-top: 15em;
+}
+
+video{
+	margin: auto;
+	margin-top: 120px;
+	width: 100%;
+	max-width: 100%;
+	max-height: 80%;
+	height: auto;
+}
+#index-video{
+    filter:brightness(0.8);
+}
+
+#BB1{
+    position: fixed;
+	top: 120px;
+    left: -123px;
+	width: 230px;
+    height: auto;  
+}
+#BB1:hover{
+	left: 0%;
+}
+
+#BB2 {
+    position: fixed;
+	top: 200px;
+    left:-123px;
+	width: 230px;
     height: auto; 
 }
 #BB2:hover{
@@ -184,7 +403,7 @@ display:inline;
 }
 }
 
-@media only screen and (min-width: 480px) and (max-width: 899px) {
+@media only screen and (min-width: 480px) and (max-width: 1199px) {
 .video-container{
     margin: auto;
 }

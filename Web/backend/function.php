@@ -938,7 +938,7 @@ $ChkN：字元長度
 function chk_data($ChkD,$ChkN){
 	
 	if($ChkD!=""){
-		if(ereg("^[0-9]+$",$ChkD)){ //檢查是否是數值	
+		if(ereg("^[0-9]+$",$ChkD)){ //檢查是否是數值 ereg_ ...
 			if(strlen($ChkD) > $ChkN){
 				echo '<script>history.go(-1);</script>';
 				exit;
@@ -982,7 +982,7 @@ $ManP：傳送的質
 ***************************************************************/
 
 function chk_Power($ManP){
-
+    
    $Manager_result = mysql_query("select * from `manager` where `DB_ManUser`='".$_SESSION['ManUser']."' && `$ManP`='1'");
    $Manager_num = mysql_num_rows($Manager_result);
 

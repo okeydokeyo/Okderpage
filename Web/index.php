@@ -10,7 +10,7 @@
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>   
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
     
 <body>
@@ -18,37 +18,42 @@
     <?php 
     include("top_menu.php");
     ?>
-</header>
     
+</header>
 <div class="video-container"> 
     <video autoplay loop poster="images/video.png" plays-inline id="index-video" muted>
         <source src="videos/index-video.mp4" type="video/mp4">
     </video>
-     <h1>邀您一起<br/>
+     <h1>邀您一起<br>
     推動希望之輪</h1>
 </div>   
     
  <div class="wrapper"> <div class="box-a">
-<div id="myCarousel" class="container carousel slide" dataride="carousel">
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-    
-    <div class="carousel-inner">
-        <div class="item active"><img src="images/Banner-01.jpg"></div>
-        <div class="item"><img src="images/Banner-01.jpg"></div>
-        <div class="item"><img src="images/Banner-01.jpg"></div>
-    </div>
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-        <span class="sr-only">Next</span>
-    </a></div>
+		<?
+     		$Inter_result = mysql_query("select * from `inter` ORDER BY `DB_IntSort` ASC") or die("查詢失敗n3");
+		while ($Inter_ary = mysql_fetch_array($Inter_result)){
+		if($Inter_ary['DB_IntBasis']=="2"){
+		
+		$arry=SoloSql("article"," `DB_ArtID`='".$Inter_ary['DB_IntNumID']."' && `DB_ArtAnnounce`='0'");
+		$DB_IntArticle=$Inter_ary['DB_IntArticle']*38;
+		$leng = mb_strlen($arry['DB_ArtContent']); //計算內容長度
+        //辨別字數是否大於所設定的字數
+		if ($leng > $DB_IntArticle){
+		    $InNum = "....";
+		}else{
+		    $InNum = "";		
+		}
+		?>  
+	  <!--03-->
+		     <? if ($arry['DB_ArtID'] != ""){?>
+	  <table width="100%" border="0" cellspacing="0" cellpadding="0" id="margin_01" summary="<? echo $Inter_ary['DB_IntSubject'];?>文字表格">
+		<tr>
+		  <td colspan="3" align="left" valign="top" class="text_12px_01" id="padding_07"><? echo re_change_size(mb_substr($arry['DB_ArtContent'],0,$DB_IntArticle)).$InNum;?></td>
+		</tr>
+	  </table>
+		     <? }?>
+	  <br />
+		<? }}?>
 </div>
   <div class="box-b">
 
@@ -63,6 +68,14 @@ else $show =  '0' ;
 		      $ordt_result = mysql_query("select * from `ordi_tags` where `DB_OrdTagID`='".$Inter_ary['DB_IntNumID']."' && `DB_OrdTagAnnounce`='0'") or die("查詢失敗b1");
 		      $ordt_ary = mysql_fetch_array($ordt_result);
 		?>  
+      	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+	    <tr>		    <div style="width:13%; float:right;">  
+			<? if ($ordt_ary['DB_OrdTagID'] != ""){?>
+			<a href="news_list.php?no=<? echo $Inter_ary['DB_IntNumID'];?>" title="更多(<? echo $Inter_ary['DB_IntSubject'];?>)" class="link_03"><img src="images/more_01.gif" alt="more" width="39" height="17" border="0" /></a>
+			   <? }?>
+			</div>
+		</tr>
+	  </table>
 	  <table width="100%" border="0" cellspacing="0" cellpadding="0" id="margin_01" summary="<?php echo $Inter_ary['DB_IntSubject'];?>文字表格">
 		   <?php		   
 		   //查詢條例式訊息管理資料

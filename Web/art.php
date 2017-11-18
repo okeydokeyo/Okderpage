@@ -26,7 +26,7 @@ session_start();//初始化session,就是開始要始用session
     chk_IP($_SERVER['REMOTE_ADDR']);
     chk_data($_GET['page'],5);//檢查字元長度後過長退回上一頁
     chk_data($_GET['no'],"5");  //檢查數值是否大於5個字元
-    $no=$_GET['no'];
+    $no=$_GET['no'];            //安全字元替換步驟 上網查
     $arry=SoloSql("article"," `DB_ArtID`='$no'");
     ?>
 </header>
