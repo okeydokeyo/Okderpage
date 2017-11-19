@@ -37,7 +37,7 @@
 	 //  if ( $userauth['DB_ManP_16'] == "1" ){
 	?>	  
 		  <tr>
-			<td align="left" valign="middle" class="menutitle_bg"><a href="toplogo_list.php" class="m01">LOGO圖管理</a></td>
+			<td align="left" valign="middle" class="menutitle_bg"><a href="toplogo_list.php" class="m01">第二排中心LOGO圖管理</a></td>
 		  </tr>
 	<? 
 	  // }
@@ -59,14 +59,14 @@
 		  </tr>
 	<? //if ( $userauth['DB_ManP_17'] == "1" ){?>		  
 		  <tr>
-			<td align="left" valign="middle" class="menutitle_bg"><a href="indextop_calss.php" class="m01">上方選單管理</a></td>
+			<td align="left" valign="middle" class="menutitle_bg"><a href="indextop_calss.php" class="m01">第一排選單管理</a></td>
 		  </tr>
 	<? 
 	   //}
 	   //if ( $userauth['DB_ManP_4'] == "1" ){
 	?>		  
 		  <tr>
-			<td align="left" valign="middle" class="menutitle_bg"><a href="indexleft_calss.php" class="m01">左側選單管理</a></td>
+			<td align="left" valign="middle" class="menutitle_bg"><a href="indexleft_calss.php" class="m01">第二排選單管理</a></td>
 		  </tr>
 	<? 
 	   //}

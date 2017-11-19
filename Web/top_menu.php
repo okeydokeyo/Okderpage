@@ -32,59 +32,65 @@
 
                 <div class="collapse navbar-collapse" id="myTopNavBar">
                     <ul class="nav navbar-nav navbar-right a" id="top-list">
-                       <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">關於我們<span class="caret"></span></a>
-                                                        <ul class="dropdown-menu" id="dropdown-menu">
-                                        <li><a href="art.php?no=25">中心簡介</a></li>
-                                        <li><a href="art.php?no=26">中心歷史</a></li>
-                                        <li><a href="art.php?no=29">新生命之家</a></li>
-                                        <li><a href="art.php?no=68">職業訓練中心願景</a></li><br>
-                       <li class="main-menu" onmouseover="switchMenu( this, 'SubMenu3' )" onmouseout="hideMenu()" onclick="switchMenu( this, 'SubMenu3' )"><a>超人工作室 </a><ul id="SubMenu3" class="sub-menu" style="display:none;">
-                                        <li><a href="art.php?no=33">客服工作室</a></li>
-                                        <li><a href="art.php?no=34">網路工作室</a></li>
-                                        <li><a href="art.php?no=52">綠色資源工作室</a></li></ul></li>  
-                                </ul>
+                       <li class="dropdown">
+                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">關於我們<span class="caret"></span></a>
+                            <ul class="dropdown-menu" id="dropdown-menu">
+                            <?php
+                                error_reporting(E_ALL ^ E_DEPRECATED);
+                                include "config.php";
+                                include "function.php";
+                                $result = mysql_query("SELECT * FROM top WHERE DB_TopTagID='2' ORDER BY DB_TopSort ASC");
+                                while($row = mysql_fetch_array($result)){
+                                    echo "<li><a href='art.php?no=".$row['DB_TopNumID']."'>".$row['DB_TopSubject']."</a></li>";
+                                }
+                            ?>           
+                            </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">服務內容<span class="caret"></span></a>
                                 <ul class="dropdown-menu" id="dropdown-menu">
-                                        <li><a href="art.php?no=42">生活重建訓練</a></li>
-                                        <li><a href="art.php?no=47">社區居住服務</a></li>
-                                        <li><a href="art.php?no=45">作業訓練</a></li>
-                                        <li><a href="art.php?no=44">職業訓練</a></li>
-                                        <li><a href="art.php?no=63">生命教育宣導</a></li>
-                                        <li><a href="art.php?no=64">居家就業</a></li>
+                                    <?php
+                                    $result = mysql_query("SELECT * FROM `left` WHERE `DB_LefTagID` = 34 ORDER BY DB_LefSort ASC");
+                                    while($row = mysql_fetch_array($result)){
+                                        echo "<li><a href='art.php?no=".$row['DB_LefNumID']."'>".$row['DB_LefSubject']."</a></li>";
+                                    }
+                                    ?>
                                 </ul>
                         </li>
                         <li><a href="https://scsrc.eoffering.org.tw/" target="_blank">我要捐款</a></li>
                          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">捐贈資訊<span class="caret"></span></a>
                                 <ul class="dropdown-menu" id="dropdown-menu">
-                                        <li><a href="art.php?no=69">愛心電子發票捐贈</a></li>
-                                        <li><a href="art.php?no=36">物資募集</a></li>
-                                        <li><a href="donate2.php">捐款捐物徵信</a></li>
-                                        <li><a href="donate3.php">統一勸募徵信</a></li>
-                                        <li><a href="donate4.php">年度收支表</a></li>
-                                        <li><a href="donate5.php">會計師查核報告書</a></li>
+                                    <?php
+                                    $result = mysql_query("SELECT * FROM `top` WHERE `DB_TopTagID` = 3 ORDER BY DB_TopSort ASC");
+                                    while($row = mysql_fetch_array($result)){
+                                        if($row['DB_TopNumID'] == 12){
+                                            echo "<li><a href='donate2.php'>".$row['DB_TopSubject']."</a></li>";    
+                                        }
+                                        else if($row['DB_TopNumID'] == 13){
+                                            echo "<li><a href='donate3.php'>".$row['DB_TopSubject']."</a></li>";    
+                                        }
+                                        else if($row['DB_TopNumID'] == 14){
+                                            echo "<li><a href='donate4.php'>".$row['DB_TopSubject']."</a></li>";    
+                                        }
+                                        else if($row['DB_TopNumID'] == 15){
+                                            echo "<li><a href='donate5.php'>".$row['DB_TopSubject']."</a></li>";    
+                                        }
+                                        else{
+                                            echo "<li><a href='art.php?no=".$row['DB_TopNumID']."'>".$row['DB_TopSubject']."</a></li>";
+                                        }
+                                    }
+                                    ?>   
                                 </ul></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">認識脊髓損傷<span class="caret"></span></a>
                                 <ul class="dropdown-menu" id="dropdown-menu">
                                     <?php
-                                    error_reporting(E_ALL ^ E_DEPRECATED);
-                                    include "config.php";
-                                    include "function.php";
                                     $result = mysql_query("SELECT * FROM top WHERE DB_TopTagID='4' ORDER BY DB_TopSort ASC");
                                     while($row = mysql_fetch_array($result)){
                                         echo "<li><a href='KnowMore.php?artID=".$row['DB_TopNumID']."'>".$row['DB_TopSubject']."</a></li>";
                                     }
                                     ?>
                                     <li><a href="KnowMoreVedio.php">脊髓損傷衛教影片</a></li>
-                                    <!--
-                                    <li><a href="KnowMore_1.php">什麼是脊髓損傷</a></li>
-                                    <li><a href="KnowMore_2.php">造成脊髓損傷的原因</a></li>
-                                    <li><a href="KnowMore_3.php">台灣脊髓損傷者概況</a></li>
-                                    <li><a href="KnowMore_4.php">脊髓損傷的急救處理</a></li>
-                                    <li><a href="KnowMore_5.php">脊髓損傷衛教影片</a></li>
-                                    -->
                                 </ul>
                         </li>
                         <li><a href="http://www.sci.org.tw/" target="blank">脊髓新樂園</a></li>
@@ -129,14 +135,25 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myBottomNavBar">
                     <ul class="nav navbar-nav navbar-right b" id="bottom-list">
-                        <li class="active"><a href="news.php">
+                    <?php
+                        $result = mysql_query("SELECT * FROM `left_tags` WHERE `row` = 2 AND `DB_LefTagAnnounce` = 0 ORDER BY DB_LefTagSort ASC");
+                        while($row = mysql_fetch_array($result)){
+                                echo "<li><a href='".$row['DB_LefTagUrl']."'>".$row['DB_LefTagSubject']."</a></li>";
+                        }
+                    ?>  
+                        
+                        
+                    <!--    <li class="active"><a href="news.php">
                             友善新世界雜誌<span class="sr-only">(current)
                             </span></a>
                         </li>
                         <li><a href="news_list.php?no=13">媒體報導</a></li>
                         <li><a href="volunteer.php">志工園地</a></li>
                         <li><a href="GoodLink.php">好站連結</a></li>
-                        <li><a href="billboard.php">留言板</a></li>
+                        <li><a href="billboard.php">留言板</a></li> -->
+                        
+                        
+                        
                     </ul>
                 </div>
             </div>
