@@ -1,64 +1,79 @@
 @media screen and (min-width: 900px) {
-	body{ 
-    font-family: 微軟正黑體,arial,helvetica,sans-serif;
-	
+body{ 
+    font-family: 微軟正黑體,arial,helvetica,sans-serif;	
 }
 
+.container{
+    margin-left:15%;
+
+    }
+.content-text{
+	margin-top:50px;
+	width: 90%;
+    }
+    
+.map{
+    width: 40%;
+    float:left;
+    margin-left:5%
+}
+    
+.row-space {
+	width: 50%;
+    float:left;
+}
+
+.row-space_a {
+	width: 90%;
+    float:left;
+}
+    
 .img-full {
-	width: 100%;
-	height: 120%;
 	padding-top: 7%;
 }
+    
+.row3{
+    width:33.33333%;
+    float:left; 
+    }
+    
+.row2{
+    width:50%;
+    float:left; 
+    }
+
 .footer{	
 	margin-top: 100px;
 }	
 
 .header-image {
-	margin-top: 94px;
-	margin-bottom: 30px;
+    width: 100%;
+	height: 10%;
 	position: relative;
-	margin-top: 29px;
 }
-.row-space-huge {
-	padding-top: 1px;
-}
-.row-space {
-	margin-top:50px;
-	margin-left:10%;
-	max-width: 40%;
 
+.content-text img {
+transition: all 0.5s ease 0s;
 }
-.ro {
-    max-width: 50%;
-	margin-top:30px;
-	margin-left:20%;
+
+/*判斷滑鼠的動作放大圖片還有增加透明度*/
+.content-text img:hover {
+-moz-transform: scale(2);
+-ms-transform: scale(2);
+-o-transform: scale(2);
+-webkit-transform: scale(2);
+transform: scale(2);
+opacity: .9;
 }
+
 .r {
-	margin-top:30px;
-	margin-left:10%;
+	margin-bottom:3%;
 }
-.co {
-    max-width:43.236%;
-	margin-top:30px;
-	margin-left:8.8%;
-}
+
 .r2 {
 	margin-left: 4%;
 	margin-right: 51%;
 	margin-top:10%;
-}
-
-.r1 {
-	margin-left: 14%;
-	margin-right: 51%;
-}
-
-
-
-.r4{
-	margin-top:200px;
-	margin-left: 10%;
-	margin-right: 51%;
 }
 
 .h1, h1 {
@@ -66,44 +81,15 @@
 	font-weight: bolder;
 
 }
-.map{
-	position: absolute;
-    margin-top:30px;
-    top: 570px;
-	right: 55px;
-}
-.structure{
-	position: absolute;
-	top: 1050px;
-	right: 100px;
-}
+
 strong {
 	font-size: 23px;	
 }
 p{
 	font-size: 1.2em;
-}
-
-.bodytext{
     color:#321414;
 }
 
-.col-sm-2 {
-    width: 50%;  
-    float: left; 
-}
-.col-sm-3 {
-    width: 100%;
-    float: left; 
-}
-.col-sm-4 {
-    width: 33.3333333%;
-    float: left; 
-}
-.icn_ ssss{
-	font-size: 1.2em;
-}
-}
 @media only screen and (min-width: 480px) and (max-width: 899px) {
 	body{ 
     font-family: 微軟正黑體,arial,helvetica,sans-serif;
