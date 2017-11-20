@@ -85,86 +85,104 @@ include_once ("left_menu.php");
 		<table width="100%" border="0" cellspacing="1" cellpadding="5" bgcolor="#cccccc">
 		  <tr bgcolor="#f1f1f1">
 			<td width="5%" align="center">排序</td>
-			<td width="22%" align="center">標籤標題 (點選進入)</td>
+			<td width="22%" align="center">標籤標題</td>
 			<td width="5%" align="center">層次</td>
 			<td width="12%" align="center">連結方式</td>
-			<td width="26%" align="center">連結位置</td>
+			<td width="26%" align="center">管理位置</td>
 			<td width="10%" align="center">顯示</td>
 			<td width="20%" align="center">功能</td>
 		  </tr>
 <?
   if($return){
-		$i = 0;
-		while( $return[$i] ){
-		           if ($return[$i]['DB_LefTagAnnounce'] == "0"){
-				         $LefTagAnnounce = "<span class='state_edit'>顯示</span>";
-				   }else{
-				         $LefTagAnnounce = "<span class='state_del'>不顯示</span>";
-				   }
+      $i = 0;
+      while( $return[$i] ){
+          if ($return[$i]['DB_LefTagAnnounce'] == "0"){
+              $LefTagAnnounce = "<span class='state_edit'>顯示</span>";
+          }
+          else{
+              $LefTagAnnounce = "<span class='state_del'>不顯示</span>";
+          }
 				   
-				   if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "1"){
-				           $Lclass = "網頁選單功能";
-				   }else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "2"){
-				           $Lclass = "附件網址";				   
-				   }else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "3"){
-				           $Lclass = "附件檔案";				   
-				   }else if ($return[$i]['DB_LefTagLayer'] == "2"){
-				           $Lclass = "";				   
-				   }
+          if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "1"){
+              $Lclass = "網頁選單功能";
+          }
+          else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "2"){
+              $Lclass = "附件網址";				   
+          }
+          else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "3"){
+              $Lclass = "附件檔案";				   
+          }
+          else if ($return[$i]['DB_LefTagLayer'] == "2"){
+              $Lclass = "";				   
+          }
 				   				   
-				   if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "1" && $return[$i]['DB_LefTagBasis'] == "1"){
-				           //條例式訊息標籤管理查詢
-                           $ordt_result = mysql_query("select * from `ordi_tags` where `DB_OrdTagID`='".$return[$i]['DB_LefTagNumID']."'") or die("查詢失敗b1");
-				           $ordt_ary = mysql_fetch_array($ordt_result);
-				           $LBasis = "條例式訊息管理-".$ordt_ary['DB_OrdTagSubject']."";
-				   }else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "1" && $return[$i]['DB_LefTagBasis'] == "2"){
-				           //說明文章類別查詢
-                           $artc_result = mysql_query("select * from `article` where `DB_ArtID`='".$return[$i]['DB_LefTagNumID']."'") or die("查詢失敗b2");
-				           $artc_ary = mysql_fetch_array($artc_result);
-				           $LBasis = "說明文章管理-".$artc_ary['DB_ArtSubject']."";				   
-				   }else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "1" && $return[$i]['DB_LefTagBasis'] == "3"){
-				           //行事曆管理查詢                          
-                           $calt_result = mysql_query("select * from `calendar_tags` where `DB_CalTagID`='".$return[$i]['DB_LefTagNumID']."'") or die("查詢失敗b3");
-				           $calt_ary = mysql_fetch_array($calt_result);
-				           $LBasis = "行事曆管理-".$calt_ary['DB_CalTagSubject']."";				   
-				   }else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "1" && $return[$i]['DB_LefTagBasis'] == "4"){
-				           //檔案下載類別查詢
-                           $dowc_result = mysql_query("select * from `download_tags` where `DB_DowTagID`='".$return[$i]['DB_LefTagNumID']."'") or die("查詢失敗b4");
-				           $dowc_ary = mysql_fetch_array($dowc_result);
-				           $LBasis = "檔案下載管理-".$dowc_ary['DB_DowTagSubject']."";				   
-				   }else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "1" && $return[$i]['DB_LefTagBasis'] == "5"){
-				           //網路相簿查詢
-                           $lifa_result = mysql_query("select * from `life_tags` where `DB_LifTagID`='".$return[$i]['DB_LefTagNumID']."'") or die("查詢失敗b5");
-				           $lifa_ary = mysql_fetch_array($lifa_result);
-				           $LBasis = "網路相簿管理-".$lifa_ary['DB_LifTagSubject']."";				   
-				   }else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "1" && $return[$i]['DB_LefTagBasis'] == "6"){
-				           //常見問題管理查詢
-                           $fqa_result = mysql_query("select * from `faq_tags` where `DB_FaqTagID`='".$return[$i]['DB_LefTagNumID']."'") or die("查詢失敗b6");
-				           $fqa_ary = mysql_fetch_array($fqa_result);
-				           $LBasis = "常見問題管理-".$fqa_ary['DB_FaqTagSubject']."";				   
-				   }else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "1" && $return[$i]['DB_LefTagBasis'] == "7"){
-				           //網站連結查詢
-                           /*$webt_result = mysql_query("select * from `website_tags` where `DB_WebTagID`='".$return[$i]['DB_LefTagNumID']."'") or die("查詢失敗b7");
-				           $webt_ary = mysql_fetch_array($webt_result);*/
-				           $LBasis = "網站連結";				   
-				   }else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "1" && $return[$i]['DB_LefTagBasis'] == "8"){
-				           //參訪紀錄查詢
-                           /*$visi_result = mysql_query("select * from `visit` where `DB_VisID`='".$return[$i]['DB_LefTagNumID']."'") or die("查詢失敗b8");
-				           $visi_ary = mysql_fetch_array($visi_result);*/
-				           $LBasis = "參訪紀錄";				   
-				   }else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "2"){
-				           $LBasis = "網址";				   
-				   }else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "3"){
-				           $LBasis = "檔案";				   
-				   }else if ($return[$i]['DB_LefTagLayer'] == "2"){
-				           $LBasis = "";				   
-				   }
+          if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "1" && $return[$i]['DB_LefTagBasis'] == "1"){
+              //條例式訊息標籤管理查詢
+              $ordt_result = mysql_query("select * from `ordi_tags` where `DB_OrdTagID`='".$return[$i]['DB_LefTagNumID']."'") or die("查詢失敗b1");
+              $ordt_ary = mysql_fetch_array($ordt_result);
+              $LBasis = "條例式訊息管理-".$ordt_ary['DB_OrdTagSubject']."";
+          }
+          else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "1" && $return[$i]['DB_LefTagBasis'] == "2"){
+              //說明文章類別查詢
+              $artc_result = mysql_query("select * from `article` where `DB_ArtID`='".$return[$i]['DB_LefTagNumID']."'") or die("查詢失敗b2");
+              $artc_ary = mysql_fetch_array($artc_result);
+              $LBasis = "說明文章管理-".$artc_ary['DB_ArtSubject']."";				   
+          }
+          else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "1" && $return[$i]['DB_LefTagBasis'] == "3"){
+              //行事曆管理查詢                          
+              $calt_result = mysql_query("select * from `calendar_tags` where `DB_CalTagID`='".$return[$i]['DB_LefTagNumID']."'") or die("查詢失敗b3");
+              $calt_ary = mysql_fetch_array($calt_result);
+              $LBasis = "行事曆管理-".$calt_ary['DB_CalTagSubject']."";				   
+          }
+          else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "1" && $return[$i]['DB_LefTagBasis'] == "4"){
+              //檔案下載類別查詢
+              $dowc_result = mysql_query("select * from `download_tags` where `DB_DowTagID`='".$return[$i]['DB_LefTagNumID']."'") or die("查詢失敗b4");
+              $dowc_ary = mysql_fetch_array($dowc_result);
+              $LBasis = "檔案下載管理-".$dowc_ary['DB_DowTagSubject']."";				   
+          }
+          else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "1" && $return[$i]['DB_LefTagBasis'] == "5"){
+              //網路相簿查詢
+              $lifa_result = mysql_query("select * from `life_tags` where `DB_LifTagID`='".$return[$i]['DB_LefTagNumID']."'") or die("查詢失敗b5");
+              $lifa_ary = mysql_fetch_array($lifa_result);
+              $LBasis = "網路相簿管理-".$lifa_ary['DB_LifTagSubject']."";				   
+          }
+          else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "1" && $return[$i]['DB_LefTagBasis'] == "6"){
+              //常見問題管理查詢
+              $fqa_result = mysql_query("select * from `faq_tags` where `DB_FaqTagID`='".$return[$i]['DB_LefTagNumID']."'") or die("查詢失敗b6");
+              $fqa_ary = mysql_fetch_array($fqa_result);
+              $LBasis = "常見問題管理-".$fqa_ary['DB_FaqTagSubject']."";				   
+          }
+          else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "1" && $return[$i]['DB_LefTagBasis'] == "7"){
+              $LBasis = "好站連結管理";				   
+          }
+          else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "1" && $return[$i]['DB_LefTagBasis'] == "8"){
+              $LBasis = "參訪紀錄";				   
+          }
+          else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "1" && $return[$i]['DB_LefTagBasis'] == "9"){
+              $LBasis = "留言板管理";				   
+          }
+          else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "2"){
+              $LBasis = "網址";				   
+          }
+          else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "3"){
+              $LBasis = "檔案";				   
+          }
+          else if ($return[$i]['DB_LefTagLayer'] == "2"){
+              $LBasis = "";				   
+          }
+                    
 ?>				  
 		  <tr bgcolor="#ffffff">
-			<td align="center"><? echo $return[$i]['DB_LefTagSort'];?></td>
+			<td align="center">
+                <? echo $return[$i]['DB_LefTagSort'];?>
+            </td>
 			<td align="left">
-			   <? if ($return[$i]['DB_LefTagLayer'] == "2"){?>
-			            <a href="indexleft_list.php?DB_LefTagID=<? echo $return[$i]['DB_LefTagID'];?>" class="link_04"><? echo $return[$i]['DB_LefTagSubject'];?></a>
+			   <?php 
+                if ($return[$i]['DB_LefTagLayer'] == "2"){
+                ?>
+			   <a href="indexleft_list.php?DB_LefTagID=<? echo $return[$i]['DB_LefTagID'];?>" class="link_04">
+                <? echo $return[$i]['DB_LefTagSubject'];?>
+                </a>
 			   <? }
                 else{?>
 			            <span class="link_04"><? echo $return[$i]['DB_LefTagSubject'];?></span>

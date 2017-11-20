@@ -1,38 +1,6 @@
-<?
-include "cksession.php";
-include "../config.php";
-include "../function.php";
-chk_account_id($_SESSION['ManUser']); //檢查帳號是否符合後,否回首頁
-chk_Power("DB_ManP_17"); //檢查是否功能權限,否回首頁
-
-
-$page = (empty($_GET['page']))?1:$_GET['page']; //現在頁面
-//********************************************************************************************************
-
-//左側選單標籤管理查詢
-$sql = "select * from `left_tags` where 1 ORDER BY `DB_LefTagSort` ASC";	
-$return = iron_page( $sql, 1000, 10, $page, 10 ); //iron分頁程式
-$result = mysql_query($sql) or die("查詢失敗let");
-$number = mysql_num_rows($result); //全部資料的總數
-$url = "indexleft_calss.php"; //本頁的網址 & 使用的 get變數
-?>
 <? 
 include_once ("top.php");
 ?>
-<script language="javascript">
-<!--
-//換頁Script
-function GoPage(page){
-   location.href="<? echo $url ?>?page="+page;
-}
-//選擇是否刪除
-function  Delete(id){
-  if ( confirm("是否刪除此筆紀錄") ){
-      location.href='indexleft_calssDel.php?DB_LefTagID='+id;
-  }
-}
--->
-</script>
 <!--top_end-->
 <table width="955" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
@@ -82,28 +50,14 @@ include_once ("left_menu.php");
 			<td width="22%" align="center">標籤標題 (點選進入)</td>
 			<td width="5%" align="center">層次</td>
 			<td width="12%" align="center">連結方式</td>
-			<td width="26%" align="center">連結位置</td>
 			<td width="10%" align="center">顯示</td>
 			<td width="20%" align="center">功能</td>
-		  </tr>
-		  
-          <!--  <tr bgcolor="#ffffff">
-			<td align="center">1</td>
-			<td align="left"><span class="text_12px_04">回首頁</span></td>
-			<td align="center">1</td>
-			<td align="center" class="state_add">網址&nbsp;</td>
-			<td align="center" class="text_12px_03">index.php&nbsp;</td>
-			<td align="center"><span class="state_edit">顯示</span></td>
-			<td align="center">系統預設</td>
-		  </tr>
-           -->
-            
+		  </tr> 
 		  <tr bgcolor="#ffffff">
-			<td align="center">2</td>
+			<td align="center">1</td>
 			<td align="left"><a href="indextop_list.php?DB_TopTagID=2" class="link_04">關於我們</a></td>
 			<td align="center">2</td>
 			<td align="center" class="state_add">網頁選單功能&nbsp;</td>
-			<td align="center" class="text_12px_03">&nbsp;</td>
 			<td align="center"><span class="state_edit">顯示</span></td>
 			<td align="center">系統預設</td>
 		  </tr>
@@ -112,7 +66,6 @@ include_once ("left_menu.php");
 			<td align="left"><a href="indextop_list.php?DB_TopTagID=34" class="link_04">服務內容</a></td>
 			<td align="center">2</td>
 			<td align="center" class="state_add">網頁選單功能&nbsp;</td>
-			<td align="center" class="text_12px_03">&nbsp;</td>
 			<td align="center"><span class="state_edit">顯示</span></td>
 			<td align="center">系統預設</td>
 		  </tr>
@@ -121,7 +74,6 @@ include_once ("left_menu.php");
 			<td align="left"><a href="indextop_list.php?DB_TopTagID=3" class="link_04">捐贈資訊</a></td>
 			<td align="center">2</td>
 			<td align="center" class="state_add">網頁選單功能&nbsp;</td>
-			<td align="center" class="text_12px_03">&nbsp;</td>
 			<td align="center"><span class="state_edit">顯示</span></td>
 			<td align="center">系統預設</td>
 		  </tr>
@@ -130,7 +82,6 @@ include_once ("left_menu.php");
 			<td align="left"><a href="indextop_list.php?DB_TopTagID=4" class="link_04">認識脊髓損傷</a></td>
 			<td align="center">2</td>
 			<td align="center" class="state_add">網頁選單功能&nbsp;</td>
-			<td align="center" class="text_12px_03">&nbsp;</td>
 			<td align="center"><span class="state_edit">顯示</span></td>
 			<td align="center">系統預設</td>
 		  </tr>

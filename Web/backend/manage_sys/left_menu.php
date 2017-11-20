@@ -73,7 +73,7 @@
 	   //if ( $userauth['DB_ManP_5'] == "1" ){
 	?>		  
 		  <tr>
-			<td align="left" valign="middle" class="menutitle_bg"><a href="indexmain_list.php" class="m01">中間選單管理</a></td>
+			<td align="left" valign="middle" class="menutitle_bg"><a href="indexmain_list.php" class="m01">中間功能管理</a></td>
 		  </tr>
 		  <tr>
 			<td align="left" valign="middle" class="menutitle_bg01">網頁流量分析</td>
@@ -81,10 +81,10 @@
 	<? 
 	   //if ( $userauth['DB_ManP_6'] == "1" ){
 	?>		  
-<!--		  <tr>
+		  <tr>
 			<td align="left" valign="middle" class="menutitle_bg"><a href="links_list.php" class="m01">相關連結</a></td>
 		  </tr>
--->	<? 
+	<? 
 	  // }
 	   //if ( $userauth['DB_ManP_7'] == "1" ){
 	?>		  
@@ -121,6 +121,27 @@
 			<td align="left" valign="middle" class="menutitle_bg"><a href="calendar_calss.php" class="m01">行事曆管理</a></td>
 		  </tr>
 	<? 
+	   //}
+	   //if ( $userauth['DB_ManP_11'] == "1" ){
+	?>		  
+		  <tr>
+			<td align="left" valign="middle" class="menutitle_bg"><a href="download_calss.php" class="m01">檔案下載</a></td>
+		  </tr>
+	<? 
+	   //}
+	  // if ( $userauth['DB_ManP_12'] == "1" ){
+	?>		  
+		  <tr>
+			<td align="left" valign="middle" class="menutitle_bg"><a href="photo_calss.php" class="m01">網路相簿</a></td>
+		  </tr>
+	<? 
+	   //}
+	  // if ( $userauth['DB_ManP_13'] == "1" ){
+	?>		  
+		  <tr>
+			<td align="left" valign="middle" class="menutitle_bg"><a href="FAQ_calss.php" class="m01">常見問題</a></td>
+		  </tr>
+	<? 
 	 //  }
     //if ( $userauth['DB_ManP_14'] == "1" ){
 	?>		  
@@ -140,7 +161,7 @@
 	?>			  
 
 	      <tr>
-		    <td align="left" valign="middle" class="menutitle_bg"><a href="message_calss.php" class="m01">留言版</a></td>
+		    <td align="left" valign="middle" class="menutitle_bg"><a href="message_calss.php" class="m01">留言版管理</a></td>
 	      </tr>	
 	<?// }?>		  	  
 		  <tr>

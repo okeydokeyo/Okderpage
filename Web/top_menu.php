@@ -138,22 +138,9 @@
                     <?php
                         $result = mysql_query("SELECT * FROM `left_tags` WHERE `row` = 2 AND `DB_LefTagAnnounce` = 0 ORDER BY DB_LefTagSort ASC");
                         while($row = mysql_fetch_array($result)){
-                                echo "<li><a href='".$row['DB_LefTagUrl']."'>".$row['DB_LefTagSubject']."</a></li>";
+                            echo "<li><a href='".$row['DB_LefTagUrl']."'>".$row['DB_LefTagSubject']."</a></li>";
                         }
                     ?>  
-                        
-                        
-                    <!--    <li class="active"><a href="news.php">
-                            友善新世界雜誌<span class="sr-only">(current)
-                            </span></a>
-                        </li>
-                        <li><a href="news_list.php?no=13">媒體報導</a></li>
-                        <li><a href="volunteer.php">志工園地</a></li>
-                        <li><a href="GoodLink.php">好站連結</a></li>
-                        <li><a href="billboard.php">留言板</a></li> -->
-                        
-                        
-                        
                     </ul>
                 </div>
             </div>

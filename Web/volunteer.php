@@ -20,41 +20,30 @@
 
 </head>
     
-<header>
-    <?php 
-    include("top_menu.php");
-    ?>
-</header>
-<body>
-<div class="header-image">
-    <img src="train4.jpg" alt="" class="img-full">
-</div>
-
-<div class="container">
-  <div class="content-text row-space-huge">
-     <div class="r">
-       <h1>歡迎加入-慈輪志工隊</h1>
-     </div>
-  <div class="row row-space">
-    <p class="bodytext"><strong>簡介</strong>&nbsp;</p>
-    <p>由於中心工作人員大多數皆為脊髓損傷者，使得組織在日常工作及許多對外活動上，皆須仰賴各界志工們的協助方能順利進行。</p>
-    <p>期待您的加入，與我們一起共同為脊髓損傷者的明天而努力！</p>
-    </div></div></div>
+    <header>
+        <?php 
+        include("top_menu.php");
+        ?>
+    </header>
     
-    <div class="container">
-     <div class="row co row-space">
-<div class="icontextbox col-sm-2">
-    <p class="bodytext"><strong>我要報名</strong></p><p>
-請直接線上報名，將有專人與您聯絡。</p></div>
- <div class="icontextbox col-sm-2">
-    <p class="bodytext"><strong>加入慈輪志工</strong></p><p>
-03-4909001 轉112 蔡小姐</p>
-</div></div></div>
-<div style="text-align:center;"><IFRAME SRC="https://www.beclass.com/showregist.php?regist_id=MjAzYzZhNjU4ZTVhMmQ1OTM2ZDc6U2hvd0Zvcm0=" FRAMEBORDER="0" height="1120" width="700" marginwidth="0" marginheight="0" align="center"></IFRAME></div>
-<footer>
-    <?php
-    include("footer.php");
-    ?>
-</footer>
-</body>
+    <body>
+        <div class="header-image">
+            <img src="train4.jpg" alt="" class="img-full">
+        </div> 
+    
+        <?php 
+        $result = mysql_query("SELECT * FROM article WHERE DB_ArtID='48'") or die("查詢失敗");;
+        while($row = mysql_fetch_array($result)){   
+            echo $row['DB_ArtContent'];
+        }
+        ?>  
+        
+        <div style="text-align:center;"><IFRAME SRC="https://www.beclass.com/showregist.php?regist_id=MjAzYzZhNjU4ZTVhMmQ1OTM2ZDc6U2hvd0Zvcm0=" FRAMEBORDER="0" height="1120" width="700" marginwidth="0" marginheight="0" align="center"></IFRAME></div>
+        
+        <footer>
+        <?php
+        include("footer.php");
+        ?>
+        </footer>
+    </body>
 </html>
