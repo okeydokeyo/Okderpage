@@ -21,7 +21,7 @@
     </header>
 
 
-    <form id="newsForm" method="get" action="news.php"><font id="newsSubject">雜誌分類：</font>
+    <form id="newsForm" method="get" action="news.php"><font id="newsSubject">刊物分類：</font>
         <select name="mag" onchange="window.location='news.php?mag='+this.value">
             <option value="">-請選擇-</option>
             <?php
@@ -33,8 +33,15 @@
             ?>
         </select><br><br>
         <?php
-        $result1 = mysql_query("SELECT * FROM `ordi` WHERE `DB_OrdKind`='".@$_GET["mag"]."'");
-        
+        $result1 = mysql_query("SELECT * FROM `ordi` WHERE `DB_OrdKind`='".@$_GET["mag"]."' ORDER BY `DB_OrdID` ASC");
+        $result2 = mysql_query("SELECT * FROM `left` WHERE `DB_LefTagID`='35' ORDER BY `DB_LefSort` ASC");
+        while($row = mysql_fetch_array($result2))
+        {
+            if($row['DB_LefNumID']==@$_GET["mag"])
+            {
+                echo "<h1>".$row['DB_LefSubject']."</h1><br><br>";
+            }
+        }
         while($row = mysql_fetch_array($result1))
         {
             if($row['DB_OrdTagID']==11)
@@ -57,7 +64,7 @@
             $result4 = mysql_query("SELECT * FROM `ordi` WHERE `DB_OrdTagID`='".@$_GET["{124}"]."' ORDER BY `DB_OrdID` ASC");
             while($row4 = mysql_fetch_array($result4))
             {
-                echo "<a href='news.php?magArt=".$row4['DB_OrdID']."' class='magslink'>●&nbsp;&nbsp;&nbsp;&nbsp;".$row4['DB_OrdSubject']."</a><br><br>";
+                echo "●&nbsp;&nbsp;&nbsp;&nbsp;<a href='news.php?magArt=".$row4['DB_OrdID']."' class='magslink'>".$row4['DB_OrdSubject']."</a><br><br>";
             }
             echo "<br><br><a href='news.php?mag=124' class='magslink'>-回上頁-</a>";
         }
