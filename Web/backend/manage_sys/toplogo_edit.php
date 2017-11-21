@@ -86,7 +86,7 @@ include_once ("left_menu.php");
 		<td align="left" valign="middle"><img src="images/icon_a1.gif" width="15" height="20" /></td>
 		<td align="left" valign="middle" background="images/gray_02.gif" class="text_12px_01">&nbsp;<strong><? echo $userauth['DB_ManName'];?></strong> 歡迎登入!!&nbsp;&nbsp;</td>
 		<td align="left" valign="middle"><img src="images/icon_q1.gif" width="15" height="20" /></td>
-		<td align="left" valign="middle" background="images/gray_02.gif" class="text_12px_01"><a href="id_info.php" class="link_01">首頁</a> >> 網頁風格管理 >> LOGO圖管理 >> <span class="text_12px_02"><strong>修改資料</strong></span></td>
+		<td align="left" valign="middle" background="images/gray_02.gif" class="text_12px_01"><a href="id_info.php" class="link_01">首頁</a> >> 導覽列管理 >> 第二排LOGO圖管理 >> <span class="text_12px_02"><strong>修改資料</strong></span></td>
 		<td align="left" valign="middle"><img src="images/gray_03.gif" width="10" height="20" /></td>
       </tr>
 	</table>
@@ -97,7 +97,7 @@ include_once ("left_menu.php");
 	  </tr>
 	  <tr>
 	    <td width="5" align="left" valign="top"><img src="images/title_bg01.gif" width="5" height="28" /></td>
-		<td width="742" align="left" valign="middle" class="title_bg"><strong>LOGO圖管理</strong></td>
+		<td width="742" align="left" valign="middle" class="title_bg"><strong>第二排LOGO圖管理</strong></td>
 		<td width="5" align="left" valign="top"><img src="images/title_bg03.gif" width="5" height="28" /></td>
 	  </tr>
 	  <tr>

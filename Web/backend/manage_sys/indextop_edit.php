@@ -19,20 +19,15 @@ $DB_TopNumID = $_POST['DB_TopNumID'];
 
 
 if( !empty($DB_TopSort) && !empty($DB_TopSubject) ){
-     
 	 ChangeSortEdit("top",$DB_TopSort,"DB_TopSort",$TopSort," && `DB_TopTagID`='".$TopTagID."'"); //修改排序
-	 $arry2 = SoloSql("top_tags","`DB_TopTagID`='".$TopTagID."'");
-	               
-					//修改
-					$UpStr = "`DB_TopSort`='$DB_TopSort',`DB_TopSubject`='$DB_TopSubject',`DB_TopBasis`='$DB_TopBasis',`DB_TopNumID`='$DB_TopNumID',`DB_EndTime`=NOW(),`DB_EditUser`='".$_SESSION['ManUser']."'";
-					EditSql("top",$TopID,"DB_TopID","indextop_list.php?DB_TopTagID=$TopTagID","修改成功!!",$UpStr);
-			
-					//紀錄使用者資訊	
-					$UpStr="`DB_RecUser`,`DB_RecIp`,`DB_RecSubject`,`DB_RecAccess`,`DB_RecAction`,`DB_RecTime`";
-					$UpStr2="'".$_SESSION['ManUser']."','".$_SERVER['REMOTE_ADDR']."','上方選單管理-".ereg_replace("'","\'",$arry2['DB_TopTagSubject'])."','".$DB_TopSubject."','edit',NOW()";
-					Recording_Add("recording",$UpStr,$UpStr2);
-
-
+	 $arry2 = SoloSql("top_tags","`DB_TopTagID`='".$TopTagID."'");      
+    //修改
+    $UpStr = "`DB_TopSort`='$DB_TopSort',`DB_TopSubject`='$DB_TopSubject',`DB_TopBasis`='$DB_TopBasis',`DB_TopNumID`='$DB_TopNumID',`DB_EndTime`=NOW(),`DB_EditUser`='".$_SESSION['ManUser']."'";
+    EditSql("top",$TopID,"DB_TopID","indextop_list.php?DB_TopTagID=$TopTagID","修改成功!!",$UpStr);
+    //紀錄使用者資訊	
+    $UpStr="`DB_RecUser`,`DB_RecIp`,`DB_RecSubject`,`DB_RecAccess`,`DB_RecAction`,`DB_RecTime`";
+    $UpStr2="'".$_SESSION['ManUser']."','".$_SERVER['REMOTE_ADDR']."','上方選單管理-".ereg_replace("'","\'",$arry2['DB_TopTagSubject'])."','".$DB_TopSubject."','edit',NOW()";
+    Recording_Add("recording",$UpStr,$UpStr2);
 }
 ?>
 
@@ -42,10 +37,6 @@ include_once ("top.php");
 
 <script language="JavaScript" type="text/javascript" src="ajax.js"></script>
 <script language="javascript">
-<!--
-
-
-
 //更換文件資料
 function change1( num ){
 	var oHttpReq = new createXMLHttpRequest();
@@ -64,9 +55,6 @@ function change1( num ){
 	oHttpReq.send(null);
 }
 
-
-
-
 function checkinput(){
 	var ErrString = "" ;
 	if (document.form1.DB_TopSort.value == ""){ErrString = ErrString + "排序" + unescape('%0D%0A')}
@@ -80,19 +68,14 @@ function checkinput(){
 		alert("您有以下欄位未確實填寫：\n\n"+ErrString+"\n請檢查您所填寫的資料。");
 	return false;
 	}
-	
 
 	return true;
 }
-
-
-
--->
 </script>
+
 <?
 $DB_TopID = $_GET['DB_TopID'];
 $ary = SoloSql("top","`DB_TopID`='$DB_TopID'");
-
 ?>
 <!--top_end-->
 <table width="955" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -111,9 +94,14 @@ include_once ("left_menu.php");
 	  <tr>
 		<td align="top" valign="middle"><img src="images/gray_01.gif" width="10" height="20" /></td>
 		<td align="top" valign="middle"><img src="images/icon_a1.gif" width="15" height="20" /></td>
-		<td align="top" valign="middle" background="images/gray_02.gif" class="text_12px_01">&nbsp;<strong><? echo $userauth['DB_ManName'];?></strong> 歡迎登入!!&nbsp;&nbsp;</td>
+          <td align="top" valign="middle" background="images/gray_02.gif" class="text_12px_01">&nbsp;
+            <strong><? echo $userauth['DB_ManName'];?></strong> 歡迎登入!!&nbsp;&nbsp;
+          </td>
 		<td align="top" valign="middle"><img src="images/icon_q1.gif" width="15" height="20" /></td>
-		<td align="top" valign="middle" background="images/gray_02.gif" class="text_12px_01"><a href="id_info.php" class="link_01">首頁</a> >> 網頁首頁管理>> 上方選單管理 >> <? echo $ary2['DB_TopTagSubject'];?> >> <span class="text_12px_02"><strong>編輯資料</strong></span></td>
+          <td align="top" valign="middle" background="images/gray_02.gif" class="text_12px_01">
+            <a href="id_info.php" class="link_01">首頁</a> >> 導覽列管理>> 第一排導覽列管理 >> <? echo $ary2['DB_TopTagSubject'];?> >> 
+            <span class="text_12px_02"><strong>編輯資料</strong></span>
+          </td>
 		<td align="top" valign="middle"><img src="images/gray_03.gif" width="10" height="20" /></td>
       </tr>
 	</table>
@@ -160,76 +148,83 @@ include_once ("left_menu.php");
 		  </tr>
 		  <tr>
 			<td align="top" valign="top" class="border_02"><img src="images/icon_g.gif" width="5" height="5" align="absmiddle" /> 選單名稱 <font color="red">*</font></td>
-			<td align="top" valign="top" class="border_02"><input name="DB_TopSubject" value="<? echo $ary['DB_TopSubject'];?>" type="text" class="text_12px_01" size="30" /></td>
+              <td align="top" valign="top" class="border_02">
+                <input name="DB_TopSubject" value="<? echo $ary['DB_TopSubject'];?>" type="text" class="text_12px_01" size="30" />
+              </td>
 		  </tr>
-		 
 		</table>
-			
-			<table width="100%" border="0" cellspacing="1" cellpadding="5" class="text_12px_01">
-              <tr>			
-			   <td width="18%" align="top" valign="top" class="border_02"><img src="images/icon_g.gif" width="5" height="5" align="absmiddle" /> 連結網頁選單功能<font color="red">&nbsp;</font></td>
-			   <td width="82%" align="top" valign="top" class="border_02">
-			  <select name="DB_TopBasis" onChange="change1(this.value);" class="text_12px_01">
-			  <option value="">請選擇</option>
-			  <option value="1" <? if ($ary['DB_TopBasis'] == "1"){echo "selected";}?>>條列式訊息管理</option>
-			  <option value="2" <? if ($ary['DB_TopBasis'] == "2"){echo "selected";}?>>說明文章管理</option>
-			  <option value="3" <? if ($ary['DB_TopBasis'] == "3"){echo "selected";}?>>行事曆</option>
-			  <option value="4" <? if ($ary['DB_TopBasis'] == "4"){echo "selected";}?>>檔案下載</option>
-			  <option value="5" <? if ($ary['DB_TopBasis'] == "5"){echo "selected";}?>>網路相簿</option>
-			  <option value="6" <? if ($ary['DB_TopBasis'] == "6"){echo "selected";}?>>常見問題</option>
-			  <option value="7" <? if ($ary['DB_TopBasis'] == "7"){echo "selected";}?>>網站連結</option>
-			  <option value="8" <? if ($ary['DB_TopBasis'] == "8"){echo "selected";}?>>參訪紀錄</option>
-			  </select>
-		  
-		<span id="show1">
-		 <? if (/*$ary['DB_TopBasis'] != "2" && $ary['DB_TopBasis'] != "3" &&*/ $ary['DB_TopBasis'] != "7" && $ary['DB_TopBasis'] != "8"){?>
-			  <select name="DB_TopNumID" class="text_12px_01">
-			  <?
-			   if ($ary['DB_TopBasis'] == "1"){
-			        $BaSql = "ordi_tags";
-					$BaSort = "DB_OrdTagSort";
-					$BaID = "DB_OrdTagID";
-					$BaName = "DB_OrdTagSubject";
-			   }else if ($ary['DB_TopBasis'] == "2"){
-			        $BaSql = "article";
-					$BaSort = "DB_ArtSort";
-					$BaID = "DB_ArtID";
-					$BaName = "DB_ArtSubject";					
-			   }else if ($ary['DB_TopBasis'] == "3"){
-			        $BaSql = "calendar_tags";
-					$BaSort = "DB_CalTagSort";
-					$BaID = "DB_CalTagID";
-					$BaName = "DB_CalTagSubject";					
-			   }else if ($ary['DB_TopBasis'] == "4"){
-			        $BaSql = "download_tags";
-					$BaSort = "DB_DowTagSort";
-					$BaID = "DB_DowTagID";
-					$BaName = "DB_DowTagSubject";					
-			   }else if ($ary['DB_TopBasis'] == "5"){
-			        $BaSql = "life_tags";
-					$BaSort = "DB_LifTagSort";
-					$BaID = "DB_LifTagID";
-					$BaName = "DB_LifTagSubject";					
-			   }else if ($ary['DB_TopBasis'] == "6"){
-			        $BaSql = "faq_tags";
-					$BaSort = "DB_FaqTagSort";
-					$BaID = "DB_FaqTagID";
-					$BaName = "DB_FaqTagSubject";					
-			   }
-			   
-			   $BaSq_result = mysql_query("select * from `". $BaSql."` where 1 ORDER BY `".$BaSort."` ASC");
-			       
-				   while ( $BaSq_ary = mysql_fetch_array($BaSq_result) ){ 
-			  ?>
-			    <option value="<? echo $BaSq_ary[''.$BaID.''];?>" <? if ($ary['DB_TopNumID'] == $BaSq_ary[''.$BaID.'']){echo "selected";}?>><? echo $BaSq_ary[''.$BaName.''];?></option>
-				<? } ?>
-			  </select>
-		 <? } ?>			  
-	    </span>		
-                </td>
-              </tr>
+            <table width="100%" border="0" cellspacing="1" cellpadding="5" class="text_12px_01">
+                <tr>			
+                    <td width="18%" align="top" valign="top" class="border_02">
+                        <img src="images/icon_g.gif" width="5" height="5" align="absmiddle" /> 連結網頁選單功能
+                        <font color="red">&nbsp;</font>
+                    </td>
+                    <td width="82%" align="top" valign="top" class="border_02">
+                        <select name="DB_TopBasis" onChange="change1(this.value);" class="text_12px_01">
+                            <option value="">請選擇</option>
+                            <option value="1" <? if ($ary['DB_TopBasis'] == "1"){echo "selected";}?>>條列式訊息管理</option>
+                            <option value="2" <? if ($ary['DB_TopBasis'] == "2"){echo "selected";}?>>說明文章管理</option>
+                            <option value="3" <? if ($ary['DB_TopBasis'] == "3"){echo "selected";}?>>行事曆</option>
+                            <option value="4" <? if ($ary['DB_TopBasis'] == "4"){echo "selected";}?>>檔案下載</option>
+                            <option value="5" <? if ($ary['DB_TopBasis'] == "5"){echo "selected";}?>>網路相簿</option>
+                            <option value="6" <? if ($ary['DB_TopBasis'] == "6"){echo "selected";}?>>常見問題</option>
+                            <option value="7" <? if ($ary['DB_TopBasis'] == "7"){echo "selected";}?>>好站連結管理</option>
+                            <option value="8" <? if ($ary['DB_TopBasis'] == "8"){echo "selected";}?>>參訪紀錄</option>
+                        </select>
+                        <span id="show1">
+                            <?php 
+                            if ($ary['DB_TopBasis'] != "7" && $ary['DB_TopBasis'] != "8"){
+                            ?>
+                            <select name="DB_TopNumID" class="text_12px_01">
+                                <?php
+                                if ($ary['DB_TopBasis'] == "1"){
+                                    $BaSql = "ordi_tags";
+                                    $BaSort = "DB_OrdTagSort";
+                                    $BaID = "DB_OrdTagID";
+                                    $BaName = "DB_OrdTagSubject";
+                                }
+                                else if ($ary['DB_TopBasis'] == "2"){
+                                    $BaSql = "article";
+                                    $BaSort = "DB_ArtSort";
+                                    $BaID = "DB_ArtID";
+                                    $BaName = "DB_ArtSubject";					
+                               }
+                                else if ($ary['DB_TopBasis'] == "3"){
+                                    $BaSql = "calendar_tags";
+                                    $BaSort = "DB_CalTagSort";
+                                    $BaID = "DB_CalTagID";
+                                    $BaName = "DB_CalTagSubject";					
+                               }
+                                else if ($ary['DB_TopBasis'] == "4"){
+                                    $BaSql = "download_tags";
+                                    $BaSort = "DB_DowTagSort";
+                                    $BaID = "DB_DowTagID";
+                                    $BaName = "DB_DowTagSubject";					
+                               }
+                                else if ($ary['DB_TopBasis'] == "5"){
+                                    $BaSql = "life_tags";
+                                    $BaSort = "DB_LifTagSort";
+                                    $BaID = "DB_LifTagID";
+                                    $BaName = "DB_LifTagSubject";					
+                               }
+                                else if ($ary['DB_TopBasis'] == "6"){
+                                    $BaSql = "faq_tags";
+                                    $BaSort = "DB_FaqTagSort";
+                                    $BaID = "DB_FaqTagID";
+                                    $BaName = "DB_FaqTagSubject";					
+                               }
+                                $BaSq_result = mysql_query("select * from `". $BaSql."` where 1 ORDER BY `".$BaSort."` ASC");
+                                while ( $BaSq_ary = mysql_fetch_array($BaSq_result) ){ 
+                                ?>
+                                <option value="<? echo $BaSq_ary[''.$BaID.''];?>" <? if ($ary['DB_TopNumID'] == $BaSq_ary[''.$BaID.'']){echo "selected";}?>><? echo $BaSq_ary[''.$BaName.''];?></option>
+                                <? } ?>
+                            </select>
+                            <? } ?>			  
+                        </span>		
+                    </td>
+                </tr>
             </table>
-</form>	
+        </form>	
 
 		
 		<div align="center" style="padding:5px;margin:5px"><a href="javascript:document.form1.submit();" onClick="return checkinput();" title="修改資料" class="button_01">修改資料</a></div>
@@ -243,7 +238,6 @@ include_once ("left_menu.php");
 	  </tr>
   
 	</table>
-
 	</td>
   </tr>
   <tr>

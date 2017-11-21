@@ -259,7 +259,7 @@ include_once ("left_menu.php");
 		<td align="left" valign="middle"><img src="images/icon_a1.gif" width="15" height="20" /></td>
 		<td align="left" valign="middle" background="images/gray_02.gif" class="text_12px_01">&nbsp;<strong><? echo $userauth['DB_ManName'];?></strong> 歡迎登入!!&nbsp;&nbsp;</td>
 		<td align="left" valign="middle"><img src="images/icon_q1.gif" width="15" height="20" /></td>
-		<td align="left" valign="middle" background="images/gray_02.gif" class="text_12px_01"><a href="id_info.php" class="link_01">首頁</a> >> 網頁首頁管理 >> <a href="indexleft_calss.php" class="link_01">左側選單管理</a> >> <span class="text_12px_02"><strong>編輯標籤</strong></span></td>
+		<td align="left" valign="middle" background="images/gray_02.gif" class="text_12px_01"><a href="id_info.php" class="link_01">首頁</a> >> 導覽列管理 >> <a href="indexleft_calss.php" class="link_01">第二排導覽列管理</a> >> <span class="text_12px_02"><strong>編輯標籤</strong></span></td>
 		<td align="left" valign="middle"><img src="images/gray_03.gif" width="10" height="20" /></td>
       </tr>
 	</table>
@@ -271,7 +271,7 @@ include_once ("left_menu.php");
 	  </tr>
 	  <tr>
 	    <td width="5" align="left" valign="top"><img src="images/title_bg01.gif" width="5" height="28" /></td>
-		<td width="742" align="left" valign="middle" class="title_bg"><strong>左側選單管理</strong></td>
+		<td width="742" align="left" valign="middle" class="title_bg"><strong>第二排導覽列管理</strong></td>
 		<td width="5" align="left" valign="top"><img src="images/title_bg03.gif" width="5" height="28" /></td>
 	  </tr>
 	  <tr>
@@ -345,12 +345,10 @@ include_once ("left_menu.php");
                                     <td width="82%" align="left" valign="top">
                                     <select name="DB_LefTagBasis" onChange="change1(this.value);" class="text_12px_01">
                                       <option value="">請選擇位置</option>
-                                      <option value="1" <? if ($ary['DB_LefTagBasis'] == "1"){echo "selected";}?>>條列式訊息管理</option>
-                                      <option value="2" <? if ($ary['DB_LefTagBasis'] == "2"){echo "selected";}?>>說明文章管理</option>
+                                      <option value="1" <? if ($ary['DB_LefTagBasis'] == "1"){echo "selected";}?>>最新消息管理</option>
+                                      <option value="2" <? if ($ary['DB_LefTagBasis'] == "2"){echo "selected";}?>>分頁內容管理</option>
                                       <option value="3" <? if ($ary['DB_LefTagBasis'] == "3"){echo "selected";}?>>行事曆管理</option>
                                       <option value="4" <? if ($ary['DB_LefTagBasis'] == "4"){echo "selected";}?>>檔案下載</option>
-                                      <option value="5" <? if ($ary['DB_LefTagBasis'] == "5"){echo "selected";}?>>網路相簿</option>
-                                      <option value="6" <? if ($ary['DB_LefTagBasis'] == "6"){echo "selected";}?>>常見問題</option>
                                       <option value="7" <? if ($ary['DB_LefTagBasis'] == "7"){echo "selected";}?>>好站連結管理</option>
                                       <option value="8" <? if ($ary['DB_LefTagBasis'] == "8"){echo "selected";}?>>參訪紀錄</option>
                                       <option value="9" <? if ($ary['DB_LefTagBasis'] == "9"){echo "selected";}?>>留言板管理</option>
@@ -382,18 +380,6 @@ include_once ("left_menu.php");
                                                 $BaSort = "DB_DowTagSort";
                                                 $BaID = "DB_DowTagID";
                                                 $BaName = "DB_DowTagSubject";					
-                                           }
-                                            else if ($ary['DB_LefTagBasis'] == "5"){ //網路相簿
-                                                $BaSql = "life_tags";
-                                                $BaSort = "DB_LifTagSort";
-                                                $BaID = "DB_LifTagID";
-                                                $BaName = "DB_LifTagSubject";					
-                                           }
-                                            else if ($ary['DB_LefTagBasis'] == "6"){ //常見問題
-                                                $BaSql = "faq_tags";
-                                                $BaSort = "DB_FaqTagSort";
-                                                $BaID = "DB_FaqTagID";
-                                                $BaName = "DB_FaqTagSubject";					
                                            }
                                            $BaSq_result = mysql_query("select * from `". $BaSql."` where 1 ORDER BY `".$BaSort."` ASC");
                                             while ( $BaSq_ary = mysql_fetch_array($BaSq_result) ){ 
