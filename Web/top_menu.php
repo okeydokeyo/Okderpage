@@ -87,7 +87,7 @@
                                     <?php
                                     $result = mysql_query("SELECT * FROM top WHERE DB_TopTagID='4' ORDER BY DB_TopSort ASC");
                                     while($row = mysql_fetch_array($result)){
-                                        echo "<li><a href='KnowMore.php?artID=".$row['DB_TopNumID']."'>".$row['DB_TopSubject']."</a></li>";
+                                        echo "<li><a href='art.php?no=".$row['DB_TopNumID']."'>".$row['DB_TopSubject']."</a></li>";
                                     }
                                     ?>
                                     <li><a href="KnowMoreVedio.php">脊髓損傷衛教影片</a></li>
