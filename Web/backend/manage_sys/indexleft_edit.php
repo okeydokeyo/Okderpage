@@ -295,16 +295,6 @@ include_once ("left_menu.php");
 					$BaSort = "DB_DowTagSort";
 					$BaID = "DB_DowTagID";
 					$BaName = "DB_DowTagSubject";					
-			   }else if ($ary['DB_LefBasis'] == "5"){
-			        $BaSql = "life_tags";
-					$BaSort = "DB_LifTagSort";
-					$BaID = "DB_LifTagID";
-					$BaName = "DB_LifTagSubject";					
-			   }else if ($ary['DB_LefBasis'] == "6"){
-			        $BaSql = "faq_tags";
-					$BaSort = "DB_FaqTagSort";
-					$BaID = "DB_FaqTagID";
-					$BaName = "DB_FaqTagSubject";					
 			   }
 			   
 			   $BaSq_result = mysql_query("select * from `". $BaSql."` where 1 ORDER BY `".$BaSort."` ASC");

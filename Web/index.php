@@ -44,12 +44,8 @@
                  else{
                      $InNum = "";		
                  }
-         ?>  
-         <!--03-->
-         <?php
                  if ($arry['DB_ArtID'] != ""){
          ?>
-	  
          <table width="100%" border="0" cellspacing="0" cellpadding="0" id="margin_01" summary="<? echo $Inter_ary['DB_IntSubject'];?>文字表格">
              <tr>
                  <td colspan="3" align="left" valign="top" class="text_12px_01" id="padding_07">
@@ -61,29 +57,30 @@
          <br />
          <? }}?>
      </div> 
+     
      <div class="box-b">
-
-<?php
-if(isset($_GET['show']))  $show=$_GET['show']; 
-else $show =  '0' ;
-		$Inter_result = mysql_query("select * from `inter` ORDER BY `DB_IntSort` ASC") or die("查詢失敗n3");
-		while ($Inter_ary = mysql_fetch_array($Inter_result)){
-		?>
-		<?php
-		if($Inter_ary['DB_IntBasis']=="1"){
-		      $ordt_result = mysql_query("select * from `ordi_tags` where `DB_OrdTagID`='".$Inter_ary['DB_IntNumID']."' && `DB_OrdTagAnnounce`='0'") or die("查詢失敗b1");
-		      $ordt_ary = mysql_fetch_array($ordt_result);
-		?>  
-      	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-	    <tr>		    <div style="width:13%; float:right;">  
-			<? if ($ordt_ary['DB_OrdTagID'] != ""){?>
-			<a href="news_list.php?no=<? echo $Inter_ary['DB_IntNumID'];?>" title="更多(<? echo $Inter_ary['DB_IntSubject'];?>)" class="link_03"><img src="images/more_01.gif" alt="more" width="39" height="17" border="0" /></a>
-			   <? }?>
-			</div>
-		</tr>
-	  </table>
-	  <table width="100%" border="0" cellspacing="0" cellpadding="0" id="margin_01" summary="<?php echo $Inter_ary['DB_IntSubject'];?>文字表格">
-		   <?php		   
+         <?php
+         if(isset($_GET['show']))  $show=$_GET['show']; 
+         else $show =  '0' ;
+         $Inter_result = mysql_query("select * from `inter` ORDER BY `DB_IntSort` ASC") or die("查詢失敗n3");
+         while ($Inter_ary = mysql_fetch_array($Inter_result)){
+             if($Inter_ary['DB_IntBasis']=="1"){
+                 $ordt_result = mysql_query("select * from `ordi_tags` where `DB_OrdTagID`='".$Inter_ary['DB_IntNumID']."' && `DB_OrdTagAnnounce`='0'") or die("查詢失敗b1");
+                 $ordt_ary = mysql_fetch_array($ordt_result);
+         ?>   
+         <table width="100%" border="0" cellspacing="0" cellpadding="0">
+             <tr>		    
+                 <div style="width:13%; float:right;">  
+                     <? if ($ordt_ary['DB_OrdTagID'] != ""){?>
+                     <a href="news_list.php?no=<? echo $Inter_ary['DB_IntNumID'];?>" title="更多(<? echo $Inter_ary['DB_IntSubject'];?>)" class="link_03">
+                         <img src="images/more_01.gif" alt="more" width="39" height="17" border="0" />
+                     </a>  
+                     <? }?>
+                 </div>
+             </tr>
+         </table>
+         <table width="100%" border="0" cellspacing="0" cellpadding="0" id="margin_01" summary="<?php echo $Inter_ary['DB_IntSubject'];?>文字表格">
+             <?php		   
 		   //查詢條例式訊息管理資料
 		   $time = date("Y-m-d"); //時間
 		   $Ordi_result = mysql_query("select * from `ordi` where `DB_OrdTagID`='".$Inter_ary['DB_IntNumID']."' && `DB_OrdAnnounce`='0' && (`DB_OrdStart_Time`<='$time' && `DB_OrdEnd_Time`>='$time' || `DB_OrdPermanent`='1')  ORDER BY `DB_OrdTime` DESC LIMIT 0,".$Inter_ary['DB_IntOrdi']."");

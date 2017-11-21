@@ -5,9 +5,10 @@ include "../function.php";
 //chk_account_id($_SESSION['ManUser']); //檢查帳號是否符合後,否回首頁
 //chk_Power("DB_ManP_8"); //檢查是否功能權限,否回首頁
 
-$DB_OrdTagID=$_GET['DB_OrdTagID'];
-$arry1=SoloSql("ordi_tags"," `DB_OrdTagID`='$DB_OrdTagID'");
+$DB_OrdTagID=$_GET['DB_OrdTagID'];  //最新消息=10
+$arry1=SoloSql("ordi_tags"," `DB_OrdTagID`='$DB_OrdTagID'"); //取大標：最新消息
 $page = (empty($_GET['page']))?1:$_GET['page']; //現在頁面
+
 //條列式訊息管理查詢
 $sql = "select * from `ordi` where `DB_OrdTagID`='$DB_OrdTagID' ORDER BY `DB_OrdTime` DESC";	
 $return = iron_page( $sql, 10, 10, $page, 10 ); //iron分頁程式

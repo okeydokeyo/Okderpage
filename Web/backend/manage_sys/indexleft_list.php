@@ -127,16 +127,6 @@ include_once ("left_menu.php");
                            $dowc_result = mysql_query("select * from `download_tags` where `DB_DowTagID`='".$return[$i]['DB_LefNumID']."'") or die("查詢失敗b4");
 				           $dowc_ary = mysql_fetch_array($dowc_result);
 				           $LBasis = "檔案下載管理-".$dowc_ary['DB_DowTagSubject']."";				   
-				   }else if (/*$return[$i]['DB_LefClass'] == "1" &&*/ $return[$i]['DB_LefBasis'] == "5"){
-				           //網路相簿查詢
-                           $lifa_result = mysql_query("select * from `life_tags` where `DB_LifTagID`='".$return[$i]['DB_LefNumID']."'") or die("查詢失敗b5");
-				           $lifa_ary = mysql_fetch_array($lifa_result);
-				           $LBasis = "網路相簿管理-".$lifa_ary['DB_LifTagSubject']."";				   
-				   }else if (/*$return[$i]['DB_LefClass'] == "1" &&*/ $return[$i]['DB_LefBasis'] == "6"){
-				           //常見問題管理查詢
-                           $fqa_result = mysql_query("select * from `faq_tags` where `DB_FaqTagID`='".$return[$i]['DB_LefNumID']."'") or die("查詢失敗b6");
-				           $fqa_ary = mysql_fetch_array($fqa_result);
-				           $LBasis = "常見問題管理-".$fqa_ary['DB_FaqTagSubject']."";				   
 				   }else if (/*$return[$i]['DB_LefClass'] == "1" &&*/ $return[$i]['DB_LefBasis'] == "7"){
 				           //網站連結查詢
                            /*$webt_result = mysql_query("select * from `website_tags` where `DB_WebTagID`='".$return[$i]['DB_LefNumID']."'") or die("查詢失敗b7");

@@ -199,7 +199,7 @@ function change1( num,DB_FileName ){
 
 
 //-->
-</Script>
+</script>
 
 <!--top_end-->
 <table width="955" border="0" align="center" cellpadding="0" cellspacing="0">
