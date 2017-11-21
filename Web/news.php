@@ -33,61 +33,21 @@
             ?>
         </select><br><br>
         <?php
-        $result1 = mysql_query("SELECT * FROM `ordi` WHERE `DB_OrdTagID`='".@$_GET["mag"]."'");
-        $result2 = mysql_query("SELECT * FROM `ordi_tags` WHERE `DB_OrdTagID`='".@$_GET["mag"]."'");
-        if(@$_GET["mag"]!=null)
-        {
-            while($row = mysql_fetch_array($result2))
-            {
-                echo "<h2>".$row['DB_OrdTagSubject']."</h2>";
-                echo "<br><br>";
-            }
-            while($row = mysql_fetch_array($result1))
-            {
-                if($row['DB_OrdBasis']==1 && $row['DB_OrdPermanent']==1)
-                {
-                    echo "<font class='newsContent'>●&nbsp;&nbsp;&nbsp;&nbsp;</font><a href='news.php?article=".$row['DB_OrdID']."' class='magslink'>".$row['DB_OrdSubject']."</a>";
-                    echo "<br><br>";
-                }
-                else if($row['DB_OrdBasis']==3)
-                {
-                    echo "<font class='newsContent'>線上預覽：</font>";
-                    echo "<a href='".$row['DB_OrdUrl3_1']."' target='_blank' class='magslink'>".$row['DB_OrdSubject']."</a>";
-                }
-            }
-        }
-        
-        if(@$_GET["article"]!=null)
-        {
-            $result3 = mysql_query("SELECT * FROM `ordi` WHERE `DB_OrdID`='".@$_GET["article"]."'");
-            while($row = mysql_fetch_array($result3))
-            {
-                echo "<h2>".$row['DB_OrdSubject']."</h2>";
-                echo "<br><br>";
-                echo "<form id='newsForm'>".$row['DB_OrdContent'];
-                echo "<br><br><br>";
-                echo "<a href='news.php?mag=".$row['DB_OrdTagID']."' class='magslink'>-回上頁-</a></form>";
-            }
-        }
-        
-        
-        /*
+        $result1 = mysql_query("SELECT * FROM `ordi` WHERE `DB_OrdKind`='".@$_GET["mag"]."'");
         
         while($row = mysql_fetch_array($result1))
         {
-            if($row['DB_OrdKind'] == @$_GET["mag"])
+            if($row['DB_OrdTagID']==11)
             {
-                if($row['DB_OrdTagID']==11)
-                {
-                    echo "<a href='".$row['DB_OrdUrl3_1']."' class='magslink'>".$row['DB_OrdSubject'];
-                    echo "<br><br>";
-                }
-                else
-                {
-                    echo "<a href='".$row['DB_OrdUrl3_1']."' target='_blank' class='magslink'>".$row['DB_OrdSubject'];
-                    echo "<br><br>";
-                }
+                echo "<a href='".$row['DB_OrdUrl3_1']."' class='magslink'>".$row['DB_OrdSubject'];
+                echo "<br><br>";
             }
+            else
+            {
+                echo "<a href='".$row['DB_OrdUrl3_1']."' target='_blank' class='magslink'>".$row['DB_OrdSubject'];
+                echo "<br><br>";
+            }
+            
         }
 
         if(@$_GET["{124}"] != null)
@@ -111,7 +71,7 @@
                 echo $row5['DB_OrdContent'];
                 echo "<br><br><br><a href='news.php?{124}=".$row5['DB_OrdTagID']."' class='magslink'>-回上頁-</a>";
             }
-        }*/
+        }
         ?>
 
     </form>
