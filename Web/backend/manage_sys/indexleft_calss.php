@@ -50,7 +50,7 @@ include_once ("left_menu.php");
 		<td align="left" valign="middle"><img src="images/icon_a1.gif" width="15" height="20" /></td>
 		<td align="left" valign="middle" background="images/gray_02.gif" class="text_12px_01">&nbsp;<strong><? echo $userauth['DB_ManName'];?></strong> 歡迎登入!!&nbsp;&nbsp;</td>
 		<td align="left" valign="middle"><img src="images/icon_q1.gif" width="15" height="20" /></td>
-		<td align="left" valign="middle" background="images/gray_02.gif" class="text_12px_01"><a href="id_info.php" class="link_01">首頁</a> >> 網頁首頁管理 >> <span class="text_12px_02"><strong>第二排選單管理</strong></span></td>
+		<td align="left" valign="middle" background="images/gray_02.gif" class="text_12px_01"><a href="id_info.php" class="link_01">首頁</a> >> 導覽列管理 >> <span class="text_12px_02"><strong>第二排導覽列管理</strong></span></td>
 		<td align="left" valign="middle"><img src="images/gray_03.gif" width="10" height="20" /></td>
       </tr>
 	</table>
@@ -60,7 +60,7 @@ include_once ("left_menu.php");
 	  </tr>
 	  <tr>
 	    <td width="5" align="left" valign="top"><img src="images/title_bg01.gif" width="5" height="28" /></td>
-		<td width="742" align="left" valign="middle" class="title_bg"><strong>第二排選單管理</strong></td>
+		<td width="742" align="left" valign="middle" class="title_bg"><strong>第二排導覽列管理</strong></td>
 		<td width="5" align="left" valign="top"><img src="images/title_bg03.gif" width="5" height="28" /></td>
 	  </tr>
 	  <tr>
@@ -139,18 +139,6 @@ include_once ("left_menu.php");
               $dowc_result = mysql_query("select * from `download_tags` where `DB_DowTagID`='".$return[$i]['DB_LefTagNumID']."'") or die("查詢失敗b4");
               $dowc_ary = mysql_fetch_array($dowc_result);
               $LBasis = "檔案下載管理-".$dowc_ary['DB_DowTagSubject']."";				   
-          }
-          else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "1" && $return[$i]['DB_LefTagBasis'] == "5"){
-              //網路相簿查詢
-              $lifa_result = mysql_query("select * from `life_tags` where `DB_LifTagID`='".$return[$i]['DB_LefTagNumID']."'") or die("查詢失敗b5");
-              $lifa_ary = mysql_fetch_array($lifa_result);
-              $LBasis = "網路相簿管理-".$lifa_ary['DB_LifTagSubject']."";				   
-          }
-          else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "1" && $return[$i]['DB_LefTagBasis'] == "6"){
-              //常見問題管理查詢
-              $fqa_result = mysql_query("select * from `faq_tags` where `DB_FaqTagID`='".$return[$i]['DB_LefTagNumID']."'") or die("查詢失敗b6");
-              $fqa_ary = mysql_fetch_array($fqa_result);
-              $LBasis = "常見問題管理-".$fqa_ary['DB_FaqTagSubject']."";				   
           }
           else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "1" && $return[$i]['DB_LefTagBasis'] == "7"){
               $LBasis = "好站連結管理";				   

@@ -66,7 +66,7 @@ include_once ("left_menu.php");
 		<td align="left" valign="middle"><img src="images/icon_a1.gif" width="15" height="20" /></td>
 		<td align="left" valign="middle" background="images/gray_02.gif" class="text_12px_01">&nbsp;<strong><? echo $userauth['DB_ManName'];?></strong> 歡迎登入!!&nbsp;&nbsp;</td>
 		<td align="left" valign="middle"><img src="images/icon_q1.gif" width="15" height="20" /></td>
-		<td align="left" valign="middle" background="images/gray_02.gif" class="text_12px_01"><a href="id_info.php" class="link_01">首頁</a> >> 網頁首頁管理 >> 上方選單管理 >> <span class="text_12px_02"><strong>
+		<td align="left" valign="middle" background="images/gray_02.gif" class="text_12px_01"><a href="id_info.php" class="link_01">首頁</a> >> 導覽列管理 >> 第一排導覽列管理 >> <span class="text_12px_02"><strong>
             <?php 
             if($DB_TopTagID == 34){
                 echo $ary['DB_LefTagSubject'];
@@ -142,7 +142,7 @@ include_once ("left_menu.php");
                                $ordt_result = mysql_query("select * from `ordi_tags` where `DB_OrdTagID`='".$return[$i]['DB_TopNumID']."'") or die("查詢失敗b1"); 
                             }
 				           $ordt_ary = mysql_fetch_array($ordt_result);
-				           $IBasis = "條例式訊息管理-".$ordt_ary['DB_OrdTagSubject']."";
+				           $IBasis = "最新消息管理-".$ordt_ary['DB_OrdTagSubject']."";
 				   }
                     else if ($return[$i]['DB_TopBasis'] == "2" || $return[$i]['DB_LefBasis'] == "2"){
 				           //說明文章類別查詢       
@@ -153,7 +153,7 @@ include_once ("left_menu.php");
                             $artc_result = mysql_query("select * from `article` where `DB_ArtID`='".$return[$i]['DB_TopNumID']."'") or die("查詢失敗b2");
                             }
 				           $artc_ary = mysql_fetch_array($artc_result);
-				           $IBasis = "說明文章管理-".$artc_ary['DB_ArtSubject']."";				   
+				           $IBasis = "分頁內容管理-".$artc_ary['DB_ArtSubject']."";				   
 				   }
                     else if ($return[$i]['DB_TopBasis'] == "3" || $return[$i]['DB_LefBasis'] == "3"){
 				           //行事曆管理查詢                          
@@ -177,38 +177,10 @@ include_once ("left_menu.php");
 				           $dowc_ary = mysql_fetch_array($dowc_result);
 				           $IBasis = "檔案下載管理-".$dowc_ary['DB_DowTagSubject']."";				   
 				   }
-                    else if ($return[$i]['DB_TopBasis'] == "5" || $return[$i]['DB_LefBasis'] == "5"){
-				           //網路相簿查詢
-                            if($DB_TopTagID == 34){
-                           $lifa_result = mysql_query("select * from `life_tags` where `DB_LifTagID`='".$return[$i]['DB_LefNumID']."'") or die("查詢失敗b5");                          
-                            }
-                            else{
-                           $lifa_result = mysql_query("select * from `life_tags` where `DB_LifTagID`='".$return[$i]['DB_TopNumID']."'") or die("查詢失敗b5");        
-                            }
-				           $lifa_ary = mysql_fetch_array($lifa_result);
-				           $IBasis = "網路相簿管理-".$lifa_ary['DB_LifTagSubject']."";				   
-				   }
-                    else if ($return[$i]['DB_TopBasis'] == "6" || $return[$i]['DB_LefBasis'] == "6"){
-				           //常見問題管理查詢
-                            if($DB_TopTagID == 34){
-                           $fqa_result = mysql_query("select * from `faq_tags` where `DB_FaqTagID`='".$return[$i]['DB_LefNumID']."'") or die("查詢失敗b6");                          
-                            }
-                            else{
-                           $fqa_result = mysql_query("select * from `faq_tags` where `DB_FaqTagID`='".$return[$i]['DB_TopNumID']."'") or die("查詢失敗b6");        
-                            }
-				           $fqa_ary = mysql_fetch_array($fqa_result);
-				           $IBasis = "常見問題管理-".$fqa_ary['DB_FaqTagSubject']."";				   
-				   }
                     else if ($return[$i]['DB_TopBasis'] == "7" || $return[$i]['DB_LefBasis'] == "7"){
-				           //網站連結查詢
-                           /*$webt_result = mysql_query("select * from `website_tags` where `DB_WebTagID`='".$return[$i]['DB_LefNumID']."'") or die("查詢失敗b7");
-				           $webt_ary = mysql_fetch_array($webt_result);*/
 				           $IBasis = "網站連結";				   
 				   }
                     else if ($return[$i]['DB_TopBasis'] == "8" || $return[$i]['DB_LefBasis'] == "8"){
-				           //參訪紀錄查詢
-                           /*$visi_result = mysql_query("select * from `visit` where `DB_VisID`='".$return[$i]['DB_TopNumID']."'") or die("查詢失敗b8");
-				           $visi_ary = mysql_fetch_array($visi_result);*/
 				           $IBasis = "參訪紀錄";				   
 				   }			
 
@@ -254,7 +226,9 @@ include_once ("left_menu.php");
                             echo $return[$i]['DB_TopID'];
                         }
                         ?>
-                         " class="button_02"><img src="images/icon_edit.gif" border="0" align="absmiddle" /> 編輯</a>&nbsp;
+                         " class="button_02">
+                    <img src="images/icon_edit.gif" border="0" align="absmiddle" /> 編輯
+                </a>&nbsp;
 				<a href="javascript:Delete(
                         <?php 
                         if($DB_TopTagID == 34){
@@ -264,7 +238,9 @@ include_once ("left_menu.php");
                             echo $return[$i]['DB_TopID'];
                         }
                         ?>
-                );" class="button_03"><img src="images/icon_del2.gif" border="0" align="absmiddle" /> 刪除</a>			
+                );" class="button_03">
+                    <img src="images/icon_del2.gif" border="0" align="absmiddle" /> 刪除
+                </a>			
 			</td>
 		  </tr>
 		<?
@@ -281,7 +257,6 @@ include_once ("left_menu.php");
 				<a href="javascript:Delete(<? echo $return[$i]['DB_TopID']; ?>);" class="button_03"><img src="images/icon_del2.gif" border="0" align="absmiddle" /> 刪除</a>			
 			</td>
 		  </tr>-->
-		  
 		</table>
 		</td>
 		<td align="left" valign="top" style="background-image:url(images/com_R.gif); background-repeat:repeat-y;">&nbsp;</td>

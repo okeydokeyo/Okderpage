@@ -28,34 +28,40 @@
     推動希望之輪</h1>
 </div>   
     
- <div class="wrapper"> <div class="box-a">
-		<?
-     		$Inter_result = mysql_query("select * from `inter` ORDER BY `DB_IntSort` ASC") or die("查詢失敗n3");
-		while ($Inter_ary = mysql_fetch_array($Inter_result)){
-		if($Inter_ary['DB_IntBasis']=="2"){
-		
-		$arry=SoloSql("article"," `DB_ArtID`='".$Inter_ary['DB_IntNumID']."' && `DB_ArtAnnounce`='0'");
-		$DB_IntArticle=$Inter_ary['DB_IntArticle']*38;
-		$leng = mb_strlen($arry['DB_ArtContent']); //計算內容長度
-        //辨別字數是否大於所設定的字數
-		if ($leng > $DB_IntArticle){
-		    $InNum = "....";
-		}else{
-		    $InNum = "";		
-		}
-		?>  
-	  <!--03-->
-		     <? if ($arry['DB_ArtID'] != ""){?>
-	  <table width="100%" border="0" cellspacing="0" cellpadding="0" id="margin_01" summary="<? echo $Inter_ary['DB_IntSubject'];?>文字表格">
-		<tr>
-		  <td colspan="3" align="left" valign="top" class="text_12px_01" id="padding_07"><? echo re_change_size(mb_substr($arry['DB_ArtContent'],0,$DB_IntArticle)).$InNum;?></td>
-		</tr>
-	  </table>
-		     <? }?>
-	  <br />
-		<? }}?>
-</div>
-  <div class="box-b">
+ <div class="wrapper"> 
+     <div class="box-a">
+         <?php
+         $Inter_result = mysql_query("select * from `inter` ORDER BY `DB_IntSort` ASC") or die("查詢失敗n3");
+         while ($Inter_ary = mysql_fetch_array($Inter_result)){
+             if($Inter_ary['DB_IntBasis']=="2"){
+                 $arry=SoloSql("article"," `DB_ArtID`='".$Inter_ary['DB_IntNumID']."' && `DB_ArtAnnounce`='0'");
+                 $DB_IntArticle=$Inter_ary['DB_IntArticle']*38;	
+                 $leng = mb_strlen($arry['DB_ArtContent']); //計算內容長度
+                 //辨別字數是否大於所設定的字數
+                 if ($leng > $DB_IntArticle){  
+                     $InNum = "....";
+                 }
+                 else{
+                     $InNum = "";		
+                 }
+         ?>  
+         <!--03-->
+         <?php
+                 if ($arry['DB_ArtID'] != ""){
+         ?>
+	  
+         <table width="100%" border="0" cellspacing="0" cellpadding="0" id="margin_01" summary="<? echo $Inter_ary['DB_IntSubject'];?>文字表格">
+             <tr>
+                 <td colspan="3" align="left" valign="top" class="text_12px_01" id="padding_07">
+                     <? echo re_change_size(mb_substr($arry['DB_ArtContent'],0,$DB_IntArticle)).$InNum;?>
+                 </td>
+             </tr>
+         </table>
+         <? }?>
+         <br />
+         <? }}?>
+     </div> 
+     <div class="box-b">
 
 <?php
 if(isset($_GET['show']))  $show=$_GET['show']; 

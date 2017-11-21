@@ -58,7 +58,7 @@ include_once ("left_menu.php");
 		<td align="left" valign="middle"><img src="images/icon_a1.gif" width="15" height="20" /></td>
 		<td align="left" valign="middle" background="images/gray_02.gif" class="text_12px_01">&nbsp;<strong><? echo $userauth['DB_ManName'];?></strong> 歡迎登入!!&nbsp;&nbsp;</td>
 		<td align="left" valign="middle"><img src="images/icon_q1.gif" width="15" height="20" /></td>
-		<td align="left" valign="middle" background="images/gray_02.gif" class="text_12px_01"><a href="id_info.php" class="link_01">首頁</a> >> 網頁首頁管理 >> 左側選單管理 >> <span class="text_12px_02"><strong><? echo $ary['DB_LefTagSubject'];?></strong></span></td>
+		<td align="left" valign="middle" background="images/gray_02.gif" class="text_12px_01"><a href="id_info.php" class="link_01">首頁</a> >> 導覽列管理 >> 第二排選單管理 >> <span class="text_12px_02"><strong><? echo $ary['DB_LefTagSubject'];?></strong></span></td>
 		<td align="left" valign="middle"><img src="images/gray_03.gif" width="10" height="20" /></td>
       </tr>
 	</table>
