@@ -36,9 +36,9 @@
 			<td align="left" valign="middle" class="menutitle_bg"><a href="http://localhost/backend/manage_sys/topview_edit.php?DB_AniID=1&page=1" class="m01">主要影片管理</a></td>
 		  </tr>
             		  
-            <tr>	
+        <!--    <tr>	
                 <td align="left" valign="middle" class="menutitle_bg"><a href="http://localhost/backend/manage_sys/carousel_edit.php" class="m01">輪播圖片管理</a></td>
-            </tr>
+            </tr> -->
             
             <tr>	
                 <td align="left" valign="middle" class="menutitle_bg">
@@ -129,9 +129,11 @@
 	   //}
     //if ( $userauth['DB_ManP_14'] == "1" ){
 	?>		  
-		  <tr>
+		  <!--
+            <tr>
 		    <td align="left" valign="middle" class="menutitle_bg"><a href="publication_calss.php" class="m01">中心刊物與服務成果管理</a></td>
-	      </tr>            
+	      </tr>  
+            -->
 		  <tr>
 		    <td align="left" valign="middle" class="menutitle_bg"><a href="links2_list.php" class="m01">好站連結管理</a></td>
 	      </tr>

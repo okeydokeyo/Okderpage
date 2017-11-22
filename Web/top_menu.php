@@ -64,16 +64,16 @@
                                     $result = mysql_query("SELECT * FROM `top` WHERE `DB_TopTagID` = 3 ORDER BY DB_TopSort ASC");
                                     while($row = mysql_fetch_array($result)){
                                         if($row['DB_TopNumID'] == 12){
-                                            echo "<li><a href='donate2.php'>".$row['DB_TopSubject']."</a></li>";    
+                                            echo "<li><a href='download_list.php?no=12'>".$row['DB_TopSubject']."</a></li>";    
                                         }
                                         else if($row['DB_TopNumID'] == 13){
-                                            echo "<li><a href='donate3.php'>".$row['DB_TopSubject']."</a></li>";    
+                                            echo "<li><a href='download_list.php?no=13'>".$row['DB_TopSubject']."</a></li>";    
                                         }
                                         else if($row['DB_TopNumID'] == 14){
-                                            echo "<li><a href='donate4.php'>".$row['DB_TopSubject']."</a></li>";    
+                                            echo "<li><a href='download_list.php?no=14'>".$row['DB_TopSubject']."</a></li>";    
                                         }
                                         else if($row['DB_TopNumID'] == 15){
-                                            echo "<li><a href='donate5.php'>".$row['DB_TopSubject']."</a></li>";    
+                                            echo "<li><a href='download_list.php?no=15'>".$row['DB_TopSubject']."</a></li>";    
                                         }
                                         else{
                                             echo "<li><a href='art.php?no=".$row['DB_TopNumID']."'>".$row['DB_TopSubject']."</a></li>";
