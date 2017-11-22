@@ -142,7 +142,7 @@ include_once ("left_menu.php");
                                $ordt_result = mysql_query("select * from `ordi_tags` where `DB_OrdTagID`='".$return[$i]['DB_TopNumID']."'") or die("查詢失敗b1"); 
                             }
 				           $ordt_ary = mysql_fetch_array($ordt_result);
-				           $IBasis = "最新消息管理-".$ordt_ary['DB_OrdTagSubject']."";
+				           $IBasis = "條列式訊息管理-".$ordt_ary['DB_OrdTagSubject']."";
 				   }
                     else if ($return[$i]['DB_TopBasis'] == "2" || $return[$i]['DB_LefBasis'] == "2"){
 				           //說明文章類別查詢       
@@ -178,7 +178,7 @@ include_once ("left_menu.php");
 				           $IBasis = "檔案下載管理-".$dowc_ary['DB_DowTagSubject']."";				   
 				   }
                     else if ($return[$i]['DB_TopBasis'] == "7" || $return[$i]['DB_LefBasis'] == "7"){
-				           $IBasis = "網站連結";				   
+				           $IBasis = "好站連結管理";				   
 				   }
                     else if ($return[$i]['DB_TopBasis'] == "8" || $return[$i]['DB_LefBasis'] == "8"){
 				           $IBasis = "參訪紀錄";				   

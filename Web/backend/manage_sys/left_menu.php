@@ -33,8 +33,18 @@
             // }
             // if ( $userauth['DB_ManP_2'] == "1" ){?>	  
 		  <tr>
-			<td align="left" valign="middle" class="menutitle_bg"><a href="topview_list.php" class="m01">主要影片管理</a></td>
+			<td align="left" valign="middle" class="menutitle_bg"><a href="http://localhost/backend/manage_sys/topview_edit.php?DB_AniID=1&page=1" class="m01">主要影片管理</a></td>
 		  </tr>
+            		  
+            <tr>	
+                <td align="left" valign="middle" class="menutitle_bg"><a href="http://localhost/backend/manage_sys/carousel_edit.php" class="m01">輪播圖片管理</a></td>
+            </tr>
+            
+            <tr>	
+                <td align="left" valign="middle" class="menutitle_bg">
+                    <a href="#" onclick='window.open("https://www.fotor.com/tw/");return false;' class="m01">外部修圖網站</a>
+                </td>
+            </tr>
 	<? 
 	 //  }
     ?>	  
@@ -64,7 +74,7 @@
             //  if ( $userauth['DB_ManP_16'] == "1" ){
 	?>	  
 		  <tr>
-			<td align="left" valign="middle" class="menutitle_bg"><a href="toplogo_list.php" class="m01">第二排LOGO圖管理</a></td>
+			<td align="left" valign="middle" class="menutitle_bg"><a href="toplogo_edit.php?DB_LogID=1&page=1" class="m01">第二排LOGO圖管理</a></td>
 		  </tr>
 	<? 
 	  // }
@@ -99,7 +109,7 @@
 		  </tr>
 	<? //if ( $userauth['DB_ManP_8'] == "1" ){?>		  
 		  <tr>
-			<td align="left" valign="middle" class="menutitle_bg"><a href="sections_calss.php" class="m01">輪播圖片及最新消息管理</a></td>
+			<td align="left" valign="middle" class="menutitle_bg"><a href="sections_calss.php" class="m01">條列式訊息管理</a></td>
 		  </tr>
 	<? 
 	 //  }
@@ -110,13 +120,6 @@
 		  </tr>
 	<? 
 	  // }
-	   //if ( $userauth['DB_ManP_10'] == "1" ){
-	?>		  
-		  <tr>
-			<td align="left" valign="middle" class="menutitle_bg"><a href="calendar_calss.php" class="m01">行事曆管理</a></td>
-		  </tr>
-	<? 
-	   //}
 	   //if ( $userauth['DB_ManP_11'] == "1" ){
 	?>		  
 		  <tr>
@@ -127,10 +130,26 @@
     //if ( $userauth['DB_ManP_14'] == "1" ){
 	?>		  
 		  <tr>
+		    <td align="left" valign="middle" class="menutitle_bg"><a href="publication_calss.php" class="m01">中心刊物與服務成果管理</a></td>
+	      </tr>            
+		  <tr>
 		    <td align="left" valign="middle" class="menutitle_bg"><a href="links2_list.php" class="m01">好站連結管理</a></td>
 	      </tr>
 	<? 
 	  // }
+	 //  if ( $userauth['DB_ManP_18'] == "1" ){
+	?>			  
+	      <tr>
+		    <td align="left" valign="middle" class="menutitle_bg"><a href="message_calss.php" class="m01">留言版管理</a></td>
+	      </tr>	
+	<?// }
+	   //if ( $userauth['DB_ManP_10'] == "1" ){
+	?>		  
+		  <tr>
+			<td align="left" valign="middle" class="menutitle_bg"><a href="calendar_calss.php" class="m01">行事曆管理</a></td>
+		  </tr>
+	<? 
+	   //}
 	 //  if ( $userauth['DB_ManP_15'] == "1" ){
 	?>		  
 		  <tr>
@@ -138,13 +157,7 @@
 	      </tr>
 	<? 
 	 //  }
-	 //  if ( $userauth['DB_ManP_18'] == "1" ){
-	?>			  
-
-	      <tr>
-		    <td align="left" valign="middle" class="menutitle_bg"><a href="message_calss.php" class="m01">留言版管理</a></td>
-	      </tr>	
-	<?// }?>		  	  
+    ?>		  	  
 		  <tr>
 			<td height="5" align="left" valign="middle"></td>
 		  </tr>

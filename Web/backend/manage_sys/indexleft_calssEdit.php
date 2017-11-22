@@ -345,13 +345,14 @@ include_once ("left_menu.php");
                                     <td width="82%" align="left" valign="top">
                                     <select name="DB_LefTagBasis" onChange="change1(this.value);" class="text_12px_01">
                                       <option value="">請選擇位置</option>
-                                      <option value="1" <? if ($ary['DB_LefTagBasis'] == "1"){echo "selected";}?>>最新消息管理</option>
+                                      <option value="1" <? if ($ary['DB_LefTagBasis'] == "1"){echo "selected";}?>>條列式訊息管理</option>
                                       <option value="2" <? if ($ary['DB_LefTagBasis'] == "2"){echo "selected";}?>>分頁內容管理</option>
-                                      <option value="3" <? if ($ary['DB_LefTagBasis'] == "3"){echo "selected";}?>>行事曆管理</option>
-                                      <option value="4" <? if ($ary['DB_LefTagBasis'] == "4"){echo "selected";}?>>檔案下載</option>
+                                      <option value="4" <? if ($ary['DB_LefTagBasis'] == "4"){echo "selected";}?>>檔案下載管理</option>
+                                      <option value="10" <? if ($ary['DB_LefTagBasis'] == "10"){echo "selected";}?>>中心刊物與服務成果管理</option>
                                       <option value="7" <? if ($ary['DB_LefTagBasis'] == "7"){echo "selected";}?>>好站連結管理</option>
-                                      <option value="8" <? if ($ary['DB_LefTagBasis'] == "8"){echo "selected";}?>>參訪紀錄</option>
                                       <option value="9" <? if ($ary['DB_LefTagBasis'] == "9"){echo "selected";}?>>留言板管理</option>
+                                      <option value="3" <? if ($ary['DB_LefTagBasis'] == "3"){echo "selected";}?>>行事曆管理</option>
+                                      <option value="8" <? if ($ary['DB_LefTagBasis'] == "8"){echo "selected";}?>>參訪紀錄</option>
                                     </select>
                                     <span id="show1">
                                         <?php if ($ary['DB_LefTagBasis'] != "7" && $ary['DB_LefTagBasis'] != "8"){?>

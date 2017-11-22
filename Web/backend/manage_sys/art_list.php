@@ -10,7 +10,7 @@ $page = (empty($_GET['page']))?1:$_GET['page']; //現在頁面
 //********************************************************************************************************
 
 //說明文章管理查詢
-$sql = "select * from `article` where 1 ORDER BY `DB_ArtSort` ASC";	
+$sql = "select * from `article` where `DB_ArtID` != 28 ORDER BY `DB_ArtSort` ASC";	
 $return = iron_page( $sql, 10, 10, $page, 10 ); //iron分頁程式
 $result = mysql_query($sql) or die("查詢失敗");
 $number = mysql_num_rows($result); //全部資料的總數
@@ -50,7 +50,7 @@ include_once ("left_menu.php");
 		<td align="left" valign="middle"><img src="images/icon_a1.gif" width="15" height="20" /></td>
 		<td align="left" valign="middle" background="images/gray_02.gif" class="text_12px_01">&nbsp;<strong><? echo $userauth['DB_ManName'];?></strong> 歡迎登入!!&nbsp;&nbsp;</td>
 		<td align="left" valign="middle"><img src="images/icon_q1.gif" width="15" height="20" /></td>
-		<td align="left" valign="middle" background="images/gray_02.gif" class="text_12px_01"><a href="id_info.php" class="link_01">首頁</a> >> 網頁首頁管理 >> <span class="text_12px_02"><strong>說明文章管理</strong></span></td>
+		<td align="left" valign="middle" background="images/gray_02.gif" class="text_12px_01"><a href="id_info.php" class="link_01">首頁</a> >> 網頁選單管理 >> <span class="text_12px_02"><strong>分頁內容管理</strong></span></td>
 		<td align="left" valign="middle"><img src="images/gray_03.gif" width="10" height="20" /></td>
       </tr>
 	</table>
@@ -60,7 +60,7 @@ include_once ("left_menu.php");
 	  </tr>
 	  <tr>
 	    <td width="5" align="left" valign="top"><img src="images/title_bg01.gif" width="5" height="28" /></td>
-		<td width="742" align="left" valign="middle" class="title_bg"><strong>說明文章管理</strong></td>
+		<td width="742" align="left" valign="middle" class="title_bg"><strong>分頁內容管理</strong></td>
 		<td width="5" align="left" valign="top"><img src="images/title_bg03.gif" width="5" height="28" /></td>
 	  </tr>
 	  <tr>

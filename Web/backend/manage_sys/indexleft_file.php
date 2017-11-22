@@ -59,28 +59,4 @@ if ($num == "4"){
 
 <? 
 }
-if ($num == "5"){
-      //網路相簿查詢
-      $lifa_result = mysql_query("select * from `life_tags` where 1 ORDER BY `DB_LifTagSort` ASC") or die("查詢失敗b5");
-?>
-      <select name="DB_LefNumID">
-	       <? while ( $lifa_ary = mysql_fetch_array($lifa_result) ){?>
-			    <option value="<? echo $lifa_ary['DB_LifTagID'];?>"><? echo $lifa_ary['DB_LifTagSubject'];?></option>
-		   <? } ?>
-	  </select>
-
-<? 
-}
-if ($num == "6"){
-      //常見問題管理查詢
-      $fqa_result = mysql_query("select * from `faq_tags` where 1 ORDER BY `DB_FaqTagSort` ASC") or die("查詢失敗b6");
-?>
-      <select name="DB_LefNumID">
-	       <? while ( $fqa_ary = mysql_fetch_array($fqa_result) ){?>
-			    <option value="<? echo $fqa_ary['DB_FaqTagID'];?>"><? echo $fqa_ary['DB_FaqTagSubject'];?></option>
-		   <? } ?>
-	  </select>
-
-<? 
-}
 ?>

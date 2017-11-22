@@ -126,7 +126,7 @@ include_once ("left_menu.php");
               //說明文章類別查詢
               $artc_result = mysql_query("select * from `article` where `DB_ArtID`='".$return[$i]['DB_LefTagNumID']."'") or die("查詢失敗b2");
               $artc_ary = mysql_fetch_array($artc_result);
-              $LBasis = "說明文章管理-".$artc_ary['DB_ArtSubject']."";				   
+              $LBasis = "分頁內容管理-".$artc_ary['DB_ArtSubject']."";				   
           }
           else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "1" && $return[$i]['DB_LefTagBasis'] == "3"){
               //行事曆管理查詢                          
@@ -148,6 +148,9 @@ include_once ("left_menu.php");
           }
           else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "1" && $return[$i]['DB_LefTagBasis'] == "9"){
               $LBasis = "留言板管理";				   
+          }
+          else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "1" && $return[$i]['DB_LefTagBasis'] == "10"){
+              $LBasis = "中心刊物與服務成果管理";				   
           }
           else if ($return[$i]['DB_LefTagLayer'] == "1" && $return[$i]['DB_LefTagClass'] == "2"){
               $LBasis = "網址";				   
