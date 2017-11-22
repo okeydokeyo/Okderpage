@@ -62,7 +62,6 @@
          <? }}?>
      </div> 
      <div class="box-b">
-
 <?php
 if(isset($_GET['show']))  $show=$_GET['show']; 
 else $show =  '0' ;
@@ -75,9 +74,9 @@ else $show =  '0' ;
 		      $ordt_ary = mysql_fetch_array($ordt_result);
 		?>  
       	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-	    <tr>		    <div style="width:13%; float:right;">  
+	    <tr>		    <div style="width:13%; float:left;">  
 			<? if ($ordt_ary['DB_OrdTagID'] != ""){?>
-			<a href="news_list.php?no=<? echo $Inter_ary['DB_IntNumID'];?>" title="更多(<? echo $Inter_ary['DB_IntSubject'];?>)" class="link_03"><img src="images/more_01.gif" alt="more" width="39" height="17" border="0" /></a>
+			<a href="news_list.php?no=<? echo $Inter_ary['DB_IntNumID'];?>" title="更多(<? echo $Inter_ary['DB_IntSubject'];?>)" class="link_03"><img src="images/news.png" alt="more" width="80" border="0" /></a>
 			   <? }?>
 			</div>
 		</tr>

@@ -1,23 +1,10 @@
-@media screen and (min-width: 1450px) {
+@media only screen and (min-width: 1500px){
+    
 .video-container{
     margin: auto;
 }
 
-.fa {
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}    
-
 .video-container h1 {
-    
-  -webkit-animation-duration: 1.5s;
-  -moz-animation-duration: 1.5s;
-  -webkit-animation-name: slidein;
-  -moz-animation-name: slidein;
   position: absolute;
   top: 50%;
   width: 100%;
@@ -26,30 +13,11 @@
   color: #fff;
   text-align: center;
 }
-@-webkit-keyframes slidein {
-  from {
-  top: 70%;
-  }
-
-  to {
-  top: 50%;
-  }
-}
-
-@-moz-keyframes slidein {
-  from {
-  top: 70%;
-  }
-
-  to {
-  top: 50%;
-  }
-}
 
 .footer{
     width: 100%;
     background-color: #AAAAAA;
-	margin-top: 27em;
+	margin-top: 15em;
 }
 
 video{
@@ -134,7 +102,7 @@ video{
 }
 
 .flipper {
-    margin-top: 9em;
+    margin-top: 3em;
     transition: 0.6s;
     transform-style: preserve-3d;
     position: relative;
@@ -145,6 +113,8 @@ video{
     transition: 0.6s;
     transform-style: preserve-3d;
     position: absolute;
+        margin-top: 4%;
+    margin-bottom: 4%;
 }
 
 .vertical.flip-container {
@@ -175,18 +145,16 @@ video{
     padding-left: 2%;
 }
 
-.wrapper{
-	margin-top:50px;
-}
-
 .box-a{
+margin-top:5px;
 width:50%;
 height:300px;
 float:left;
 display:inline;
 }
-
+    
 .box-b{
+margin-top:0%;
 width:50%;
 height:300px;
 float:left;
@@ -215,9 +183,16 @@ display:inline;
 .border_02 {
     border-bottom: 1px dotted #cccccc;
 }
+    
+        .row{
+        margin-top: 20%;
+        height:20em;
+}
+    
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1449px) {
+    
 .video-container{
     margin: auto;
 }
@@ -361,18 +336,16 @@ video{
     padding-left: 2%;
 }
 
-.wrapper{
-	margin-top:50px;
-}
-
 .box-a{
+margin-top:2%;
 width:50%;
 height:300px;
 float:left;
 display:inline;
 }
-
+    
 .box-b{
+margin-top:0%;
 width:50%;
 height:300px;
 float:left;
@@ -404,13 +377,11 @@ display:inline;
 }
 
 @media only screen and (min-width: 480px) and (max-width: 1199px) {
-.video-container{
-    margin: auto;
-}
+
 
 .video-container h1 {
   position: absolute;
-  top: 50%;
+    top: 200px;
   width: 100%;
   font-size: 2.5em;
   letter-spacing: 1em;
@@ -421,12 +392,11 @@ display:inline;
 .footer{
     width: 100%;
     background-color: #AAAAAA;
-	margin-top: 200px;
+    margin-top:10em;
 }
 
 video{
-	margin: auto;
-	margin-top: 120px;
+	margin-top:130px;
 	width: 100%;
 	max-width: 100%;
 	max-height: 80%;
@@ -486,7 +456,6 @@ video{
 }
 
 .flip-container {
-    margin-bottom: 80px;
     display: inline;
     perspective: 1000;
     transform-style: preserve-3d;
@@ -501,15 +470,15 @@ video{
 }
 
 .flip-container, .front, .back {
-    max-width: 100%;
-    max-height: 100%;
-}
+    height:inherit;
+    }
 
 .flipper {
-    margin-top: 5em;
     transition: 0.6s;
     transform-style: preserve-3d;
     position: relative;
+    margin-top: 4%;
+    margin-bottom: 4%;
 }
 
 .front, .back {
@@ -517,6 +486,8 @@ video{
     transition: 0.6s;
     transform-style: preserve-3d;
     position: absolute;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
 
 .vertical.flip-container {
@@ -553,12 +524,13 @@ width:100%;
 height:auto;
 float:left;
 display:inline;
+margin-top:-2.4%;
 }
 
 .box-b{
+    margin-top:-2.4%;
 width:100%;
 height:auto;
-margin-top:10px;
 float:left;
 display:inline;
 }
@@ -585,19 +557,19 @@ display:inline;
 .border_02 {
     border-bottom: 1px dotted #cccccc;
 }
+    .row{
+        height:65em;
 }
-
+}
 
 @media screen and (max-width: 479px) {
-.video-container{
-    margin: auto;
-}
+
 
 .video-container h1 {
   position: absolute;
-  top: 20%;
+    top: 25%;
   width: 100%;
-  font-size: 1.5em;
+  font-size: 1.9em;
   letter-spacing: 1em;
   color:#FFFFFF;
   text-align: center;
@@ -606,12 +578,11 @@ display:inline;
 .footer{
     width: 100%;
     background-color: #AAAAAA;
-	margin-top: 200px;
+    margin-top:10em;
 }
 
 video{
-	margin: auto;
-	/*margin-top: 65px;*/
+	margin-top:30%;
 	width: 100%;
 	max-width: 100%;
 	max-height: 80%;
@@ -624,9 +595,11 @@ video{
 #BB1{
     position: fixed;
 	top: 120px;
-    left:-80px;
-	width: 150px;
+    left: -108px;
+	width: 200px;
     height: auto;  
+        display:none;
+
 }
 #BB1:hover{
 	left: 0%;
@@ -635,9 +608,10 @@ video{
 #BB2 {
     position: fixed;
 	top: 200px;
-    left:-80px;
-	width:150px;
+    left:-108px;
+	width: 200px;
     height: auto; 
+    display:none;
 }
 #BB2:hover{
 	left: 0%;
@@ -671,7 +645,6 @@ video{
 }
 
 .flip-container {
-    margin-bottom:10px;
     display: inline;
     perspective: 1000;
     transform-style: preserve-3d;
@@ -686,14 +659,15 @@ video{
 }
 
 .flip-container, .front, .back {
-    max-width: 100%;
-    max-height: 100%;
-}
+    height:inherit;
+    }
 
 .flipper {
     transition: 0.6s;
     transform-style: preserve-3d;
     position: relative;
+    margin-top: 4%;
+    margin-bottom: 4%;
 }
 
 .front, .back {
@@ -701,6 +675,8 @@ video{
     transition: 0.6s;
     transform-style: preserve-3d;
     position: absolute;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
 
 .vertical.flip-container {
@@ -737,27 +713,29 @@ width:100%;
 height:auto;
 float:left;
 display:inline;
+margin-top:-2.4%;
 }
 
 .box-b{
+    margin-top:-2.4%;
 width:100%;
 height:auto;
-margin-top: 10px;
 float:left;
 display:inline;
 }
 
 .text_12px_06{
-	font-size: 4px;
+	font-size: 12px;
     text-align:left;
 	color: #824A1A;
 }
 .link_03{
-	font-size:4px;
+	font-size: 0.9em;
 	text-align:left;
 	color: #3A2203;
 }
 .link_03:hover{
+	font-size: 1em;
 	text-align:left;
 	color: #824A1A;
 }
@@ -768,4 +746,8 @@ display:inline;
 .border_02 {
     border-bottom: 1px dotted #cccccc;
 }
+    .row{
+        height:53em;
 }
+    
+    }
