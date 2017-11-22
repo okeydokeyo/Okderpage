@@ -19,7 +19,7 @@ if(!empty($DB_LogExp) ){
             else{
                 $UpStr=" `DB_LogAnnounce`='$DB_LogAnnounce',`DB_LogExp`='$DB_LogExp',`DB_EndTime`=NOW(),`DB_EditUser`='".$_SESSION['ManUser']."'";
 			}
-			EditSql("logo","$DB_LogID_no","DB_LogID","toplogo_list.php?page=$page","修改成功!!",$UpStr);
+			EditSql("logo","$DB_LogID_no","DB_LogID","toplogo_edit.php?DB_LogID=1&page=1","修改成功!!",$UpStr);
 	
 			//紀錄使用者資訊	
  $UpStr="`DB_RecUser`,`DB_RecIp`,`DB_RecSubject`,`DB_RecAccess`,`DB_RecAction`,`DB_RecTime`";

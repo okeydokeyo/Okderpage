@@ -37,7 +37,5 @@ if($_GET['del'] == "Yes"){
 if($DB_FileName=="DB_LogImg"){
 	echo "<input name=\"DB_LogImg\" type=\"file\" id=\"DB_LogImg\" />";
 }
-
-
 ?>
 
