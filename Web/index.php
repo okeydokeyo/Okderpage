@@ -22,18 +22,7 @@
 </header>
 <div class="video-container"> 
     <video autoplay loop poster="images/video.png" plays-inline id="index-video" muted>
-            <?php
-            $Logo_result = mysql_query("select * from `animation` where `DB_AniID`='1' && `DB_LogAnnounce`='0'") or die("查詢失敗lo");
-            $Logo_num = mysql_num_rows($Logo_result);
-            if ($Logo_num <> 0){
-                $Logo_ary = mysql_fetch_array($Logo_result);
-            }
-            else{
-                $Logo2_result = mysql_query("select * from `animation` where `DB_LogAnnounce`='0' ORDER BY `DB_AniID` ASC") or die("查詢失敗lo2");
-                $Logo_ary = mysql_fetch_array($Logo2_result);
-            }
-            ?>	
-        <source src="videos/<?php echo $Logo_ary['DB_LogImg'];?>" type="video/mp4">
+<source src="videos/index-video.mp4" type="video/mp4">
     </video>
      <h1>邀您一起<br>
     推動希望之輪</h1>
@@ -41,59 +30,29 @@
     
  <div class="wrapper"> 
      <div class="box-a">
-<br>
-<div id="myCarousel" class="container carousel slide" dataride="carousel">  
-    <ol class="carousel-indicators">
-    <?php
-        $carousel_result = mysql_query("select * from `carousel` where `DB_LogImg`!=''") or die("查詢失敗lo");
-        $carousel_num = mysql_num_rows($carousel_result);
-        $i = 0;
-        while($i < $carousel_num){
-            echo '<li data-target="#myCarousel" data-slide-to="'.$i.'"></li>';
-            $i++;
-        }
-    ?>
-    </ol>
-    
-    <div class="carousel-inner">
-        <div class="item active"><img src="images/Banner-01.jpg"></div>
-        <div class="item"><img src="images/Banner-01.jpg"></div>
-        <div class="item"><img src="images/Banner-01.jpg"></div>
-    </div>
-    
-    
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-        <span class="sr-only">Next</span>
-    </a></div>
-     </div> 
-     
-     <div class="box-b">
          <?php
-         if(isset($_GET['show']))  $show=$_GET['show']; 
-         else $show =  '0' ;
          $Inter_result = mysql_query("select * from `inter` ORDER BY `DB_IntSort` ASC") or die("查詢失敗n3");
          while ($Inter_ary = mysql_fetch_array($Inter_result)){
-             if($Inter_ary['DB_IntBasis']=="1"){
-                 $ordt_result = mysql_query("select * from `ordi_tags` where `DB_OrdTagID`='".$Inter_ary['DB_IntNumID']."' && `DB_OrdTagAnnounce`='0'") or die("查詢失敗b1");
-                 $ordt_ary = mysql_fetch_array($ordt_result);
-         ?>   
-         <table width="100%" border="0" cellspacing="0" cellpadding="0">
-             <tr>		    
-                 <div style="width:13%; float:right;">  
-                     <? if ($ordt_ary['DB_OrdTagID'] != ""){?>
-                     <a href="news_list.php?no=<? echo $Inter_ary['DB_IntNumID'];?>" title="更多(<? echo $Inter_ary['DB_IntSubject'];?>)" class="link_03">
-                         <img src="images/more_01.gif" alt="more" width="39" height="17" border="0" />
-                     </a>  
-                     <? }?>
-                 </div>
+             if($Inter_ary['DB_IntBasis']=="2"){
+                 $arry=SoloSql("article"," `DB_ArtID`='".$Inter_ary['DB_IntNumID']."' && `DB_ArtAnnounce`='0'");
+                 $DB_IntArticle=$Inter_ary['DB_IntArticle']*38;	
+                 $leng = mb_strlen($arry['DB_ArtContent']); //計算內容長度
+                 //辨別字數是否大於所設定的字數
+                 if ($leng > $DB_IntArticle){  
+                     $InNum = "....";
+                 }
+                 else{
+                     $InNum = "";		
+                 }
+                 if ($arry['DB_ArtID'] != ""){
+         ?>
+         <table width="100%" border="0" cellspacing="0" cellpadding="0" id="margin_01" summary="<? echo $Inter_ary['DB_IntSubject'];?>文字表格">
+             <tr>
+                 <td colspan="3" align="left" valign="top" class="text_12px_01" id="padding_07">
+                     <? echo re_change_size(mb_substr($arry['DB_ArtContent'],0,$DB_IntArticle)).$InNum;?>
+                 </td>
              </tr>
          </table>
-<<<<<<< HEAD
          <? }?>
          <br />
          <? }}?>
@@ -119,11 +78,7 @@ else $show =  '0' ;
 		</tr>
 	  </table>
 	  <table width="100%" border="0" cellspacing="0" cellpadding="0" id="margin_01" summary="<?php echo $Inter_ary['DB_IntSubject'];?>文字表格">
-		   <?php		   
-=======
-         <table width="100%" border="0" cellspacing="0" cellpadding="0" id="margin_01" summary="<?php echo $Inter_ary['DB_IntSubject'];?>文字表格">
-             <?php		   
->>>>>>> 95a366e79c7e6439cc14210b45494c6fa2de4cdb
+		   <?php		    
 		   //查詢條例式訊息管理資料
 		   $time = date("Y-m-d"); //時間
 		   $Ordi_result = mysql_query("select * from `ordi` where `DB_OrdTagID`='".$Inter_ary['DB_IntNumID']."' && `DB_OrdAnnounce`='0' && (`DB_OrdStart_Time`<='$time' && `DB_OrdEnd_Time`>='$time' || `DB_OrdPermanent`='1')  ORDER BY `DB_OrdTime` DESC LIMIT 0,".$Inter_ary['DB_IntOrdi']."");
@@ -158,7 +113,7 @@ else $show =  '0' ;
 		</tr>
 		  <?php }}?>
 	  </table>
-	  <br />
+	  <br/>
 		<?php }?>
 
 		<?php }?>
