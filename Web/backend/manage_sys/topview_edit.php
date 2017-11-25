@@ -105,17 +105,8 @@ include_once ("left_menu.php");
 		<td align="left" valign="top">
 		<table width="100%" border="0" cellspacing="1" cellpadding="5" class="text_12px_01">
 		  <tr>
-			<td colspan="2" align="left" valign="top" class="border_02">請注意標<font color="red">*</font>為必填資料</td>
-			</tr>
-		  <tr>
-			<td width="15%" align="left" valign="top" class="border_02"><img src="images/icon_g.gif" width="5" height="5" align="absmiddle" /> 顯 示<font color="red">*</font></td>
-			<td width="85%" align="left" valign="top" class="border_02">
-			  <input name="DB_LogAnnounce" type="radio" value="0" <? if($arry['DB_LogAnnounce']=="0"){echo "checked";}?> />顯示
-			  <input name="DB_LogAnnounce" type="radio" value="1" <? if($arry['DB_LogAnnounce']=="1"){echo "checked";}?> />不顯示</td>
-		  </tr>
-		  <tr>
 			<td align="left" valign="top" class="border_02">
-                <img src="images/icon_g.gif" width="5" height="5" align="absmiddle" /> LOGO圖片說明<font color="red">*</font>
+                <img src="images/icon_g.gif" width="5" height="5" align="absmiddle" /> 主要影片說明<font color="red">*</font>
             </td>
 			<td align="left" valign="top" class="border_02">
                 <input name="DB_LogExp" value="<? echo $arry['DB_LogExp'];?>" type="text" class="text_12px_01" size="80" />
