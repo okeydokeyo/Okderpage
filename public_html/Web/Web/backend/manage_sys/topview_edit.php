@@ -4,7 +4,6 @@ include "../config.php";
 include "../function.php";
 //chk_account_id($_SESSION['ManUser']); //檢查帳號是否符合後,否回首頁
 //chk_Power("DB_ManP_16"); //檢查是否功能權限,否回首頁
-
 $arry=SoloSql("animation","`DB_AniID`='".$_GET['DB_AniID']."'");
 $page=$_POST['page'];
 $DB_AniID_no=$_POST['DB_AniID_no'];
@@ -14,18 +13,21 @@ $DB_LogExp=ereg_replace("'","\'",$_POST['DB_LogExp']);
 if(!empty($DB_LogExp) ){	
     if(!empty($_FILES['DB_LogImg']['name'])){   
         $return=iron_upload("DB_LogImg", time(), "", "../../videos/", "mp4", "16677216" );		
-        $UpStr=" `DB_LogAnnounce`='$DB_LogAnnounce',`DB_LogExp`='$DB_LogExp',`DB_LogImg`='".$return['new_file']."',`DB_LogFileName`='".$return['old_file_name']."',`DB_EndTime`=NOW(),`DB_EditUser`='".$_SESSION['ManUser']."'";
-			}
-            else{
-                $UpStr=" `DB_LogAnnounce`='$DB_LogAnnounce',`DB_LogExp`='$DB_LogExp',`DB_EndTime`=NOW(),`DB_EditUser`='".$_SESSION['ManUser']."'";
-			}
-			EditSql("animation","$DB_AniID_no","DB_AniID","topview_edit.php?DB_AniID=1&page=1","修改成功!!",$UpStr);
-	
-			//紀錄使用者資訊	
- $UpStr="`DB_RecUser`,`DB_RecIp`,`DB_RecSubject`,`DB_RecAccess`,`DB_RecAction`,`DB_RecTime`";
-			$UpStr2="'".$_SESSION['ManUser']."','".$_SERVER['REMOTE_ADDR']."','主要影片管理','".$DB_LogExp."','edit',NOW()";
-			Recording_Add("recording",$UpStr,$UpStr2);
+        $UpStr=" `DB_LogAnnounce`='$DB_LogAnnounce',`DB_LogExp`='$DB_LogExp',`DB_LogImg`='".$return['new_file']."',`DB_LogFileName`='".$return['old_file_name']."',`DB_EndTime`=NOW(),`DB_EditUser`='".$_SESSION['ManUser']."'";	
+    }
+            
+    else{        
+        $UpStr=" 
+        `DB_LogAnnounce`='$DB_LogAnnounce',`DB_LogExp`='$DB_LogExp',`DB_EndTime`=NOW(),`DB_EditUser`='".$_SESSION['ManUser']."'";	
+    }	
+    EditSql("animation","$DB_AniID_no","DB_AniID","topview_edit.php?DB_AniID=1&page=1","修改成功!!",$UpStr);
+		
+    //紀錄使用者資訊	
+    $UpStr="`DB_RecUser`,`DB_RecIp`,`DB_RecSubject`,`DB_RecAccess`,`DB_RecAction`,`DB_RecTime`";
+    $UpStr2="'".$_SESSION['ManUser']."','".$_SERVER['REMOTE_ADDR']."','主要影片管理','".$DB_LogExp."','edit',NOW()";	
+    Recording_Add("recording",$UpStr,$UpStr2);
 }
+
 include_once ("top.php");
 ?>
 
@@ -33,7 +35,6 @@ include_once ("top.php");
 <script language="javascript">
 function checkinput(){
 	var ErrString = "" ;
-	if (document.form1.DB_LogExp.value == ""){ErrString = ErrString + "主要影片說明" + unescape('%0D%0A')}
 	if (document.form1.DB_LogImg.value == ""){ErrString = ErrString + "上傳影片" + unescape('%0D%0A')}
 	if (ErrString != "") {
 		alert("您有以下欄位未確實填寫：\n\n"+ErrString+"\n請檢查您所填寫的資料。");
@@ -105,14 +106,6 @@ include_once ("left_menu.php");
 		<td align="left" valign="top">
 		<table width="100%" border="0" cellspacing="1" cellpadding="5" class="text_12px_01">
 		  <tr>
-			<td align="left" valign="top" class="border_02">
-                <img src="images/icon_g.gif" width="5" height="5" align="absmiddle" /> 主要影片說明<font color="red">*</font>
-            </td>
-			<td align="left" valign="top" class="border_02">
-                <input name="DB_LogExp" value="<? echo $arry['DB_LogExp'];?>" type="text" class="text_12px_01" size="80" />
-              </td>
-		  </tr>
-		  <tr>
 			<td width="15%" align="left" valign="top" class="border_02">
                 <img src="images/icon_g.gif" width="5" height="5" align="absmiddle" /> 上 傳 影 片<font color="red">*</font>
             </td>
@@ -141,8 +134,9 @@ include_once ("left_menu.php");
 		</table> 		
 		<div align="center" style="padding:5px;margin:5px">
             <a href="javascript:document.form1.submit();" onClick="return checkinput();" title="修改資料" class="button_01">修改資料</a></div>
-	  <input  type="hidden" name="DB_AniID_no" value="<? echo $arry['DB_AniID'];?>">
-	  <input type="hidden" name="page" value="<? echo $_GET['page'];?>">		
+            <input type="hidden" name="DB_AniID_no" value="<? echo $arry['DB_AniID'];?>">
+            <input type="hidden" name="DB_LogExp" value="<? echo $arry['DB_LogExp'];?>">
+            <input type="hidden" name="page" value="<? echo $_GET['page'];?>">		
 		</td>
           
 		<td align="left" valign="top" style="background-image:url(images/com_R.gif); background-repeat:repeat-y;">&nbsp;</td>

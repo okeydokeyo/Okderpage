@@ -147,7 +147,7 @@
         
         function link_category(category){
             var num;
-            if(category == "捐款")
+            if(category == "捐款/捐物")
                 num = 1;
             else if(category == "通報")
                 num = 2;
@@ -206,7 +206,7 @@
                     <input type="text" class="form-control Input" name="topic" placeholder="主旨：（八字以內）">
                 </td>
                 <td valign="center" >
-                    <label class="radio-inline" style="margin-left:15px"><input type="radio" name="category" value="donation" id="A">捐款</label>
+                    <label class="radio-inline" style="margin-left:15px"><input type="radio" name="category" value="donation" id="A">捐款/捐物</label>
                     <label class="radio-inline"><input type="radio" name="category" value="report">通報</label>
                     <label class="radio-inline"><input type="radio" name="category" value="injury">脊髓損傷</label>
                     <label class="radio-inline"><input type="radio" name="category" value="information">中心相關問題</label>
@@ -234,7 +234,7 @@
                     $this->ID = $ID_in;
                     
                     $this->category = $category_in;
-                    if($this->category ===  "捐款"){
+                    if($this->category ===  "捐款/捐物"){
                         $this->button = "button1";
                     }
                     else if($this->category === "通報"){

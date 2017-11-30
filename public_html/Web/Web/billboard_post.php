@@ -6,7 +6,7 @@
     $topic = $_POST["topic"];
     switch($_POST["category"]){
         case "donation":
-            $category = "捐款";
+            $category = "捐款/捐物";
             break;
         case "report":
             $category = "通報";

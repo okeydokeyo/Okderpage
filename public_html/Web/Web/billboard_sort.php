@@ -69,17 +69,14 @@
        <ul>
             <?php
             $num = $_GET['num'];
-            require_once("dbtools.inc.php");
-            $link = create_connection();
-            if($num == 1)
-                $sql = "SELECT*FROM comments WHERE category='捐款' AND pass=1 ORDER BY DB_MesTime DESC";
+            if($num == 1)         
+                $result = mysql_query("SELECT*FROM comments WHERE category='捐款/捐物' AND pass=1 ORDER BY DB_MesTime DESC") or die("查詢失敗n3");
             else if($num == 2)
-                $sql = "SELECT*FROM comments WHERE category='通報' AND pass=1 ORDER BY DB_MesTime DESC";
+                $result = mysql_query("SELECT*FROM comments WHERE category='通報' AND pass=1 ORDER BY DB_MesTime DESC") or die("查詢失敗n3");
             else if($num == 3)
-                $sql = "SELECT*FROM comments WHERE category='脊髓損傷' AND pass=1 ORDER BY DB_MesTime DESC";
+                $result = mysql_query("SELECT*FROM comments WHERE category='脊髓損傷' AND pass=1 ORDER BY DB_MesTime DESC") or die("查詢失敗n3");
             else
-                $sql = "SELECT*FROM comments WHERE category='中心相關問題' AND pass=1 ORDER BY DB_MesTime DESC";
-            $result = execute_sql("scsrc2", $sql, $link);    
+                $result = mysql_query("SELECT*FROM comments WHERE category='中心相關問題' AND pass=1 ORDER BY DB_MesTime DESC") or die("查詢失敗n3");
             $num_rows = mysql_num_rows($result);
            class Message{
                 var $ID, $category, $topic, $name, $current_time, $content, $button;
@@ -87,7 +84,7 @@
                     $this->ID = $ID_in;
                     $this->category = $category_in;
                     
-                    if($this->category ===  "捐款"){
+                    if($this->category ===  "捐款/捐物"){
                         $this->button = "button1";
                     }
                     else if($this->category === "通報"){
@@ -105,11 +102,9 @@
                     $this->current_time = $time_in;
                     $this->content = $content_in;
                     
-                    $link2 = create_connection();
-                    $reply_sql = "SELECT*FROM comments_reply WHERE DB_MesID=".$this->ID." AND pass=1";
-                    $reply_result = execute_sql("scsrc2", $reply_sql, $link2); 
+                
+                    $reply_result = mysql_query("SELECT*FROM comments_reply WHERE DB_MesID=".$this->ID." AND pass=1") or die("查詢失敗n3"); 
                     $reply_num_in = mysql_num_rows($reply_result);
-                    
                     $this->reply_num = $reply_num_in;
                 }
                 function displayMessage(){
@@ -170,7 +165,6 @@
                }  
             }
             mysql_free_result($result);
-            mysql_close($link);
         ?>
     </ul>   
     </div>

@@ -142,12 +142,13 @@ function Message_Pass(id){
 		<table width="100%" border="0" cellspacing="1" cellpadding="5" bgcolor="#cccccc">
 		  <tr bgcolor="#f1f1f1">
               <td width="8%" align="center">留言編號</td>
-              <td width="12%" align="center">日 期</td>
-              <td width="36%" align="center">標 題 (請點選標題文字進入回應審核及管理)</td>
-              <td width="10%" align="center">留言者</td>
+              <td width="8%" align="center">日 期</td>
+              <td width="30%" align="center">標 題 (請點選標題文字進入回應審核及管理)</td>
+              <td width="8%" align="center">留言者</td>
               <td width="8%" align="center">留言審核</td>
               <td width="8%" align="center">回覆審核</td>
-              <td width="18%" align="center">功 能</td>
+              <td width="20%" align="center">功 能</td>
+              <td width="10%" align="center">備註頁面</td>
 		  </tr>
             <?
             if($return){
@@ -209,6 +210,12 @@ function Message_Pass(id){
                         <img src="images/icon_del2.gif" border="0" align="absmiddle" /> 刪除
                     </a>
                 </td>
+                
+                <td align="center">
+                    <a href="message_calssNote.php?DB_MesID=<? echo $return[$i]['DB_MesID'];?>&page=<? echo $page;?>" class="button_02">
+                        <img src="images/icon_massage2.gif" border="0" align="absmiddle" /> 查看備註
+                    </a>           
+                </td>
             </tr>
             <?
             $i++;
@@ -220,8 +227,8 @@ function Message_Pass(id){
 		<div align="left" style="padding:5px;margin:5px"><img src="images/icon_g.gif" width="5" height="5" align="absmiddle" /> <span class="text_12px_04">每頁10筆，共<? echo $number;?>筆資料</span>
 <?  if ( $return['total_page'] > 1) { ?>		
 		　|　
-		  <a href="javascript:GoPage(1)" title="最前頁" class="button_05">|<</a>
-		  <a href="javascript:GoPage(<? echo $return['f']; ?>)" title="上一頁" class="button_05"><<</a>
+		  <a href="javascript:GoPage(1)" title="最前頁" class="button_05">|</a>
+		  <a href="javascript:GoPage(<? echo $return['f']; ?>)" title="上一頁" class="button_05"></a>
 		  <? for($i=$return[ 'show_start' ];$i<$return['show_start']+$return['show_page'];$i++){ ?>		  
 		       <? if ($i!=$page){?>　<a href="javascript:GoPage(<? echo $i;?>)" class="link_02"><? }?><? if ($i==$page){?>　<span class="text_12px_03b"><? }?><? echo $i;?><? if ($i==$page){?></span><? }?><? if ($i!=$page){?></a><? }?>
 		  <?   }   ?>　		  
