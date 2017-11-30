@@ -1,0 +1,141 @@
+#abgne_float_ad {
+	display: none;
+	position: absolute;
+}
+#abgne_float_ad img {
+	border: none;
+}
+div.bigDiv {
+	height: 3000px;
+}
+
+.th2{
+    text-align: center;
+}
+
+
+#nav{
+    margin: auto;
+}
+
+#top-navbar-button{
+    background-color:white;
+}
+
+#top-navbar-button span{
+    background-color:#AAAAAA;
+}
+
+#top-navbar{
+    background-color:#AAAAAA;
+    margin: auto;
+    
+}
+#top-list a{
+    color:#FFFFFF;
+    font-size: 1.2em;
+}
+#dropdown-menu a{
+    color: black;
+    text-align: center;
+}
+#bottom-menu{
+    background-color:white;
+    margin: auto;
+}
+#bottom-navbar-button{
+    background-color:#AAAAAA;
+}
+
+#bottom-navbar-button span{
+    background-color:white;
+}
+#logo{
+    float:left;
+    margin: auto;
+}
+#bottom-list{
+    padding-top: 0.5em;
+    float:right;
+}
+#bottom-list a{
+    color:black;
+    font-size: 1.2em;
+}
+
+.footer{
+    width: 100%;
+    background-color: #AAAAAA;
+}
+
+.footer h4{
+    font-size:1.17em;
+}
+
+#contactUs{
+    padding-top: 40px;
+    text-align: center;
+    color: aliceblue;
+}
+
+#Facebook{
+    width: 40px;
+    margin-left: 49%;
+}
+
+#address{
+    margin: auto;
+    padding-top: 10px;
+    text-align: center;
+    color: aliceblue;
+}
+.a>li>a:hover{
+    text-decoration: none;
+    background-color: #666666;
+}
+.b>li>a:hover{
+    text-decoration: none;
+    background-color: #E5E5E5;
+}
+body {
+    background:url(images/bg/bg_03.png);
+    background-size: 20% auto;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+	font-family: 微軟正黑體,arial,helvetica,sans-serif;
+	background-color:#F4F4F4;
+}
+
+#KeyWord{
+    margin-top: 1em;
+}
+
+#search_button{
+      display: inline-block;
+  border-radius: 4px;
+  background-color: pink;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+
+/*以下是超人工作室下拉選單樣式調整*/
+	.main-menu	{
+	margin-top: -19px;
+	padding-top:-4px;
+}	/* 主選單的樣式 */
+	.sub-menu	{	color:#E5E5E5; background-color:#FFFFFF; margin:0px 0px; padding:0px; list-style-type:none; position:absolute; z-index:1;	} /* 下拉清單的樣式 */
+	.sub-menu li	{
+	text-align: left;
+	z-index: 1;
+} /* 下拉清單每一列的樣式 */
+	.sub-menu li:hover	{	color:#FFFFFF; background-color:#E5E5E5; 	}
+	.sub-menu a	{	text-align:left; display:block; text-decoration:none; color:#0000FF; z-index:1;	}
+	.sub-menu a:hover	{	color:#FFFFFF; background-color:#E5E5E5; text-decoration:none; 	}
