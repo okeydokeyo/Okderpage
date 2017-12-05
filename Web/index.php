@@ -45,16 +45,35 @@
                         $carousel_num = mysql_num_rows($carousel_result);
                         $i = 0;
                         while($i < $carousel_num){
-                            echo '<li data-target="#myCarousel" data-slide-to="'.$i.'"></li>';
+                            if($i == 0){
+                                echo '<li data-target="#myCarousel" data-slide-to="0" class="active"></li>';
+                            }
+                            else{    
+                                echo '<li data-target="#myCarousel" data-slide-to="'.$i.'"></li>';
+                            }
                             $i++;
                         }
                         ?>
                     </ol>
-                    <div class="carousel-inner">
-                        <div class="item active"><img src="images/Banner-01.jpg"></div>
-                        <div class="item"><img src="images/Banner-01.jpg"></div>
-                        <div class="item"><img src="images/Banner-01.jpg"></div>
+                    <div class="carousel-inner" >
+                        <?php  
+                        $i=0;
+                        while($i < $carousel_num){       
+                            $location = "../../carouselPicture/" . mysql_result($carousel_result,$i,1);
+                            $imageFileType = pathinfo($location, PATHINFO_EXTENSION);                       
+                            $j = $i + 1;
+                            $name = $j . "." . $imageFileType;
+                            if($i == 0){            
+                                echo '<div class="item active"><img src="carouselPicture/'.$name.'"></div>';
+                            }
+                            else{  
+                                echo '<div class="item"><img src="carouselPicture/'.$name.'"></div>';
+                            }
+                            $i++;
+                        }
+                        ?>
                     </div> 
+                    
                     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
                         <span class="glyphicon glyphicon-chevron-left"></span>
                         <span class="sr-only">Previous</span>

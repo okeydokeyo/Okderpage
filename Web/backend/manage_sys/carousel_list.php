@@ -5,29 +5,6 @@ include "../function.php";
 //chk_account_id($_SESSION['ManUser']); //檢查帳號是否符合後,否回首頁
 //chk_Power("DB_ManP_16"); //檢查是否功能權限,否回首頁
 $arry=SoloSql("carousel","`DB_LogID`='".$_GET['DB_LogID']."'");
-$page=$_POST['page'];
-$DB_LogAnnounce=$_POST['DB_LogAnnounce'];
-$DB_LogID_no=$_POST['DB_LogID_no'];
-$DB_LogExp=ereg_replace("'","\'",$_POST['DB_LogExp']);
-
-if(!empty($DB_LogExp) ){	
-    if(!empty($_FILES['DB_LogImg']['name'])){   
-        $return=iron_upload("DB_LogImg", time(), "", "../../carouselPictures/", "jpg", "16677216" );
-        $UpStr=" `DB_LogAnnounce`='$DB_LogAnnounce',`DB_LogExp`='$DB_LogExp',`DB_LogImg`='".$return['new_file']."',`DB_LogFileName`='".$return['old_file_name']."',`DB_EndTime`='NOT EMPTY',`DB_EditUser`='".$_SESSION['ManUser']."'";	
-    }
-    else{        
-        $UpStr=" 
-        `DB_LogAnnounce`='$DB_LogAnnounce',`DB_LogExp`='$DB_LogExp',`DB_EndTime`='EMPTY',`DB_EditUser`='".$_SESSION['ManUser']."'";	
-    }	
-    
-    EditSql("carousel","$DB_LogID_no","DB_LogID","carousel_edit.php",$UpStr,$UpStr);
-		
-    //紀錄使用者資訊	
-    $UpStr="`DB_RecUser`,`DB_RecIp`,`DB_RecSubject`,`DB_RecAccess`,`DB_RecAction`,`DB_RecTime`";
-    $UpStr2="'".$_SESSION['ManUser']."','".$_SERVER['REMOTE_ADDR']."','輪播圖片管理','".$DB_LogExp."','edit',NOW()";	
-    Recording_Add("recording",$UpStr,$UpStr2);
-}
-
 include_once ("top.php");
 ?>
 
@@ -101,7 +78,7 @@ function change1( num,DB_FileName ){ //(DB_LogID, DB_LogImg)
             </table> 
     
             <table width="752" border="0" cellspacing="0" cellpadding="0">
-                <form action="carousel_list.php" method="POST" enctype="multipart/form-data" name="form1" target="FormFrame">	  
+                <form action="ExecuteCarouselUpload.php" method="POST" enctype="multipart/form-data" name="form1" target="FormFrame"> 
                     <tr>
                         <td width="5" align="left" valign="top"><img src="images/com_top_L.gif" width="5" height="5" /></td>
                         <td width="742" align="left" valign="top" background="images/com_top.gif"></td>
@@ -124,7 +101,7 @@ function change1( num,DB_FileName ){ //(DB_LogID, DB_LogImg)
                                             if(!empty($arry['DB_LogImg']) && !empty($arry['DB_LogFileName'])){
                                             ?>
                                             <a href="../../carouselPicture/<? echo $arry['DB_LogImg'];?>" target="_blank">
-                                                <? echo $arry['DB_LogFileName'];?>         
+                                                <? echo $arry['DB_LogExp'];?>         
                                             </a> 
                                             <a href="javascript:change1(<? echo $arry['DB_LogID'];?>,'DB_LogImg');">
                                                 <img src="images/icon_del.gif" width="16" height="16" border="0" align="absmiddle" />
@@ -133,7 +110,6 @@ function change1( num,DB_FileName ){ //(DB_LogID, DB_LogImg)
                                             }
                                             else if(empty($arry['DB_LogImg']) && empty($arry['DB_LogFileName'])){
                                             ?>
-                                            <p>EMPTY</p>
                                             <input name="DB_LogImg" type="file" id="DB_LogImg" class="text_12px_01"/>
                                             <?php         
                                             }
@@ -143,14 +119,13 @@ function change1( num,DB_FileName ){ //(DB_LogID, DB_LogImg)
                                     </td>
                                 </tr>
                             </table> 		
+                            <input type="hidden" name="DB_LogID" value="<? echo $arry['DB_LogID'];?>">
+                            <input type="hidden" name="page" value="<? echo $_GET['page'];?>">
                             <div align="center" style="padding:5px;margin:5px">
                                 <a href="javascript:document.form1.submit();" onClick="return checkinput();" title="修改資料" class="button_01">
-                                    修改資料
+                                    上傳檔案
                                 </a>
                             </div>
-                            <input type="hidden" name="DB_LogID_no" value="<? echo $arry['DB_LogID'];?>">
-                            <input type="hidden" name="DB_LogExp" value="<? echo $arry['DB_LogExp'];?>">
-                            <input type="hidden" name="page" value="<? echo $_GET['page'];?>">		
                         </td>
                         <td align="left" valign="top" style="background-image:url(images/com_R.gif); background-repeat:repeat-y;">
                             &nbsp;

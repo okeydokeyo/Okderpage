@@ -8,13 +8,6 @@ include "../function.php";
 $page = (empty($_GET['page']))?1:$_GET['page']; //現在頁面
 include_once ("top.php");
 ?>
-<script language="javascript">
-<!--
-//換頁Script
-function GoPage(page){
-   location.href="<? echo $url ?>?page="+page;
-}
-</script>
 <!--top_end-->
 <table width="955" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>

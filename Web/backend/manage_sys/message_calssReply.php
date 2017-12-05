@@ -95,7 +95,7 @@ include_once ("left_menu.php");
 		  </tr>
 		  <tr>
 			<td width="15%" align="left" valign="top" class="border_02"><img src="images/icon_g.gif" width="5" height="5" align="absmiddle" /> 留言編號</td>
-			<td width="85%" align="left" valign="top" class="border_02"><font color="red">59</font> </td>
+			<td width="85%" align="left" valign="top" class="border_02"><font color="red"><?echo $ary['DB_MesID'];?></font> </td>
 		  </tr>
 		  <tr>
 			<td align="left" valign="top" class="border_02"><img src="images/icon_g.gif" width="5" height="5" align="absmiddle" /> 留言日期</td>
