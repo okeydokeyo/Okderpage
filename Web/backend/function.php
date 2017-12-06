@@ -504,11 +504,12 @@ function iron_upload( $file_var, $new_file_name, $old_file_name, $upload_dest, $
 			else{	// 複製失敗
 				// 回覆暫存檔
 				if( $old_file_backup == 'success' ){
-					@rename( $upload_dest.'/'.'iron_temp.tmp', $upload_dest.'/'.$old_file_name );	
-                }
+					@rename( $upload_dest.'/'.'iron_temp.tmp', $upload_dest.'/'.$old_file_name );
+					}
 				$return['upload'] = false;
 				$return['error'] = '複製檔案失敗';
                 $return['file[tmp_name]'] = $filevalue;
+                $return['new_file_path'] = $upload_dest.'/'.$new_file_name.'.'.$new_file_type;
 				return $return;
 				}					
 			}
