@@ -444,7 +444,7 @@ function iron_upload( $file_var, $new_file_name, $old_file_name, $upload_dest, $
 	
 	// 判斷是上傳的檔案且上傳成功
 	if( is_uploaded_file ($file['tmp_name'] ) && $HTTP_POST_FILES[$file_var]['error'] == 0){
-		$error = '沒有錯誤';	// 若錯誤時要回報的訊息
+		$error = '';	// 若錯誤時要回報的訊息
 		
 		// 判斷有無超過最大容量	
 		if( $file['size'] > $max_size && $max_size > 0){
@@ -480,13 +480,6 @@ function iron_upload( $file_var, $new_file_name, $old_file_name, $upload_dest, $
 				$old_file_backup = 'success';
 				}
 			
-            if($file['tmp_name'] == ''){
-                $filevalue = "檔案為空值";
-            }
-            else{
-                $filevalue = "檔案不為空值";
-            }
-            
 			// 複製暫存檔到上傳路徑
 			if( @copy( $file['tmp_name'], $new_file_path ) ){	// 複製成功
 				// 刪掉暫存檔
@@ -498,7 +491,6 @@ function iron_upload( $file_var, $new_file_name, $old_file_name, $upload_dest, $
 				$return['new_file_name'] = $new_file_name;
 				$return['new_file'] = $new_file_name.'.'.$new_file_type;
 				$return['upload'] = true;
-                $return['error'] = '沒有錯誤';
 				return $return;
 				}
 			else{	// 複製失敗
@@ -508,8 +500,6 @@ function iron_upload( $file_var, $new_file_name, $old_file_name, $upload_dest, $
 					}
 				$return['upload'] = false;
 				$return['error'] = '複製檔案失敗';
-                $return['file[tmp_name]'] = $filevalue;
-                $return['new_file_path'] = $upload_dest.'/'.$new_file_name.'.'.$new_file_type;
 				return $return;
 				}					
 			}
