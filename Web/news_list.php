@@ -162,13 +162,13 @@ session_start();//初始化session,就是開始要始用session
 		<?php  if ( $return['total_page'] > 1) { ?>		
 		頁數：<?php echo $return[ 'now_page' ];?> / <?php echo  $return[ 'total_page' ];?></span>
 		　|　
-		  <a href="javascript:GoPage(1)" title="最前頁" class="button_05">|</a>
-		  <a href="javascript:GoPage(<?php echo $return['f']; ?>)" title="上一頁" class="button_05"></a>
+		  <a href="javascript:GoPage(1)" title="最前頁" class="button_05">|＜</a>
+		  <a href="javascript:GoPage(<?php echo $return['f']; ?>)" title="上一頁" class="button_05">＜＜</a>
 		  <?php for($i=$return[ 'show_start' ];$i<$return['show_start']+$return['show_page'];$i++){ ?>		  
 		       <?php if ($i!=$page){?>　<a href="javascript:GoPage(<?php echo $i;?>)" class="link_05" title="第<?php echo $i;?>頁" ><?php }?><?php if ($i==$page){?>　<span class="text_12px_03b"><?php }?><?php echo $i;?><?php if ($i==$page){?></span><?php }?><?php if ($i!=$page){?></a><?php }?>
 		  <?php   }   ?>　		  
-		  <a href="javascript:GoPage(<?php echo $return['b']; ?>)" title="下一頁" class="button_05">>></a>
-		  <a href="javascript:GoPage(<?php echo $return['total_page']; ?>)" title="最後頁" class="button_05">>|</a>
+		  <a href="javascript:GoPage(<?php echo $return['b']; ?>)" title="下一頁" class="button_05">＞＞</a>
+		  <a href="javascript:GoPage(<?php echo $return['total_page']; ?>)" title="最後頁" class="button_05">＞|</a>
 		<?php   }   ?>			
 		</div>
 	</td>

@@ -1,3 +1,14 @@
+#abgne_float_ad {
+	display: none;
+	position: absolute;
+}
+#abgne_float_ad img {
+	border: none;
+}
+div.bigDiv {
+	height: 3000px;
+}
+
 .th2{
     text-align: center;
 }

@@ -120,11 +120,6 @@ session_start();//初始化session,就是開始要始用session
 			</td>
 		  </tr>
 		</table>
-		<div align="right" style="padding:5px;margin:5px" class="text_12px_01b"><!--<img src="images/icon_top.png" alt="*" width="13" height="13" border="0" align="middle" /> <a href="#" title="友善列印" class="link_03">友善列印</a> │ --><img src="images/icon_top.png" alt="*" width="13" height="13" border="0" align="middle" /> <a href="#top" title="連結往頁面上方" class="link_03">TOP</a></div>
-		<br />
-	  <!--01_end-->
-		<!--con_end-->
-	</div>
 	</td>
   </tr>
 <footer>

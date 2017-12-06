@@ -90,7 +90,6 @@
                                         echo "<li><a href='art.php?no=".$row['DB_TopNumID']."'>".$row['DB_TopSubject']."</a></li>";
                                     }
                                     ?>
-                                    <li><a href="KnowMoreVedio.php">脊髓損傷衛教影片</a></li>
                                 </ul>
                         </li>
                         <li><a href="http://www.sci.org.tw/" target="blank">脊髓新樂園</a></li>

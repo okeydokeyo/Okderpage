@@ -1,9 +1,3 @@
-      <?php 
-session_start();//初始化session,就是開始要始用session
-?>
-
-
-
 <html>
 <head>
     <title>桃園市私立脊髓損傷潛能發展中心</title>
@@ -21,8 +15,8 @@ session_start();//初始化session,就是開始要始用session
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
-<header>
-    <?php 
+<?php 
+    session_start();//初始化session,就是開始要始用session
     include("top_menu.php");
 chk_IP($_SERVER['REMOTE_ADDR']);
 chk_data($_GET['page'],5);//檢查字元長度後過長退回上一頁
@@ -31,31 +25,11 @@ chk_data($_GET['DB_DowUnitID'],"5");  //檢查數值是否大於5個字元
 
 $no=$_GET['no'];
 $arry=SoloSql("download_tags"," `DB_DowTagID`='$no'");
-?>
-    </header>
-    <script language="javascript">
-//換頁Script
-function GoPage(page){
-location.href="<? echo $url ?>?DB_DowUnitID=<? echo $_GET['DB_DowUnitID'];?>&no=<? echo $_GET['no'];?>&page="+page;
-}
-
-</script><noscript>
-  <p>很抱歉，本網頁使用script可是您的瀏覽器並不支援，請改用支援 JavaScript 的瀏覽器，謝謝!</p>  
-</noscript>
-   <body>
-       <tr>
-    <td align="left" valign="top">
-<form action="download_list.php" method="GET" name="form1" > 
-		<div align="left" style="margin-left:20%;margin-top:15%;" class="text_12px_01b border_02">
-		<img src="images/arrow_blue01.gif" alt="*" width="10" height="11" align="absmiddle" /> 選擇檔案類別：
-	<select id="DB_DowUnitID" name="DB_DowUnitID" class="text_12px_01b">
-		<option value="" >不分類</option>
-		<?
+    		
         if($_GET['DB_DowUnitID']!=""){
 $DB_DowUnitID=" && `DB_DowUnitID`='".$_GET['DB_DowUnitID']."'";
 }
-
-
+    
 $page = (empty($_GET['page']))?1:$_GET['page']; //現在頁面
 //********************************************************************************************************
 
@@ -66,6 +40,29 @@ $result = mysql_query($sql) or die("查詢失敗");
 $number = mysql_num_rows($result); //全部資料的總數
 $url = "download_list.php"; //本頁的網址 & 使用的 get變數
 $abri = $arry['DB_DowTagSubject']; //top標題
+?>
+
+<script language="javascript">
+//換頁Script
+function GoPage(page){
+location.href="<? echo $url ?>?DB_DowUnitID=<? echo $_GET['DB_DowUnitID'];?>&no=<? echo $_GET['no'];?>&page="+page;
+}
+
+</script><noscript>
+  <p>很抱歉，本網頁使用script可是您的瀏覽器並不支援，請改用支援 JavaScript 的瀏覽器，謝謝!</p>  
+</noscript>
+   <body>
+       <tr>   
+    <td align="left" valign="top">
+        <div class="r" style="margin-top:13%; margin-left:20%"><h1>
+               <? echo $arry['DB_DowTagSubject'];?>
+            </h1></div>
+<form action="download_list.php" method="GET" name="form1" > 
+		<div align="left" style="margin-left:20%;" class="text_12px_01b border_02">
+		<img src="images/arrow_blue01.gif" alt="*" width="10" height="11" align="absmiddle" /> 選擇檔案類別：
+	<select id="DB_DowUnitID" name="DB_DowUnitID" class="text_12px_01b">
+		<option value="" >不分類</option>
+<?
 		//查詢檔案下載類別資料
 		$dowun_result = mysql_query("select * from `download_unit` where `DB_DowTagID`='$no' ORDER BY `DB_DowUnitSort` ASC") or die("查詢失敗");
 		for ($a=1 ;$a<=$dowun_ary = mysql_fetch_array($dowun_result) ;$a++){
@@ -77,6 +74,7 @@ $abri = $arry['DB_DowTagSubject']; //top標題
 		<input type="submit" name="name" value="送出" id="name" class="text_12px_01b" />
 	    </div>
 </form>
+
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" id="margin_01" class="text_12px_01" summary="<? echo $arry['DB_DowTagSubject'];?>表格"  style="width:50%; margin-left:20%; margin-top:2%">
 		  <caption align="left" class="hidden"><? echo $arry['DB_DowTagSubject'];?>列表</caption>
 		  <tr>
@@ -93,12 +91,11 @@ $abri = $arry['DB_DowTagSubject']; //top標題
 		$c = ($page - 1) * 10;
 		while( $return[$i] ){
 		$c++;
-
 		?>
 		  <tr>
 			<td align="center" valign="middle" class="border_02"><? if($_GET['DB_DowUnitID']==""){echo $c;}else{echo $return[$i]['DB_DowSort'];}?></td>
-			<td align="left" valign="middle" class="text_12px_01 border_02"><a href="download.php?DB_FileTitle=<? echo urlencode($return[$i]['DB_DowName']);?>&DB_FileName=<? echo $return[$i]['DB_DowFileName'];?>" class="link_01" title="<? echo $return[$i]['DB_DowName'];?>(另開視窗下載)"><? echo $return[$i]['DB_DowSubject'];?></a></td>
-			<td align="center" valign="middle" class="border_02"><a href="download.php?DB_FileTitle=<? echo urlencode($return[$i]['DB_DowName']);?>&DB_FileName=<? echo $return[$i]['DB_DowFileName'];?>" class="link_01" title="<? echo $return[$i]['DB_DowName'];?>(另開視窗下載)"><? echo strtoupper(substr($return[$i]['DB_DowFileName'],-3));?></a></td>
+			<td align="center" valign="middle" class="text_12px_01 border_02"><a href="download.php?DB_FileTitle=<? echo urlencode($return[$i]['DB_DowName']);?>&DB_FileName=<? echo $return[$i]['DB_DowFileName'];?>" class="link_01" title="<? echo $return[$i]['DB_DowName'];?>(另開視窗下載)"><? echo $return[$i]['DB_DowSubject'];?></a></td>
+			<td align="left" valign="middle" class="border_02"><a href="download.php?DB_FileTitle=<? echo urlencode($return[$i]['DB_DowName']);?>&DB_FileName=<? echo $return[$i]['DB_DowFileName'];?>" class="link_01" title="<? echo $return[$i]['DB_DowName'];?>(另開視窗下載)"><? echo strtoupper(substr($return[$i]['DB_DowFileName'],-3));?></a></td>
 		  </tr>
 		  <tr>
 			<td colspan="3" class="h5"></td>
@@ -120,13 +117,13 @@ $abri = $arry['DB_DowTagSubject']; //top標題
 		<?  if ( $return['total_page'] > 1) { ?>		
 		頁數：<? echo $return[ 'now_page' ];?> / <? echo  $return[ 'total_page' ];?></span>
 		　|　
-		  <a href="javascript:GoPage(1)" title="最前頁" class="button_05">|<</a>
-		  <a href="javascript:GoPage(<? echo $return['f']; ?>)" title="上一頁" class="button_05"></a>
+		  <a href="javascript:GoPage(1)" title="最前頁" class="button_05">|＜<</a>
+		  <a href="javascript:GoPage(<? echo $return['f']; ?>)" title="上一頁" class="button_05">＜＜</a>
 		  <? for($i=$return[ 'show_start' ];$i<$return['show_start']+$return['show_page'];$i++){ ?>		  
 		       <? if ($i!=$page){?>　<a href="javascript:GoPage(<? echo $i;?>)" class="link_05" title="第<? echo $i;?>頁" ><? }?><? if ($i==$page){?>　<span class="text_12px_03b"><? }?><? echo $i;?><? if ($i==$page){?></span><? }?><? if ($i!=$page){?></a><? }?>
 		  <?   }   ?>　		  
-		  <a href="javascript:GoPage(<? echo $return['b']; ?>)" title="下一頁" class="button_05">>></a>
-		  <a href="javascript:GoPage(<? echo $return['total_page']; ?>)" title="最後頁" class="button_05">>|</a>
+		  <a href="javascript:GoPage(<? echo $return['b']; ?>)" title="下一頁" class="button_05">＞＞</a>
+		  <a href="javascript:GoPage(<? echo $return['total_page']; ?>)" title="最後頁" class="button_05">＞|</a>
 		<?   }   ?>			
 		</div>
 
