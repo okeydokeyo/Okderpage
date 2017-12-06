@@ -10,16 +10,16 @@ $DB_AniID_no=$_POST['DB_AniID_no'];
 $DB_LogAnnounce=$_POST['DB_LogAnnounce'];
 $DB_LogExp=ereg_replace("'","\'",$_POST['DB_LogExp']);
 
-if(!empty($DB_LogExp) ){	
+if(!empty($DB_LogExp)){	
     if(!empty($_FILES['DB_LogImg']['name'])){   
         $return=iron_upload("DB_LogImg", time(), "", "../../videos/", "mp4", "16677216" );		
-        $UpStr=" `DB_LogAnnounce`='$DB_LogAnnounce',`DB_LogExp`='$DB_LogExp',`DB_LogImg`='".$return['file[tmp_name]']."',`DB_LogFileName`='".$return['old_file_name']."',`DB_EndTime`=NOW(),`DB_EditUser`='".$_SESSION['ManUser']."'";	
+        $UpStr=" `DB_LogAnnounce`='$DB_LogAnnounce',`DB_LogExp`='$DB_LogExp',`DB_LogImg`='".$return['new_file']."',`DB_LogFileName`='".$return['old_file_name']."',`DB_EndTime`=NOW(),`DB_EditUser`='".$_SESSION['ManUser']."'";	
     }      
     else{        
         $UpStr=" 
         `DB_LogAnnounce`='$DB_LogAnnounce',`DB_LogExp`='$DB_LogExp',`DB_EndTime`=NOW(),`DB_EditUser`='".$_SESSION['ManUser']."'";	
     }	
-    EditSql("animation","$DB_AniID_no","DB_AniID","topview_edit.php?DB_AniID=1&page=1",$UpStr,$UpStr);
+    EditSql("animation","$DB_AniID_no","DB_AniID","topview_edit.php?DB_AniID=1&page=1","修改成功！", $UpStr);
 		
     //紀錄使用者資訊	
     $UpStr="`DB_RecUser`,`DB_RecIp`,`DB_RecSubject`,`DB_RecAccess`,`DB_RecAction`,`DB_RecTime`";
