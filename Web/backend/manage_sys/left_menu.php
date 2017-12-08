@@ -33,10 +33,10 @@
             // }
             // if ( $userauth['DB_ManP_2'] == "1" ){?>	  
 		  <tr>
-			<td align="left" valign="middle" class="menutitle_bg"><a href="http://localhost/backend/manage_sys/topview_edit.php?DB_AniID=1&page=1" class="m01">主要影片管理</a></td>
+			<td align="left" valign="middle" class="menutitle_bg"><a href="topview_edit.php?DB_AniID=1&page=1" class="m01">主要影片管理</a></td>
 		  </tr>		    
             <tr>	
-                <td align="left" valign="middle" class="menutitle_bg"><a href="http://localhost/backend/manage_sys/carousel_edit.php" class="m01">輪播圖片管理</a></td>
+                <td align="left" valign="middle" class="menutitle_bg"><a href="carousel_edit.php" class="m01">輪播圖片管理</a></td>
             </tr> 
             
             <tr>	
