@@ -43,7 +43,7 @@
     <div class="timeline-target clearfix" data-max-items="42" data-limit="5">                  
         <?php                
         $result = mysql_query("SELECT * FROM history");              
-        /*while($row = mysql_fetch_array($result)){         
+        while($row = mysql_fetch_array($result)){         
             if($row['DB_HistoryID'] % 2 === 0){
                 echo "        
                 <div class='timeline-item even'>   
@@ -109,7 +109,8 @@
             </div>
         </div>";
                 }
-            }   */      
+            } 
+            }       
         ?> 
     </div>
 </div>		
