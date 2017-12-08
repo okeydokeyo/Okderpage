@@ -54,7 +54,7 @@ location.href="<? echo $url ?>?DB_DowUnitID=<? echo $_GET['DB_DowUnitID'];?>&no=
    <body>
        <tr>   
     <td align="left" valign="top">
-        <div class="r" style="margin-top:13%; margin-left:20%"><h1>
+        <div class="r" id="ct" style="margin-left:20%"><h1>
                <? echo $arry['DB_DowTagSubject'];?>
             </h1></div>
 <form action="download_list.php" method="GET" name="form1" > 

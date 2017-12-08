@@ -52,37 +52,17 @@ session_start();//初始化session,就是開始要始用session
         <tr>
             <td align="left" valign="top">
                 <!--left_menu-->
-                <div id="content">
-                    <table style="margin-top:15%; margin-left:16%; margin-right:16%;"  width="68%" border="0" cellspacing="0" cellpadding="0">
+                <div id="ct">
+                    <table style="margin-left:10%;"  width="70%" border="0" cellspacing="0" cellpadding="0">
                         <tr>
-                            <td align="left" valign="middle" id="title_01"><h1><?php echo $arry['DB_OrdTagSubject'];?><input type="button" value="新聞中心" style="
-                                font-size:46%;
-                                display: inline-block;
-                                border-radius: 4px;
-                                background-color: pink;
-                                border: none;
-                                color: #FFFFFF;
-                                text-align: center;
-                                transition: all 0.5s;
-                                cursor: pointer;
-                                margin-left: 5%;}"  
+                            <td align="left" valign="middle" id="title_01"><h1><?php echo $arry['DB_OrdTagSubject'];?><br><input type="button" id="l" value="新聞中心" 
                             onclick="location.href='news_list.php?no=23'">
-                                <input type="button" value="媒體報導" style="
-                                                                         font-size:46%;
-                                                                         display: inline-block;
-                                                                         border-radius: 4px;
-                                                                         background-color: pink;
-                                                                         border: none;
-                                                                         color: #FFFFFF;
-                                                                         text-align: center;
-                                                                         transition: all 0.5s;
-                                                                         cursor: pointer;
-                                                                         margin-left: 2%;}"  
+                                <input type="button" id="r" value="媒體報導"
                                        onclick="location.href='news_list.php?no=13'"></h1>
                             </td>
                         </tr>
                     </table>
-                    <table style="margin-top:1%; margin-left:16%; margin-right:16%;" width="68%" border="0" cellspacing="0" cellpadding="0" id="margin_01" class="text_12px_01">
+                    <table style="margin-top:1%; margin-left:10%;" width="70%" border="0" cellspacing="0" cellpadding="0" id="margin_01" class="text_12px_01">
                         <caption align="left" class="hidden"><?php echo $arry['DB_OrdTagSubject'];?>列表</caption>
                         <?php
                         $ordi_result = mysql_query("select * from `ordi` where `DB_OrdTagID`='$no' && `DB_OrdAnnounce`='0' && `DB_OrdNewTime`!='0000-00-00'&& (`DB_OrdStart_Time`<='$time' && `DB_OrdEnd_Time`>='$time' || `DB_OrdPermanent`='1')") or die("查詢失敗OrNum");
@@ -158,7 +138,7 @@ session_start();//初始化session,就是開始要始用session
 		</tr>
 	  </table>
 	  <br />
-		<div style="margin-left:23%;" align="left" style="padding:5px;margin:5px"><img src="images/icon_g.gif" alt="*" width="5" height="5" align="absmiddle" /> <span class="text_12px_04">資料筆數：<?php echo $number;?>　　
+		<div style="margin-left:10%;" align="left" style="padding:5px;margin:5px"><img src="images/icon_g.gif" alt="*" width="5" height="5" align="absmiddle" /> <span class="text_12px_04">資料筆數：<?php echo $number;?>　　
 		<?php  if ( $return['total_page'] > 1) { ?>		
 		頁數：<?php echo $return[ 'now_page' ];?> / <?php echo  $return[ 'total_page' ];?></span>
 		　|　
