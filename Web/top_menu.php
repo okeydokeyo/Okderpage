@@ -41,7 +41,13 @@
                                 include "function.php";
                                 $result = mysql_query("SELECT * FROM top WHERE DB_TopTagID='2' ORDER BY DB_TopSort ASC");
                                 while($row = mysql_fetch_array($result)){
-                                    echo "<li><a href='art.php?no=".$row['DB_TopNumID']."'>".$row['DB_TopSubject']."</a></li>";
+                                    if($row['DB_TopNumID'] === "26"){
+                                        echo "<li><a href='history.php'</a>中心歷史</li>";
+                                    }
+                                    else{
+                                        echo "<li><a href='art.php?no=".$row['DB_TopNumID']."'>".$row['DB_TopSubject']."</a></li>";
+                                    }
+                                    
                                 }
                             ?>           
                             </ul>
@@ -85,11 +91,13 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">認識脊髓損傷<span class="caret"></span></a>
                                 <ul class="dropdown-menu" id="dropdown-menu">
                                     <?php
-                                    $result = mysql_query("SELECT * FROM top WHERE DB_TopTagID='4' ORDER BY DB_TopSort ASC");
+                                    $result = mysql_query("SELECT * FROM top WHERE DB_TopTagID='4' ORDER BY DB_TopSort ASC");   
                                     while($row = mysql_fetch_array($result)){
+                                        if($row['DB_TopNumID'] != 0)
                                         echo "<li><a href='art.php?no=".$row['DB_TopNumID']."'>".$row['DB_TopSubject']."</a></li>";
                                     }
                                     ?>
+                                     <li><a href="KnowMoreVedio.php">脊髓損傷衛教影片</a></li>
                                 </ul>
                         </li>
                         <li><a href="http://www.sci.org.tw/" target="blank">脊髓新樂園</a></li>
