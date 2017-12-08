@@ -160,7 +160,7 @@
             <div class="col-xs-12 col-md-10 col-md-offset-1">
                 <div class="col-md-4">
                     <div class="flip-container col-xs-4 col-md-10 col-md-offset-1">
-                        <a href="about_1.php"> 
+                        <a href="art.php?no=25"> 
                             <div class="flipper">
                                 <div class="front">
                                     <img src="images/關於我們.png" class="img-responsive" alt="關於我們">
@@ -188,7 +188,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="flip-container col-xs-4 col-md-10 col-md-offset-1">
-                        <a href="KnowMore_1.php"> 
+                        <a href="art.php?no=31"> 
                             <div class="flipper">
                                 <div class="front">
                                     <img src="images/認識脊髓損傷.png" class="img-responsive" alt="認識脊髓損傷">
