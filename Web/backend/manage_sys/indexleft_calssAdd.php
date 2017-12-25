@@ -374,10 +374,7 @@ $lefta_num = mysql_num_rows($lefta_result);
   </tr>
 </table>
 </form>
-<!--bottom-->
-<? 
-include_once ("bottom.php");
-?>
+
 <iframe width="0" height="0" name="FormFrame"></iframe>
 </body>
 </html>

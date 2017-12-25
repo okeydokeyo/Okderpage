@@ -339,9 +339,7 @@ include_once ("left_menu.php");
   </tr>
 </table>
 <!--bottom-->
-<? 
-include_once ("bottom.php");
-?>
+
 <iframe width="0" height="0" name="FormFrame"></iframe>
 </body>
 </html>

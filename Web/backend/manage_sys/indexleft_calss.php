@@ -215,8 +215,6 @@ include_once ("left_menu.php");
   </tr>
 </table>
 <!--bottom-->
-<? 
-include_once ("bottom.php");
-?>
+
 </body>
 </html>

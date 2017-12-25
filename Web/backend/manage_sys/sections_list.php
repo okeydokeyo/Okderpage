@@ -275,9 +275,6 @@ include_once ("left_menu.php");
     <td height="10" colspan="2" align="left" valign="top"></td>
   </tr>
 </table>
-<!--bottom-->
-<? 
-include_once ("bottom.php");
-?>
+
 </body>
 </html>

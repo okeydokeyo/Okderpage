@@ -236,11 +236,7 @@ $ary = SoloSql("top","`DB_TopID`='$DB_TopID'");
 	  </tr>
 </table>
 
-	
-<!--bottom-->
-<? 
-include_once ("bottom.php");
-?>
+
 <iframe width="0" height="0" name="FormFrame"></iframe>
 </body>
 </html>

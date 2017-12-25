@@ -210,10 +210,7 @@ include_once ("left_menu.php");
     <td height="10" colspan="2" align="left" valign="top"></td>
   </tr>
 </table>
-<!--bottom-->
-<? 
-include_once ("bottom.php");
-?>
+
 <iframe width="0" height="0" name="FormFrame"></iframe>
 </body>
 </html>
