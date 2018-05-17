@@ -1,0 +1,523 @@
+.fa-calendar{
+    margin-top:20px;
+}
+
+.timeline:before {
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    width: 2px;
+    background-color: #d4d4d4;
+    left: 50%;
+    margin-left: -1.5px;
+	height: 101%;
+    margin-top:-80px;
+	z-index:-1;
+}
+
+.timeline:after, .timeline:before {
+    content: " ";
+}
+
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+div {
+    display: block;
+}
+
+.timeline {
+    list-style: none;
+    padding: 20px 0;
+    position: relative;
+}
+
+.timeline-item.odd {
+    float: left;
+    padding-right: 60px;
+}
+
+.timeline-item {
+    display: block;
+    width: 50%;
+    position: relative;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    clear: both;
+}
+
+
+
+
+.donate-icon, .donation-info, .profile-fact, .profile-text-big, .round-stat, .sm-asset .sm-toolbar .icn, .sm-btn-action .icn, .timeline-badge, .timeline-date-right, div.ps-caption, div.ps-toolbar {
+    text-align: center;
+}
+
+.bg-default {
+    background: #555;
+    color: #fff;
+}
+
+.icn {
+    font-family: icons;
+    display: inline-block;
+    line-height: 1;
+    font-weight: 400;
+    font-style: normal;
+    speak: none;
+    text-decoration: inherit;
+    text-transform: none;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icn, html {
+    -webkit-font-smoothing: antialiased;
+}
+
+.icn_calendar:before {
+    content: "\f112";
+}
+
+.timeline-panel {
+    position: relative;
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+}
+
+.timeline-panel:before {
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,.2);
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+}
+
+.timeline-panel:after, .timeline-panel:before {
+    position: absolute;
+    content: "";
+    top: 30px;
+    right: -10px;
+    display: block;
+    background: #fff;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    width: 22px;
+    height: 22px;
+}
+
+.timeline-panel .box {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0;
+}
+
+.box {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.timeline-heading {
+    height: 60px;
+}
+
+.timeline-sociallink {
+    color: #d4d4d4;
+    font-size: 2500px;
+    cursor: pointer;
+}
+
+.btn, .caret, .checkbox-inline, .icn, .radio-inline {
+    vertical-align: middle;
+}
+.icn, html {
+    -webkit-font-smoothing: antialiased;
+}
+
+.icn_facebook:before {
+    content: "\f125";
+}
+
+.btn-alt .icn {
+    margin-left: 0;
+    margin-top: -4px;
+    line-height: 15px;
+    font-size: 30px;
+}
+
+.btn-alt-primary .icn, .btn-alt-secondary .icn {
+    font-size: 24px;
+    margin-top: -4px;
+}
+
+.icn_twitter:before {
+    content: "\f151";
+}
+
+.timeline-date {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.btn, .caret, .checkbox-inline, .icn, .radio-inline {
+    vertical-align: middle;
+}
+.icn, html {
+    -webkit-font-smoothing: antialiased;
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+user agent stylesheet
+i, cite, em, var, address, dfn {
+    font-style: italic;
+}
+.font-cond {
+    font-family: TradeGothicCond, NewLetterGothic, "Siri Core", "Geneva CY", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Hiragino Kaku Gothic ProN W3", Osaka, メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "Arial Unicode MS", Tahoma, Helvetica, sans-serif;
+}
+
+.timeline-day {
+    line-height: 1;
+    font-size: 4vw;
+    padding-right: 5px;
+    border-right: 1px solid #a0a0a0;
+    margin-right: 5px;
+}
+.timeline-date-right, .timeline-day {
+    display: block;
+    float: left;
+    font-weight: 700;
+}
+
+.timeline-date-right, .timeline-day {
+    display: block;
+    float: left;
+    font-weight: 700;
+}
+.donatebar .figure, .lsd-title-target, .profile-lead, .timeline-date-right {
+    text-transform: uppercase;
+}
+.donate-icon, .donation-info, .profile-fact, .profile-text-big, .round-stat, .sm-asset .sm-toolbar .icn, .sm-btn-action .icn, .timeline-badge, .timeline-date-right, div.ps-caption, div.ps-toolbar {
+    text-align: center;
+}
+
+.box h4 {
+    margin: 0 0 20px;
+    padding: 0;
+}
+.h4, h4 {
+    font-size: 2vw;
+}
+.h4, .h5, h4, h5 {
+    margin-top: 12.5px;
+    margin-bottom: 12.5px;
+}
+
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+user agent stylesheet
+h4 {
+    display: block;
+    -webkit-margin-before: 1.33em;
+    -webkit-margin-after: 1.33em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+
+p {
+    margin: 0 0 12.5px;
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+user agent stylesheet
+p {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+.space-sm {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.btn-alt {
+    margin-bottom: 0;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn-alt-secondary {
+    color: #003063;
+}
+.btn-alt, .btn-secondary.active, .btn-secondary:active, .open>.dropdown-toggle.btn-secondary {
+    background-image: none;
+}
+.btn-alt, .flag {
+    display: inline-block;
+}
+.btn-alt-primary, .btn-alt-secondary, .no-padding {
+    padding: 0;
+}
+.btn, .btn-alt, .footer-claim, .footer-nav a, .location-item .facts, .text-big-alt {
+    text-transform: uppercase;
+}
+.btn, .btn-alt, .text-big, .text-big-alt {
+    font-family: TradeGothicCond, NewLetterGothic, "Siri Core", "Geneva CY", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Hiragino Kaku Gothic ProN W3", Osaka, メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "Arial Unicode MS", Tahoma, Helvetica, sans-serif;
+}
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    text-align: center;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    padding: 8px 9px;
+    border-radius: 3px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.btn, .nav-tabs>li>a {
+    border: 1px solid transparent;
+}
+.btn, .dropdown-header {
+    line-height: 1.57142857;
+    white-space: nowrap;
+}
+.btn, .caret, .checkbox-inline, .icn, .radio-inline {
+    vertical-align: middle;
+}
+.btn, .btn-danger.active, .btn-danger:active, .btn-default.active, .btn-default:active, .btn-info.active, .btn-info:active, .btn-primary.active, .btn-primary:active, .btn-warning.active, .btn-warning:active, .btn.active, .btn:active, .dropdown-menu>.disabled>a:focus, .dropdown-menu>.disabled>a:hover, .form-control, .navbar-toggle, .open>.dropdown-toggle.btn-danger, .open>.dropdown-toggle.btn-default, .open>.dropdown-toggle.btn-info, .open>.dropdown-toggle.btn-primary, .open>.dropdown-toggle.btn-warning {
+    background-image: none;
+}
+a {
+    cursor: pointer;
+}
+a, map, object {
+    outline: 0;
+    moz-outline: none;
+}
+a {
+    color: #db002f;
+    text-decoration: none;
+}
+
+user agent stylesheet
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: auto;
+    text-decoration: underline;
+}
+
+.icn_buttonarrowright:before {
+    content: "\f110";
+}
+
+.timeline-panel:after {
+    z-index: 2;
+}
+.timeline-panel:after, .timeline-panel:before {
+    position: absolute;
+    content: "";
+    top: 30px;
+    right: -10px;
+    display: block;
+    background: #fff;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    width: 22px;
+    height: 22px;
+}
+
+.timeline-item.even {
+    float: right;
+    padding-left: 60px;
+}
+.timeline-item:nth-child(2) {
+    margin-top: 100px;
+}
+.timeline-item {
+    display: block;
+    width: 50%;
+    position: relative;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    clear: both;
+}
+
+.even .timeline-badge {
+    left: -30px;
+}
+
+.donate-icon, .donation-info, .profile-fact, .profile-text-big, .round-stat, .sm-asset .sm-toolbar .icn, .sm-btn-action .icn, .timeline-badge, .timeline-date-right, div.ps-caption, div.ps-toolbar {
+    text-align: center;
+}
+.timeline-badge, .timeline-panel {
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+}
+.bg-default {
+    background: #555;
+    color: #fff;
+}
+
+.icn_calendar:before {
+    content: "\f112";
+}
+
+.timeline-panel {
+    position: relative;
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+}
+
+.even .timeline-panel:after, .even .timeline-panel:before {
+    left: -10px;
+    right: auto;
+}
+.timeline-panel:before {
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,.2);
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+}
+.timeline-panel:after, .timeline-panel:before {
+    position: absolute;
+    content: "";
+    top: 30px;
+    right: -10px;
+    display: block;
+    background: #fff;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    width: 22px;
+    height: 22px;
+}
+
+.timeline-panel .box {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0;
+}
+.box {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.timeline-heading {
+    height: 60px;
+}
+
+.timeline-item.odd {
+    float: left;
+    padding-right: 60px;
+}
+
+.timeline-item {
+    display: block;
+    width: 50%;
+    position: relative;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    clear: both;
+}
+
+.odd .timeline-badge {
+    right: -30px;
+}
+.timeline-badge {
+    width: 60px;
+    height: 60px;
+    line-height: 50px;
+    font-size: 1.4em;
+    position: absolute;
+    top: 30px;
+    z-index: 100;
+    border-radius: 100%;
+    border: 4px solid #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+}
+.donate-icon, .donation-info, .profile-fact, .profile-text-big, .round-stat, .sm-asset .sm-toolbar .icn, .sm-btn-action .icn, .timeline-badge, .timeline-date-right, div.ps-caption, div.ps-toolbar {
+    text-align: center;
+}
+
+.bg-default {
+    background: #555;
+    color: #fff;
+}
+
+body{ 
+    font-family: 微軟正黑體,arial,helvetica,sans-serif;
+	
+}
+
+.img-full {
+	width: 100%;
+	height: 100%;
+	padding-top: 3%;
+}
+
+
+.header-image {
+	overflow: hidden;
+	margin-top: 94px;
+}
+
+.header-image {
+	display: block;
+	margin-bottom: 30px;
+	max-height: 1800px;
+	position: relative;
+	margin-top: 29px;
+}
+.row-space-huge {
+	padding-top: 1px;
+}
+.row-space {
+	padding-top: 3px;
+}
+.row {
+	margin-left: 4%;
+	margin-right: 51%;
+	margin-top:30px;
+}
+
+.r2 {
+	margin-left: 5%;
+	margin-right: 51%;
+	margin-top:10%;
+}
+
+.r {
+	
+	margin-left: 5%;
+	margin-right: 51%;
+	color: #F50338;
+}
+
+
+.map{
+	position: absolute;
+	top: 620px;
+	right: 55px;
+}
+.structure{
+	position: absolute;
+	top: 1280px;
+	right: 200px;
+}
+
+.bodytext{
+    color:#321414;
+}
+
+.footer{
+    margin-top:-2%;
+}

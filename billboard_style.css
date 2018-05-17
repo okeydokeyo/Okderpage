@@ -1,0 +1,249 @@
+body{ 
+    font-family: 微軟正黑體,arial,helvetica,sans-serif;
+    background-color:#F4F4F4;
+}
+
+.myDiv{
+	white-space: nowrap; /* 不斷行 */
+    margin-top: 2%;
+}
+
+.myDiv ul{
+    width: 80%;
+    margin: auto;
+    padding: 0px;
+}
+
+.myDiv ul li{
+    display: inline-block;
+    margin-left: 4.15%;
+    margin-right: 4.15%;
+    width: 25%;
+}
+
+.ui-dialog{
+    position: fixed;
+}
+
+#dialog-form{
+    background-color: white;
+    width: 50%;
+}
+
+
+element.style {
+    width: 50%;
+    
+}
+#input_table{
+    margin-top:180px;
+    border-collapse: separate;
+    border:5px #ccc solid;
+    border-radius:10px;
+    background-color:white;
+}
+
+.Input{
+    border-style:none;
+    border-bottom-style: solid;
+}
+
+#input_area{
+    font-size: 20px;
+    resize: none;
+}
+
+.sendbutton{
+    border-style:none;
+    color:antiquewhite;
+    background-color: red;
+    padding:10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius:10px;
+    margin-right: 30px;
+    margin-bottom:10px;
+    margin-top:1em;
+}
+
+#message_table{
+    width:100%;
+    display: inline-table;
+}
+
+.message_row{
+    background-color:white;
+}
+
+#td_1{
+    border-collapse: separate;
+    border-top: 5px #ccc solid;
+    border-left: 5px #ccc solid;
+}
+
+#td_2{
+    border-collapse: separate;
+    border-top: 5px #ccc solid;
+    border-right: 5px #ccc solid;
+    text-align: right;
+}
+
+.tr_2{
+    border-collapse: separate;
+    border-left: 5px #ccc solid;
+    border-right: 5px #ccc solid;
+}
+
+#td_3{
+    border-collapse: separate;
+    border-bottom: 5px #ccc solid;
+    border-left: 5px #ccc solid;
+    border-right: 5px #ccc solid;
+}
+
+#td_4{
+    border-collapse: separate;
+    border-top: 2px #ccc solid;
+    border-left: 5px #ccc solid;
+    border-right: 5px #ccc solid;
+    margin: 0px;
+}
+
+#showReplyNum{
+    padding-right: 2.5em;
+    padding-top: 0.5em;
+    margin: 0px;
+}
+
+#topic_label{
+    font-size: 1.5em;
+    padding-left: 10px;
+}
+
+#time_label{
+    padding-left: 10px;
+}
+
+.content_area{
+    border-style: none;
+    border: 0px;
+    font-size: 1.5em;
+    resize:none;
+}
+
+#reply_topic{
+    font-size: 2em;
+}
+
+#reply_content_area{
+    border-style: none;
+    border: 0px;
+    font-size: 1.5em;
+    background-color: white;
+    margin-top: 1em;
+}
+
+.name_style_1{
+    background-color: darkgrey;
+    color: white;
+    max-width: 4em;
+    width: 4em;
+    height: 4em;
+    font-weight: bold;
+    font-size:1.5em;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    border-radius: 99em;
+}
+
+.name_style_2{
+    background-color: darkgrey;
+    color: white;
+    width: 7em;
+    height: 7em;
+    font-weight: bold;
+    font-size:1em;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    border-radius: 99em;
+    word-wrap:break-word;
+    word-break:keep-all;
+}
+
+.reply_name_label{
+    background-color: darkgrey;
+    color: white;
+    width: 5em;
+    height: 5em;
+    font-weight: bold;
+    font-size:0.5em;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    border-radius: 99em;
+}
+
+.reply_name_label2{
+    background-color: pink;
+    color: aliceblue;
+    width: 5em;
+    height: 5em;
+    font-weight: bold;
+    font-size:0.5em;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    border-radius: 99em;
+}
+
+#replybutton{
+    border-style:none;
+    color:antiquewhite;
+    background-color: orangered;
+    padding:12.5px;
+    border-radius:10px;
+    margin-right: 30px;
+    margin-bottom:10px;
+}
+
+.button1{    
+    background-color: orange;
+    padding:10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius:10px;
+    margin-bottom:0px;
+    border: 0px;
+}
+
+.button2{    
+    background-color: coral;
+    padding:10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius:10px;
+    margin-bottom:0px;
+    border: 0px;
+}
+
+.button3{    
+    background-color: hotpink;
+    padding:10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius:10px;
+    margin-bottom:0px;
+    border: 0px;
+}
+
+.button4{    
+    background-color: sienna;
+    padding:10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius:10px;
+    margin-bottom:0px;
+    border: 0px;
+}
